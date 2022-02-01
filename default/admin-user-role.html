@@ -15,6 +15,7 @@
         <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
         <!-- third party css end -->
 
 		<!-- App css -->
@@ -1490,7 +1491,6 @@
                                         <div class="mb-2">
                                             <h4 class="header-title">Total User</h4>
                                         </div>
-
                                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                             <thead>
                                                 <tr>
@@ -1527,7 +1527,29 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <a  data-bs-toggle="modal" data-bs-target="#edit-banner-category-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
+                                                        <a  data-bs-toggle="modal" data-bs-target="#edit-admin-user-role-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
+                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="../assets/images/download-img/anika.jpg" alt="" class="image">
+                                                    </td>
+                                                    <td>Anika</td>
+                                                    <td>anika@gmail.com</td>
+                                                    <td> 
+                                                        <div class="admin-access">
+                                                            <p class="brand">Brand</p>
+                                                            <p class="category">Category</p>
+                                                            <p class="product">Product</p>
+                                                            <p class="slider">Slider</p>
+                                                            <p class="coupon">Coupons</p>
+                                                            <p class="shipping">Shipping</p>
+                                                            <p class="setting">Setting</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <a  data-bs-toggle="modal" data-bs-target="#edit-admin-user-role-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
                                                         <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
@@ -1972,8 +1994,8 @@
         <div class="rightbar-overlay"></div>
 
         <!--edit slider modal-->
-        <div class="edit-all-users-modal">
-            <div class="modal fade" tabindex="-1" id="edit-all-users-modal">
+        <div class="edit-admin-user-role-modal">
+            <div class="modal fade" tabindex="-1" id="edit-admin-user-role-modal">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -1989,9 +2011,9 @@
                             <label for="email" class="form-label">Email</label>
                             <input class="form-control" type="text" id="email">
                         </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input class="form-control" type="number" id="phone">
+                        <div>
+                            <label class="form-label">Add Accessability</label>
+                            <input type="text" class="selectize-close-btn" value="Brand">
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Profile Pic</label>
@@ -2024,6 +2046,11 @@
         <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
         <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
         <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
+        
+        <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
+        <script src="../assets/libs/select2/js/select2.min.js"></script>
+        <script src="../assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+        <script src="../assets/js/pages/form-advanced.init.js"></script>
         <!-- third party js ends -->
 
         <!-- Datatables init -->
