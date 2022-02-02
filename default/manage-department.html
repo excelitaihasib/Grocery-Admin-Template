@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Admin user role</title>
+        <title>Manage Department</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -15,7 +15,6 @@
         <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
         <!-- third party css end -->
 
 		<!-- App css -->
@@ -707,60 +706,15 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#all-user" data-bs-toggle="collapse">
-                                    <i class="fas fa-users"></i>
-                                    <span> All Users </span>
+                                <a href="#manage-department" data-bs-toggle="collapse">
+                                    <i class="fa fa-building"></i>
+                                    <span> Department </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="all-user">
+                                <div class="collapse" id="manage-department">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="all-users.html">All Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#product-stock" data-bs-toggle="collapse">
-                                    <i class="fa fa-undo"></i>
-                                    <span> Return Order </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="product-stock">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="return-order-list.html">Return Request</a>
-                                        </li>
-                                        <li>
-                                            <a href="all-return-order-list.html">All Request</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#return-order" data-bs-toggle="collapse">
-                                    <i class="fa fa-list"></i>
-                                    <span> Manage Stock </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="return-order">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="product-stock-list.html">Product Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#admin-role" data-bs-toggle="collapse">
-                                    <i class="fa fa-user-circle"></i>
-                                    <span> Admin User Role </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="admin-role">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="admin-user-role.html">All Admin User Role</a>
+                                            <a href="manage-department.html">Manage Department</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1485,79 +1439,53 @@
                     <!-- Start Content-->
                     <div class="container-fluid mt-5">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-9 m-auto">
                                 <div class="card">
+                                    <div class="pt-3 ps-3 header-title">Department-list</div>
                                     <div class="card-body">
-                                        <div class="mb-2">
-                                            <h4 class="header-title">Total User</h4>
-                                        </div>
                                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Image</th>
-                                                    <th>Name</th>
-                                                    <td>Email</td>
-                                                    <td>Access</td>
+                                                    <th>Department Id</th>
+                                                    <th>Department Name</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td>#EOS123456789</td>
+                                                    <td class="title">Marketing</td>
                                                     <td>
-                                                        <img src="../assets/images/download-img/anika.jpg" alt="" class="image">
-                                                    </td>
-                                                    <td>Anika</td>
-                                                    <td>anika@gmail.com</td>
-                                                    <td> 
-                                                        <div class="admin-access">
-                                                            <p class="brand">Brand</p>
-                                                            <p class="category">Category</p>
-                                                            <p class="product">Product</p>
-                                                            <p class="slider">Slider</p>
-                                                            <p class="coupon">Coupons</p>
-                                                            <p class="shipping">Shipping</p>
-                                                            <p class="setting">Setting</p>
-                                                            <p class="returnOrder">Return Order</p>
-                                                            <p class="review">Review</p>
-                                                            <p class="orders">Orders</p>
-                                                            <p class="stock">Stock</p>
-                                                            <p class="reports">Reports</p>
-                                                            <p class="allUser">All-User</p>
-                                                            <p class="adminUserRole">Admin-User-Role</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a  data-bs-toggle="modal" data-bs-target="#edit-admin-user-role-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
+                                                        <a data-bs-toggle="modal" data-bs-target="#edit-banner-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
                                                         <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
+                                                    <td>#EOS123456789</td>
+                                                    <td class="title">Marketing</td>
                                                     <td>
-                                                        <img src="../assets/images/download-img/anika.jpg" alt="" class="image">
-                                                    </td>
-                                                    <td>Anika</td>
-                                                    <td>anika@gmail.com</td>
-                                                    <td> 
-                                                        <div class="admin-access">
-                                                            <p class="brand">Brand</p>
-                                                            <p class="category">Category</p>
-                                                            <p class="product">Product</p>
-                                                            <p class="slider">Slider</p>
-                                                            <p class="coupon">Coupons</p>
-                                                            <p class="shipping">Shipping</p>
-                                                            <p class="setting">Setting</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a  data-bs-toggle="modal" data-bs-target="#edit-admin-user-role-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
+                                                        <a data-bs-toggle="modal" data-bs-target="#edit-banner-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
                                                         <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        
                                     </div> <!-- end card body-->
-                                </div> <!-- end card -->
+                                </div><!-- end card -->
                             </div><!-- end col-->
+                            <div class="col-lg-3">
+                                <form>
+                                    <div class="add-banner-container">
+                                        <h3>Add Department</h3>
+                                        <div class="mb-3">
+                                            <label for="brandName" class="form-label">Department Name</label>
+                                            <input class="form-control" type="text" id="brandName" required>
+                                        </div>
+                                        <button type="submit" class="add-banner-btn">Add Banner</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                         <!-- end row-->
                         
@@ -1993,8 +1921,8 @@
         <div class="rightbar-overlay"></div>
 
         <!--edit slider modal-->
-        <div class="edit-admin-user-role-modal">
-            <div class="modal fade" tabindex="-1" id="edit-admin-user-role-modal">
+        <div class="edit-banner-modal">
+            <div class="modal fade" tabindex="-1" id="edit-banner-modal">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -2003,20 +1931,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Banner Title</label>
                             <input class="form-control" type="text" id="name">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input class="form-control" type="text" id="email">
-                        </div>
-                        <div>
-                            <label class="form-label">Add Accessability</label>
-                            <input type="text" class="selectize-close-btn" value="Brand">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label">Profile Pic</label>
-                            <input class="form-control" type="file" id="image">
+                            <label for="formFile" class="form-label">Banner Image</label>
+                            <input class="form-control" type="file" id="formFile" required>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -2045,11 +1969,6 @@
         <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
         <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
         <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
-        
-        <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
-        <script src="../assets/libs/select2/js/select2.min.js"></script>
-        <script src="../assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
-        <script src="../assets/js/pages/form-advanced.init.js"></script>
         <!-- third party js ends -->
 
         <!-- Datatables init -->
