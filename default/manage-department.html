@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Brands</title>
+        <title>Manage Department</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -26,6 +26,8 @@
 
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+        <!--custom css-->
         <link rel="stylesheet" href="../assets//css/style.css">
 
     </head>
@@ -590,7 +592,7 @@
                         <ul id="side-menu">
 
                             <li class="menu-title">Navigation</li>
-                
+                            
                             <li>
                                 <a href="dashboard.html">
                                     <i data-feather="airplay"></i>
@@ -703,7 +705,21 @@
                                     </ul>
                                 </div>
                             </li>
-                            
+                            <li>
+                                <a href="#manage-department" data-bs-toggle="collapse">
+                                    <i class="fa fa-building"></i>
+                                    <span> Department </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="manage-department">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="manage-department.html">Manage Department</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
                             <li class="menu-title mt-2">Apps</li>
 
                             <li>
@@ -712,6 +728,7 @@
                                     <span> Calendar </span>
                                 </a>
                             </li>
+
                             <li>
                                 <a href="apps-chat.html">
                                     <i data-feather="message-square"></i>
@@ -1422,476 +1439,32 @@
                     <!-- Start Content-->
                     <div class="container-fluid mt-5">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-9 m-auto">
                                 <div class="card">
+                                    <div class="pt-3 ps-3 header-title">Department-list</div>
                                     <div class="card-body">
-                                        <div class="add-brand-container d-flex justify-content-between mb-2">
-                                            <h4 style="font-size: 24px;">Brand List</h4>
-                                            <button data-bs-toggle="modal" data-bs-target="#add-brand-modal" type="button" class="btn btn-danger waves-effect waves-light mb-2 me-2"><i class="fas fa-plus pe-2"></i> Add Brand</button>
-                                        </div>
-
                                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Brand Name</th>
-                                                    <th>Position</th>
+                                                    <th>Department Id</th>
+                                                    <th>Department Name</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
+                                                    <td>#EOS123456789</td>
+                                                    <td class="title">Marketing</td>
                                                     <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                        <a data-bs-toggle="modal" data-bs-target="#edit-banner-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
                                                         <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
+                                                    <td>#EOS123456789</td>
+                                                    <td class="title">Marketing</td>
                                                     <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Ashton Cox</td>
-                                                    <td>Junior Technical Author</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cedric Kelly</td>
-                                                    <td>Senior Javascript Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Airi Satou</td>
-                                                    <td>Accountant</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brielle Williamson</td>
-                                                    <td>Integration Specialist</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Herrod Chandler</td>
-                                                    <td>Sales Assistant</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Rhona Davidson</td>
-                                                    <td>Integration Specialist</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Colleen Hurst</td>
-                                                    <td>Javascript Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sonya Frost</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jena Gaines</td>
-                                                    <td>Office Manager</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quinn Flynn</td>
-                                                    <td>Support Lead</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Charde Marshall</td>
-                                                    <td>Regional Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Haley Kennedy</td>
-                                                    <td>Senior Marketing Designer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tatyana Fitzpatrick</td>
-                                                    <td>Regional Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Michael Silva</td>
-                                                    <td>Marketing Designer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Paul Byrd</td>
-                                                    <td>Chief Financial Officer (CFO)</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gloria Little</td>
-                                                    <td>Systems Administrator</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bradley Greer</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dai Rios</td>
-                                                    <td>Personnel Lead</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jenette Caldwell</td>
-                                                    <td>Development Lead</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Yuri Berry</td>
-                                                    <td>Chief Marketing Officer (CMO)</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Caesar Vance</td>
-                                                    <td>Pre-Sales Support</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Doris Wilder</td>
-                                                    <td>Sales Assistant</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Angelica Ramos</td>
-                                                    <td>Chief Executive Officer (CEO)</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gavin Joyce</td>
-                                                    <td>Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jennifer Chang</td>
-                                                    <td>Regional Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brenden Wagner</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Fiona Green</td>
-                                                    <td>Chief Operating Officer (COO)</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Shou Itou</td>
-                                                    <td>Regional Marketing</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Michelle House</td>
-                                                    <td>Integration Specialist</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Suki Burks</td>
-                                                    <td>Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Prescott Bartlett</td>
-                                                    <td>Technical Author</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gavin Cortez</td>
-                                                    <td>Team Leader</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Martena Mccray</td>
-                                                    <td>Post-Sales support</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Unity Butler</td>
-                                                    <td>Marketing Designer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Howard Hatfield</td>
-                                                    <td>Office Manager</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hope Fuentes</td>
-                                                    <td>Secretary</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Vivian Harrell</td>
-                                                    <td>Financial Controller</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Timothy Mooney</td>
-                                                    <td>Office Manager</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jackson Bradshaw</td>
-                                                    <td>Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Olivia Liang</td>
-                                                    <td>Support Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bruno Nash</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sakura Yamamoto</td>
-                                                    <td>Support Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Thor Walton</td>
-                                                    <td>Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Finn Camacho</td>
-                                                    <td>Support Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Serge Baldwin</td>
-                                                    <td>Data Coordinator</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Zenaida Frank</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Zorita Serrano</td>
-                                                    <td>Software Engineer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jennifer Acosta</td>
-                                                    <td>Junior Javascript Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cara Stevens</td>
-                                                    <td>Sales Assistant</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hermione Butler</td>
-                                                    <td>Regional Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Lael Greer</td>
-                                                    <td>Systems Administrator</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jonas Alexander</td>
-                                                    <td>Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Shad Decker</td>
-                                                    <td>Regional Director</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Michael Bruce</td>
-                                                    <td>Javascript Developer</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Donna Snider</td>
-                                                    <td>Customer Support</td>
-                                                    <td>
-                                                        <a data-bs-toggle="modal" data-bs-target="#edit-brand-modal" href="javascript:void(0);" class="action-icon edit-icon "> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                        <a data-bs-toggle="modal" data-bs-target="#edit-banner-modal" href="#" class="action-icon edit-icon"> <i class="mdi mdi-square-edit-outline mt-5"></i></a>
                                                         <a href="javascript:void(0);" class="action-icon delete-icon"> <i class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
@@ -1899,13 +1472,24 @@
                                         </table>
                                         
                                     </div> <!-- end card body-->
-                                </div> <!-- end card -->
+                                </div><!-- end card -->
                             </div><!-- end col-->
+                            <div class="col-lg-3">
+                                <form>
+                                    <div class="add-banner-container">
+                                        <h3>Add Department</h3>
+                                        <div class="mb-3">
+                                            <label for="brandName" class="form-label">Department Name</label>
+                                            <input class="form-control" type="text" id="brandName" required>
+                                        </div>
+                                        <button type="submit" class="add-banner-btn">Add Banner</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                         <!-- end row-->
                         
                     </div> <!-- container -->
-
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
@@ -2336,56 +1920,32 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-        <!--Add brand modal-->
-        <div class="add-brand-modal">
-            <div class="modal fade" tabindex="-1" id="add-brand-modal">
+        <!--edit slider modal-->
+        <div class="edit-banner-modal">
+            <div class="modal fade" tabindex="-1" id="edit-banner-modal">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Add Brand</h5>
+                      <h5 class="modal-title">Edit</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="brandName" class="form-label">Brand Name</label>
-                            <input class="form-control" type="text" id="brandName">
+                            <label for="name" class="form-label">Banner Title</label>
+                            <input class="form-control" type="text" id="name">
                         </div>
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Brand Image</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Banner Image</label>
+                            <input class="form-control" type="file" id="formFile" required>
                         </div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-danger waves-effect waves-light mb-2 me-2">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-
-        <!--edit brand modal-->
-        <div class="edit-brand-modal">
-            <div class="modal fade" tabindex="-1" id="edit-brand-modal">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Edit Brand</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="brandName" class="form-label">Brand Name</label>
-                            <input class="form-control" type="text" id="brandName">
-                        </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Brand Image</label>
-                            <input class="form-control" type="file" id="formFile">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-danger waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-danger waves-effect waves-light mb-2 me-2">Update</button>
+                      <button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Update</button>
                     </div>
                   </div>
                 </div>
