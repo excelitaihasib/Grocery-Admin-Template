@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8" />
-        <title>Timeline | UBold - Responsive Admin Dashboard Template</title>
+        <title>POS | UBold - Responsive Admin Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -10,15 +11,23 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-		<!-- App css -->
-		<link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-		<link href="../assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+        <!-- Plugins css -->
+        <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/quill/quill.core.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+        
+        <!-- App css -->
+        <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+        <link href="../assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
-		<link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
-		<link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+        <link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+        <link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
 
-		<!-- icons -->
-		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/pos.css" rel="stylesheet" >
 
     </head>
 
@@ -534,7 +543,7 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-            <div class="left-side-menu">
+            <div class="left-side-menu" style="display: none;">
 
                 <div class="h-100" data-simplebar>
 
@@ -584,49 +593,16 @@
                             <li class="menu-title">Navigation</li>
                 
                             <li>
-                                <a href="#sidebarDashboards" data-bs-toggle="collapse">
+                                <a href="index.html">
                                     <i data-feather="airplay"></i>
-                                    <span class="badge bg-success rounded-pill float-end">4</span>
-                                    <span> Dashboards </span>
-                                </a>
-                                <div class="collapse" id="sidebarDashboards">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="index.html">Dashboard 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="dashboard-2.html">Dashboard 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="dashboard-3.html">Dashboard 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="dashboard-4.html">Dashboard 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li class="menu-title mt-2">Apps</li>
-
-                            <li>
-                                <a href="apps-calendar.html">
-                                    <i data-feather="calendar"></i>
-                                    <span> Calendar </span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="apps-chat.html">
-                                    <i data-feather="message-square"></i>
-                                    <span> Chat </span>
+                                    <span> Dashboard </span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                                     <i data-feather="shopping-cart"></i>
-                                    <span> Ecommerce </span>
+                                    <span> Brand </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarEcommerce">
@@ -668,7 +644,7 @@
                             <li>
                                 <a href="#sidebarCrm" data-bs-toggle="collapse">
                                     <i data-feather="users"></i>
-                                    <span> CRM </span>
+                                    <span> Category </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarCrm">
@@ -693,29 +669,32 @@
                             </li>
 
                             <li>
-                                <a href="#sidebarEmail" data-bs-toggle="collapse">
-                                    <i data-feather="mail"></i>
-                                    <span> Email </span>
+                                <a href="#sidebarProduct" data-bs-toggle="collapse">
+                                    <i data-feather="shopping-cart"></i>
+                                    <span> Product </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarEmail">
+                                <div class="collapse" id="sidebarProduct">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="email-inbox.html">Inbox</a>
+                                            <a href="product.html">Add Products</a>
                                         </li>
                                         <li>
-                                            <a href="email-read.html">Read Email</a>
+                                            <a href="email-read.html">Manage All Products</a>
                                         </li>
                                         <li>
-                                            <a href="email-compose.html">Compose Email</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-templates.html">Email Templates</a>
+                                            <a href="email-compose.html">Manage Hot Deals Time</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
+                            <li>
+                              <a href="pos.html">
+                                  <i data-feather="shopping-cart"></i>
+                                  <span> POS </span>
+                              </a>
+                            </li>
+                            
                             <li>
                                 <a href="apps-social-feed.html">
                                     <span class="badge bg-pink float-end">Hot</span>
@@ -1330,204 +1309,489 @@
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Extras Pages</a></li>
-                                            <li class="breadcrumb-item active">Timeline</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Timeline</h4>
+                              <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">POS</a></li>
+                                    </ol>
                                 </div>
+                                <h4 class="page-title">POS</h4>
+                              </div>
                             </div>
                         </div>     
                         <!-- end page title --> 
 
-
                         <div class="row">
-                            <div class="col-12">
-                                <div class="timeline">
-
-                                    <article class="timeline-item">
-                                        <h2 class="m-0 d-none">&nbsp;</h2>
-                                        <div class="time-show mt-0">
-                                            <a href="#" class="btn btn-primary width-lg">Today</a>
+                          <div class="col-xl-7 col-12">
+                            <div class="card">
+                              <div class="row">
+                                <div class="col-xl-6 col-sm-12">
+                                  <div class="card-header">
+                                      <div class="input-group col-12 d-flex">
+                                        <div class="col-1">
+                                            <span class="input-group-text" id="basic-addon1" title="customer" style="height: 100%; border-radius: 0px; padding: 0px; ">
+                                                <i class="fas fa-user" style="margin: auto;"></i>
+                                            </span>
                                         </div>
-                                    </article>
-
-                                    <article class="timeline-item timeline-item-left">
-                                        <div class="timeline-desk">
-                                            <div class="timeline-box">
-                                                <span class="arrow-alt"></span>
-                                                <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                <h4 class="mt-0 font-16">1 hour ago</h4>
-                                                <p class="text-muted"><small>08:25 am</small></p>
-                                                <p class="mb-0">Dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? </p>
-                                            </div>
+                                        <div class="col-10">
+                                            <select class="form-control select2" id="delivery" aria-label="Username" aria-describedby="basic-addon1" >
+                                                <option>Walk-in-customer</option>
+                                                <option value="SH1">John P</option>
+                                                <option value="SH2">Chris Moris</option>
+                                                <option value="SH3">Moin</option>
+                                            </select>
                                         </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="timeline-box">
-                                                <span class="arrow"></span>
-                                                <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                <h4 class="mt-0 font-16">2 hours ago</h4>
-                                                <p class=" text-muted"><small>08:25 am</small></p>
-                                                <p class="mb-0">consectetur adipisicing elit. Iusto, optio, dolorum <a href="#">John deon</a> provident rerum aut hic quasi placeat iure tempora laudantium </p>
-                                            </div>
+                                        <div class="col-1">
+                                            <span class="input-group-text pointer" data-bs-toggle="modal" data-bs-target="#customer-modal" title="New Customer?" style="height: 100%; border-radius: 0px;  padding: 0px;">
+                                                <i class="text-blue fas fa-user-plus" style="margin: auto;"></i>
+                                            </span>
                                         </div>
-                                    </article>
-
-                                    <article class="timeline-item timeline-item-left">
-                                        <div class="timeline-desk">
-                                            <div class="timeline-box">
-                                                <span class="arrow-alt"></span>
-                                                <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                <h4 class="mt-0 font-16">10 hours ago</h4>
-                                                <p class="text-muted"><small>08:25 am</small></p>
-                                                <p>3 new photo Uploaded on facebook fan page</p>
-                                                <div class="timeline-album">
-                                                    <a href="javascript: void(0);">
-                                                        <img alt="" src="../assets/images/small/img-1.jpg">
-                                                    </a>
-                                                    <a href="javascript: void(0);">
-                                                        <img alt="" src="../assets/images/small/img-2.jpg">
-                                                    </a>
-                                                    <a href="javascript: void(0);">
-                                                        <img alt="" src="../assets/images/small/img-3.jpg">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="timeline-box">
-                                                <span class="arrow"></span>
-                                                <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                <h4 class="mt-0 font-16">14 hours ago</h4>
-                                                <p class="text-muted"><small>08:25 am</small></p>
-                                                <p class="mb-0">Outdoor visit at California State Route 85 with John Boltana &
-                                                    Harry Piterson regarding to setup a new show room.</p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item  timeline-item-left">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow-alt"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">19 hours ago</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Jonatha Smith added new milestone <span><a href="#">Pathek</a></span>
-                                                        Lorem ipsum dolor sit amet consiquest dio</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <h2 class="m-0 d-none">&nbsp;</h2>
-                                        <div class="time-show">
-                                            <a href="#" class="btn btn-primary width-lg">Yesterday</a>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">07 January 2018</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Montly Regular Medical check up at Greenland Hospital by the
-                                                        doctor <span><a href="#"> Johm meon </a></span>
-                                                    </p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item timeline-item-left">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow-alt"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">07 January 2018</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Download the new updates of Ubold admin dashboard</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">07 January 2018</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Jonatha Smith added new milestone <span><a class="blue" href="#">crishtian</a></span>
-                                                        Lorem ipsum dolor sit amet consiquest dio</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <h2 class="m-0 d-none">&nbsp;</h2>
-                                        <div class="time-show">
-                                            <a href="#" class="btn btn-primary width-lg">Last Month</a>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item timeline-item-left">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow-alt"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">31 December 2017</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Download the new updates of Ubold admin dashboard</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
-                                                    <h4 class="mt-0 font-16">16 Decembar 2017</h4>
-                                                    <p class="text-muted"><small>08:25 am</small></p>
-                                                    <p class="mb-0">Jonatha Smith added new milestone <span><a href="#">prank</a></span>
-                                                        Lorem ipsum dolor sit amet consiquest dio</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
+                                      </div>
+                                  </div>
                                 </div>
-                                <!-- end timeline -->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
-                        
-                    </div> <!-- container -->
+                                <div class="col-xl-6 col-sm-12">
+                                  <div class="card-header">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-barcode"></i></span>
+                                        <input type="text" class="form-control" placeholder="Item Name/Barcode/Itemcode" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end row -->
+                              <div class="card-body" >
+                                <div class="row">
+                                  <div class="col-xl-12 mb-2">
+                                    <div class="table-responsive scrollbar" style="border: 1px solid rgb(51, 122, 183);">
+                                      <table class="table show-cart" style="text-align: center;">
+                                        <thead class="table-info">
+                                          <tr>
+                                            <th>Item Name</th>
+                                            <th>Stock</th>
+                                            <th style="width: 180px;">QTY</th>
+                                            <th>Price</th>
+                                            <th>Discount</th>
+                                            <th>Tax</th>
+                                            <th>Sub Total</th>
+                                            <th><i class="fas fa-times"></i></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                  <a>Biblio Plastic Armchair</a> <i class="fa fa-edit pointer" data-bs-toggle="modal" data-bs-target=".sale-modal"></i>
+                                                </td>
+                                                <td>6.00</td>
+                                                <td><input data-toggle="touchspin" type="text" value="0"></td>
+                                                <td><input type="text" class="form-control" value="2000.00"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><i class="fas fa-trash mt-2"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                  <a>Biblio Plastic Armchair</a> <i class="fa fa-edit pointer" data-bs-toggle="modal" data-bs-target=".sale-modal"></i>
+                                                </td>
+                                                <td>6.00</td>
+                                                <td><input data-toggle="touchspin" type="text" value="0"></td>
+                                                <td><input type="text" class="form-control" value="2000.00"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><i class="fas fa-trash mt-2"></i></td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end row -->
+                                <div class="row mb-2">
+                                    <div class="col-xl-12">
+                                      <div class="row">
+                                        <div class="col-xl-6 col-md-12">
+                                          <input type="checkbox" class="form-check-input" id="customckeck7" required="">
+                                          <label class="form-check-label" for="customradio6">Send SMS to Customer 
+                                          </label>
+                                          <i class="fas fa-info-circle"  title="Do you wants to send SMS?"data-bs-toggle="popover" data-bs-placement="top" data-bs-content="If checkbox is Disabled! You need to enable it from SMS -> SMS API &nbsp;&nbsp;
+                                          Note:Walk-in Customer will not receive SMS!" ></i>
+                                        </div>
+                                        <div class="col-xl-6 col-md-12">
+                                          <div class="row form-group">
+                                            <label for="other_charges" class="col-sm-5 mb-2 input-label">Other Charges<label class="text-danger">*</label></label>
+                                            <div class="col-sm-7">
+                                            <input type="text" class="form-control text-right" id="other_charges" name="other_charges" placeholder="0.00" value="" style="margin-top: -8px;">
+                                            <span id="other_charges_msg" style="display:none" class="text-danger"></span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- end row -->
 
-                </div> <!-- content -->
+                              </div>
+                              <div class="card-footer">
+                                <div class="row">
+                                  <div class="col-md-3 text-right">
+                                    <label> Quantity:</label><br>
+                                    <span class="text-bold tot_qty">1</span>
+                                  </div>
+                                  <div class="col-md-3 text-right">
+                                    <label>Total Amount:</label><br>
+                                    TK. <span style="font-size: 19px;" class="tot_amt text-bold">20768.00</span>                  
+                                  </div>
+                                  <div class="col-md-3 text-right">
+                                    <label>Total Discount:<i class="fas fa-edit" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#discount-modal"></i></label><br>
+                                    TK. <span style="font-size: 19px;" class="tot_disc text-bold">0.00</span>                  
+                                  </div>
+                                  <div class="col-md-3 text-right">
+                                    <label>Grand Total:</label><br>
+                                    TK. <span style="font-size: 19px;" class="tot_grand text-bold">20768.00</span>                  
+                                  </div>
+                                </div>
+                                <!-- end row -->
+                                <div class="row">
+                                  <div class="col-sm-3 text-right">
+                                    <button type="button" class="btn btn-danger btn-block btn-md waves-effect width-xl btn-lg waves-light mb-2" data-bs-toggle="modal" data-bs-target="#hold-modal"><i class="fas fa-hand-paper" style="margin-right: 8px;"></i>Hold</button></i>
+                                  </div>
+                                  <div class="col-sm-3 text-right">
+                                    <button type="button" class="btn btn-info  btn-block btn-md waves-effect width-xl btn-lg waves-light mb-2" data-bs-toggle="modal" data-bs-target="#multiple-modal"><i class="fas fa-credit-card" style="margin-right: 8px;"></i>Multiple</button>
+                                  </div>
+                                  <div class="col-sm-3 text-right">
+                                    <button type="button" class="btn btn-blue  btn-block btn-md waves-effect width-xl btn-lg waves-light mb-2" data-bs-toggle="modal" data-bs-target="#cash-modal"><i class="fas fa-money-bill-alt" style="margin-right: 8px;"></i>Cash</button>
+                                  </div>
+                                  <div class="col-sm-3 text-right">
+                                    <button type="button" class="btn btn-success  btn-block btn-md waves-effect width-xl btn-lg waves-light mb-2" data-bs-toggle="modal" data-bs-target="#pay-modal"><i class="fas fa-money-bill-alt" style="margin-right: 8px;"></i>Pay All</button>
+                                  </div>
+                                </div>
+                                <!-- end row -->
+                              </div>
+                            </div>
+                          </div> <!-- col end -->
+                          <div class="col-xl-5 col-12">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="card-header">
+                                            <div class="input-group col-12 d-flex">
+                                                <div class="col-11">
+                                                    <select class="form-control select2" id="all-category" aria-label="Username" aria-describedby="basic-addon3" >
+                                                        <option>All Category</option>
+                                                        <option value="SH1">Fruits & Vegetables</option>
+                                                        <option value="SH2">Meat & Fish</option>
+                                                        <option value="SH3">Breakfast</option>
+                                                        <option value="SH4">Snacks</option>
+                                                        <option value="SH5">Rice</option>
+                                                        <option value="SH6">Ready Mix</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-1">
+                                                    <span class="input-group-text pointer" data-toggle="modal" data-target="#customer-modal" title="Reset Category" style="height: 100%; border-radius: 0px; padding: 0px;">
+                                                        <i onclick="refresh1()" class="text-blue fas fa-undo" style="margin: auto;"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="card-header">
+                                            <div class="input-group col-12 d-flex">
+                                                <div class="col-11">
+                                                    <select class="form-control select2" id="all-brand" aria-label="Username" aria-describedby="basic-addon4">
+                                                        <option>All Brands</option>
+                                                        <option value="SH1">Teer</option>
+                                                        <option value="SH2">Fresh</option>
+                                                        <option value="SH3">Radhuni</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-1">
+                                                    <span class="input-group-text pointer" data-toggle="modal" data-target="#customer-modal" title="Reset Brand" style="height: 100%; border-radius: 0px; padding: 0px;">
+                                                        <i onclick="refresh2()" class="text-blue fas fa-undo" style="margin: auto;"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-scrollbar">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="card gallery">
+                                                <div class="card-header">
+                                                    <span style="background-color: #DD4B39; color: white; font-size: 15px; padding-left: 5px; padding-right: 5px;">QTY. 6.00</span>
+                                                </div>
+                                                <div class="card-body" style="padding-top: 38px; text-align: center; " >
+                                                    <div>
+                                                        <img src="../assets/images/image-1.jpg"  alt="product-pic" height="80px" width="80px"  >
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <h5 class="mt-0" style="padding-top: 5px;" >Biblio Plastic Armchair </a> </h5>
+                                                                <div class="product-price-tag">
+                                                                    <small style = "padding-left:5px; padding-right: 5px; color: white; font-weight: 700; font-size: medium; margin : 0px; background-color: rgb(76, 94, 107); ">TK.39</small>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </div>
 
                 <!-- Footer Start -->
                 <footer class="footer">
@@ -1547,7 +1811,6 @@
                     </div>
                 </footer>
                 <!-- end Footer -->
-
             </div>
 
             <!-- ============================================================== -->
@@ -1555,6 +1818,10 @@
             <!-- ============================================================== -->
 
 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- END wrapper -->
 
@@ -1957,11 +2224,297 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
+
+
+        <!-- All Modal Start -->
+
+      
+        <!-- Add Customer Modal Start -->
+        <div id="customer-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="customer-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="customer-modalLabel">Add Customer</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="customer-name" class="form-label">Customer Name</label>
+                                    <input class="form-control" type="text" id="customer-name">
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="mobile" class="form-label">Mobile</label>
+                                    <input class="form-control" type="text" id="mobile">
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input class="form-control" type="text" id="phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input class="form-control" type="text" id="email">
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="balance" class="form-label">Opening Balance</label>
+                                    <input class="form-control" type="text" id="balance">
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="mb-3">
+                                    <label for="Tax" class="form-label">TAX Number</label>
+                                    <input class="form-control" type="text" id="Tax">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <textarea class="form-control"  id="address" style="height: 60px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Add Customer Modal End -->
+
+        <!-- Discount Modal Start -->
+        <div id="discount-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="discount-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="discount-modalLabel">Set Discount</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="mb-3">
+                                    <label for="discount" class="form-label">Discount</label>
+                                    <input class="form-control" type="text" id="discount">
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="mb-3">
+                                    <label for="discount-type" class="form-label">Discount Type</label>
+                                    <select id="discount-type" class="form-select">
+                                        <option>Percentage%</option>
+                                        <option>Fixed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Discount Modal End -->
+        <!-- Cash Modal Start -->
+        <div id="cash-modal" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="cash-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="cash-modalLabel">Payments</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="card" style="background-color: #d2d6de;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label for="amount" class="form-label">Amount</label>
+                                                <input class="form-control" type="text" id="amount">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label for="pay-note" class="form-label">Payment Note</label>
+                                                <textarea class="form-control"  id="pay-note" style="height: 60px"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body col-card-body">
+                                        <div class="row">
+                                            <div class="col-md-12 border-bottom">
+                                              <span class="col-md-6 text-right text-bold">Total Items:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px;">2</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 border-bottom">
+                                              <span class="col-md-6 text-right text-bold">Total:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">1760.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 border-bottom">
+                                              <span class="col-md-6 text-right text-bold">Discount:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">0.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-right: -16px;
+                                        margin-left: -16px;">
+                                            <div class="col-md-12 border-bottom" style="background-color: #f1556c;">
+                                              <span class="col-md-6 text-right text-bold">Total Payable:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">1760.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 border-bottom">
+                                              <span class="col-md-6 text-right text-bold">Total Paying:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">0.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 border-bottom">
+                                              <span class="col-md-6 text-right text-bold">Balance:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">1760.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-right: -16px;
+                                        margin-left: -16px;">
+                                            <div class="col-md-12 border-bottom" style="background-color: #fd7e14;">
+                                              <span class="col-md-6 text-right text-bold">Change Return:</span>
+                                              <span class="col-md-6 text-right text-bold" style="font-size: 22px; ;">0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-save" style="margin-right: 5px;"></i> Save</button>
+                        <a href="http://127.0.0.1:5500/default/invoice.html" target="popup" onclick="window.open('http://127.0.0.1:5500/default/invoice.html','popup','width=500,height=500'); return false;">
+                        <button data-bs-dismiss="modal" type="button" class="btn btn-info"><i class="fas fa-print" style="margin-right: 5px;"></i>Save & Print</button></a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Cash Modal End -->
+        <!-- Sale Item Start -->
+        <div  class="modal fade sale-modal"  tabindex="-1" role="dialog" aria-labelledby="sale-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="sale-modalLabel">Manage Sales Item</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <b>Item Name: </b>
+                                    <span id="item-name">Biblio Plastic Armchair</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card" style="background-color: #d2d6de;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="tax-type" class="form-label">Tax Type</label>
+                                                <select id="tax-type" class="form-select select2">
+                                                    <option>Exclusive</option>
+                                                    <option>Inclusive</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tax" class="form-label">Tax</label>
+                                                <select id="tax" class="form-select select2">
+                                                    <option>-Select-</option>
+                                                    <option>Vat 5%</option>
+                                                    <option>Tax 10%</option>
+                                                    <option>Tax 18%</option>
+                                                    <option>IGST 4.5%</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="discount-type" class="form-label">Discount Type</label>
+                                                <select id="discount-type" class="form-select select2">
+                                                    <option>Percentage%</option>
+                                                    <option>Fixed</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="discount" class="form-label">Discount</label>
+                                                <input id="discount" class="form-control" type="text" value="0">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="description" class="form-label">Description</label>
+                                                <textarea id="description" class="form-control"   style="height: 60px"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"> Set</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- Sale Item End -->
+        <!-- All Modal End -->
+
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
+        <!-- Select2 js-->
+        <script src="../assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+        <script src="../assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+        <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
+        <script src="../assets/libs/select2/js/select2.min.js"></script>
+        
+       
+         <!-- Quill js -->
+         <script src="../assets/libs/quill/quill.min.js"></script>
 
-        <!-- App js -->
-        <script src="../assets/js/app.min.js"></script>
+         <!-- Init js -->
+         <script src="../assets/js/pages/add-product.init.js"></script>
+         <script src="../assets/js/pages/form-advanced.init.js"></script>
+
+          <!-- Tippy js-->
+          <script src="../assets/libs/tippy.js/tippy.all.min.js"></script>
+ 
+         <!-- App js -->
+         <script src="../assets/js/app.min.js"></script>
+         <script src="../assets/js/pos.js"></script>
         
     </body>
 </html>
