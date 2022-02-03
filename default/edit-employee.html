@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Add Employee</title>
+    <title>Edit Employee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
@@ -1535,7 +1535,7 @@
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
-                            <h4 class="page-title">Add Employee</h4>
+                            <h4 class="page-title">Edit</h4>
                         </div>
                     </div>
                 </div>
@@ -1547,7 +1547,7 @@
                             <form class="needs-validation" novalidate>
                                 <div class="employee-container">
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">Employee name</label>
                                                 <input type="text" class="form-control" id="name" placeholder="Name"
@@ -1583,18 +1583,9 @@
                                                     Please enter your salary
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="designation" class="form-label">Employee
-                                                    Designation</label>
-                                                <input type="text" class="form-control" id="designation"
-                                                    placeholder="Designation" required />
-                                                <div class="invalid-feedback">
-                                                    please enter your name
-                                                </div>
-                                            </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="dprt-name" class="form-label">Department Name</label>
                                                 <select id="dprt-name" class="form-select" required="">
@@ -1627,17 +1618,9 @@
                                                     please write your birth day date
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="p-address" class="form-label">Employee Present
-                                                    Address</label>
-                                                <textarea id="p-address" class="form-control" required></textarea>
-                                                <div class="invalid-feedback">
-                                                    please write your present address
-                                                </div>
-                                            </div>
                                         </div>
 
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="office-id" class="form-label">Employee Office Id</label>
                                                 <input type="text" class="form-control" id="office-id"
@@ -1671,10 +1654,22 @@
                                                     please write your joining date
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="p-address" class="form-label">Employee Present
+                                                    Address</label>
+                                                <textarea id="p-address" class="form-control" rows="3" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    please write your present address
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="p-address" class="form-label">Employee Permanent
                                                     Address</label>
-                                                <textarea id="p-address" class="form-control" required ></textarea>
+                                                <textarea id="p-address" class="form-control" rows="3" required ></textarea>
                                                 <div class="invalid-feedback">
                                                     please write your permanent address
                                                 </div>
@@ -1682,7 +1677,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Add Employee</button>
+                                <button class="btn btn-primary" type="submit">Update</button>
                             </form>
 
                         </div> <!-- end card-body-->
