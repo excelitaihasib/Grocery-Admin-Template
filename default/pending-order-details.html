@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Pickers | UBold - Responsive Admin Dashboard Template</title>
+        <title>Pending Order Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -10,22 +10,16 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-        <!-- Plugins css -->
-        <link href="../assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
-        <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+	    <!-- App css -->
+	    <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+	    <link href="../assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
-		<!-- App css -->
-		<link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-		<link href="../assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+	    <link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+	    <link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
 
-		<link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
-		<link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
-
-		<!-- icons -->
-		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+	    <!-- icons -->
+	    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css">
 
     </head>
 
@@ -591,24 +585,113 @@
                             <li class="menu-title">Navigation</li>
                 
                             <li>
-                                <a href="#sidebarDashboards" data-bs-toggle="collapse">
+                                <a href="dashboard.html">
                                     <i data-feather="airplay"></i>
-                                    <span class="badge bg-success rounded-pill float-end">4</span>
-                                    <span> Dashboards </span>
+                                    <span> Dashboard </span>
                                 </a>
-                                <div class="collapse" id="sidebarDashboards">
+                            </li>
+                             <li>
+                                <a href="brands.html">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span> Brand </span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#category" data-bs-toggle="collapse">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span> Category </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="category">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="index.html">Dashboard 1</a>
+                                            <a href="category.html">All Category</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard-2.html">Dashboard 2</a>
+                                            <a href="sub-category.html">All Sub-Category</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard-3.html">Dashboard 3</a>
+                                            <a href="sub-sub-category.html">All Sub-Sub-Category</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#product" data-bs-toggle="collapse">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span> Products </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="product">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="manage-products.html">Manage All Products</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#SliderOption" data-bs-toggle="collapse">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span> Slider Option </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="SliderOption">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="slider-option.html">Manage Slider</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="coupon-list.html">
+                                    <i class="fas fa-gift"></i>
+                                    <span> Coupon Option </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="banner-option.html">
+                                    <i class="far fa-image"></i>
+                                    <span> Banner Option </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="banner-category.html">
+                                    <i class="far fa-image"></i>
+                                    <span> Banner Category </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#order" data-bs-toggle="collapse">
+                                    <i class="fab fa-first-order"></i>
+                                    <span> Orders </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="order">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="pending-order-list.html">Pending Orders</a>
                                         </li>
                                         <li>
-                                            <a href="dashboard-4.html">Dashboard 4</a>
+                                            <a href="confirm-order-list.html">Confirmed Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="processing-order-list.html">Processing Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="picked-order-list.html">Picked Orders</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="shipped-order-list.html">Shipped Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="deliver-order-list.html">Delivered Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="cancel-order-list.html">Cancel Orders</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1333,112 +1416,200 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        
-     
-
-                        <div class="row mt-4">
-                            <div class="col-lg-12">
+                        <h4 class="header-title my-4">Order Details</h4>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
+                                    <div class="text-center pt-4"><h4>Shippings Details</h4></div>
                                     <div class="card-body">
-                                        <h4 class="header-title">Add Expence</h4>                           
-                                          
-                                    <div class="d-flex justify-content-end">
-                                        <button class="btn btn-danger"> Add Expense Type </button>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Shipping Name:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Anika Rahman</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Shipping Phone:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>019-----431</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Shipping Email:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>info@gmail.com</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Division:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Dhaka</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>District:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Narayanganj</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>State:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Bandar</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Post Code:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>1421</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Order Date:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>12-12-2022</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Date</label>
-                                                        <input type="text" id="conjunction-datepicker" class="form-control flatpickr-input" placeholder="2018-10-10 :: 2018-10-11" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="card">
+                                    <div class="text-center pt-4"><h4>Shippings Details <span style="color: #ff3333;">Invoice: EOS75887016</span> </h4></div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Name:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Anika Rahman</h5>
                                                     </div>
                                                 </div>
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label for="formFile" class="form-label">Image</label>
-                                                        <input class="form-control" type="file" id="formFile">
-                                                      </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label for="validationCustom01" class="form-label">Expense</label>
-                                                        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required />
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Phone:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>019-----431</h5>
                                                     </div>
                                                 </div>
-
-                                              
-                                             
-                                                
-                                            </div>
-                                            <!-- ==end of row== -->
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label for="validationCustomUsername" class="form-label">Payment Type</label>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>Payment Type</option>
-                                                            <option value="1">Cash</option>
-                                                            <option value="2">Bank</option>
-                                                            <option value="3">Bkash</option>
-                                                            <option value="3">Card</option>
-                                                          </select>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Payment Type:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Cash On Delivery</h5>
                                                     </div>
                                                 </div>
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label for="validationCustom03" class="form-label">Payment Amount</label>
-                                                        <input type="text" class="form-control" id="validationCustom03" placeholder="Amount" required />
-                                                        <div class="invalid-feedback">
-                                                            Please provide a valid city.
-                                                        </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Tranx ID:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>123456789</h5>
                                                     </div>
                                                 </div>
-                                                <div class="col-4">
-                                                    <div class="mb-3">
-                                                        <label for="validationCustomUsername" class="form-label">Expense Type</label>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>Expense Type</option>
-                                                            <option value="1">Bills</option>
-                                                            <option value="2">Food expense</option>
-                                                            <option value="3">Stationary</option>
-                                                            <option value="3">Gift Purpose</option>
-                                                            <option value="3">Employee Cost</option>
-                                                            <option value="3">Other</option>
-                                                          </select>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Invoice:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>EOS75887016</h5>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- end of row -->
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="mb-3">
-                                                        <label for="validationCustom04" class="form-label">Expense Short Descraption</label>
-                                                        <div class="form-floating">
-                                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                             
-                                                          </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Order Total:</h5>
                                                     </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>$7</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row pt-2">
+                                                    <div class="col-lg-5 col-md-5 col-sm-5">
+                                                        <h5>Order:</h5>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                                        <h5>Pending</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="pt-2 text-center">
+                                                    <button class="btn btn-success w-50">cancel Order</button>
                                                 </div>
                                             </div>
-                                            <button class="btn btn-primary" type="submit">Add Expense</button>
-                                        </form>
-
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-
-
-                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- end row -->
 
-
-         
-
-
-       
-
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-centered mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Product Image</th>
+                                                        <th>Product Name</th>
+                                                        <th>Product Code</th>
+                                                        <th>Color</th>
+                                                        <th>Size</th>
+                                                        <th>Quantity</th>
+                                                        <th>Price</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><img src="../assets/images/products/product-5.png" alt="product-img" height="32"></td>
+                                                        <th scope="row">Red Hoodie for men</th>
+                                                        <td>2*#2464367</td>
+                                                        <td>red</td>
+                                                        <td>42</td>
+                                                        <td>2</td>
+                                                        <td>400</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><img src="../assets/images/products/product-1.png" alt="product-img" height="32"></td>
+                                                        <th scope="row">Polo Navy blue T-shirt</th>
+                                                        <td>2*#2464367</td>
+                                                        <td>nebi blue</td>
+                                                        <td>42</td>
+                                                        <td>2</td>
+                                                        <td>400</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
                         
                     </div> <!-- container -->
 
@@ -1875,54 +2046,8 @@
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
 
-        <!-- Plugins js-->
-        <script src="../assets/libs/flatpickr/flatpickr.min.js"></script>
-        <script src="../assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
-        <script src="../assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
-        <script src="../assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
-        <!-- Init js-->
-        <script src="../assets/js/pages/form-pickers.init.js"></script>
-
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
         
-    <!-- Code injected by live-server -->
-<script type="text/javascript">
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script></body>
+    </body>
 </html>
