@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard | UBold - Responsive Admin Dashboard Template</title>
+        <title>All Reports - Profit Reports | UBold - Responsive Admin Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -24,7 +24,17 @@
 
         <!-- icons -->
         <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/css/index.css" rel="stylesheet" >
+
+        <style>
+            .avatar-title {
+                align-items: center;
+                color: #fff;
+                display: flex;
+                height: 100%;
+                justify-content: center;
+                width: 100%;
+            }
+        </style>
 
     </head>
 
@@ -590,113 +600,131 @@
                             <li class="menu-title">Navigation</li>
                 
                             <li>
-                                <a href="index.html">
+                                <a href="dashboard.html">
                                     <i data-feather="airplay"></i>
                                     <span> Dashboard </span>
                                 </a>
                             </li>
-
-                            <li>
-                                <a href="#sidebarEcommerce" data-bs-toggle="collapse">
-                                    <i class="fas fa-shopping-cart"></i>
+                             <li>
+                                <a href="brands.html">
+                                    <i class="fas fa-list-alt"></i>
                                     <span> Brand </span>
-                                    <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarEcommerce">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="ecommerce-dashboard.html">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-products.html">Products</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-product-detail.html">Product Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-product-edit.html">Add Product</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-customers.html">Customers</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-orders.html">Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-order-detail.html">Order Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-sellers.html">Sellers</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-cart.html">Shopping Cart</a>
-                                        </li>
-                                        <li>
-                                            <a href="ecommerce-checkout.html">Checkout</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
 
                             <li>
-                                <a href="#sidebarCrm" data-bs-toggle="collapse">
-                                    <i class="fas fa-users"></i>
+                                <a href="#category" data-bs-toggle="collapse">
+                                    <i class="fas fa-list-alt"></i>
                                     <span> Category </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarCrm">
+                                <div class="collapse" id="category">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="crm-dashboard.html">Dashboard</a>
+                                            <a href="category.html">All Category</a>
                                         </li>
                                         <li>
-                                            <a href="crm-contacts.html">Contacts</a>
+                                            <a href="sub-category.html">All Sub-Category</a>
                                         </li>
                                         <li>
-                                            <a href="crm-opportunities.html">Opportunities</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-leads.html">Leads</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-customers.html">Customers</a>
+                                            <a href="sub-sub-category.html">All Sub-Sub-Category</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
                             <li>
-                                <a href="#sidebarProduct" data-bs-toggle="collapse">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span> Product </span>
+                                <a href="#product" data-bs-toggle="collapse">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span> Products </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="sidebarProduct">
+                                <div class="collapse" id="product">
                                     <ul class="nav-second-level">
                                         <li>
                                             <a href="product.html">Add Products</a>
                                         </li>
                                         <li>
-                                            <a href="email-read.html">Manage All Products</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-compose.html">Manage Hot Deals Time</a>
+                                            <a href="manage-products.html">Manage All Products</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
+                            <li>
+                                <a href="#SliderOption" data-bs-toggle="collapse">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span> Slider Option </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="SliderOption">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="slider-option.html">Manage Slider</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="coupon-list.html">
+                                    <i class="fas fa-gift"></i>
+                                    <span> Coupon Option </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="banner-option.html">
+                                    <i class="far fa-image"></i>
+                                    <span> Banner Option </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="banner-category.html">
+                                    <i class="far fa-image"></i>
+                                    <span> Banner Category </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#order" data-bs-toggle="collapse">
+                                    <i class="fab fa-first-order"></i>
+                                    <span> Orders </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="order">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="pending-order-list.html">Pending Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="confirm-order-list.html">Confirmed Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="processing-order-list.html">Processing Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="picked-order-list.html">Picked Orders</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="shipped-order-list.html">Shipped Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="deliver-order-list.html">Delivered Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="cancel-order-list.html">Cancel Orders</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li>
                                 <a href="pos.html">
                                     <i class="fas fa-calculator"></i>
                                     <span> POS </span>
                                 </a>
                             </li>
-
                             <li>
                                 <a href="#sidebarPurchase" data-bs-toggle="collapse">
                                     <i class="fas fa-shopping-cart"></i>
                                     <span> Purchase </span>
+                                    <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="sidebarPurchase">
                                   <ul class="nav-second-level">
@@ -707,6 +735,33 @@
                                           <a href="view_purchase.html">View Purchase</a>
                                       </li>
                                   </ul>
+                              </div>
+                            </li>
+
+                            <li>
+                                <a href="#sidebarReport" data-bs-toggle="collapse">
+                                    <i class="fas fa-file"></i>
+                                    <span> All Reports </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="sidebarReport">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="order_reports.html">Order Reports</a>
+                                        </li>
+                                        <li>
+                                            <a href="salary_reports.html">Salary Reports</a>
+                                        </li>
+                                        <li>
+                                          <a href="product_reports.html">Return Product Reports</a>
+                                        </li>
+                                        <li>
+                                          <a href="user_reports.html">User Active Reports</a>
+                                        </li>
+                                        <li>
+                                          <a href="profit_reports.html">Profit Reports</a>
+                                        </li>
+                                    </ul>
                               </div>
                             </li>
 
@@ -1317,426 +1372,64 @@
 
             <div class="content-page">
                 <div class="content">
-
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <form class="d-flex align-items-center mb-3">
-                                            <div class="input-group input-group-sm">
-                                                <input type="text" class="form-control border" id="dash-daterange">
-                                                <span class="input-group-text bg-blue border-blue text-white">
-                                                    <i class="mdi mdi-calendar-range"></i>
-                                                </span>
-                                            </div>
-                                            <a href="javascript: void(0);" class="btn btn-blue btn-sm ms-2">
-                                                <i class="mdi mdi-autorenew"></i>
-                                            </a>
-                                            <a href="javascript: void(0);" class="btn btn-blue btn-sm ms-1">
-                                                <i class="mdi mdi-filter-variant"></i>
-                                            </a>
-                                        </form>
-                                    </div>
-                                    <h4 class="page-title">Dashboard</h4>
-                                </div>
+                    <div class="row">
+                        <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #fff; border-bottom: 1px solid #ced4da;">
+                            <h4>Search By Date</h4>
                             </div>
-                        </div>     
-                        <!-- end page title --> 
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class="fas fa-tag font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Today's Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">58,947</span> TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-money-bill-alt font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Monthly Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span> TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-money-bill-alt font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Yearly Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-warning"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Admin</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
+                            <div class="card-body">
+                            <label for="validationCustom01" class="form-label">Select Date</label>
+                            <input class="form-control" id="validationCustom01" type="date" name="date">
+                            <button class="btn btn-blue mt-2" type="submit">Search</button>
+                            </div>
                         </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Employee</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">200</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total User</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class=" fas fa-dollar-sign font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Paid Salary</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-secondary border-secondary border">
-                                                    <i class="fas fa-dollar-sign font-22 avatar-title text-secondary"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Due Salary</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
                         </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-check font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Delivered Product</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">200</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-secondary border-secondary border">
-                                                    <i class="fas fa-hourglass-half font-22 avatar-title text-secondary"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Pending Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">100</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class=" fas fa-redo font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Confirmed Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-shopping-cart font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Processing Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
+                        <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #fff; border-bottom: 1px solid #ced4da;">
+                            <h4>Search By Month</h4>
+                            </div>
+                            <div class="card-body">
+                            <label for="validationCustom02" class="form-label">Select Month</label>
+                            <select id="validationCustom02" class="form-select form-control" required>
+                                <option label="Choose One"></option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <label for="validationCustom03" class="form-label mt-2">Select Year</label>
+                            <input type="text" id="validationCustom03" class="form-control">
+                            <button class="btn btn-blue mt-2" type="submit">Search</button>
+                            </div>
                         </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-sync-alt font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Picked Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">14</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-pink border-pink border">
-                                                    <i class="fas fa-exclamation-triangle font-22 avatar-title text-pink"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Shipped Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">8</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
-                                                    <i class="fas fa-trash-alt font-22 avatar-title text-danger"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Cancel Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">0</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Debit</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">12</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
                         </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-pink border-pink border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-pink"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Credit</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
-                                                    <i class="fas fa-dollar-sign font-22 avatar-title text-warning"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Asset</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">1000</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
+                        <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #fff; border-bottom: 1px solid #ced4da;">
+                            <h4>Select Year</h4>
+                            </div>
+                            <div class="card-body">
+                            <label for="validationCustom04" class="form-label">Select Year</label>
+                            <input type="text" id="validationCustom04" class="form-control">
+                            <button class="btn btn-blue mt-2" type="submit">Search</button>
+                            </div>
                         </div>
-                        
-                    </div> <!-- container -->
+                        </div>
+                    </div>
 
-                </div> <!-- content -->
+                </div> <!-- container -->
+
+            </div> <!-- content -->
 
                 <!-- Footer Start -->
                 <footer class="footer">
