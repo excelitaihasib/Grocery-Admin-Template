@@ -106,7 +106,34 @@ table tbody tr td {
     margin: 3px;
     padding: 2px 10px;
     border-radius: 5px;
-
+}
+.admin-btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+.admin-btns > .employee-btn, .admin-btn {
+    background-color: #f1556c;
+    border: 1px solid #f1556c;
+    border-radius: 5px;
+    padding: 3px 20px;
+    color: #fff;
+    font-size: 16px;
+}
+.admin-btns > .employee-btn > a, .admin-btn > a {
+    color: #fff;
+}
+.admin-btns .employee-btn {
+    background-color: #00BC8B;
+    border: 1px solid #00BC8B;
+}
+.admin-input-container {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0;
+}
+.adminImage {
+    height: 100px;
 }
 /* style for Admin User Role */
 
