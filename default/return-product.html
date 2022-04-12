@@ -11,9 +11,17 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-        <!-- Plugins css -->
-        <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+       <!-- third party css -->
+       <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" /> 
+       <link href="../assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+       <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+       <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+       <!-- third party css end -->
         
         <!-- App css -->
         <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -24,29 +32,86 @@
 
         <!-- icons -->
         <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/css/dashboard.css" rel="stylesheet" >
+
+        <!--custom css-->
+        <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
-            .avatar-title {
-                align-items: center;
-                color: #fff;
-                display: flex;
-                height: 100%;
-                justify-content: center;
-                width: 100%;
-            }
-            .left-side-menu{
-                width: 255px;
-            }
-            .footer{
-                left: 255px;
-            }
+          .avatar-title {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            width: 100%;
+          }
+          .left-side-menu{
+            width: 255px;
+          }
+          .footer{
+            left: 255px;
+          }
+           .qty {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            margin-top: 0px;
+          }
+          .qty .line {
+            background-color: #fff;
+            width: auto;
+            display: inline-block;
+            z-index: 3;
+            padding: 0 20px 0 20px;
+            color: #464646;
+            position: relative;
+            font-weight: bold;
+            margin: 0;
+          }
+          .qty::after {
+            content: '';
+            width: 100%;
+            border-bottom: 1px solid #000;
+            position: absolute;
+            left: 0;
+            top: 50%;
+          }
+          .right-arrow{
+            position: absolute;
+            right: 0;
+            top: 3.8px;
+            color: #000;
+          }
+          .left-arrow{
+            position: absolute;
+            left: 0;
+            top: 3.8px;
+            color: #000;
+          }
+          #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 10px;
+           }
+          #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+            position: absolute;
+            right: 20px;
+            top: 23px;
+          }
+          #return-product-submit-modal .table-striped>tbody>tr:nth-of-type(odd){
+            --bs-table-accent-bg: #fff;
+          }
+          #return-product-submit-modal table th,td{
+              text-align: center;
+          }
         </style>
 
     </head>
 
     <!-- body start -->
-    <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
+    <body class="loading return-product" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -803,397 +868,119 @@
 
             <div class="content-page">
                 <div class="content">
-
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        <div class="row mt-4">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class="fas fa-tag font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Today's Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">58,947</span> TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
+                  <!-- Start Content-->
+                  <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-lg-flex justify-content-lg-between mb-2">
+                                      <div class="col-lg-6">
+                                        <h4 class="header-title">Return Product</h4>
+                                      </div>
+                                      <div class="col-lg-6 d-flex justify-content-lg-center">
+                                        <div class="col-lg-7 justify-content-lg-center" style="display: contents">
+                                          <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Add Returnable Product</button></a>
+                                        </div>
+                                      </div>
                                     </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-money-bill-alt font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Monthly Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span> TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-money-bill-alt font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Yearly Sale</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-warning"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Admin</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Employee</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">200</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total User</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class=" fas fa-dollar-sign font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Paid Salary</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-secondary border-secondary border">
-                                                    <i class="fas fa-dollar-sign font-22 avatar-title text-secondary"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Due Salary</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-check font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Delivered Product</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">200</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-secondary border-secondary border">
-                                                    <i class="fas fa-hourglass-half font-22 avatar-title text-secondary"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Pending Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">100</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-blue border-blue border">
-                                                    <i class=" fas fa-redo font-22 avatar-title text-blue"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Confirmed Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-shopping-cart font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Processing Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">10</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                                                    <i class="fas fa-sync-alt font-22 avatar-title text-info"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Picked Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">14</span></h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-pink border-pink border">
-                                                    <i class="fas fa-exclamation-triangle font-22 avatar-title text-pink"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Shipped Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">8</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-danger border-danger border">
-                                                    <i class="fas fa-trash-alt font-22 avatar-title text-danger"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Total Cancel Order</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">0</span></h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-success border-success border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-success"></i>
-                                                </div>
-                                            </div>
-                                           <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Debit</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">12</span>TK</h3>
-                                                </div>
-                                           </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-pink border-pink border">
-                                                    <i class="fas fa-user-friends font-22 avatar-title text-pink"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Credit</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">580</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-
-                            <div class="col-sm-6 col-md-6 col-xl-3">
-                                <div class="widget-rounded-circle card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
-                                                    <i class="fas fa-dollar-sign font-22 avatar-title text-warning"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <p class="text-muted mb-1 text-truncate">Asset</p>
-                                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">1000</span>TK</h3>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        <!-- end row-->
-                                    </div>
-                                </div> <!-- end widget-rounded-circle-->
-                            </div> <!-- end col-->
-                        </div>
-                        
-                    </div> <!-- container -->
+                                    <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>Product Code</th>
+                                                <th>Product Name</th>
+                                                <th>Brand Name</th>
+                                                <th style="width: 25%;">
+                                                  <div class="qty">
+                                                    <p class="line">QTY of Size</p>
+                                                    <p><i class="fas fa-angle-right right-arrow"></i></p>
+                                                    <p><i class="fas fa-angle-left left-arrow"></i></p>
+                                                  </div>
+                                                  <table class="text-center d-flex">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="px-3">M</th>
+                                                            <th class="px-3">L</th>
+                                                            <th class="px-3">X</th>
+                                                            <th class="px-3">XL</th>
+                                                            <th class="px-3">XXL</th>
+                                                        </tr>
+                                                    </thead>
+                                                  </table>
+                                                </th>
+                                                <th>Return Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td># WBH 5484</td>
+                                                <td>P47 - Wireless Bluetooth
+                                                  Headphone WBH</td>
+                                                <td>Brand Name</td>
+                                                <td>
+                                                  <table class="text-center d-flex">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">2</td>
+                                                            <td class="px-4">0</td>
+                                                            <td class="px-3">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td>৳ 500</td>
+                                            </tr>
+                                            <tr>
+                                                <td># WBH 5484</td>
+                                                <td>P47 - Wireless Bluetooth
+                                                  Headphone WBH</td>
+                                                <td>Brand Name</td>
+                                                <td>
+                                                  <table class="text-center d-flex">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-4">0</td>
+                                                            <td class="px-3">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td>৳ 500</td>
+                                            </tr>
+                                            <tr>
+                                                <td># WBH 5484</td>
+                                                <td>P47 - Wireless Bluetooth
+                                                  Headphone WBH</td>
+                                                <td>Brand Name</td>
+                                                <td>
+                                                  <table class="text-center d-flex">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-3">0</td>
+                                                            <td class="px-4">0</td>
+                                                            <td class="px-3">0</td>
+                                                        </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                                <td>৳ 500</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div>
+                    <!-- end row-->
+                    
+                  </div> <!-- container -->
 
                 </div> <!-- content -->
 
@@ -1218,6 +1005,71 @@
 
         </div>
         <!-- END wrapper -->
+
+
+        <!-- return product modal -->
+        <div class="return-product-modal">
+            <div class="modal fade" tabindex="-1" id="return-product-modal">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Submit SKU Code</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">SKU Code</label>
+                            <input class="form-control" type="text" id="name">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-submit-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2" >Submit</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <!-- return product submit modal -->
+          <div class="return-productsubmit-modal">
+            <div class="modal fade" tabindex="-1" id="return-product-submit-modal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add Returnable Product</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <table id="datatable-buttons" class="table table-striped nowrap w-100" style="background-color: #f3f7f9; border: 1px solid #DEE2E6;">
+                                <thead style="background-color: transparent;">
+                                    <tr>
+                                        <th>Color</th>
+                                        <th>Size</th>
+                                        <th>QTY</th>
+                                        <th>Return Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Red</td>
+                                        <td>M</td>
+                                        <td><input type="number" value="1" style="text-align: center; padding: 11px 0px; border: 1px solid #DEE2E6;"></td>
+                                        <td>৳ 500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
+                      <a href="#"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2" >Save</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1343,14 +1195,31 @@
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
 
-        <!-- Plugins js-->
+        <!-- third party js -->
+        <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="../assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
+        <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
+        <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
         <script src="../assets/libs/flatpickr/flatpickr.min.js"></script>
-        <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
+        <script src="../assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+        <script src="../assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
+        <script src="../assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <!-- third party js ends -->
 
-        <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
+        <!-- Datatables init -->
+        <script src="../assets/js/pages/datatables.init.js"></script>
 
-        <!-- Dashboar 1 init js-->
-        <script src="../assets/js/pages/dashboard-1.init.js"></script>
+        <!-- Init js-->
+        <script src="../assets/js/pages/form-pickers.init.js"></script>
 
         <!-- App js-->
         <script src="../assets/js/app.min.js"></script>
