@@ -11,7 +11,7 @@ $(document).ready(function () {
         },
     });
     var a = $("#datatable-buttons").DataTable({
-        lengthChange:1,
+        lengthChange: 1,
         buttons: [
             { extend: "copy", className: "btn-light" },
             { extend: "print", className: "btn-light" },
@@ -87,7 +87,7 @@ $(document).ready(function () {
         $(".dataTables_length label").addClass("form-label");
 
 
-        const datatableContent = document.getElementById('datatable-buttons');
-        datatableContent.parentElement.style.overflowX = 'auto';
+    const datatableContent = document.getElementById('datatable-buttons');
+    datatableContent.parentElement.style.overflowX = 'auto';
 
 });
