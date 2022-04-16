@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Grocery E-com</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Grocery E-com" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -30,6 +30,12 @@
     <!-- icons -->
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/dashboard.css" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- LIne chart js  -->
 
@@ -92,6 +98,12 @@
             background: #C6EEE6;
             border: 2px solid #1ABC9C;
         }
+        /* .dashbord-card-info{
+            width: 50%;
+        } */
+        .dashbord-card-info h2{
+            text-align: right;
+        }
 
         .dashbord-card-info p {
             font-weight: 400;
@@ -115,6 +127,26 @@
         }
 
 
+
+        @media(max-width:1400px){
+                .dashbord-card-info p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19px;
+                text-align: right;
+                color: #6E768E;
+            }
+
+            .dashbord-card-info h2 {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: right;
+                color: #6E768E;
+            }
+        }
+
+        
         /* Chart Js  */
     </style>
 
@@ -319,21 +351,21 @@
                 <div class="logo-box">
                     <a href="index.html" class="logo logo-dark text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                            <!-- <span class="logo-lg-text-light">UBold</span> -->
+                            <img src="../assets/images/logo.png" alt="" height="22">
+                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo-dark.png" alt="" height="20">
-                            <!-- <span class="logo-lg-text-light">U</span> -->
+                            <img src="../assets/images/logo.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
+                            <img src="../assets/images/logo.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo-light.png" alt="" height="20">
+                            <img src="../assets/images/logo.png" alt="" height="20">
                         </span>
                     </a>
                 </div>
@@ -367,7 +399,7 @@
         <!-- end Topbar -->
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="left-side-menu">
+        <div class="left-side-menu" style="width: 263px;">
 
             <div class="h-100" data-simplebar>
 
@@ -378,12 +410,61 @@
 
                     <ul id="side-menu">
 
+                        <li>
+                            <a href="#owner_dashboard" data-bs-toggle="collapse">
+                                <i class="fas fa-list-alt"></i>
+                                <span> Shop Owner Dashboard </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="owner_dashboard">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="shop_owner_dashboard.html">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-owner-product-list.html">Product List</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Product Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-owner-supplier-list.html">Supplier List</a>
+                                    </li>
+                                    <li>
+                                        <a href="return-product.html">Return Product</a>
+                                    </li>
+                                    <li>
+                                        <a href="payment-history.html">Payment History</a>
+                                    </li>
+                                    <li>
+                                        <a href="profit-report.html">Profit Report</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li>
-                            <a href="index.html">
-                                <i data-feather="airplay"></i>
-                                <span> Dashboard </span>
+                            <a href="#suplier_panel" data-bs-toggle="collapse">
+                                <i class="fas fa-list-alt"></i>
+                                <span> Supplier Panel </span>
+                                <span class="menu-arrow"></span>
                             </a>
+                            <div class="collapse" id="suplier_panel">
+                                <ul class="nav-second-level">
+                                    <li>
+                                        <a href="supplier_dashboard.html">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier-panel-product-list.html">Product List</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier-return-product.html">Return Product</a>
+                                    </li>
+                                    <li>
+                                        <a href="supplier-payment-history.html">Payment History</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                         <li>
@@ -494,7 +575,7 @@
                 <div class="container-fluid p-4">
                     <div class="row">
                         <div class="mb-3 main-head">Dashboard</div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xxl-3 col-xl-3  col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -522,7 +603,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -555,7 +636,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -588,7 +669,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -624,7 +705,7 @@
                     <!-- end row  -->
 
                     <div class="row">
-                        <div class="col-lg-6 col-md-8 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
 
                             <div class="card p-3">
                                 <div class="card-body">
@@ -632,7 +713,7 @@
                                         class="line-chart mb-2 d-flex justify-content-between align-items-center flex-wrap">
                                         <h3>Sales Analytics</h3>
 
-                                        <div class="col-sm-12 col-lg-2 col-md-2">
+                                        <div class="col-sm-12 col-lg-3 col-md-3">
                                             <select class="form-select form-select-lg"
                                                 aria-label=".form-select-lg example">
                                                 <option selected>January</option>
@@ -648,6 +729,40 @@
                                     <!-- end line-chart  -->
                                     <div>
                                         <canvas id="myChart"></canvas>
+                                    </div>
+                                    <!-- end line chart js  -->
+                                </div>
+                                <!-- end card-body  -->
+                            </div>
+                            <!-- end card  -->
+                        </div>
+                        <!-- end col  -->
+                        
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                            <div class="card p-3">
+                                <div class="card-body">
+                                    <div
+                                        class="line-chart mb-2 d-flex justify-content-between align-items-center flex-wrap">
+                                        <h3>Sales Analytics</h3>
+
+                                        <div class="col-sm-12 col-lg-3 col-md-3">
+                                            <select class="form-select form-select-lg"
+                                                aria-label=".form-select-lg example">
+                                                <option selected>January</option>
+                                                <option value="1">February</option>
+                                                <option value="2">March</option>
+                                                <option value="3">April</option>
+                                            </select>
+                                            <!-- end select  -->
+                                        </div>
+                                        <!-- end col  -->
+
+                                    </div>
+                                    <!-- end line-chart  -->
+                                    <div>
+                                        <canvas id="myChart2"></canvas>
                                     </div>
                                     <!-- end line chart js  -->
                                 </div>
@@ -822,51 +937,56 @@
 
     <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
 
-    <!-- Dashboar 1 init js-->
+    <!-- Dashboar 1 init js -->
     <script src="../assets/js/pages/dashboard-1.init.js"></script>
 
     <!-- App js-->
     <script src="../assets/js/app.min.js"></script>
     <!-- Line chart js  -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
-        const labels = [
-            '1 Jun',
-            '5 Jun',
-            '10 Jun',
-            '15 Jun',
-            '20 Jun',
-            '25 Jun',
-            '30 Jun',
-        ];
-
-        const data = {
-            labels: labels,
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(60,136,250,0.2)',
-                borderColor: 'rgb(60,136,250)',
-                data: [30, 10, 20, 30, 50, 20, 30, 50,],
-                fill: true,
-            }]
-        };
-
-
-        const config = {
-            type: 'line',
-            data: data,
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2005', '2007', '2009', '2011', '2013', '2015',],
+                datasets: [{
+                    label: '# Analytics',
+                    data: [65, 56, 80, 82, 55, 53, 30],
+                    backgroundColor: [
+                        // 'rgba(255, 99, 132, 0.2)',
+                        // 'rgba(54, 162, 235, 0.2)',
+                        // 'rgba(255, 206, 86, 0.2)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)'
+                        // 'rgba(153, 102, 255, 0.2)',
+                        // 'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
             options: {
                 scales: {
                     y: {
                         beginAtZero: true,
                         grid: {
-                            borderColor: 'transparent',
-                            // borderWidth: 2,
+                            //   borderColor: 'transparent',
+                            //     borderWidth: 2,
                             borderDash: [10, 10],
                             display: true
                         }
-
                     },
                     x: {
                         grid: {
@@ -874,20 +994,52 @@
                             display: false
                         }
                     }
-                },
-
-            },
-
-        };
-
+                }
+            }
+        });
     </script>
-
-
     <script>
-        const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
+        const ctx2 = document.getElementById('myChart2');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        // 'rgba(255, 99, 132, 0.2)',
+                        // 'rgba(54, 162, 235, 0.2)',
+                        // 'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                        // 'rgba(153, 102, 255, 0.2)',
+                        // 'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        // 'rgba(255, 99, 132, 1)',
+                        // 'rgba(54, 162, 235, 1)',
+                        // 'rgba(255, 206, 86, 1)',
+                        // 'rgba(75, 192, 192, 1)',
+                        // 'rgba(153, 102, 255, 1)',
+                        // 'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     </script>
 
 </body>

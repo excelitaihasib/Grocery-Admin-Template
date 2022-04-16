@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Grocery E-com</title>
+  <title>Profit Report</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -42,6 +42,9 @@
 
   <!--custom css-->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     .avatar-title {
@@ -78,6 +81,24 @@
       position: absolute;
       right: 20px;
       top: 23px;
+    }
+    @media (max-width: 767px){
+        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+        justify-content: center;
+        }
+    }
+    @media (max-width: 636px){
+        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+            right: 0;
+            left: 0;
+            top: 60px;
+        }
+        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+            margin-top: 20px;
+        }
+        .header-title {
+            text-align: center;
+        }
     }
     #datatable-buttons .edit{
       font-size: 17px;

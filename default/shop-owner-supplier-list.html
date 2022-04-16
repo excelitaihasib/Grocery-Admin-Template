@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Return Product</title>
+        <title>Supplier List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Grocery E-com" name="description" />
         <meta content="Coderthemes" name="author" />
@@ -92,6 +92,16 @@
             top: 3.8px;
             color: #000;
           }
+          .prdQty {
+                border: 1px solid #ced4da;
+                margin-bottom: 0;
+                padding: 5px 0;
+                text-align: center;
+                width: 120px;
+            }
+            .prdQty:focus {
+                outline: none;
+            }
           #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
             width: 100%;
             display: flex;
@@ -102,13 +112,39 @@
           #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
             position: absolute;
             right: 20px;
-            top: 23px;
+            top: 28px;
           }
           #return-product-submit-modal .table-striped>tbody>tr:nth-of-type(odd){
             --bs-table-accent-bg: #fff;
           }
-          #return-product-submit-modal table th,td{
-              text-align: center;
+
+          .addReturnAblePrdBtn {
+              display: flex;
+              justify-content: end;
+          }
+         @media (max-width: 1795px){
+            .addReturnAblePrdBtn {
+              justify-content: center;
+            }
+          }
+          @media (max-width: 1190px){
+            .addReturnAblePrdBtn {
+              justify-content: start;
+            }
+          }
+          @media (max-width: 991px){
+                #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+                    top: 115px;
+                    right: auto;
+            }
+            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+                margin-top: 35px;
+            }
+          }
+          @media (max-width: 767px){
+            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+                justify-content: center;
+            }
           }
         </style>
 
@@ -297,21 +333,21 @@
                     <div class="logo-box">
                         <a href="index.html" class="logo logo-dark text-center">
                             <span class="logo-sm">
-                                <img src="../assets/images/logo-sm.png" alt="" height="22">
-                                <!-- <span class="logo-lg-text-light">UBold</span> -->
+                                <!-- <img src="../assets/images/logo-sm.png" alt="" height="22"> -->
+                                <span class="logo-lg-text-light">Shop Owner</span>
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/logo-dark.png" alt="" height="20">
-                                <!-- <span class="logo-lg-text-light">U</span> -->
+                                <!-- <img src="../assets/images/logo-dark.png" alt="" height="20"> -->
+                                <span class="logo-lg-text-light">Shop Owner</span>
                             </span>
                         </a>
                 
                         <a href="index.html" class="logo logo-light text-center">
                             <span class="logo-sm">
-                                <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                <span class="logo-lg-text-light">Shop Owner</span>
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/logo-light.png" alt="" height="20">
+                                <span class="logo-lg-text-light">Shop Owner</span>
                             </span>
                         </a>
                     </div>
@@ -878,104 +914,66 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="d-lg-flex justify-content-lg-between mb-2">
-                                      <div class="col-lg-6">
-                                        <h4 class="header-title">Return Product</h4>
+                                    <div class="d-lg-flex col-lg-10 mb-2">
+                                      <div class="col-lg-5">
+                                        <h4 class="header-title">Supplier List</h4>
                                       </div>
-                                      <div class="col-lg-6 d-flex justify-content-lg-center">
-                                        <div class="col-lg-7 justify-content-lg-center" style="display: contents">
-                                          <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Add Returnable Product</button></a>
-                                        </div>
+                                      <div  class="col-lg-7 addReturnAblePrdBtn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#addSupplier"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Add New Supplier <i class="fas fa-user-plus"></i></button></a>
                                       </div>
                                     </div>
                                     <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                         <thead>
                                             <tr>
-                                                <th>Product Code</th>
-                                                <th>Product Name</th>
-                                                <th>Brand Name</th>
-                                                <th style="width: 25%;">
-                                                  <div class="qty">
-                                                    <p class="line">QTY of Size</p>
-                                                    <p><i class="fas fa-angle-right right-arrow"></i></p>
-                                                    <p><i class="fas fa-angle-left left-arrow"></i></p>
-                                                  </div>
-                                                  <table class="text-center d-flex">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="px-3">M</th>
-                                                            <th class="px-3">L</th>
-                                                            <th class="px-3">X</th>
-                                                            <th class="px-3">XL</th>
-                                                            <th class="px-3">XXL</th>
-                                                        </tr>
-                                                    </thead>
-                                                  </table>
-                                                </th>
-                                                <th>Return Amount</th>
+                                                <th> Supplier ID</th>
+                                                <th> Supplier Name </th>
+                                                <th> Name </th>
+                                                <th> Bank Details </th>
+                                                <th> Mobile Bank Details </th>
+                                                <th> Supplier Contact </th>
+                                                <th> Supplier Address </th>
+                                                <th> Action </th>                                  
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td># WBH 5484</td>
-                                                <td>P47 - Wireless Bluetooth
-                                                  Headphone WBH</td>
-                                                <td>Brand Name</td>
                                                 <td>
-                                                  <table class="text-center d-flex">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">2</td>
-                                                            <td class="px-4">0</td>
-                                                            <td class="px-3">0</td>
-                                                        </tr>
-                                                    </tbody>
-                                                  </table>
+                                                     #SP 5484 
                                                 </td>
-                                                <td>৳ 500</td>
-                                            </tr>
-                                            <tr>
-                                                <td># WBH 5484</td>
-                                                <td>P47 - Wireless Bluetooth
-                                                  Headphone WBH</td>
-                                                <td>Brand Name</td>
                                                 <td>
-                                                  <table class="text-center d-flex">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-4">0</td>
-                                                            <td class="px-3">0</td>
-                                                        </tr>
-                                                    </tbody>
-                                                  </table>
+                                                    Rahim Febrics
                                                 </td>
-                                                <td>৳ 500</td>
-                                            </tr>
-                                            <tr>
-                                                <td># WBH 5484</td>
-                                                <td>P47 - Wireless Bluetooth
-                                                  Headphone WBH</td>
-                                                <td>Brand Name</td>
                                                 <td>
-                                                  <table class="text-center d-flex">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-3">0</td>
-                                                            <td class="px-4">0</td>
-                                                            <td class="px-3">0</td>
-                                                        </tr>
-                                                    </tbody>
-                                                  </table>
+                                                    MD Al Amin
                                                 </td>
-                                                <td>৳ 500</td>
+                                                <td>
+                                                    <div class="d-flex  flex-column">
+                                                        <span> Bank Name: DBBL </span> 
+                                                        <span> Account No: 0123456789 </span>                                       
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex  flex-column">
+                                                        <span>Bank Name: Bkash </span>
+                                                        <span>Account No: 0123456789 </span>
+                                                    </div>
+
+                                                </td>
+                                                <td> Phone : 0123456789 </td>
+                                                <td>  95/1, Santinagar (gr. Floor), Dhaka </td>
+                                                
+                                                <td>      
+                                                    <div class="d-flex gap-1">
+                                                        <button class="editIcon"><i data-bs-toggle="modal" data-bs-target="#editSupplier" class="fas fa-edit"></i></button>
+                                                        <button class="deleteIcon"> <i class="far fa-trash-alt"></i></button>
+                                                    </div>                                                                        
+                                                </td>
                                             </tr>
+
+
+
+                                    
+
                                         </tbody>
                                     </table>
                                 </div> <!-- end card body-->
@@ -1009,71 +1007,6 @@
 
         </div>
         <!-- END wrapper -->
-
-
-        <!-- return product modal -->
-        <div class="return-product-modal">
-            <div class="modal fade" tabindex="-1" id="return-product-modal">
-                <div class="modal-dialog modal-dialog-centered modal-sm">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Submit SKU Code</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">SKU Code</label>
-                            <input class="form-control" type="text" id="name">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-submit-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2" >Submit</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <!-- return product submit modal -->
-          <div class="return-productsubmit-modal">
-            <div class="modal fade" tabindex="-1" id="return-product-submit-modal">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Add Returnable Product</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <table id="datatable-buttons" class="table table-striped nowrap w-100" style="background-color: #f3f7f9; border: 1px solid #DEE2E6;">
-                                <thead style="background-color: transparent;">
-                                    <tr>
-                                        <th>Color</th>
-                                        <th>Size</th>
-                                        <th>QTY</th>
-                                        <th>Return Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Red</td>
-                                        <td>M</td>
-                                        <td><input type="number" value="1" style="text-align: center; padding: 11px 0px; border: 1px solid #DEE2E6;"></td>
-                                        <td>৳ 500</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-light waves-effect waves-light mb-2 me-2" data-bs-dismiss="modal">Close</button>
-                      <a href="#"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2" >Save</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1195,6 +1128,122 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+
+         <!-- supplier Add Model -->
+         <div class="modal fade" id="addSupplier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel"> Add Supplier</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-3 mt-3">
+                            <label for="prdCode">Supplier ID </label>
+                            <input type="text" name="" id="prdCode" class="form-control mt-1" value="#12354">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">   Supplier Name  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Name  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Mobile Number  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 mt-3">
+                            <label for="prdCode"> Mobile Number 2 </label>
+                            <input type="text" name="" id="prdCode" class="form-control mt-1" value="">
+                        </div>
+
+           
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Bank Name Details  </label>
+                            <textarea type="text"class="form-control" > </textarea>
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Bank Name Details  </label>
+                            <textarea type="text" class="form-control" > </textarea>
+                        </div>
+
+
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Supplier Address  </label>
+                            <textarea type="text"class="form-control"> </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-end">
+                    <button type="button" class="btn btn-info px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- supplier Add Model -->
+        <div class="modal fade" id="editSupplier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel"> Add Supplier</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-3 mt-3">
+                            <label for="prdCode">Supplier ID </label>
+                            <input type="text" name="" id="prdCode" class="form-control mt-1" value="#12354">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">   Supplier Name  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Name  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Mobile Number  </label>
+                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 mt-3">
+                            <label for="prdCode"> Mobile Number 2 </label>
+                            <input type="text" name="" id="prdCode" class="form-control mt-1" value="">
+                        </div>
+
+           
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Bank Name Details  </label>
+                            <textarea type="text"class="form-control" > </textarea>
+                        </div>
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Bank Name Details  </label>
+                            <textarea type="text" class="form-control" > </textarea>
+                        </div>
+
+
+                        <div class="col-lg-3 mt-3">
+                            <label for="supplierPrdCode">  Supplier Address  </label>
+                            <textarea type="text"class="form-control"> </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-end">
+                    <button type="button" class="btn btn-info px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
