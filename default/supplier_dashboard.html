@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard</title>
+    <title>Grocery E-com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Grocery E-com" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -34,9 +34,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- LIne chart js  -->
 
@@ -100,13 +98,6 @@
             border: 2px solid #1ABC9C;
         }
 
-        /* .dashbord-card-info{
-            width: 50%;
-        } */
-        .dashbord-card-info h2 {
-            text-align: right;
-        }
-
         .dashbord-card-info p {
             font-weight: 400;
             font-size: 16px;
@@ -126,26 +117,6 @@
             font-size: 24px;
             line-height: 29px;
             color: #343A40;
-        }
-
-
-
-        @media(max-width:1400px) {
-            .dashbord-card-info p {
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 19px;
-                text-align: right;
-                color: #6E768E;
-            }
-
-            .dashbord-card-info h2 {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 19px;
-                text-align: right;
-                color: #6E768E;
-            }
         }
 
 
@@ -353,21 +324,21 @@
                 <div class="logo-box">
                     <a href="index.html" class="logo logo-dark text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo.png" alt="" height="22">
-                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
+                            <img src="../assets/images/logo-sm.png" alt="" height="22">
+                            <!-- <span class="logo-lg-text-light">UBold</span> -->
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo.png" alt="" height="20">
-                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
+                            <img src="../assets/images/logo-dark.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">U</span> -->
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo.png" alt="" height="22">
+                            <img src="../assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo.png" alt="" height="20">
+                            <img src="../assets/images/logo-light.png" alt="" height="20">
                         </span>
                     </a>
                 </div>
@@ -401,7 +372,7 @@
         <!-- end Topbar -->
 
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="left-side-menu" style="width: 263px;">
+        <div class="left-side-menu">
 
             <div class="h-100" data-simplebar>
 
@@ -412,61 +383,12 @@
 
                     <ul id="side-menu">
 
-                        <li>
-                            <a href="#owner_dashboard" data-bs-toggle="collapse">
-                                <i class="fas fa-list-alt"></i>
-                                <span> Shop Owner Dashboard </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="owner_dashboard">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="shop_owner_dashboard.html">Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-owner-product-list.html">Product List</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Product Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-owner-supplier-list.html">Supplier List</a>
-                                    </li>
-                                    <li>
-                                        <a href="return-product.html">Return Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="payment-history.html">Payment History</a>
-                                    </li>
-                                    <li>
-                                        <a href="profit-report.html">Profit Report</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
 
                         <li>
-                            <a href="#suplier_panel" data-bs-toggle="collapse">
-                                <i class="fas fa-list-alt"></i>
-                                <span> Supplier Panel </span>
-                                <span class="menu-arrow"></span>
+                            <a href="index.html">
+                                <i data-feather="airplay"></i>
+                                <span> Dashboard </span>
                             </a>
-                            <div class="collapse" id="suplier_panel">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="supplier_dashboard.html">Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="supplier-panel-product-list.html">Product List</a>
-                                    </li>
-                                    <li>
-                                        <a href="supplier-return-product.html">Return Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="supplier-payment-history.html">Payment History</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
 
                         <li>
@@ -577,7 +499,7 @@
                 <div class="container-fluid p-4">
                     <div class="row">
                         <div class="mb-3 main-head">Dashboard</div>
-                        <div class=" col-xxl-3 col-xl-3  col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -605,7 +527,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -638,7 +560,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -671,7 +593,7 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -739,8 +661,10 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
+                        
+                        
+                        <div class="col-lg-6 col-md-8 col-sm-12">
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="card p-3">
                                 <div class="card-body">
                                     <div
@@ -770,6 +694,7 @@
                             </div>
                             <!-- end card  -->
                         </div>
+                        <!-- end col  -->
                     </div>
                     <!-- end row  -->
 
@@ -936,7 +861,7 @@
 
     <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
 
-    <!-- Dashboar 1 init js -->
+    <!-- Dashboar 1 init js-->
     <script src="../assets/js/pages/dashboard-1.init.js"></script>
 
     <!-- App js-->
@@ -1040,14 +965,6 @@
             }
         });
     </script>
-
-
-    <!-- <script>
-        const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
-    </script> -->
 
 </body>
 

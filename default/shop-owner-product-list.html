@@ -30,23 +30,25 @@
         <!--custom css-->
         <link rel="stylesheet" href="../assets//css/style.css">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
         <style>
-            .eyeIcon, .editIcon, .replyIcon {
-                border: transparent;
-                background: transparent;
-                color: #6c757d;
-            }
-            .editIcon {
-                color: #6658DD;
-            }
+            
             .table>:not(caption)>*>* {
                 border-bottom-width: 0px;
             }
-
-            .prdQuantity p{
+            
+            .prdQty {
                 border: 1px solid #ced4da;
                 margin-bottom: 0;
                 padding: 5px 0;
+                text-align: center;
+                width: 120px;
+            }
+            .prdQty:focus {
+                outline: none;
             }
 
             #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
@@ -2201,6 +2203,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLabel">Product Details</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -2339,6 +2342,7 @@
                 <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel">Submit SKU Code</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="">
@@ -2360,6 +2364,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="exampleModalLabel">Add Returnable Product</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p> <span style="font-weight: bold;">Product Name :</span> P47 - P47-Wireless Bluetooth Headphone</p>
@@ -2378,7 +2383,7 @@
                                 <tr class="text-center">
                                     <td>Red</td>
                                     <td>M</td>
-                                    <td class="prdQuantity"><p>1</p></td>
+                                    <td><input class="prdQty" type="number" value="1"></td>
                                     <td>6500</td>
                                 </tr>
                             </tbody>
