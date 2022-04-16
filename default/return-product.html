@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Grocery E-com</title>
+        <title>Return Product</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Grocery E-com" name="description" />
         <meta content="Coderthemes" name="author" />
@@ -35,6 +35,10 @@
 
         <!--custom css-->
         <link rel="stylesheet" href="../assets/css/style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
         <style>
           .avatar-title {
@@ -88,6 +92,16 @@
             top: 3.8px;
             color: #000;
           }
+          .prdQty {
+                border: 1px solid #ced4da;
+                margin-bottom: 0;
+                padding: 5px 0;
+                text-align: center;
+                width: 120px;
+            }
+            .prdQty:focus {
+                outline: none;
+            }
           #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
             width: 100%;
             display: flex;
@@ -98,13 +112,39 @@
           #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
             position: absolute;
             right: 20px;
-            top: 23px;
+            top: 28px;
           }
           #return-product-submit-modal .table-striped>tbody>tr:nth-of-type(odd){
             --bs-table-accent-bg: #fff;
           }
-          #return-product-submit-modal table th,td{
-              text-align: center;
+
+          .addReturnAblePrdBtn {
+              display: flex;
+              justify-content: end;
+          }
+         @media (max-width: 1795px){
+            .addReturnAblePrdBtn {
+              justify-content: center;
+            }
+          }
+          @media (max-width: 1190px){
+            .addReturnAblePrdBtn {
+              justify-content: start;
+            }
+          }
+          @media (max-width: 991px){
+                #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+                    top: 115px;
+                    right: auto;
+            }
+            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+                margin-top: 35px;
+            }
+          }
+          @media (max-width: 767px){
+            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+                justify-content: center;
+            }
           }
         </style>
 
@@ -874,14 +914,12 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="d-lg-flex justify-content-lg-between mb-2">
-                                      <div class="col-lg-6">
+                                    <div class="d-lg-flex col-lg-10 mb-2">
+                                      <div class="col-lg-5">
                                         <h4 class="header-title">Return Product</h4>
                                       </div>
-                                      <div class="col-lg-6 d-flex justify-content-lg-center">
-                                        <div class="col-lg-7 justify-content-lg-center" style="display: contents">
-                                          <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Add Returnable Product</button></a>
-                                        </div>
+                                      <div  class="col-lg-7 addReturnAblePrdBtn">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#return-product-modal"><button type="button" class="btn btn-success waves-effect waves-light mb-2 me-2">Add Returnable Product</button></a>
                                       </div>
                                     </div>
                                     <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -1055,7 +1093,7 @@
                                     <tr>
                                         <td>Red</td>
                                         <td>M</td>
-                                        <td><input type="number" value="1" style="text-align: center; padding: 11px 0px; border: 1px solid #DEE2E6;"></td>
+                                        <td><input class="prdQty" type="number" value="1"></td>
                                         <td>৳ 500</td>
                                     </tr>
                                 </tbody>

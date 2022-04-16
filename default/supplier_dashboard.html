@@ -31,6 +31,11 @@
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <!-- LIne chart js  -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-chart/2.0.28/LineChart.css"
@@ -632,7 +637,7 @@
                                         class="line-chart mb-2 d-flex justify-content-between align-items-center flex-wrap">
                                         <h3>Sales Analytics</h3>
 
-                                        <div class="col-sm-12 col-lg-2 col-md-2">
+                                        <div class="col-sm-12 col-lg-3 col-md-3">
                                             <select class="form-select form-select-lg"
                                                 aria-label=".form-select-lg example">
                                                 <option selected>January</option>
@@ -648,6 +653,40 @@
                                     <!-- end line-chart  -->
                                     <div>
                                         <canvas id="myChart"></canvas>
+                                    </div>
+                                    <!-- end line chart js  -->
+                                </div>
+                                <!-- end card-body  -->
+                            </div>
+                            <!-- end card  -->
+                        </div>
+                        <!-- end col  -->
+                        
+                        
+                        <div class="col-lg-6 col-md-8 col-sm-12">
+
+                            <div class="card p-3">
+                                <div class="card-body">
+                                    <div
+                                        class="line-chart mb-2 d-flex justify-content-between align-items-center flex-wrap">
+                                        <h3>Sales Analytics</h3>
+
+                                        <div class="col-sm-12 col-lg-3 col-md-3">
+                                            <select class="form-select form-select-lg"
+                                                aria-label=".form-select-lg example">
+                                                <option selected>January</option>
+                                                <option value="1">February</option>
+                                                <option value="2">March</option>
+                                                <option value="3">April</option>
+                                            </select>
+                                            <!-- end select  -->
+                                        </div>
+                                        <!-- end col  -->
+
+                                    </div>
+                                    <!-- end line-chart  -->
+                                    <div>
+                                        <canvas id="myChart2"></canvas>
                                     </div>
                                     <!-- end line chart js  -->
                                 </div>
@@ -829,44 +868,49 @@
     <script src="../assets/js/app.min.js"></script>
     <!-- Line chart js  -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
-        const labels = [
-            '1 Jun',
-            '5 Jun',
-            '10 Jun',
-            '15 Jun',
-            '20 Jun',
-            '25 Jun',
-            '30 Jun',
-        ];
-
-        const data = {
-            labels: labels,
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(60,136,250,0.2)',
-                borderColor: 'rgb(60,136,250)',
-                data: [30, 10, 20, 30, 50, 20, 30, 50,],
-                fill: true,
-            }]
-        };
-
-
-        const config = {
-            type: 'line',
-            data: data,
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2005', '2007', '2009', '2011', '2013', '2015',],
+                datasets: [{
+                    label: '# Analytics',
+                    data: [65, 56, 80, 82, 55, 53, 30],
+                    backgroundColor: [
+                        // 'rgba(255, 99, 132, 0.2)',
+                        // 'rgba(54, 162, 235, 0.2)',
+                        // 'rgba(255, 206, 86, 0.2)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)'
+                        // 'rgba(153, 102, 255, 0.2)',
+                        // 'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)',
+                        'rgba(20,155,198,0.7)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
             options: {
                 scales: {
                     y: {
                         beginAtZero: true,
                         grid: {
-                            borderColor: 'transparent',
-                            // borderWidth: 2,
+                            //   borderColor: 'transparent',
+                            //     borderWidth: 2,
                             borderDash: [10, 10],
                             display: true
                         }
-
                     },
                     x: {
                         grid: {
@@ -874,20 +918,52 @@
                             display: false
                         }
                     }
-                },
-
-            },
-
-        };
-
+                }
+            }
+        });
     </script>
-
-
     <script>
-        const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
+        const ctx2 = document.getElementById('myChart2');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        // 'rgba(255, 99, 132, 0.2)',
+                        // 'rgba(54, 162, 235, 0.2)',
+                        // 'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                        // 'rgba(153, 102, 255, 0.2)',
+                        // 'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        // 'rgba(255, 99, 132, 1)',
+                        // 'rgba(54, 162, 235, 1)',
+                        // 'rgba(255, 206, 86, 1)',
+                        // 'rgba(75, 192, 192, 1)',
+                        // 'rgba(153, 102, 255, 1)',
+                        // 'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     </script>
 
 </body>
