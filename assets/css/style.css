@@ -20,12 +20,15 @@ tbody tr {
     color: #6c757d;
     font-size: 20px;
 }
-.pdfIcon{
+
+.pdfIcon {
     color: #6658DD;
 }
-.printIcon{
+
+.printIcon {
     color: #F88443;
 }
+
 .editIcon {
     color: #0D6EFD;
 }

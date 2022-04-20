@@ -40,10 +40,6 @@
 
         <style>
             
-            .table>:not(caption)>*>* {
-                border-bottom-width: 0px;
-            }
-            
             .prdQty {
                 border: 1px solid #ced4da;
                 margin-bottom: 0;
@@ -85,6 +81,13 @@
                 .header-title {
                     text-align: center;
                 }
+            }
+            .supPrdViewContainer .viewTitle {
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+            .supPrdViewContainer .viewInfo {
+                padding: 7px 0 7px 0;
             }
         </style>
 
@@ -1922,46 +1925,46 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdCode">Product Code</label>
-                        <input type="text" name="" id="prdCode" class="form-control mt-1" value="#12354">
+                <div class="row supPrdViewContainer">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Product Code</p>
+                        <p class="viewInfo">#12345</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="brndName">Brand Name</label>
-                        <input type="text" name="" id="brndName" class="form-control mt-1" value="Brand Name">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Brand Name</p>
+                        <p class="viewInfo">Brand Name</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdCategory">Category</label>
-                        <input type="text" name="" id="prdCategory" class="form-control mt-1" value="Category">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Category</p>
+                        <p class="viewInfo">Category</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdName">Product Name</label>
-                        <input type="text" name="" id="prdName" class="form-control mt-1" value="Product Name">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Product Name</p>
+                        <p class="viewInfo">Product Name</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdUnit">Unit (meter)</label>
-                        <input type="text" name="" id="prdUnit" class="form-control mt-1" value="500 m">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Unit (meter)</p>
+                        <p class="viewInfo">500 m</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdQty">Quantity</label>
-                        <input type="number" name="" id="prdqty" class="form-control mt-1" value="4">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Quantity</p>
+                        <p class="viewInfo">5</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdBuyingP">Buying Price</label>
-                        <input type="number" name="" id="prdBuyingP" class="form-control mt-1" value="50000">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Buying Price</p>
+                        <p class="viewInfo">50000</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label for="prdSellingP">Buying Price</label>
-                        <input type="number" name="" id="prdSellingP" class="form-control mt-1" value="50000">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Selling Price</p>
+                        <p class="viewInfo">50000</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label class="form-label">Color</label>
-                        <input type="text" class="selectize-close-btn" value="Red,Green">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Color</p>
+                        <p class="viewInfo">red, green</p>
                     </div>
-                    <div class="col-lg-3 mt-3">
-                        <label class="form-label">Size</label>
-                        <input type="text" class="selectize-close-btn" value="X,Xl,XXl">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                        <p class="viewTitle">Size</p>
+                        <p class="viewInfo">XL, XXl</p>
                     </div>
                 </div>
             </div>
