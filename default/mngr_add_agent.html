@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Product List</title>
+        <title>File Uploads | Dropzone | Dropify | UBold - Responsive Admin Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -10,13 +10,10 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-        <!-- third party css -->
-        <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <!-- third party css end -->
-        <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+        <!-- Plugins css -->
+        <link href="../assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/dropify/css/dropify.min.css" rel="stylesheet" type="text/css" />
+
 		<!-- App css -->
 		<link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
 		<link href="../assets/css/config/default/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
@@ -27,66 +24,33 @@
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-        <!--custom css-->
-        <link rel="stylesheet" href="../assets//css/style.css">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
         <style>
-            
-            .prdQty {
-                border: 1px solid #ced4da;
-                margin-bottom: 0;
-                padding: 5px 0;
-                text-align: center;
-                width: 120px;
+            .dropify-wrapper {
+                height: 200px !important;
+                width: 200px !important;
             }
-            .prdQty:focus {
-                outline: none;
-            }
-
-            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                margin-top: 10px;
-            }
-            #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
-                position: absolute;
-                right: 20px;
-                top: 23px;
-            }
-
-            @media (max-width: 767px){
-                #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
-                justify-content: center;
-               }
-            }
-            @media (max-width: 468px){
-                #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
-                    right: 0;
-                    left: 0;
-                    top: 60px;
-                }
-                #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
-                    margin-top: 50px;
-                }
-                .header-title {
-                    text-align: center;
-                }
-            }
-            .supPrdViewContainer .viewTitle {
-                margin-bottom: 5px;
+            .submitBtn {
+                width: 129.2px;
+                height: 45.4px;
+                background: #1ABC9C;
+                border-radius: 5.25025px;
+                font-family: 'Nunito';
                 font-weight: 600;
+                font-size: 18.9009px;
+                text-align: center;
+                color: #FFFFFF;
+                border: transparent;
             }
-            .supPrdViewContainer .viewInfo {
-                padding: 7px 0 7px 0;
+            .header-title {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 28px;
+                color: #343A40;
             }
+            
         </style>
-
     </head>
 
     <!-- body start -->
@@ -96,508 +60,508 @@
         <div id="wrapper">
 
             <!-- Topbar Start -->
-        <div class="navbar-custom">
-            <div class="container-fluid">
-                <ul class="list-unstyled topnav-menu float-end mb-0">
+<div class="navbar-custom">
+    <div class="container-fluid">
+        <ul class="list-unstyled topnav-menu float-end mb-0">
 
-                    <li class="d-none d-lg-block">
-                        <form class="app-search">
-                            <div class="app-search-box dropdown">
-                                <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="Search..." id="top-search">
-                                    <button class="btn input-group-text" type="submit">
-                                        <i class="fe-search"></i>
-                                    </button>
-                                </div>
-                                <div class="dropdown-menu dropdown-lg" id="search-dropdown">
-                                    <!-- item-->
-                                    <div class="dropdown-header noti-title">
-                                        <h5 class="text-overflow mb-2">Found 22 results</h5>
-                                    </div>
-                    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="fe-home me-1"></i>
-                                        <span>Analytics Report</span>
-                                    </a>
-                    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="fe-aperture me-1"></i>
-                                        <span>How can I help you?</span>
-                                    </a>
-                                    
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="fe-settings me-1"></i>
-                                        <span>User profile settings</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <div class="dropdown-header noti-title">
-                                        <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                                    </div>
-
-                                    <div class="notification-list">
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="d-flex align-items-start">
-                                                <img class="d-flex me-2 rounded-circle" src="../assets/images/users/user-2.jpg" alt="Generic placeholder image" height="32">
-                                                <div class="w-100">
-                                                    <h5 class="m-0 font-14">Erwin E. Brown</h5>
-                                                    <span class="font-12 mb-0">UI Designer</span>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="d-flex align-items-start">
-                                                <img class="d-flex me-2 rounded-circle" src="../assets/images/users/user-5.jpg" alt="Generic placeholder image" height="32">
-                                                <div class="w-100">
-                                                    <h5 class="m-0 font-14">Jacob Deo</h5>
-                                                    <span class="font-12 mb-0">Developer</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                    
-                                </div>  
-                            </div>
-                        </form>
-                    </li>
-            
-                    <li class="dropdown d-inline-block d-lg-none">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="fe-search noti-icon"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
-                            <form class="p-3">
-                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                            </form>
+            <li class="d-none d-lg-block">
+                <form class="app-search">
+                    <div class="app-search-box dropdown">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search..." id="top-search">
+                            <button class="btn input-group-text" type="submit">
+                                <i class="fe-search"></i>
+                            </button>
                         </div>
-                    </li>
-            
-                    <li class="dropdown d-none d-lg-inline-block">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
-                            <i class="fe-maximize noti-icon"></i>
-                        </a>
-                    </li>
-            
-                    <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="fe-grid noti-icon"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-lg dropdown-menu-end">
-            
-                            <div class="p-lg-1">
-                                <div class="row g-0">
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/slack.png" alt="slack">
-                                            <span>Slack</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/github.png" alt="Github">
-                                            <span>GitHub</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/dribbble.png" alt="dribbble">
-                                            <span>Dribbble</span>
-                                        </a>
-                                    </div>
-                                </div>
-            
-                                <div class="row g-0">
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/bitbucket.png" alt="bitbucket">
-                                            <span>Bitbucket</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/dropbox.png" alt="dropbox">
-                                            <span>Dropbox</span>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a class="dropdown-icon-item" href="#">
-                                            <img src="../assets/images/brands/g-suite.png" alt="G Suite">
-                                            <span>G Suite</span>
-                                        </a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-            
-                        </div>
-                    </li>
-            
-                    <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="../assets/images/flags/us.jpg" alt="user-image" height="16">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="../assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="../assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="../assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <img src="../assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                            </a>
-            
-                        </div>
-                    </li>
-                    
-                    <li class="dropdown notification-list topbar-dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="fe-bell noti-icon"></i>
-                            <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-lg">
-            
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5 class="m-0">
-                                    <span class="float-end">
-                                        <a href="" class="text-dark">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Notification
-                                </h5>
-                            </div>
-            
-                            <div class="noti-scroll" data-simplebar>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                    <div class="notify-icon">
-                                        <img src="../assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                    <p class="notify-details">Cristina Pride</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Hi, How are you? What about our next meeting</small>
-                                    </p>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-primary">
-                                        <i class="mdi mdi-comment-account-outline"></i>
-                                    </div>
-                                    <p class="notify-details">Caleb Flakelar commented on Admin
-                                        <small class="text-muted">1 min ago</small>
-                                    </p>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon">
-                                        <img src="../assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                    <p class="notify-details">Karen Robinson</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Wow ! this admin looks good and awesome design</small>
-                                    </p>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-warning">
-                                        <i class="mdi mdi-account-plus"></i>
-                                    </div>
-                                    <p class="notify-details">New user registered.
-                                        <small class="text-muted">5 hours ago</small>
-                                    </p>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info">
-                                        <i class="mdi mdi-comment-account-outline"></i>
-                                    </div>
-                                    <p class="notify-details">Caleb Flakelar commented on Admin
-                                        <small class="text-muted">4 days ago</small>
-                                    </p>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-secondary">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <p class="notify-details">Carlos Crouch liked
-                                        <b>Admin</b>
-                                        <small class="text-muted">13 days ago</small>
-                                    </p>
-                                </a>
-                            </div>
-            
-                            <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                View all
-                                <i class="fe-arrow-right"></i>
-                            </a>
-            
-                        </div>
-                    </li>
-            
-                    <li class="dropdown notification-list topbar-dropdown">
-                        <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="../assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
-                            <span class="pro-user-name ms-1">
-                                Geneva <i class="mdi mdi-chevron-down"></i> 
-                            </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                        <div class="dropdown-menu dropdown-lg" id="search-dropdown">
                             <!-- item-->
                             <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
+                                <h5 class="text-overflow mb-2">Found 22 results</h5>
                             </div>
             
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-user"></i>
-                                <span>My Account</span>
+                                <i class="fe-home me-1"></i>
+                                <span>Analytics Report</span>
                             </a>
             
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-settings"></i>
-                                <span>Settings</span>
+                                <i class="fe-aperture me-1"></i>
+                                <span>How can I help you?</span>
                             </a>
-            
+                            
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-lock"></i>
-                                <span>Lock Screen</span>
-                            </a>
-            
-                            <div class="dropdown-divider"></div>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="fe-log-out"></i>
-                                <span>Logout</span>
-                            </a>
-            
-                        </div>
-                    </li>
-            
-                    <li class="dropdown notification-list">
-                        <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
-                            <i class="fe-settings noti-icon"></i>
-                        </a>
-                    </li>
-            
-                </ul>
-            
-                <!-- LOGO -->
-                <div class="logo-box">
-                    <a href="index.html" class="logo logo-dark text-center">
-                        <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                            <!-- <span class="logo-lg-text-light">UBold</span> -->
-                        </span>
-                        <span class="logo-lg">
-                            <img src="../assets/images/logo-dark.png" alt="" height="20">
-                            <!-- <span class="logo-lg-text-light">U</span> -->
-                        </span>
-                    </a>
-            
-                    <a href="index.html" class="logo logo-light text-center">
-                        <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="../assets/images/logo-light.png" alt="" height="20">
-                        </span>
-                    </a>
-                </div>
-            
-                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
-                    <li>
-                        <button class="button-menu-mobile waves-effect waves-light">
-                            <i class="fe-menu"></i>
-                        </button>
-                    </li>
-
-                    <li>
-                        <!-- Mobile menu toggle (Horizontal Layout)-->
-                        <a class="navbar-toggle nav-link" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
-                            <div class="lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </a>
-                        <!-- End mobile menu toggle-->
-                    </li>   
-                    
-                    <li class="dropdown d-none d-xl-block">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            Create New
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </a>
-                        <div class="dropdown-menu">
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-briefcase me-1"></i>
-                                <span>New Projects</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-user me-1"></i>
-                                <span>Create Users</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-bar-chart-line- me-1"></i>
-                                <span>Revenue Report</span>
-                            </a>
-            
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
                                 <i class="fe-settings me-1"></i>
-                                <span>Settings</span>
+                                <span>User profile settings</span>
                             </a>
-            
-                            <div class="dropdown-divider"></div>
-            
+
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-headphones me-1"></i>
-                                <span>Help & Support</span>
-                            </a>
-            
-                        </div>
-                    </li>
-            
-                    <li class="dropdown dropdown-mega d-none d-xl-block">
-                        <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            Mega Menu
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </a>
-                        <div class="dropdown-menu dropdown-megamenu">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">UI Components</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Widgets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Nestable List</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Range Sliders</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Masonry Items</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Sweet Alerts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Treeview Page</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Tour Page</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-            
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">Applications</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">eCommerce Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">CRM Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Email</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Calendar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Team Contacts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Task Board</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Email Templates</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-            
-                                        <div class="col-md-4">
-                                            <h5 class="text-dark mt-0">Extra Pages</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Left Sidebar with User</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Menu Collapsed</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Small Left Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">New Header Style</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Search Result</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Gallery Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Maintenance & Coming Soon</a>
-                                                </li>
-                                            </ul>
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
+                            </div>
+
+                            <div class="notification-list">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="d-flex align-items-start">
+                                        <img class="d-flex me-2 rounded-circle" src="../assets/images/users/user-2.jpg" alt="Generic placeholder image" height="32">
+                                        <div class="w-100">
+                                            <h5 class="m-0 font-14">Erwin E. Brown</h5>
+                                            <span class="font-12 mb-0">UI Designer</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="text-center mt-3">
-                                        <h3 class="text-dark">Special Discount Sale!</h3>
-                                        <h4>Save up to 70% off.</h4>
-                                        <button class="btn btn-primary rounded-pill mt-3">Download Now</button>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="d-flex align-items-start">
+                                        <img class="d-flex me-2 rounded-circle" src="../assets/images/users/user-5.jpg" alt="Generic placeholder image" height="32">
+                                        <div class="w-100">
+                                            <h5 class="m-0 font-14">Jacob Deo</h5>
+                                            <span class="font-12 mb-0">Developer</span>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
             
+                        </div>  
+                    </div>
+                </form>
+            </li>
+    
+            <li class="dropdown d-inline-block d-lg-none">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-search noti-icon"></i>
+                </a>
+                <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
+                    <form class="p-3">
+                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                    </form>
+                </div>
+            </li>
+    
+            <li class="dropdown d-none d-lg-inline-block">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
+                    <i class="fe-maximize noti-icon"></i>
+                </a>
+            </li>
+    
+            <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-grid noti-icon"></i>
+                </a>
+                <div class="dropdown-menu dropdown-lg dropdown-menu-end">
+    
+                    <div class="p-lg-1">
+                        <div class="row g-0">
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/slack.png" alt="slack">
+                                    <span>Slack</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/github.png" alt="Github">
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/dribbble.png" alt="dribbble">
+                                    <span>Dribbble</span>
+                                </a>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
+    
+                        <div class="row g-0">
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/bitbucket.png" alt="bitbucket">
+                                    <span>Bitbucket</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/dropbox.png" alt="dropbox">
+                                    <span>Dropbox</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a class="dropdown-icon-item" href="#">
+                                    <img src="../assets/images/brands/g-suite.png" alt="G Suite">
+                                    <span>G Suite</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <img src="../assets/images/flags/us.jpg" alt="user-image" height="16">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="../assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="../assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="../assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <img src="../assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                    </a>
+    
+                </div>
+            </li>
+            
+            <li class="dropdown notification-list topbar-dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-bell noti-icon"></i>
+                    <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+    
+                    <!-- item-->
+                    <div class="dropdown-item noti-title">
+                        <h5 class="m-0">
+                            <span class="float-end">
+                                <a href="" class="text-dark">
+                                    <small>Clear All</small>
+                                </a>
+                            </span>Notification
+                        </h5>
+                    </div>
+    
+                    <div class="noti-scroll" data-simplebar>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                            <div class="notify-icon">
+                                <img src="../assets/images/users/user-1.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                            <p class="notify-details">Cristina Pride</p>
+                            <p class="text-muted mb-0 user-msg">
+                                <small>Hi, How are you? What about our next meeting</small>
+                            </p>
+                        </a>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-primary">
+                                <i class="mdi mdi-comment-account-outline"></i>
+                            </div>
+                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                <small class="text-muted">1 min ago</small>
+                            </p>
+                        </a>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon">
+                                <img src="../assets/images/users/user-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                            <p class="notify-details">Karen Robinson</p>
+                            <p class="text-muted mb-0 user-msg">
+                                <small>Wow ! this admin looks good and awesome design</small>
+                            </p>
+                        </a>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-warning">
+                                <i class="mdi mdi-account-plus"></i>
+                            </div>
+                            <p class="notify-details">New user registered.
+                                <small class="text-muted">5 hours ago</small>
+                            </p>
+                        </a>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-info">
+                                <i class="mdi mdi-comment-account-outline"></i>
+                            </div>
+                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                <small class="text-muted">4 days ago</small>
+                            </p>
+                        </a>
+    
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-secondary">
+                                <i class="mdi mdi-heart"></i>
+                            </div>
+                            <p class="notify-details">Carlos Crouch liked
+                                <b>Admin</b>
+                                <small class="text-muted">13 days ago</small>
+                            </p>
+                        </a>
+                    </div>
+    
+                    <!-- All-->
+                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                        View all
+                        <i class="fe-arrow-right"></i>
+                    </a>
+    
+                </div>
+            </li>
+    
+            <li class="dropdown notification-list topbar-dropdown">
+                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <img src="../assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                    <span class="pro-user-name ms-1">
+                        Geneva <i class="mdi mdi-chevron-down"></i> 
+                    </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                    <!-- item-->
+                    <div class="dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome !</h6>
+                    </div>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>My Account</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <i class="fe-settings"></i>
+                        <span>Settings</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <i class="fe-lock"></i>
+                        <span>Lock Screen</span>
+                    </a>
+    
+                    <div class="dropdown-divider"></div>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <i class="fe-log-out"></i>
+                        <span>Logout</span>
+                    </a>
+    
+                </div>
+            </li>
+    
+            <li class="dropdown notification-list">
+                <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+                    <i class="fe-settings noti-icon"></i>
+                </a>
+            </li>
+    
+        </ul>
+    
+        <!-- LOGO -->
+        <div class="logo-box">
+            <a href="index.html" class="logo logo-dark text-center">
+                <span class="logo-sm">
+                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                    <!-- <span class="logo-lg-text-light">UBold</span> -->
+                </span>
+                <span class="logo-lg">
+                    <img src="../assets/images/logo-dark.png" alt="" height="20">
+                    <!-- <span class="logo-lg-text-light">U</span> -->
+                </span>
+            </a>
+    
+            <a href="index.html" class="logo logo-light text-center">
+                <span class="logo-sm">
+                    <img src="../assets/images/logo-sm.png" alt="" height="22">
+                </span>
+                <span class="logo-lg">
+                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                </span>
+            </a>
         </div>
+    
+        <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+            <li>
+                <button class="button-menu-mobile waves-effect waves-light">
+                    <i class="fe-menu"></i>
+                </button>
+            </li>
+
+            <li>
+                <!-- Mobile menu toggle (Horizontal Layout)-->
+                <a class="navbar-toggle nav-link" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </li>   
+            
+            <li class="dropdown d-none d-xl-block">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    Create New
+                    <i class="mdi mdi-chevron-down"></i> 
+                </a>
+                <div class="dropdown-menu">
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <i class="fe-briefcase me-1"></i>
+                        <span>New Projects</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <i class="fe-user me-1"></i>
+                        <span>Create Users</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <i class="fe-bar-chart-line- me-1"></i>
+                        <span>Revenue Report</span>
+                    </a>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <i class="fe-settings me-1"></i>
+                        <span>Settings</span>
+                    </a>
+    
+                    <div class="dropdown-divider"></div>
+    
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item">
+                        <i class="fe-headphones me-1"></i>
+                        <span>Help & Support</span>
+                    </a>
+    
+                </div>
+            </li>
+    
+            <li class="dropdown dropdown-mega d-none d-xl-block">
+                <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    Mega Menu
+                    <i class="mdi mdi-chevron-down"></i> 
+                </a>
+                <div class="dropdown-menu dropdown-megamenu">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5 class="text-dark mt-0">UI Components</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);">Widgets</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Nestable List</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Range Sliders</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Masonry Items</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Sweet Alerts</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Treeview Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Tour Page</a>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <h5 class="text-dark mt-0">Applications</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);">eCommerce Pages</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">CRM Pages</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Email</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Calendar</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Team Contacts</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Task Board</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Email Templates</a>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <h5 class="text-dark mt-0">Extra Pages</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);">Left Sidebar with User</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Menu Collapsed</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Small Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">New Header Style</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Search Result</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Gallery Pages</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Maintenance & Coming Soon</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="text-center mt-3">
+                                <h3 class="text-dark">Special Discount Sale!</h3>
+                                <h4>Save up to 70% off.</h4>
+                                <button class="btn btn-primary rounded-pill mt-3">Download Now</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+</div>
 <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
@@ -649,160 +613,26 @@
                         <ul id="side-menu">
 
                             <li class="menu-title">Navigation</li>
-                            
+                
                             <li>
-                                <a href="dashboard.html">
+                                <a href="#sidebarDashboards" data-bs-toggle="collapse">
                                     <i data-feather="airplay"></i>
-                                    <span> Dashboard </span>
+                                    <span class="badge bg-success rounded-pill float-end">4</span>
+                                    <span> Dashboards </span>
                                 </a>
-                            </li>
-                             <li>
-                                <a href="brands.html">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Brand </span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#category" data-bs-toggle="collapse">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Category </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="category">
+                                <div class="collapse" id="sidebarDashboards">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="category.html">All Category</a>
+                                            <a href="index.html">Dashboard 1</a>
                                         </li>
                                         <li>
-                                            <a href="sub-category.html">All Sub-Category</a>
+                                            <a href="dashboard-2.html">Dashboard 2</a>
                                         </li>
                                         <li>
-                                            <a href="sub-sub-category.html">All Sub-Sub-Category</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#product" data-bs-toggle="collapse">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Products </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="product">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="manage-products.html">Manage All Products</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#SliderOption" data-bs-toggle="collapse">
-                                    <i class="fas fa-sliders-h"></i>
-                                    <span> Slider Option </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="SliderOption">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="slider-option.html">Manage Slider</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="coupon-list.html">
-                                    <i class="fas fa-gift"></i>
-                                    <span> Coupon Option </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="banner-option.html">
-                                    <i class="far fa-image"></i>
-                                    <span> Banner Option </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="banner-category.html">
-                                    <i class="far fa-image"></i>
-                                    <span> Banner Category </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#order" data-bs-toggle="collapse">
-                                    <i class="fab fa-first-order"></i>
-                                    <span> Orders </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="order">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="pending-order-list.html">Pending Orders</a>
+                                            <a href="dashboard-3.html">Dashboard 3</a>
                                         </li>
                                         <li>
-                                            <a href="confirm-order-list.html">Confirmed Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="processing-order-list.html">Processing Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="picked-order-list.html">Picked Orders</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="shipped-order-list.html">Shipped Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="deliver-order-list.html">Delivered Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="cancel-order-list.html">Cancel Orders</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#all-user" data-bs-toggle="collapse">
-                                    <i class="fas fa-users"></i>
-                                    <span> All Users </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="all-user">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="all-users.html">All Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#product-stock" data-bs-toggle="collapse">
-                                    <i class="fa fa-undo"></i>
-                                    <span> Return Order </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="product-stock">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="return-order-list.html">Return Request</a>
-                                        </li>
-                                        <li>
-                                            <a href="all-return-order-list.html">All Request</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#return-order" data-bs-toggle="collapse">
-                                    <i class="fa fa-list"></i>
-                                    <span> Manage Stock </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="return-order">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="product-stock-list.html">Product Stock</a>
+                                            <a href="dashboard-4.html">Dashboard 4</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -1524,251 +1354,78 @@
 
             <div class="content-page">
                 <div class="content">
+
                     <!-- Start Content-->
-                    <div class="container-fluid mt-5">
+                    <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 mt-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="mb-2">
-                                            <h4 class="header-title">Product List</h4>
+
+                                        <h4 class="header-title">Add New Agent</h4>
+                                        <!-- Add Image Container Start -->
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h4>Add Image</h4>
+                                                    <input type="file" data-plugins="dropify" data-height="300" />
+                                                </div>
+                                            </div>
                                         </div>
-                                        <table id="datatable-buttons" class="table table-striped nowrap w-100">
-                                            <thead>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <th>Product Code</th>
-                                                    <th>Supplier Product Code</th>
-                                                    <th>Brand Name</th>
-                                                    <th>Category</th>
-                                                    <th>Product Name</th>
-                                                    <th>Unit</th>
-                                                    <th>QTY</th>
-                                                    <th>Buying Price</th>
-                                                    <th>Product Return</th>
-                                                    <th>Withdrawal Amount</th>
-                                                    <th>Total Balance</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td> 
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>10 Feb 2022</td>
-                                                    <td>#5484</td>
-                                                    <td>#2414</td>
-                                                    <td>Brand Name</td>
-                                                    <td>Category</td>
-                                                    <td>P47-Wireless Bluetooth Headphone</td>
-                                                    <td>500ml</td>
-                                                    <td>5</td>
-                                                    <td>1254</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td>1300</td>
-                                                    <td class="d-flex gap-2">
-                                                        <button class="eyeIcon" data-bs-toggle="modal" data-bs-target="#supPrdViewModal"><i class="fa fa-solid fa-eye"></i></button>
-                                                        <button class="editIcon" data-bs-toggle="modal" data-bs-target="#supPrdEditModal"><i class="fas fa-edit"></i></button>
-                                                        <button class="replyIcon" data-bs-toggle="modal" data-bs-target="#supPrdReplyModal"><i class="fas fa-reply"></i></button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
+                                        <!-- Add Image Container End -->
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="agentId">Agent Id</label>
+                                                <input type="text" name="" id="agentId" class="form-control mt-1" value="#12354">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="name">Name</label>
+                                                <input type="text" name="" id="name" class="form-control mt-1" value="Full Name">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="" id="brndName" class="form-control mt-1" value="example@excelitai.com">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="mobile-1">Mobile Number 1</label>
+                                                <input type="number" name="" id="mobile-1" class="form-control mt-1" value="01912345678">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="mobile-2">Mobile Number 2</label>
+                                                <input type="number" name="" id="mobile-2" class="form-control mt-1" value="01912345678">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="pAddress" class="form-label">Present Address</label>
+                                                <textarea class="form-control" id="pAddress" rows="3">Example: 180, Jagonnath, Dhaka 1211</textarea>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
+                                                <label for="perAddress" class="form-label">Permanent Address</label>
+                                                <textarea class="form-control" id="perAddress" rows="3">Example: 180, Jagonnath, Dhaka 1211</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <h5>Log In Details :</h5>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="" id="brndName" class="form-control mt-1" value="example@excelitai.com">
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                                <label for="password">Password</label>
+                                                <input type="password" name="" id="password" class="form-control mt-1" value="01912345678">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center my-3">
+                                            <button class="submitBtn">Submit</button>
+                                        </div>
+
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div><!-- end col -->
                         </div>
-                        <!-- end row--> 
+                        <!-- end row -->  
+                        
                     </div> <!-- container -->
+
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
@@ -2199,238 +1856,24 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-
-        <!-- supplier Product view modal -->
-        <div class="modal fade" id="supPrdViewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Product Details</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row supPrdViewContainer">
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Product Code</p>
-                        <p class="viewInfo">#12345</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Brand Name</p>
-                        <p class="viewInfo">Brand Name</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Category</p>
-                        <p class="viewInfo">Category</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Product Name</p>
-                        <p class="viewInfo">Product Name</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Unit (meter)</p>
-                        <p class="viewInfo">500 m</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Quantity</p>
-                        <p class="viewInfo">5</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Buying Price</p>
-                        <p class="viewInfo">50000</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Selling Price</p>
-                        <p class="viewInfo">50000</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Color</p>
-                        <p class="viewInfo">red, green</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
-                        <p class="viewTitle">Size</p>
-                        <p class="viewInfo">XL, XXl</p>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-info px-4" data-bs-dismiss="modal">Close</button>
-            </div>
-            </div>
-        </div>
-        </div>
-
-        <!-- supplier Product Edit modal -->
-        <div class="modal fade" id="supPrdEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Product Details</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdCode">Product Code</label>
-                            <input type="text" name="" id="prdCode" class="form-control mt-1" value="#12354">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="supplierPrdCode">Supplier Product Code</label>
-                            <input type="text" name="" id="supplierPrdCode" class="form-control mt-1" value="#12354">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="brndName">Brand Name</label>
-                            <input type="text" name="" id="brndName" class="form-control mt-1" value="Brand Name">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdCategory">Category</label>
-                            <input type="text" name="" id="prdCategory" class="form-control mt-1" value="Category">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdName">Product Name</label>
-                            <input type="text" name="" id="prdName" class="form-control mt-1" value="Product Name">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdUnit">Unit (meter)</label>
-                            <input type="text" name="" id="prdUnit" class="form-control mt-1" value="500 m">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdQty">Quantity</label>
-                            <input type="number" name="" id="prdqty" class="form-control mt-1" value="4">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdBuyingP">Buying Price</label>
-                            <input type="number" name="" id="prdBuyingP" class="form-control mt-1" value="50000">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdDepositAmount">Deposit Amount</label>
-                            <input type="number" name="" id="prdDepositAmount" class="form-control mt-1" value="50000">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdReturn">Product Return</label>
-                            <input type="number" name="" id="prdReturn" class="form-control mt-1" value="50000">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdWithdrawAmount">Withdrawal Amount</label>
-                            <input type="number" name="" id="prdWithdrawAmount" class="form-control mt-1" value="50000">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdPurchaseDate">Purchase Date</label>
-                            <input type="date" name="" id="prdPurchaseDate" class="form-control mt-1">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label for="prdTotalB">Total Balance</label>
-                            <input type="number" name="" id="prdTotalB" class="form-control mt-1" value="450000">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label class="form-label">Color</label>
-                            <input type="text" class="selectize-close-btn" value="Red,Green">
-                        </div>
-                        <div class="col-lg-3 mt-3">
-                            <label class="form-label">Size</label>
-                            <input type="text" class="selectize-close-btn" value="X,Xl,XXl">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <!-- <button type="button" class="btn btn-info px-4" data-bs-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-success">Submit</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- supplier Product Reply modal -->
-        <div class="modal fade" id="supPrdReplyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel">Submit SKU Code</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="">
-                        <label for="skuCode">SKU Code</label>
-                        <input type="text" name="" id="skuCode" class="form-control mt-1">
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#supPrdSkuSubmitModal">Submit</button>
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- supplier Product SKU Submit modal -->
-        <div class="modal fade" id="supPrdSkuSubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel">Add Returnable Product</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p> <span style="font-weight: bold;">Product Name :</span> P47 - P47-Wireless Bluetooth Headphone</p>
-                        <p> <span style="font-weight: bold;">Category :</span> Category Name</p>
-                        <p> <span style="font-weight: bold;">Brand :</span> Brand Name</p>
-                        <table class="table" style="border: 1px solid #ced4da;">
-                            <thead>
-                                <tr class="text-center" style="border-bottom: 1px solid #ced4da; background: #F3F7F9;">
-                                    <th scope="col">Color</th>
-                                    <th scope="col">Size</th>
-                                    <th scope="col">QTY</th>
-                                    <th scope="col">Return Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-center">
-                                    <td>Red</td>
-                                    <td>M</td>
-                                    <td><input class="prdQty" type="number" value="1"></td>
-                                    <td>6500</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
 
-        <!-- third party js -->
-        <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="../assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="../assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
-        <script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-        <script src="../assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-        <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
-        <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
-        <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
-        <!-- third party js ends -->
+        <!-- Plugins js -->
+        <script src="../assets/libs/dropzone/min/dropzone.min.js"></script>
+        <script src="../assets/libs/dropify/js/dropify.min.js"></script>
 
-        <!-- Datatables init -->
-        <script src="../assets/js/pages/datatables.init.js"></script>
+        <!-- Init js-->
+        <script src="../assets/js/pages/form-fileuploads.init.js"></script>
+         <!-- Plugin js-->
+         <script src="../assets/libs/parsleyjs/parsley.min.js"></script>
+
+         <!-- Validation init js-->
+         <script src="../assets/js/pages/form-validation.init.js"></script>
 
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
-
-        <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
-        <script src="../assets/libs/select2/js/select2.min.js"></script>
-        <script src="../assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
-        <!-- Init js-->
-        <script src="../assets/js/pages/form-advanced.init.js"></script>
-
         
+
     </body>
 </html>

@@ -13,6 +13,7 @@ table > thead tr, tbody tr {
     color: #6c757d;
     font-size: 20px;
 }
+
 .editIcon {
     color: #0D6EFD;
 }
@@ -36,6 +37,7 @@ table > thead tr, tbody tr {
     text-align: center;
     width: 120px;
 }
+
 .prdQty:focus {
     outline: none;
 }
