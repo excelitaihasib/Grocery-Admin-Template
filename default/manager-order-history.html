@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Payment History</title>
+  <title>Order History</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -42,7 +42,6 @@
 
   <!--custom css-->
   <link rel="stylesheet" href="../assets/css/style.css">
-
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,39 +67,53 @@
     .footer {
       left: 255px;
     }
-    .header-title{
+
+    .header-title {
       margin-bottom: 20px;
     }
-    .date{
-      margin-top: 130px;
+
+    #datatable-buttons a {
+      color: #0D6EFD;
     }
-    #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
       width: 100%;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-top: 15px;
+      margin-top: 10px;
     }
-    #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
       position: absolute;
       right: 20px;
-      top: 198px;
+      top: 23px;
     }
-    @media (max-width: 767px){
-        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+
+    @media (max-width: 767px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         justify-content: center;
-        margin-top: 30px;
-        }
-        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
-            right: 0;
-            left: 0;
-            margin-top: 10px;
-        }
-    }
-    @media(max-width: 991px){
-      .date{
-        margin-top: 0px;
       }
+    }
+
+    @media (max-width: 636px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 60px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        margin-top: 20px;
+      }
+
+      .header-title {
+        text-align: center;
+      }
+    }
+
+    #datatable-buttons .edit {
+      font-size: 17px;
     }
   </style>
 
@@ -986,15 +999,11 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-12 paymentInfo">
-                      <h4 class="header-title">Payment History</h4>
-                      <p><b>Supplier Name :</b> Rahim Febrics</p>
-                      <p><b>Supplier ID :</b> RF 123456</p>
-                      <p><b>Contact No :</b> +8801 XXXX XXXXX</p>
-                      <p><b>Address :</b> 1219 Dhaka, Bangladesh · 3</p>
+                    <div class="col-lg-6 col-md-6 col-12">
+                      <h4 class="header-title">Order History</h4>
                     </div>
-                    <div class="col-lg-6 col-12 d-lg-flex justify-content-lg-end">
-                      <!-- <div class="col-4 date">
+                    <div class="col-lg-6 col-md-6 col-12 d-lg-flex d-inline justify-content-lg-end">
+                      <!-- <div class="col-lg-4 col-12">
                         <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
                           placeholder="Select Date" readonly="readonly">
                       </div> -->
@@ -1003,73 +1012,52 @@
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Date</th>
-                        <th>Product ID</th>
-                        <th>Brand Name</th>
-                        <th>Product Name</th>
-                        <th>Product Price</th>
-                        <th>Product Return Price </th>
-                        <th>Withdrawal Amount</th>
-                        <th>Total Balance</th>
+                        <th>Agent ID</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Product QTY</th>
+                        <th>Total Amount</th>
+                        <th>Sales Commission</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># WS123</td>
+                        <td># WS123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
                       </tr>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># WS123</td>
+                        <td># WS123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
                       </tr>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># WS123</td>
+                        <td># WS123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
                       </tr>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># WS123</td>
+                        <td># WS123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
                       </tr>
-                      <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
-                      </tr>
-                      
                     </tbody>
                   </table>
 

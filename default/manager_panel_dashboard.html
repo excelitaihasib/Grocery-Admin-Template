@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Grocery E-com</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Grocery E-com" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -32,13 +32,10 @@
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 
 
-    <!-- font awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- LIne chart js  -->
 
@@ -98,8 +95,14 @@
         }
 
         .dash-card-icon4 {
-            background: #C6EEE6;
-            border: 2px solid #1ABC9C;
+            background: #E6EEFF;
+            border: 2px solid #276FFC;
+        }
+        /* .dashbord-card-info{
+            width: 50%;
+        } */
+        .dashbord-card-info h2{
+            text-align: right;
         }
 
         .dashbord-card-info p {
@@ -124,6 +127,26 @@
         }
 
 
+
+        @media(max-width:1400px){
+                .dashbord-card-info p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19px;
+                text-align: right;
+                color: #6E768E;
+            }
+
+            .dashbord-card-info h2 {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: right;
+                color: #6E768E;
+            }
+        }
+
+        
         /* Chart Js  */
     </style>
 
@@ -328,21 +351,21 @@
                 <div class="logo-box">
                     <a href="index.html" class="logo logo-dark text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
-                            <!-- <span class="logo-lg-text-light">UBold</span> -->
+                            <img src="../assets/images/logo.png" alt="" height="22">
+                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo-dark.png" alt="" height="20">
-                            <!-- <span class="logo-lg-text-light">U</span> -->
+                            <img src="../assets/images/logo.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">Shop Owner</span> -->
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light text-center">
                         <span class="logo-sm">
-                            <img src="../assets/images/logo-sm.png" alt="" height="22">
+                            <img src="../assets/images/logo.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="../assets/images/logo-light.png" alt="" height="20">
+                            <img src="../assets/images/logo.png" alt="" height="20">
                         </span>
                     </a>
                 </div>
@@ -386,12 +409,7 @@
                 <div id="sidebar-menu">
 
                     <ul id="side-menu">
-                        <li>
-                            <a href="owner_dashboard">
-                                <i data-feather="airplay"></i>
-                                <span> Dashboard </span>
-                            </a>
-                        </li>
+
                         <li>
                             <a href="#owner_dashboard" data-bs-toggle="collapse">
                                 <i class="fas fa-list-alt"></i>
@@ -449,117 +467,26 @@
                             </div>
                         </li>
 
-
                         <li>
-                            <a href="#manager-panel" data-bs-toggle="collapse">
+                            <a href="shop_owner_productList.html" data-bs-toggle="collapse">
                                 <i class="fas fa-list-alt"></i>
-                                <span> Manager Panel </span>
+                                <span> Product List </span>
                                 <span class="menu-arrow"></span>
+
                             </a>
-                            <div class="collapse" id="manager-panel">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="supplier_dashboard.html">Dashboard</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#Agent2" data-bs-toggle="collapse">
-                                            <span> Agent </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="Agent2">
-                                            <ul class="nav-second-level">
-                                                <li>
-                                                    <a href="category.html">Add Agent</a>
-                                                </li>
-                                                <li>
-                                                    <a href="sub-category.html">Agent List</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a href="manager-customer-list.html">Customer List</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">Product Category</a>
-                                    </li>
-                                    <li>
-                                        <a href="manager-total-order-history.html">Order History</a>
-                                    </li>
-                                    <li>
-                                        <a href="manager-agent-commission.html">Agent Commission</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-
-                        <li>
-                            <a href="#agent_customer" data-bs-toggle="collapse">
-                                <i class="fas fa-list-alt"></i>
-                                <span> Agent Panel </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="agent_customer">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="supplier_dashboard.html">Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="#agent_customer_add" data-bs-toggle="collapse">
-                                            <span> Customer </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="agent_customer_add">
-                                            <ul class="nav-second-level">
-                                                <li>
-                                                    <a href="category.html">Add Customer</a>
-                                                </li>
-                                                <li>
-                                                    <a href="agent-customer-list.html">Customer List </a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a href="agent-order-history.html">Order History</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="commission-history.html">My Commission</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-                        <li>
-                            <a href="#brand" data-bs-toggle="collapse">
-                                <i class="fas fa-list-alt"></i>
-                                <span> Brands </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="brand">
+                            <!-- <div class="collapse" id="brand">
                                 <ul class="nav-second-level">
                                     <li>
                                         <a href="brands.html">All Category</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </li>
 
                         <li>
                             <a href="#category" data-bs-toggle="collapse">
                                 <i class="fas fa-list-alt"></i>
-                                <span> Category </span>
+                                <span> Supplier Details </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="category">
@@ -579,7 +506,7 @@
                         <li>
                             <a href="#product" data-bs-toggle="collapse">
                                 <i class="fas fa-list-alt"></i>
-                                <span> Products </span>
+                                <span> Return Product </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="product">
@@ -596,7 +523,7 @@
                         <li>
                             <a href="#SliderOption" data-bs-toggle="collapse">
                                 <i class="fas fa-sliders-h"></i>
-                                <span> Slider Option </span>
+                                <span> Payment History </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="SliderOption">
@@ -610,381 +537,13 @@
                         <li>
                             <a href="#coupon" data-bs-toggle="collapse">
                                 <i class="fas fa-gift"></i>
-                                <span> Coupon Option </span>
+                                <span> Profit Report </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <div class="collapse" id="coupon">
                                 <ul class="nav-second-level">
                                     <li>
                                         <a href="coupon-list.html">Manage Coupon</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#bannerOption" data-bs-toggle="collapse">
-                                <i class="far fa-image"></i>
-                                <span> Banner Option </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="bannerOption">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="banner-option.html">Manage Banner</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#bannerCategory" data-bs-toggle="collapse">
-                                <i class="far fa-image"></i>
-                                <span> Banner Category </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="bannerCategory">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="banner-category.html">Manage Banner</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#order" data-bs-toggle="collapse">
-                                <i class="fab fa-first-order"></i>
-                                <span> Orders </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="order">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="pending-order-list.html">Pending Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="confirm-order-list.html">Confirmed Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="processing-order-list.html">Processing Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="picked-order-list.html">Picked Orders</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="shipped-order-list.html">Shipped Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="deliver-order-list.html">Delivered Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="cancel-order-list.html">Cancel Orders</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#product-stock" data-bs-toggle="collapse">
-                                <i class="fa fa-undo"></i>
-                                <span> Return Order </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="product-stock">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="return-order-list.html">Return Request</a>
-                                    </li>
-                                    <li>
-                                        <a href="all-return-order-list.html">All Request</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#return-order" data-bs-toggle="collapse">
-                                <i class="fa fa-list"></i>
-                                <span> Manage Stock </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="return-order">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="product-stock-list.html">Product Stock</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#all-user" data-bs-toggle="collapse">
-                                <i class="fas fa-users"></i>
-                                <span> All Users </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="all-user">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="all-users.html">All Users</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#admin-role" data-bs-toggle="collapse">
-                                <i class="fa fa-user-circle"></i>
-                                <span> Admin User Role </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="admin-role">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="admin-user-role.html">All Admin User Role</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#manage-department" data-bs-toggle="collapse">
-                                <i class="fa fa-building"></i>
-                                <span> Department </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="manage-department">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="manage-department.html">Manage Department</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#add-employee" data-bs-toggle="collapse">
-                                <i class="fa fa-building"></i>
-                                <span> Employee Manage </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="add-employee">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="add-employee.html">Add Employee</a>
-                                    </li>
-                                    <li>
-                                        <a href="manage-employee.html">Manage Employee</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-
-                        <li>
-                            <a href="pos.html">
-                                <i class="fas fa-calculator"></i>
-                                <span> POS </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#sidebarPurchase" data-bs-toggle="collapse">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span> Purchase </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarPurchase">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="purchase.html">Purchase</a>
-                                    </li>
-                                    <li>
-                                        <a href="view_purchase.html">View Purchase</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#expense" data-bs-toggle="collapse">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span> Expense </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="expense">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="expense.html">Add Expence</a>
-                                    </li>
-                                    <li>
-                                        <a href="view_expense.html">View Expence</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarReport" data-bs-toggle="collapse">
-                                <i class="fas fa-file"></i>
-                                <span> All Reports </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarReport">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="order_reports.html">Order Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="salary_reports.html">Salary Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="product_reports.html">Return Product Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="user_reports.html">User Active Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="profit_reports.html">Profit Reports</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-
-
-
-
-
-
-
-
-                        <li>
-                            <a href="#sidebarAuth" data-bs-toggle="collapse">
-                                <i data-feather="file-text"></i>
-                                <span> Auth Pages </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarAuth">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="auth-login.html">Log In</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="auth-register.html">Register</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="auth-recoverpw.html">Recover Password</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="auth-confirm-mail.html">Confirm Mail</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="#sidebarExpages" data-bs-toggle="collapse">
-                                <i data-feather="package"></i>
-                                <span> Extra Pages </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarExpages">
-                                <ul class="nav-second-level">
-
-                                    <li>
-                                        <a href="pages-invoice.html">Invoice</a>
-                                    </li>
-
-
-                                    <li>
-                                        <a href="pages-maintenance.html">Maintenance</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="pages-404.html">Error 404</a>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-
-                        <li>
-                            <a href="#sidebarIcons" data-bs-toggle="collapse">
-                                <i data-feather="cpu"></i>
-                                <span> Icons </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarIcons">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="icons-two-tone.html">Two Tone Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-feather.html">Feather Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-mdi.html">Material Design Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-dripicons.html">Dripicons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-font-awesome.html">Font Awesome 5</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-themify.html">Themify</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-simple-line.html">Simple Line</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-weather.html">Weather</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-                        <li>
-                            <a href="#sidebarCharts" data-bs-toggle="collapse">
-                                <i data-feather="bar-chart-2"></i>
-                                <span> Charts </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarCharts">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="charts-apex.html">Apex Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-flot.html">Flot Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-morris.html">Morris Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs.html">Chartjs Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-peity.html">Peity Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartist.html">Chartist Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-c3.html">C3 Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-sparklines.html">Sparklines Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-knob.html">Jquery Knob Charts</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1016,7 +575,61 @@
                 <div class="container-fluid p-4">
                     <div class="row">
                         <div class="mb-3 main-head">Dashboard</div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xxl-3 col-xl-3  col-lg-6 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
+
+                                    <span class="dash-card-icon">
+                                        <svg width="34" height="25" viewBox="0 0 34 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M20.25 1H16.75H12.375M4.5 8H29M4.5 8C3.57174 8 2.6815 7.63125 2.02513 6.97487C1.36875 6.3185 1 5.42826 1 4.5C1 3.57174 1.36875 2.6815 2.02513 2.02513C2.6815 1.36875 3.57174 1 4.5 1H29C29.9283 1 30.8185 1.36875 31.4749 2.02513C32.1313 2.6815 32.5 3.57174 32.5 4.5C32.5 5.42826 32.1313 6.3185 31.4749 6.97487C30.8185 7.63125 29.9283 8 29 8M4.5 8V20.25C4.5 21.1783 4.86875 22.0685 5.52513 22.7249C6.1815 23.3813 7.07174 23.75 8 23.75H25.5C26.4283 23.75 27.3185 23.3813 27.9749 22.7249C28.6313 22.0685 29 21.1783 29 20.25V8"
+                                                stroke="#8B6BE8" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </span>
+                                    <!-- end span  -->
+                                    <div class="dashbord-card-info">
+                                        <h2>50</h2>
+                                        <p>Total Agent</p>
+                                    </div>
+                                    <!-- end dashbord-card-info  -->
+
+
+                                </div>
+                                <!-- end card-inner  -->
+                            </div>
+                            <!-- end card  -->
+                        </div>
+                        <!-- end col  -->
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
+
+                                    <span class="dash-card-icon dash-card-icon2">
+                                        <svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2592 0.174624C14.9583 0.816185 13.5342 2.32578 13.0478 4.63932C12.8006 5.81443 12.9518 8.17453 13.3566 9.46045C13.782 10.8114 14.5848 12.3176 15.3215 13.1467L15.9129 13.8123L15.8072 14.8781C15.749 15.4642 15.63 16.0311 15.5429 16.1378C15.2738 16.4668 14.5586 16.7674 13.7258 16.9018C12.9512 17.0266 12.9152 17.0167 12.3995 16.5349C11.8858 16.0548 10.4987 15.4281 9.94999 15.4281C9.53514 15.4281 8.74336 15.1218 8.74336 14.9613C8.74336 14.8826 8.94818 14.5232 9.19852 14.1628C10.2676 12.6235 10.564 10.3169 9.87859 8.87106C9.46776 8.00464 9.19436 7.73956 8.29444 7.33523C6.86916 6.69485 4.79251 7.12128 3.93915 8.22964C3.37139 8.96698 3.21268 9.49479 3.20955 10.6558C3.20598 11.9756 3.53709 13.1163 4.21225 14.1102C4.54173 14.5951 4.6866 14.9379 4.59914 15.0245C4.52209 15.1009 4.0162 15.2553 3.47507 15.3677C2.93393 15.48 2.2366 15.7006 1.92558 15.8578C1.12324 16.2631 0.353179 17.168 0.125895 17.9721C-0.13456 18.8933 0.036201 21.3424 0.390366 21.7647C0.742002 22.1841 2.65681 22.6292 4.98752 22.8335L6.95841 23.0062L6.95974 23.6007C6.96227 24.7411 7.41744 28.0278 7.59623 28.1985C7.85639 28.4466 10.0526 29.0693 11.867 29.4092C16.9463 30.3608 23.2138 30.1532 28.5758 28.8558C29.5437 28.6217 30.3961 28.3701 30.4697 28.2972C30.5435 28.2241 30.7203 26.9986 30.8625 25.574L31.1213 22.9836L32.6873 22.901C34.4907 22.8056 37.2791 22.2844 37.586 21.9853C37.9272 21.6528 38.139 19.0083 37.8939 18.141C37.5125 16.7915 36.3446 15.8789 34.514 15.4994C33.3795 15.2643 33.1348 15.0933 33.4036 14.7241C34.4281 13.3164 34.7975 12.2949 34.8046 10.8485C34.8141 8.94119 33.9794 7.679 32.4093 7.22693C30.9705 6.81258 29.4978 7.20851 28.5654 8.26029C27.9121 8.99748 27.7381 9.65997 27.8107 11.1355C27.8772 12.4888 28.3469 13.8104 29.0102 14.5098C29.2889 14.8036 29.3013 14.8713 29.1106 15.06C28.9911 15.1785 28.5263 15.3438 28.0777 15.4275C27.0427 15.6206 25.7959 16.2191 25.4061 16.7102C25.131 17.0565 25.0375 17.082 24.3424 17.0005C23.9234 16.9513 23.4152 16.8039 23.2134 16.6729C22.774 16.3877 22.3496 15.4692 22.2119 14.5048C22.1149 13.826 22.1341 13.7771 22.7859 13.039C23.5554 12.1676 24.3689 10.6065 24.7275 9.3131C25.1121 7.9264 25.1934 5.52902 24.8948 4.37748C24.3883 2.42392 23.2058 1.06255 21.438 0.397712C20.3148 -0.0245925 18.3501 -0.129506 17.2592 0.174624ZM20.7082 1.34605C22.1106 1.76423 23.1239 2.73158 23.6214 4.12757L23.8942 4.89261L23.1514 4.93756C22.2263 4.9934 20.4405 4.55445 18.7418 3.8538C18.0285 3.55969 17.3446 3.28856 17.2219 3.25129C17.0992 3.21415 16.3721 3.62158 15.6062 4.15675C14.8403 4.69192 14.1881 5.10436 14.1565 5.07312C14.0204 4.93829 14.5785 3.49043 14.976 2.94686C15.5196 2.20348 16.1842 1.72946 17.1444 1.40057C18.0625 1.08613 19.7497 1.06034 20.7082 1.34605ZM18.9325 5.16374C20.4238 5.73707 22.2147 6.14509 23.2399 6.14509H23.9155V6.93193C23.9155 7.96014 23.4532 9.72465 22.9 10.8078C21.9711 12.6269 20.4388 13.8073 19.0069 13.8073C17.5749 13.8073 16.0426 12.6269 15.1137 10.8078C14.6107 9.82293 14.0982 7.98372 14.0982 7.16357C14.0982 6.63031 14.1555 6.56739 15.5485 5.57248C16.4816 4.90617 17.1048 4.5568 17.2963 4.5929C17.4599 4.62385 18.1962 4.88068 18.9325 5.16374ZM8.0688 8.4822C8.8039 8.90229 9.10928 9.59322 9.09842 10.8128C9.09054 11.7052 9.01066 12.0348 8.60384 12.8533C8.05452 13.9587 7.49419 14.3952 6.62373 14.3961C6.17377 14.3965 5.95437 14.2862 5.48879 13.825C4.08314 12.4325 3.94853 9.40608 5.25467 8.55838C6.07426 8.02645 7.21693 7.9955 8.0688 8.4822ZM32.6513 8.59816C33.4781 9.20967 33.659 9.61458 33.65 10.8345C33.6439 11.6764 33.5565 12.1537 33.3078 12.7021C31.9665 15.6605 29.459 14.811 28.8985 11.2085C28.712 10.0098 29.2645 8.85382 30.2372 8.40779C30.8511 8.12635 32.152 8.22891 32.6513 8.59816ZM18.3485 14.858C18.9546 14.9852 19.2887 14.9693 20.0442 14.7776C20.5616 14.6463 21.0054 14.559 21.0302 14.5838C21.0552 14.6086 21.1182 14.8916 21.1699 15.213C21.2633 15.7913 21.2529 15.8072 20.1288 16.8078L18.9933 17.8184L17.9961 16.939C17.0284 16.0856 16.9974 16.0365 16.9531 15.2824C16.9091 14.5327 16.9196 14.5087 17.2506 14.6025C17.4394 14.656 17.9334 14.7709 18.3485 14.858ZM8.14005 15.9144C8.63567 16.3274 8.73161 16.3641 9.93437 16.5998C10.3848 16.6881 10.9387 16.8807 11.1651 17.0277L11.5768 17.2953L10.4733 17.8355C9.10913 18.5035 7.86635 19.7617 7.4341 20.9123L7.14181 21.6905L6.35821 21.7357C5.126 21.807 2.00144 21.3642 1.48216 21.0448C1.258 20.9069 1.06196 18.9187 1.21353 18.3203C1.46744 17.3185 2.53231 16.6572 4.33839 16.38C4.68244 16.3272 5.07364 16.1317 5.30524 15.8965C5.65509 15.5413 5.79387 15.5036 6.69066 15.5193C7.5281 15.5341 7.75955 15.5971 8.14005 15.9144ZM32.6234 15.9634C32.8046 16.1428 33.2453 16.3653 33.603 16.4579C35.548 16.9613 35.8011 17.0678 36.2471 17.5712C36.4981 17.8542 36.7469 18.2577 36.8002 18.4676C36.8928 18.8337 36.7884 20.9966 36.6724 21.1114C36.4834 21.2988 34.1306 21.6522 32.6171 21.7205L30.8322 21.8011L30.5747 21.0707C30.0712 19.6426 28.4817 18.1343 26.9541 17.6348C26.6737 17.5432 26.4442 17.4184 26.4442 17.3574C26.4442 17.1791 27.7863 16.6479 28.6968 16.4659C29.1804 16.3692 29.6849 16.1573 29.8868 15.9662C30.1816 15.6872 30.4007 15.6347 31.2656 15.6359C32.1278 15.6371 32.3475 15.6901 32.6234 15.9634ZM22.428 17.651C22.428 17.837 21.2184 19.8486 21.1067 19.8486C21.0485 19.8486 20.7363 19.5772 20.413 19.2455L19.825 18.6424L20.7854 17.775L21.7457 16.9075L22.0869 17.2249C22.2745 17.3995 22.428 17.5914 22.428 17.651ZM17.2875 17.8393L18.1713 18.6225L17.6594 19.2328C17.3779 19.5686 17.1071 19.8445 17.0575 19.846C17.008 19.8474 16.6504 19.3397 16.2629 18.7176L15.5583 17.5865L15.9067 17.321C16.0983 17.1749 16.2885 17.0556 16.3294 17.0559C16.3703 17.056 16.8015 17.4085 17.2875 17.8393ZM15.5174 19.7111C16.0801 20.6153 16.6358 21.3914 16.7522 21.4356C16.8686 21.4798 17.0797 21.4443 17.2212 21.3567C17.4156 21.2365 17.5326 21.2511 17.6997 21.4164C17.8951 21.6102 17.8628 21.9189 17.4187 24.0942C17.1426 25.4466 16.9353 26.6831 16.9577 26.8423C17.005 27.1751 18.6546 28.5447 18.9994 28.5372C19.3566 28.5296 21.0896 27.0929 21.0865 26.8072C21.0848 26.6674 20.8616 25.4429 20.5901 24.0861C20.1223 21.7482 20.1101 21.6069 20.3555 21.3868C20.5671 21.1973 20.6682 21.1877 20.9066 21.3354C21.0673 21.4347 21.3001 21.4774 21.4238 21.4304C21.5477 21.3833 22.0755 20.6089 22.5964 19.7098L23.5436 18.0748L24.1386 18.1582C26.9234 18.548 28.6853 19.5862 29.4591 21.2932C29.8555 22.1679 29.9455 24.082 29.6821 26.0373L29.4935 27.4371L28.2281 27.752C24.9209 28.5748 21.5642 28.9053 17.6681 28.7914C14.5211 28.6995 12.5574 28.4504 10.1001 27.8313L8.52024 27.4333L8.3471 26.0354C8.09453 23.9971 8.10881 22.4801 8.3883 21.6588C9.04383 19.7326 10.9168 18.4427 13.5742 18.0876C13.985 18.0327 14.3603 18.0056 14.4078 18.0274C14.4554 18.0492 14.9547 18.8068 15.5174 19.7111ZM19.457 19.9263L19.8101 20.2988L19.4085 20.6966L19.0069 21.0944L18.6052 20.6966L18.2036 20.2988L18.5567 19.9263C18.751 19.7214 18.9536 19.5539 19.0069 19.5539C19.0601 19.5539 19.2627 19.7214 19.457 19.9263ZM19.49 24.454L19.8987 26.553L19.49 26.8838C19.2652 27.0658 19.0478 27.2146 19.0069 27.2146C18.9659 27.2146 18.7492 27.0658 18.5252 26.8838L18.1181 26.553L18.5219 24.4533C18.7442 23.2984 18.9609 22.3538 19.0036 22.3543C19.0463 22.3547 19.2652 23.2995 19.49 24.454Z" fill="#27BAD8"/>
+                                            </svg>
+                                            
+
+
+                                    </span>
+                                    <!-- end span  -->
+                                    <div class="dashbord-card-info">
+                                        <h2>10,500</h2>
+                                        <p>Total Customer</p>
+                                    </div>
+                                    <!-- end dashbord-card-info  -->
+
+
+                                </div>
+                                <!-- end card-inner  -->
+                            </div>
+                            <!-- end card  -->
+                        </div>
+                        <!-- end col  -->
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
@@ -1033,7 +646,7 @@
                                     <!-- end span  -->
                                     <div class="dashbord-card-info">
                                         <h2>16,500</h2>
-                                        <p>Total Product</p>
+                                        <p>Agent Total Sale Amount</p>
                                     </div>
                                     <!-- end dashbord-card-info  -->
 
@@ -1044,94 +657,49 @@
                             <!-- end card  -->
                         </div>
                         <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card">
-                                <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
-
-                                    <span class="dash-card-icon dash-card-icon2">
-                                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M17.4166 4.83691C14.7494 5.13498 12.2206 6.18009 10.1212 7.85195C8.02187 9.52382 6.43722 11.7545 5.54969 14.2872C4.66216 16.82 4.50781 19.5519 5.1044 22.1685C5.701 24.7851 7.0243 27.18 8.922 29.0777C10.8197 30.9754 13.2147 32.2987 15.8313 32.8953C18.4479 33.4919 21.1797 33.3376 23.7125 32.45C26.2452 31.5625 28.4759 29.9778 30.1478 27.8785C31.8196 25.7791 32.8647 23.2503 33.1628 20.5832H17.4166V4.83691Z"
-                                                stroke="#27BAD8" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M32.4393 14.2499H23.75V5.56055C25.7535 6.27135 27.5732 7.42023 29.0764 8.92345C30.5797 10.4267 31.7285 12.2464 32.4393 14.2499Z"
-                                                stroke="#27BAD8" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-
-
-                                    </span>
-                                    <!-- end span  -->
-                                    <div class="dashbord-card-info">
-                                        <h2>10,500</h2>
-                                        <p>Total Selling Product</p>
-                                    </div>
-                                    <!-- end dashbord-card-info  -->
-
-
-                                </div>
-                                <!-- end card-inner  -->
-                            </div>
-                            <!-- end card  -->
-                        </div>
-                        <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="card">
-                                <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
-
-                                    <span class="dash-card-icon dash-card-icon3">
-                                        <svg width="34" height="25" viewBox="0 0 34 25" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M20.25 1H16.75H12.375M4.5 8H29M4.5 8C3.57174 8 2.6815 7.63125 2.02513 6.97487C1.36875 6.3185 1 5.42826 1 4.5C1 3.57174 1.36875 2.6815 2.02513 2.02513C2.6815 1.36875 3.57174 1 4.5 1H29C29.9283 1 30.8185 1.36875 31.4749 2.02513C32.1313 2.6815 32.5 3.57174 32.5 4.5C32.5 5.42826 32.1313 6.3185 31.4749 6.97487C30.8185 7.63125 29.9283 8 29 8M4.5 8V20.25C4.5 21.1783 4.86875 22.0685 5.52513 22.7249C6.1815 23.3813 7.07174 23.75 8 23.75H25.5C26.4283 23.75 27.3185 23.3813 27.9749 22.7249C28.6313 22.0685 29 21.1783 29 20.25V8"
-                                                stroke="#F6B13C" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M10 13.0016L10.5112 17.2862M10.5112 17.2862C11.0944 15.8792 12.1395 14.7008 13.4829 13.9355C14.8263 13.1703 16.392 12.8614 17.9346 13.0574C19.4772 13.2534 20.9096 13.9432 22.0072 15.0186C23.1049 16.094 23.8057 17.4943 24 19M10.5112 17.2862H14.392"
-                                                stroke="#F6B13C" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-
-
-                                    </span>
-                                    <!-- end span  -->
-                                    <div class="dashbord-card-info">
-                                        <h2>16,500</h2>
-                                        <p>Total Return Product</p>
-                                    </div>
-                                    <!-- end dashbord-card-info  -->
-
-
-                                </div>
-                                <!-- end card-inner  -->
-                            </div>
-                            <!-- end card  -->
-                        </div>
-                        <!-- end col  -->
-                        <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
 
                                     <span class="dash-card-icon dash-card-icon4">
-                                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.75 4.75H7.91667L8.55 7.91667M8.55 7.91667H33.25L26.9167 20.5833H11.0833M8.55 7.91667L11.0833 20.5833M11.0833 20.5833L7.45275 24.2139C6.45525 25.2114 7.16142 26.9167 8.57217 26.9167H26.9167M26.9167 26.9167C26.0768 26.9167 25.2714 27.2503 24.6775 27.8442C24.0836 28.438 23.75 29.2435 23.75 30.0833C23.75 30.9232 24.0836 31.7286 24.6775 32.3225C25.2714 32.9164 26.0768 33.25 26.9167 33.25C27.7565 33.25 28.562 32.9164 29.1558 32.3225C29.7497 31.7286 30.0833 30.9232 30.0833 30.0833C30.0833 29.2435 29.7497 28.438 29.1558 27.8442C28.562 27.2503 27.7565 26.9167 26.9167 26.9167ZM14.25 30.0833C14.25 30.9232 13.9164 31.7286 13.3225 32.3225C12.7286 32.9164 11.9232 33.25 11.0833 33.25C10.2435 33.25 9.43803 32.9164 8.84416 32.3225C8.2503 31.7286 7.91667 30.9232 7.91667 30.0833C7.91667 29.2435 8.2503 28.438 8.84416 27.8442C9.43803 27.2503 10.2435 26.9167 11.0833 26.9167C11.9232 26.9167 12.7286 27.2503 13.3225 27.8442C13.9164 28.438 14.25 29.2435 14.25 30.0833Z"
-                                                stroke="#1ABC9C" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M19.6464 17.3536C19.8417 17.5488 20.1583 17.5488 20.3536 17.3536L23.5355 14.1716C23.7308 13.9763 23.7308 13.6597 23.5355 13.4645C23.3403 13.2692 23.0237 13.2692 22.8284 13.4645L20 16.2929L17.1716 13.4645C16.9763 13.2692 16.6597 13.2692 16.4645 13.4645C16.2692 13.6597 16.2692 13.9763 16.4645 14.1716L19.6464 17.3536ZM19.5 10L19.5 17L20.5 17L20.5 10L19.5 10Z"
-                                                fill="#1ABC9C" />
-                                        </svg>
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27.6185 0.347074C28.121 0.60067 28.3997 0.879564 28.6532 1.38244C28.9747 2.02044 29 2.27419 29 4.85904C29 7.4439 28.9747 7.69765 28.6532 8.33565C28.0994 9.43441 27.372 9.71809 25.1072 9.71809H23.2838L21.4466 11.1064C19.6947 12.4302 19.0583 12.7287 18.8982 12.3019C18.8582 12.1959 18.9199 11.5712 19.0349 10.9136L19.2441 9.71809H18.3741C17.1415 9.71809 16.2344 9.23449 15.7815 8.33565C15.46 7.69765 15.4347 7.4439 15.4347 4.85904C15.4347 2.27419 15.46 2.02044 15.7815 1.38244C16.035 0.879564 16.3137 0.60067 16.8162 0.347074C17.4848 0.00971808 17.636 0 22.2173 0C26.7987 0 26.9499 0.00971808 27.6185 0.347074ZM16.8922 1.45848C16.5162 1.83471 16.5138 1.85615 16.5138 4.85904C16.5138 7.86193 16.5162 7.88337 16.8922 8.2596C17.2242 8.59202 17.4081 8.63861 18.3952 8.64046C19.0136 8.64154 19.6848 8.68673 19.8866 8.74072C20.2407 8.83559 20.2499 8.8757 20.1548 9.89949L20.0563 10.9601L21.548 9.83779L23.0397 8.71543L25.1861 8.6383C28.0856 8.53417 27.9209 8.76309 27.9209 4.83498C27.9209 1.8577 27.9183 1.8344 27.5425 1.45848L27.1642 1.07979H22.2173H17.2705L16.8922 1.45848ZM25.6205 2.45621C26.1949 3.03112 26.2126 3.66449 25.672 4.30727C25.342 4.6997 25.1599 4.78191 24.6198 4.78191C23.7444 4.78191 23.2263 4.25652 23.2263 3.36847C23.2263 2.09726 24.7004 1.53546 25.6205 2.45621ZM22.5257 4.55053L24.9088 6.93902L24.6005 7.24753C24.2922 7.55604 24.2922 7.55604 21.909 5.16755L19.5259 2.77906L19.8342 2.47055L20.1425 2.16204L22.5257 4.55053ZM13.7768 2.91481C14.4116 3.12953 14.5082 3.21823 14.509 3.58644C14.5096 3.93043 14.4406 4.01064 14.1432 4.01064C13.9416 4.01064 13.5277 3.90652 13.2232 3.77926C12.6036 3.52011 11.9221 3.48293 11.5945 3.6904C11.4158 3.80363 11.4988 4.1072 12.0569 5.38428L12.737 6.9401L13.6234 6.84369L14.5098 6.74744V7.20341C14.5098 7.64428 14.4754 7.66572 13.479 7.84944C11.9823 8.1254 10.8712 8.70926 9.79708 9.78411C8.74947 10.8324 8.15013 11.9511 7.89562 13.3329C7.80298 13.8362 7.72714 15.6495 7.72714 17.3622V20.4763L8.92181 20.5531C9.65557 20.6003 10.404 20.7569 10.8615 20.9587C11.4923 21.2368 11.9059 21.2875 13.5591 21.2895C14.8018 21.2909 15.6465 21.3611 15.8824 21.4824C16.4419 21.7701 16.8743 22.4479 16.8874 23.0579C16.9011 23.6972 16.6795 23.7427 19.3349 22.5552L21.3082 21.6729L21.2565 17.4309C21.2282 15.0977 21.1511 13.0759 21.0854 12.9379C20.9945 12.7472 21.0657 12.6619 21.3826 12.5823C21.6234 12.5218 21.8714 12.5496 21.9699 12.6479C22.0843 12.7622 22.1563 14.3113 22.1893 17.3614C22.2355 21.6581 22.2543 21.9132 22.5344 22.0633C23.3201 22.4839 23.5332 23.9128 22.9192 24.6431C22.4509 25.1999 16.816 28.5954 15.9742 28.828C15.5628 28.9417 12.8035 28.9986 7.67889 28.9991L0 29L0.0484028 28.4987L0.096653 27.9973L2.21623 27.9545L4.33581 27.9116V25.2936V22.6755H2.17769H0.019577V22.2128V21.75H2.34664C4.39886 21.75 4.72288 21.7148 5.09161 21.4521C5.32161 21.2883 5.80055 21.0378 6.15603 20.8954L6.80223 20.6367V17.1381C6.80223 13.3312 6.91784 12.5266 7.69107 10.9521C8.23352 9.84781 9.88633 8.18371 10.9195 7.70181C11.3611 7.49573 11.7252 7.25308 11.7287 7.16254C11.7323 7.07183 11.3845 6.21433 10.9561 5.25656C10.5278 4.29894 10.1983 3.4058 10.2241 3.27176C10.2807 2.9779 11.5459 2.61987 12.4287 2.64795C12.7679 2.65874 13.3745 2.77876 13.7768 2.91481ZM24.2984 3.39578C24.2984 3.66912 24.3923 3.79268 24.6257 3.82599C25.0174 3.88199 25.2322 3.45193 24.9703 3.13601C24.6939 2.80282 24.2984 2.95569 24.2984 3.39578ZM20.8382 5.33045C21.3808 5.9086 21.3533 6.8494 20.7794 7.34348C20.1644 7.87288 19.3927 7.8408 18.8142 7.26188C18.2398 6.68697 18.2221 6.0536 18.7627 5.41081C19.3 4.77173 20.2781 4.73394 20.8382 5.33045ZM19.3794 6.11268C19.2677 6.40376 19.5362 6.78723 19.8517 6.78723C20.1141 6.78723 20.2798 6.41147 20.1576 6.09308C20.039 5.78396 19.5003 5.79753 19.3794 6.11268ZM14.9722 11.0893C14.9722 11.4735 15.0441 11.5483 15.4945 11.6329C16.1234 11.7509 16.7672 12.3563 16.8981 12.9527C16.9534 13.2049 16.8971 13.6195 16.7644 13.9374C16.5649 14.4152 16.3126 14.5984 14.8287 15.343C13.2342 16.1433 13.1224 16.2292 13.1224 16.6554C13.1224 17.2928 13.4776 17.4309 15.1162 17.4309H16.5138V17.8936C16.5138 18.346 16.4966 18.3564 15.743 18.3564C14.9894 18.3564 14.9722 18.3667 14.9722 18.8191C14.9722 19.2305 14.9209 19.2819 14.5098 19.2819C14.0987 19.2819 14.0473 19.2305 14.0473 18.8191C14.0473 18.4554 13.9797 18.3564 13.7313 18.3564C12.7939 18.3564 11.9264 17.2846 12.138 16.3884C12.299 15.7074 12.7964 15.2872 14.3942 14.4827C15.7959 13.7769 15.8971 13.6946 15.8971 13.2607C15.8971 12.6454 15.4836 12.4947 13.7958 12.4947H12.4853L12.5342 12.0705C12.5787 11.6821 12.6446 11.6423 13.3151 11.5992C14.0122 11.5545 14.0473 11.5304 14.0473 11.0979C14.0473 10.6959 14.1007 10.6436 14.5098 10.6436C14.9169 10.6436 14.9722 10.697 14.9722 11.0893ZM6.23433 21.9257L5.49194 22.3079L5.44986 25.114L5.40793 27.9202H10.6907H15.9733L19.0998 26.0398C22.3393 24.0914 22.5989 23.8517 22.226 23.1545C21.8873 22.5213 21.4791 22.6077 18.6803 23.9056L15.9953 25.1509L13.4579 25.1086C11.2529 25.072 10.8985 25.0316 10.7531 24.8009C10.4192 24.2704 10.8501 24.1453 13.29 24.0638C15.7629 23.9813 15.8897 23.9369 15.8948 23.1505C15.8961 22.945 15.7823 22.6501 15.642 22.4949C15.4176 22.2467 15.1224 22.2128 13.1847 22.2128C11.9066 22.2128 10.9432 22.1491 10.8888 22.061C10.6821 21.7262 9.33062 21.4453 8.16122 21.4941C7.27254 21.5313 6.79144 21.6389 6.23433 21.9257ZM3.4109 26.5319C3.4109 26.9433 3.35957 26.9947 2.94845 26.9947C2.53733 26.9947 2.486 26.9433 2.486 26.5319C2.486 26.1205 2.53733 26.0691 2.94845 26.0691C3.35957 26.0691 3.4109 26.1205 3.4109 26.5319Z" fill="#276FFC"/>
+                                            </svg>
+                                            
 
 
                                     </span>
                                     <!-- end span  -->
                                     <div class="dashbord-card-info">
                                         <h2>16,500</h2>
-                                        <p>Total Stock</p>
+                                        <p>Agent Total Commission</p>
+                                    </div>
+                                    <!-- end dashbord-card-info  -->
+
+
+                                </div>
+                                <!-- end card-inner  -->
+                            </div>
+                            <!-- end card  -->
+                        </div>
+                        <!-- end col  -->
+
+                        <div class=" col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-inner d-flex justify-content-between align-items-center flex-wrap p-2">
+
+                                    <span class="dash-card-icon dash-card-icon4">
+                                        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M27.6185 0.347074C28.121 0.60067 28.3997 0.879564 28.6532 1.38244C28.9747 2.02044 29 2.27419 29 4.85904C29 7.4439 28.9747 7.69765 28.6532 8.33565C28.0994 9.43441 27.372 9.71809 25.1072 9.71809H23.2838L21.4466 11.1064C19.6947 12.4302 19.0583 12.7287 18.8982 12.3019C18.8582 12.1959 18.9199 11.5712 19.0349 10.9136L19.2441 9.71809H18.3741C17.1415 9.71809 16.2344 9.23449 15.7815 8.33565C15.46 7.69765 15.4347 7.4439 15.4347 4.85904C15.4347 2.27419 15.46 2.02044 15.7815 1.38244C16.035 0.879564 16.3137 0.60067 16.8162 0.347074C17.4848 0.00971808 17.636 0 22.2173 0C26.7987 0 26.9499 0.00971808 27.6185 0.347074ZM16.8922 1.45848C16.5162 1.83471 16.5138 1.85615 16.5138 4.85904C16.5138 7.86193 16.5162 7.88337 16.8922 8.2596C17.2242 8.59202 17.4081 8.63861 18.3952 8.64046C19.0136 8.64154 19.6848 8.68673 19.8866 8.74072C20.2407 8.83559 20.2499 8.8757 20.1548 9.89949L20.0563 10.9601L21.548 9.83779L23.0397 8.71543L25.1861 8.6383C28.0856 8.53417 27.9209 8.76309 27.9209 4.83498C27.9209 1.8577 27.9183 1.8344 27.5425 1.45848L27.1642 1.07979H22.2173H17.2705L16.8922 1.45848ZM25.6205 2.45621C26.1949 3.03112 26.2126 3.66449 25.672 4.30727C25.342 4.6997 25.1599 4.78191 24.6198 4.78191C23.7444 4.78191 23.2263 4.25652 23.2263 3.36847C23.2263 2.09726 24.7004 1.53546 25.6205 2.45621ZM22.5257 4.55053L24.9088 6.93902L24.6005 7.24753C24.2922 7.55604 24.2922 7.55604 21.909 5.16755L19.5259 2.77906L19.8342 2.47055L20.1425 2.16204L22.5257 4.55053ZM13.7768 2.91481C14.4116 3.12953 14.5082 3.21823 14.509 3.58644C14.5096 3.93043 14.4406 4.01064 14.1432 4.01064C13.9416 4.01064 13.5277 3.90652 13.2232 3.77926C12.6036 3.52011 11.9221 3.48293 11.5945 3.6904C11.4158 3.80363 11.4988 4.1072 12.0569 5.38428L12.737 6.9401L13.6234 6.84369L14.5098 6.74744V7.20341C14.5098 7.64428 14.4754 7.66572 13.479 7.84944C11.9823 8.1254 10.8712 8.70926 9.79708 9.78411C8.74947 10.8324 8.15013 11.9511 7.89562 13.3329C7.80298 13.8362 7.72714 15.6495 7.72714 17.3622V20.4763L8.92181 20.5531C9.65557 20.6003 10.404 20.7569 10.8615 20.9587C11.4923 21.2368 11.9059 21.2875 13.5591 21.2895C14.8018 21.2909 15.6465 21.3611 15.8824 21.4824C16.4419 21.7701 16.8743 22.4479 16.8874 23.0579C16.9011 23.6972 16.6795 23.7427 19.3349 22.5552L21.3082 21.6729L21.2565 17.4309C21.2282 15.0977 21.1511 13.0759 21.0854 12.9379C20.9945 12.7472 21.0657 12.6619 21.3826 12.5823C21.6234 12.5218 21.8714 12.5496 21.9699 12.6479C22.0843 12.7622 22.1563 14.3113 22.1893 17.3614C22.2355 21.6581 22.2543 21.9132 22.5344 22.0633C23.3201 22.4839 23.5332 23.9128 22.9192 24.6431C22.4509 25.1999 16.816 28.5954 15.9742 28.828C15.5628 28.9417 12.8035 28.9986 7.67889 28.9991L0 29L0.0484028 28.4987L0.096653 27.9973L2.21623 27.9545L4.33581 27.9116V25.2936V22.6755H2.17769H0.019577V22.2128V21.75H2.34664C4.39886 21.75 4.72288 21.7148 5.09161 21.4521C5.32161 21.2883 5.80055 21.0378 6.15603 20.8954L6.80223 20.6367V17.1381C6.80223 13.3312 6.91784 12.5266 7.69107 10.9521C8.23352 9.84781 9.88633 8.18371 10.9195 7.70181C11.3611 7.49573 11.7252 7.25308 11.7287 7.16254C11.7323 7.07183 11.3845 6.21433 10.9561 5.25656C10.5278 4.29894 10.1983 3.4058 10.2241 3.27176C10.2807 2.9779 11.5459 2.61987 12.4287 2.64795C12.7679 2.65874 13.3745 2.77876 13.7768 2.91481ZM24.2984 3.39578C24.2984 3.66912 24.3923 3.79268 24.6257 3.82599C25.0174 3.88199 25.2322 3.45193 24.9703 3.13601C24.6939 2.80282 24.2984 2.95569 24.2984 3.39578ZM20.8382 5.33045C21.3808 5.9086 21.3533 6.8494 20.7794 7.34348C20.1644 7.87288 19.3927 7.8408 18.8142 7.26188C18.2398 6.68697 18.2221 6.0536 18.7627 5.41081C19.3 4.77173 20.2781 4.73394 20.8382 5.33045ZM19.3794 6.11268C19.2677 6.40376 19.5362 6.78723 19.8517 6.78723C20.1141 6.78723 20.2798 6.41147 20.1576 6.09308C20.039 5.78396 19.5003 5.79753 19.3794 6.11268ZM14.9722 11.0893C14.9722 11.4735 15.0441 11.5483 15.4945 11.6329C16.1234 11.7509 16.7672 12.3563 16.8981 12.9527C16.9534 13.2049 16.8971 13.6195 16.7644 13.9374C16.5649 14.4152 16.3126 14.5984 14.8287 15.343C13.2342 16.1433 13.1224 16.2292 13.1224 16.6554C13.1224 17.2928 13.4776 17.4309 15.1162 17.4309H16.5138V17.8936C16.5138 18.346 16.4966 18.3564 15.743 18.3564C14.9894 18.3564 14.9722 18.3667 14.9722 18.8191C14.9722 19.2305 14.9209 19.2819 14.5098 19.2819C14.0987 19.2819 14.0473 19.2305 14.0473 18.8191C14.0473 18.4554 13.9797 18.3564 13.7313 18.3564C12.7939 18.3564 11.9264 17.2846 12.138 16.3884C12.299 15.7074 12.7964 15.2872 14.3942 14.4827C15.7959 13.7769 15.8971 13.6946 15.8971 13.2607C15.8971 12.6454 15.4836 12.4947 13.7958 12.4947H12.4853L12.5342 12.0705C12.5787 11.6821 12.6446 11.6423 13.3151 11.5992C14.0122 11.5545 14.0473 11.5304 14.0473 11.0979C14.0473 10.6959 14.1007 10.6436 14.5098 10.6436C14.9169 10.6436 14.9722 10.697 14.9722 11.0893ZM6.23433 21.9257L5.49194 22.3079L5.44986 25.114L5.40793 27.9202H10.6907H15.9733L19.0998 26.0398C22.3393 24.0914 22.5989 23.8517 22.226 23.1545C21.8873 22.5213 21.4791 22.6077 18.6803 23.9056L15.9953 25.1509L13.4579 25.1086C11.2529 25.072 10.8985 25.0316 10.7531 24.8009C10.4192 24.2704 10.8501 24.1453 13.29 24.0638C15.7629 23.9813 15.8897 23.9369 15.8948 23.1505C15.8961 22.945 15.7823 22.6501 15.642 22.4949C15.4176 22.2467 15.1224 22.2128 13.1847 22.2128C11.9066 22.2128 10.9432 22.1491 10.8888 22.061C10.6821 21.7262 9.33062 21.4453 8.16122 21.4941C7.27254 21.5313 6.79144 21.6389 6.23433 21.9257ZM3.4109 26.5319C3.4109 26.9433 3.35957 26.9947 2.94845 26.9947C2.53733 26.9947 2.486 26.9433 2.486 26.5319C2.486 26.1205 2.53733 26.0691 2.94845 26.0691C3.35957 26.0691 3.4109 26.1205 3.4109 26.5319Z" fill="#276FFC"/>
+                                            </svg>
+                                            
+
+
+                                    </span>
+                                    <!-- end span  -->
+                                    <div class="dashbord-card-info">
+                                        <h2>16,500</h2>
+                                        <p>Agent Total Withdrawal Amount</p>
                                     </div>
                                     <!-- end dashbord-card-info  -->
 
@@ -1146,7 +714,7 @@
                     <!-- end row  -->
 
                     <div class="row">
-                        <div class="col-lg-6 col-md-8 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
 
                             <div class="card p-3">
                                 <div class="card-body">
@@ -1180,7 +748,7 @@
                         <!-- end col  -->
                         
                         
-                        <div class="col-lg-6 col-md-8 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
 
                             <div class="card p-3">
                                 <div class="card-body">
@@ -1378,7 +946,7 @@
 
     <script src="../assets/libs/selectize/js/standalone/selectize.min.js"></script>
 
-    <!-- Dashboar 1 init js-->
+    <!-- Dashboar 1 init js -->
     <script src="../assets/js/pages/dashboard-1.init.js"></script>
 
     <!-- App js-->
