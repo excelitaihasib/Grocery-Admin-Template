@@ -48,7 +48,9 @@ tbody tr {
 .paymentInfo p {
     font-size: 16px;
 }
-
+.footer{
+    left: 263px !important;
+}
 .admin-btns>.employee-btn>a,
 .admin-btn>a {
     color: #fff;
@@ -70,6 +72,8 @@ tbody tr {
 }
 
 
+
+
 /* style for Admin User Role */
 
 
@@ -89,3 +93,11 @@ tbody tr {
 .prdQty:focus {
     outline: none;
 }
+
+
+
+ @media(max-width:992px) {
+            .footer {
+                left: 0px !important;
+            }
+        }
