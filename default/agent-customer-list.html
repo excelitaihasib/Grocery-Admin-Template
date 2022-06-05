@@ -1091,10 +1091,34 @@
                         <td>180, Jagonnath, Kalicharan
                           Saha Rd, Dhaka 1211</td>
                         <td>
-                          <button onclick="myFunction()" id="btn" class="btn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
                           </button>     
                         </td>
                       </tr>
+                      <tr>
+                        <td># 123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>example@excelitai.com</td>
+                        <td>+8801747519969</td>
+                        <td>180, Jagonnath, Kalicharan
+                          Saha Rd, Dhaka 1211</td>
+                        <td>
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          </button>     
+                        </td>
+                      </tr> <tr>
+                        <td># 123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>example@excelitai.com</td>
+                        <td>+8801747519969</td>
+                        <td>180, Jagonnath, Kalicharan
+                          Saha Rd, Dhaka 1211</td>
+                        <td>
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          </button>     
+                        </td>
+                      </tr>
+                      
                     </tbody>
                   </table>
                   <div class="d-flex justify-content-end mt-3">
@@ -1261,7 +1285,7 @@
 
   <script>
     function myFunction() {
-    const btn = document.getElementById("btn");
+    const btn = document.querySelector(".selectbtn");
     if (btn.value == "Select") {
       btn.value = "Selected";
       btn.innerHTML = "<i class='fas fa-check'> Selected";
