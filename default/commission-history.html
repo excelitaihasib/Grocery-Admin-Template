@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Payment History</title>
+  <title>Commision History</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -73,6 +73,13 @@
     }
     .date{
       margin-top: 130px;
+    }
+    table tfoot{
+      border: none;
+      border-color: transparent;
+    }
+    table tfoot td{
+      font-size: 15px;
     }
     #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
       width: 100%;
@@ -205,8 +212,6 @@
               <i class="fe-maximize noti-icon"></i>
             </a>
           </li>
-
-
 
           <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
@@ -987,9 +992,9 @@
                 <div class="card-body">
                   <div class="d-lg-flex justify-content-lg-between mb-2">
                     <div class="col-lg-6 col-12 paymentInfo">
-                      <h4 class="header-title">Payment History</h4>
-                      <p><b>Supplier Name :</b> Rahim Febrics</p>
-                      <p><b>Supplier ID :</b> RF 123456</p>
+                      <h4 class="header-title">Commission History</h4>
+                      <p><b>Agent Name :</b> Rahim Mia</p>
+                      <p><b>Agent ID :</b> RF 123456</p>
                       <p><b>Contact No :</b> +8801 XXXX XXXXX</p>
                       <p><b>Address :</b> 1219 Dhaka, Bangladesh · 3</p>
                     </div>
@@ -1004,73 +1009,69 @@
                     <thead>
                       <tr>
                         <th>Date</th>
-                        <th>Product ID</th>
-                        <th>Brand Name</th>
-                        <th>Product Name</th>
-                        <th>Product Price</th>
-                        <th>Product Return Price </th>
-                        <th>Withdrawal Amount</th>
-                        <th>Total Balance</th>
+                        <th>Order ID</th>
+                        <th>Sales QTY</th>
+                        <th>Total Sales Amount</th>
+                        <th>Sales Commission</th>
+                        <th>Deposit Amount</th>
+                        <th>Withdraw</th>
+                        <th>Remaining Balance</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123457</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                         <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
                         <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123457</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                         <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
                         <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123457</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
                         <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123457</td>
+                        <td>12</td>
+                        <td>৳ 49,000</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                       </tr>
-                      <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
-                      </tr>
-                      
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total: ৳ 49,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                      </tr>
+                    </tfoot>
                   </table>
 
                 </div> <!-- end card body-->

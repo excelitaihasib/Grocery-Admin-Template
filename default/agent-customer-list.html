@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Payment History</title>
+  <title>Customer List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -68,38 +68,114 @@
     .footer {
       left: 255px;
     }
-    .header-title{
-      margin-bottom: 20px;
+
+    .qty {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      margin-top: 0px;
     }
-    .date{
-      margin-top: 130px;
+
+    .qty .line {
+      background-color: #fff;
+      width: auto;
+      display: inline-block;
+      z-index: 3;
+      padding: 0 20px 0 20px;
+      color: #464646;
+      position: relative;
+      font-weight: bold;
+      margin: 0;
     }
-    #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+
+    .qty::after {
+      content: '';
+      width: 100%;
+      border-bottom: 1px solid #000;
+      position: absolute;
+      left: 0;
+      top: 50%;
+    }
+
+    .right-arrow {
+      position: absolute;
+      right: 0;
+      top: 3.8px;
+      color: #000;
+    }
+
+    .left-arrow {
+      position: absolute;
+      left: 0;
+      top: 3.8px;
+      color: #000;
+    }
+
+    .prdQty {
+      border: 1px solid #CED4DA;
+      margin-bottom: 0;
+      padding: 5px 0;
+      text-align: center;
+      width: 120px;
+    }
+
+    .prdQty:focus {
+      outline: none;
+    }
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
       width: 100%;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-top: 15px;
+      margin-top: 10px;
     }
-    #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
       position: absolute;
       right: 20px;
-      top: 198px;
+      top: 28px;
     }
-    @media (max-width: 767px){
-        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(1) {
+
+    #return-product-submit-modal .table-striped>tbody>tr:nth-of-type(odd) {
+      --bs-table-accent-bg: #fff;
+    }
+    .btn {
+      border: transparent;
+    }
+    .btn .btn-check:focus+.btn, .btn:focus{
+      box-shadow: none;
+    }
+    .addReturnAblePrdBtn {
+      display: flex;
+      justify-content: end;
+    }
+    @media (max-width: 1795px) {
+      .addReturnAblePrdBtn {
         justify-content: center;
-        margin-top: 30px;
-        }
-        #datatable-buttons_wrapper .row:nth-child(1) > .col-sm-12:nth-child(2) .dataTables_filter {
-            right: 0;
-            left: 0;
-            margin-top: 10px;
-        }
+      }
     }
-    @media(max-width: 991px){
-      .date{
-        margin-top: 0px;
+
+    @media (max-width: 1190px) {
+      .addReturnAblePrdBtn {
+        justify-content: start;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        top: 115px;
+        right: auto;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        margin-top: 35px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        justify-content: center;
       }
     }
   </style>
@@ -985,94 +1061,69 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-12 paymentInfo">
-                      <h4 class="header-title">Payment History</h4>
-                      <p><b>Supplier Name :</b> Rahim Febrics</p>
-                      <p><b>Supplier ID :</b> RF 123456</p>
-                      <p><b>Contact No :</b> +8801 XXXX XXXXX</p>
-                      <p><b>Address :</b> 1219 Dhaka, Bangladesh · 3</p>
+                  <div class="d-lg-flex col-lg-10 mb-2">
+                    <div class="col-lg-5">
+                      <h4 class="header-title">Customer List</h4>
                     </div>
-                    <div class="col-lg-6 col-12 d-lg-flex justify-content-lg-end">
-                      <!-- <div class="col-4 date">
-                        <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
-                          placeholder="Select Date" readonly="readonly">
-                      </div> -->
+                    <div class="col-lg-7 addReturnAblePrdBtn">
+                      <a href="agent_add_customer.html"><button type="button"
+                      class="btn btn-success waves-effect waves-light mb-2 me-2">Add
+                      New Customer <i class="fas fa-user-plus"></i> </button></a>
                     </div>
                   </div>
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Date</th>
-                        <th>Product ID</th>
-                        <th>Brand Name</th>
-                        <th>Product Name</th>
-                        <th>Product Price</th>
-                        <th>Product Return Price </th>
-                        <th>Withdrawal Amount</th>
-                        <th>Total Balance</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Mobile Number</th>
+                        <th>Customer Address</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>example@excelitai.com</td>
+                        <td>+8801747519969</td>
+                        <td>180, Jagonnath, Kalicharan
+                          Saha Rd, Dhaka 1211</td>
+                        <td>
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          </button>     
+                        </td>
                       </tr>
                       <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
-                      </tr>
-                      <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
-                      </tr>
-                      <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
-                      </tr>
-                      <tr>
-                        <td>10 Feb, 2022</td>
-                        <td># WBH 5484</td>
-                        <td>Brand Name</td>
-                        <td>P47 - Wireless Bluetooth
-                          Headphone WBH 5484</td>
-                        <td>৳ 1,00,000</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>৳ 1,00,000</td>
+                        <td># 123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>example@excelitai.com</td>
+                        <td>+8801747519969</td>
+                        <td>180, Jagonnath, Kalicharan
+                          Saha Rd, Dhaka 1211</td>
+                        <td>
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          </button>     
+                        </td>
+                      </tr> <tr>
+                        <td># 123</td>
+                        <td>MD, Ahosan Habib</td>
+                        <td>example@excelitai.com</td>
+                        <td>+8801747519969</td>
+                        <td>180, Jagonnath, Kalicharan
+                          Saha Rd, Dhaka 1211</td>
+                        <td>
+                          <button onclick="myFunction()" id="btn" class="btn selectbtn" value="Select" style="background-color: #DEE2E6; width: 100px;">Select
+                          </button>     
+                        </td>
                       </tr>
                       
                     </tbody>
                   </table>
-
+                  <div class="d-flex justify-content-end mt-3">
+                    <a href="#"><button class="btn btn-success">Select Product</button></a>
+                  </div>
                 </div> <!-- end card body-->
               </div> <!-- end card -->
             </div><!-- end col-->
@@ -1088,10 +1139,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by <a
-                href="">Excel IT AI</a>
+              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by
+              <a href="">Excel IT AI</a>
             </div>
-
           </div>
         </div>
       </footer>
@@ -1186,13 +1236,15 @@
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="condensed"
                 id="condensed-check" />
-              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
+              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small
+                  size)</small></label>
             </div>
 
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="compact"
                 id="compact-check" />
-              <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
+              <label class="form-check-label" for="compact-check">Compact <small>(Small
+                  size)</small></label>
             </div>
 
 
@@ -1230,6 +1282,30 @@
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
 
+
+  <script>
+    function myFunction() {
+    const btn = document.querySelector(".selectbtn");
+    if (btn.value == "Select") {
+      btn.value = "Selected";
+      btn.innerHTML = "<i class='fas fa-check'> Selected";
+      btn.style.background = "#1abc9c";
+      btn.style.backgroundImage = "linear-gradient(to bottom, #1abc9c 15%, transparent 50%)";
+      btn.style.color = "#fff";
+      btn.style.transition = "background 2s ease-out";
+      btn.style.width = "100px";
+    }
+    else {
+      btn.value = "Select";
+      btn.innerHTML = "Select";
+      btn.style.background = "#DEE2E6";
+      btn.style.color = "#6c757d";
+      btn.style.width = "100px";
+      btn.style.transition = "0s";
+    }
+  }
+  </script>
+  
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
 

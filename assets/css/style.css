@@ -1,39 +1,93 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Inter';
+    font-family: 'Nunito', sans-serif;
 }
 
-table > thead tr, tbody tr {
-    font-size: 16px;
+table>thead tr,
+tbody tr {
+    font-size: 17px;
 }
-.eyeIcon, .editIcon, .replyIcon, .deleteIcon {
+
+.eyeIcon,
+.editIcon,
+.replyIcon,
+.deleteIcon,
+.pdfIcon,
+.printIcon {
     border: transparent;
     background: transparent;
     color: #6c757d;
     font-size: 20px;
 }
 
+.pdfIcon {
+    color: #6658DD;
+}
+
+.printIcon {
+    color: #F88443;
+}
+
 .editIcon {
     color: #0D6EFD;
 }
-.deleteIcon{
+
+.deleteIcon {
     color: #FF3654;
 }
+
 .header-title {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 28px;
+    color: #6c757d;
+}
+
+.header-title2 {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 22px;
     color: #343A40;
 }
+
 .paymentInfo p {
     font-size: 16px;
 }
-.prdQty {
-    border: 1px solid #ced4da;
-    margin-bottom: 0;
-    padding: 5px 0;
+
+.admin-btns>.employee-btn>a,
+.admin-btn>a {
+    color: #fff;
+}
+
+.admin-btns .employee-btn {
+    background-color: #00BC8B;
+    border: 1px solid #00BC8B;
+}
+
+.admin-input-container {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0;
+}
+
+.adminImage {
+    height: 100px;
+}
+
+
+/* style for Admin User Role */
+
+
+/* style for view-employee.html file start */
+
+.employee-view-container .employee-title {
+    font-size: 24px;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0 10px 30px;
+}
+
+.employee-view-container .employee-image {
     text-align: center;
     width: 120px;
 }
@@ -41,3 +95,5 @@ table > thead tr, tbody tr {
 .prdQty:focus {
     outline: none;
 }
+
+
