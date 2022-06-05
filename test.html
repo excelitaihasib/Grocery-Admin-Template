@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+
+ <style>
+  #temp {
+   display: none;
+  }
+ </style>
+</head>
+
+<body>
+
+ <div id="main" style="background-color: red; width: 100px; height: 40px;">
+
+ </div>
+
+
+ <div class="sideMain">
+
+
+  <button id="arrow">arrow</button>
+
+  <div id="temp">
+   <button id="success" class="statusButton">success</button>
+   <button id="delete" class="statusButton">delete</button>
+  </div>
+
+ </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+
+ console.log('here');
+
+ $('#arrow').on('click', function (e) {
+  $(this).css('display', 'none');
+  $('#temp').css('display', 'block');
+ });
+
+ $('.statusButton').on('click', function () {
+  console.log(this);
+  $('#temp').css('display', 'none');
+  $('#arrow').css('display', 'block');
+
+  $('#main').append($(this));
+
+ });
+
+</script>
+
+
+
+</html>
