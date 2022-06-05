@@ -39,10 +39,16 @@ tbody tr {
 
 .header-title {
     font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 28px;
     color: #6c757d;
+}
+
+.header-title2 {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 22px;
+    color: #343A40;
 }
 
 .paymentInfo p {
