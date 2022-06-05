@@ -2,13 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Sparklines Charts | UBold - Responsive Admin Dashboard Template</title>
+        <title>Processing Order List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+        <!-- third party css -->
+        <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
 
 		<!-- App css -->
 		<link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -20,7 +27,39 @@
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
-    </head>
+        <style>
+            .processingOrderList .prcDn a{
+                background: #FFFFFF;
+                border: 1px solid #B8B8B8;
+                border-radius: 5px;
+                padding: 7px 12px;
+                color: #6c757d;
+            }
+            .processingOrderList .prcDn a:focus {
+                background: #16A085;
+                border: 1px solid #B8B8B8;
+                border-radius: 5px;
+                color: #fff;
+            }
+            .processingOrderList .faEye {
+                background: #B8E6F0;
+                border-radius: 10px;
+                color: #000000;
+                padding: 10px 12px;
+                font-size: 20px;
+            }
+            .processingOrderList .dataTables_length .form-label {
+                display: none;
+            }
+            .processingOrderList table {
+                font-family: 'Tahoma';
+            }
+            .processingOrderList table td {
+                vertical-align: middle;
+            }
+        </style>
+
+    </head> -
 
     <!-- body start -->
     <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
@@ -53,20 +92,24 @@
                                 <i class="fe-home me-1"></i>
                                 <span>Analytics Report</span>
                             </a>
+            
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="fe-aperture me-1"></i>
                                 <span>How can I help you?</span>
                             </a>
+                            
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="fe-settings me-1"></i>
                                 <span>User profile settings</span>
                             </a>
+
                             <!-- item-->
                             <div class="dropdown-header noti-title">
                                 <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
                             </div>
+
                             <div class="notification-list">
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -1317,145 +1360,66 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page">
+            <div class="content-page processingOrderList">
                 <div class="content">
-
                     <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
+                    <div class="container-fluid mt-3">
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Charts</a></li>
-                                            <li class="breadcrumb-item active">Sparklines Charts</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Sparklines Charts</h4>
+                                <div class="mb-2">
+                                    <h3 class="">Processing Order List</h3>
                                 </div>
-                            </div>
-                        </div>     
-                        <!-- end page title --> 
-
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title">Line Charts</h4>
-                                        <div class="mt-4">
-                                            <div id="sparkline1" data-colors="#6658dd,#1abc9c"></div>
-                                        </div>
-                                    </div>
+                                        <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order Date & Time</th>
+                                                    <th>Processing Order Date & Time</th>
+                                                    <th>Order no./Invoice no.</th>
+                                                    <th>Customer Id</th>
+                                                    <th>Customer Name</th>
+                                                    <th>Mobile Number</th>
+                                                    <th>Address</th>
+                                                    <th>Amount</th>
+                                                    <th>Payment</th>
+                                                    <th>Product check by</th>
+                                                    <th>Status</th>
+                                                    <th>BPP Shops Processing</th>
+                                                    <th>Processing</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>66167554</td>
+                                                    <td>66167554</td>
+                                                    <td>Mr.ABC</td>
+                                                    <td>66167554568</td>
+                                                    <td>Mohgbazar, 5168/A Dhaka- 1219</td>
+                                                    <td>550.00</td>
+                                                    <td>Cash On Delivery</td>
+                                                    <td>Mr.XYZ</td>
+                                                    <td>Processing</td>
+                                                    <td class="prcDn">
+                                                        <a href="#">Processing done</a>
+                                                    </td>
+                                                    <td class="prcDn">
+                                                        <a href="#">Processing done</a>
+                                                    </td>
+                                                    <td><a href="#"><i class="fas fa-eye faEye"></i></a></td>
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- end card body-->
                                 </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Bar Chart</h4>
-                                        <div class="mt-4">
-                                            <div id="sparkline2" data-colors="#4a81d4" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Pie Chart</h4>
-                                        <div class="mt-4">
-                                            <div id="sparkline3" data-colors="#4fc6e1,#f7b84b,#e3eaef,#f1556c" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Custom Line Chart</h4>
-                                        <div class="mt-4">
-                                            <div id="sparkline4" data-colors="#2d7bf4,#4eb7eb" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Mouse Speed Chart</h4>
-                                        <div class="mt-4">
-                                            <div id="sparkline5" data-colors="#f1556c" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Composite bar Chart</h4>
-                                        <div class="text-center mt-4">
-                                            <div id="sparkline6" data-colors="#e3eaef,#6c757d" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Discrete Chart</h4>
-                                        <div class="text-center mt-4">
-                                            <div id="sparkline7" data-colors="#4a545e" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Bullet Chart</h4>
-                                        <div class="text-center mt-4" style="min-height: 164px;">
-                                            <div id="sparkline8" data-colors="#64c5b1,#5553ce" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Box Plot Chart</h4>
-                                        <div class="text-center mt-4" style="min-height: 164px;">
-                                            <div id="sparkline9" data-colors="#6658dd,#1abc9c" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title">Tristate Charts</h4>
-                                        <div class="text-center mt-4" style="min-height: 164px;">
-                                            <div id="sparkline10" data-colors="#0acf97,#e3eaef,#ff679b" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-
+                            </div><!-- end col-->
                         </div>
-                        <!-- end row -->
-                        
+                        <!-- end row--> 
                     </div> <!-- container -->
-
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
@@ -1479,6 +1443,7 @@
 
             </div>
 
+            
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
@@ -1889,11 +1854,24 @@
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
 
-        <!-- Sparkline charts -->
-        <script src="../assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <!-- third party js -->
+        <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="../assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="../assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
+        <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
+        <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
+        <!-- third party js ends -->
 
-        <!-- init js -->
-        <script src="../assets/js/pages/sparkline.init.js"></script>
+        <!-- Datatables init -->
+        <script src="../assets/js/pages/datatables.init.js"></script>
 
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>

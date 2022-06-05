@@ -76,7 +76,7 @@ $(document).ready(function () {
             },
         }),
         $("#state-saving-datatable").DataTable({
-            stateSave: !0,
+              stateSave: !0,
             language: { paginate: { previous: "<i class='mdi mdi-chevron-left'>", next: "<i class='mdi mdi-chevron-right'>" } },
             drawCallback: function () {
                 $(".dataTables_paginate > .pagination").addClass("pagination-rounded");
