@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Picked Order Complete List</title>
+  <title>Ready to shipped</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -93,114 +93,51 @@
 
     table th,
     table td {
-      font-size: 16px;
+      font-size: 14px;
     }
 
     table tbody tr td {
       vertical-align: middle;
+      text-align: center;
     }
 
-    .details-input {
-      border: 0;
-      border-bottom: 1px solid #ced4da;
-      border-radius: 0px;
-      font-size: 18px;
+
+
+    .readyToShipped .dataTables_length .form-label {
+        display: none;
+    }
+    .readyToShipped .selectCourier {
+        background: #38414A;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Tahoma';
+        padding: 5px 10px;
+    }
+    .readyToShipped .codeGnrt {
+        margin: 0;
+        padding: 0;
+        background: #4FC6E1;
+        border: transparent;
+        border-radius: 10px;
+        color: #000;
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Tahoma';
+    }
+    .codeGnrtModal {
+        display: flex;
+        gap: 10px;
+    }
+    .codeGnrtModal button {
+        color: #fff;
+        background-color: #4FC6E1;
+        border: #4FC6E1;
+        padding: 0 10px;
     }
 
-    .supplier_n_picker_details .card-body {
-      height: 650px;
-      font-family: 'Inter';
-    }
-
-    .dt-buttons {
-      margin-top: 0px;
-    }
-
-    .picker-btn {
-      background: #38414A;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      margin: 10px;
-    }
-
-    .Supplier-btn {
-      background: #38414A;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      margin: 10px;
-    }
-
-    .select-btn {
-      display: flex;
-      justify-content: center;
-    }
-
-    option {
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-    }
-
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-      position: absolute;
-      right: 20px;
-      top: 33px;
-    }
-
-    @media (max-width: 1720px) {
-      .select-btn-row {
-        display: block;
-        justify-content: start;
-      }
-
-      .select-btn {
-        justify-content: start;
-      }
-    }
-
-    @media (max-width: 767px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        justify-content: center;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 75px;
-      }
-
-      div.dataTables_wrapper div.dataTables_length {
-        margin-top: 40px;
-      }
-
-      .select-btn {
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 636px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 84px;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        margin-top: 20px;
-      }
-    }
   </style>
 
 </head>
@@ -516,81 +453,64 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page">
+    <div class="content-page readyToShipped">
       <div class="content">
         <!-- Start Content-->
-        <div class="container-fluid">
+        <div class="container-fluid pickedOrderList">
           <div class="row mt-4">
-            <h4 class="header-title">Picked Order Complete List</h4>
+            <h4 class="header-title">Ready to shipped</h4>
           </div>
           <div class="row mt-3">
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
-                    <div class="row select-btn-row">
-                      <div class="col-xl-6"></div>
-                      <div class="select-btn col-xl-6 col-lg-12">
-                        <select class="picker-btn">
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                        </select>
-                        <select class="Supplier-btn">
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                          <option>Mr. XYZ</option>
-                        </select>
-                      </div>
-                    </div>
                     <thead>
                       <tr>
                         <th>Order Date & Time</th>
-                        <th>Processing Order Date & Time</th>
+                        <th>Pickedup Order Complete Date & Time</th>
                         <th>Order no./Invoice no.</th>
-                        <th>Product Image</th>
-                        <th>Product Name</th>
-                        <th>Product Code</th>
-                        <th>SKU Code</th>
-                        <th>Supplier Name</th>
-                        <th>Supplier Product Code</th>
-                        <th>Color</th>
-                        <th>Size</th>
-                        <th>Quantity</th>
-                        <th>Buying Price</th>
-                        <th>Zone</th>
-                        <th>Pickup boy name</th>
+                        <th>Customer Id</th>
+                        <th>Customer Name</th>
+                        <th>Mobile  Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment Type</th>
+                        <th>Product item number</th>
+                        <th>Product packing</th>
+                        <th>Courier name</th>
+                        <th>Barcode</th>
+                        <th>Status</th>
                         <th>Action</th>
-                        <th>Check by</th>
-                        <th>Check Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>66167554549</td>
-                        <td><img src="../assets/images/download-img/anika.jpg" alt="" height="46" width="40"
-                            style="justify-content: center; display: flex;"></td>
-                        <td>Mango</td>
+                        <td>2022-05-21  12:53:57</td>
+                        <td>2022-05-21  12:53:57</td>
                         <td>66167554</td>
                         <td>66167554</td>
-                        <td>Mr.abcdef</td>
-                        <td>66167554</td>
-                        <td>Red</td>
-                        <td>M</td>
-                        <td>20</td>
-                        <td>600/=</td>
-                        <td>Moghbazar</td>
-                        <td>Mr. XYZ</td>
-                        <td><a href="picked-order-picked-boy-product-list.html"><i class="fas fa-eye"
-                              style="background: #4FC6E1; border-radius: 10px; color: #000; padding: 10px 12px; font-size: 20px;"></i></a>
+                        <td>Mr.ABC</td>
+                        <td>66167554568 </td>
+                        <td>Mohgbazar, 5168/A Dhaka- 1219</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>50</td>
+                        <td>Complete </td>
+                        <td>
+                            <select class="selectCourier" name="" id="">
+                                <option value="">Select</option>
+                                <option value="">Courier 1</option>
+                                <option value="">Courier 1</option>
+                            </select>
                         </td>
-                        <td>Mr. mickel</td>
-                        <td><button class="btn"
-                            style="background-color: #A8AEB3; color: #000; border-radius: 10px;">Completed</button></td>
+                        <td>
+                            <button class="codeGnrt" data-bs-toggle="modal" data-bs-target="#codeGnrtModal">Code generate</button>
+                        <td>Handover to Courier</td>
+                        <td>
+                            <a href="ready_shipped_picked_boy_pro_list_details.html"><i class="fas fa-eye"
+                                style="background: #4FC6E1; border-radius: 10px; color: #000; padding: 10px 12px; font-size: 20px;"></i></a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -623,6 +543,25 @@
 
   </div>
   <!-- END wrapper -->
+
+  <!-- ========================Code Generate Modal Start================================ -->
+<div class="modal fade" id="codeGnrtModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="codeGnrtModal">
+              <h4>Print Quantity: </h4>
+              <input type="number">
+              <button>Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========================Code Generate Modal Start================================ -->
 
   <!-- Right Sidebar -->
   <div class="right-bar">
