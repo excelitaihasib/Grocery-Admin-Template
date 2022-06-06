@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title> Confirmed Order List</title>
+  <title> Pending Order Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -54,6 +54,10 @@
     rel="stylesheet">
 
   <style>
+    table {
+      font-family: 'Tahoma';
+    }
+
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
@@ -61,20 +65,185 @@
 
     /* .dataTables_length {
       display: none;
+    }
+
+    .dataTables_filter {
+      display: none;
     } */
 
-    table tr td .pending {
-      color: #D25600;
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
+    .order-btn-wrap .jfss-order-btn {
+      background: #0D99FF;
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      margin-right: 20px;
     }
 
-    .jfss-edit-btn {
-      background: #B8E6F0;
-      border-radius: 10px;
-      padding: 7px 12px;
+    .order-btn-wrap .jfss-order-btn2 {
+      background: #16A085;
     }
+
+    .order-btn-wrap .jfss-order-btn3 {
+      background: #FF2E2E;
+    }
+
+    .jfss-order-btn4 {
+      background: #88C604;
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .order-btn-wrap .jfss-order-btn {
+      margin-bottom: 20px;
+    }
+
+    .social-icon a {
+      font-size: 25px;
+    }
+
+    .arrow {
+      background: red;
+      padding: 31px 80px;
+      background: rgba(28, 28, 28, 0.4);
+    }
+
+    .temp {
+      display: none;
+    }
+
+    .temp .success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .temp .cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main .statusButton.success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main .statusButton.cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+      position: absolute;
+      right: 20px;
+      top: 33px;
+    }
+
+    @media (max-width: 767px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        justify-content: center;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 75px;
+      }
+    }
+
+    /* 
+    @media (max-width: 636px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 84px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        margin-top: 20px;
+      }
+    } */
+
+
+
+    @media (max-width: 636px) {
+
+      .order-details-btn-wrap {
+        margin-bottom: 50px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 256px;
+      }
+    }
+
+    .confirm-btn {
+      background: #dee2e6;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .confirm-btn:focus {
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+
+
+    /* .form-select {
+      background: #F4F5F7;
+    } */
   </style>
 
 </head>
@@ -317,7 +486,7 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu" style="width: 263px;">
+    <div class="left-side-menu" style="width: 260px;">
 
       <div class="h-100" data-simplebar>
 
@@ -328,51 +497,51 @@
 
           <ul id="side-menu">
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
-                <span class="menu-arrow"></span>
+              <a href="#order" data-bs-toggle="collapse">
+                  <i class="fab fa-first-order"></i>
+                  <span> Order </span>
+                  <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
-                <ul class="nav-second-level">
-                  <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
-                  </li>
+              <div class="collapse" id="order">
+                  <ul class="nav-second-level">
+                      <li>
+                          <a href="all_order_list.html">All Order List</a>
+                      </li>
+                      <li>
+                          <a href="pending_order_list.html">Pending Orders List</a>
+                      </li>
+                      <li>
+                          <a href="confirm_order_detail.html">Confirmed Orders List</a>
+                      </li>
+                      <li>
+                          <a href="procesing_order_list.html">Processing Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_list.html">Picked Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_procesing_list.html">Picked Order Processing List </a>
+                      </li> 
 
-                  <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="Agent2">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
-                        </li>
-                        <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li>
-                    <a href="manager-customer-list.html">Pending Order List</a>
-                  </li>
-
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-total-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
-                  </li>
-                </ul>
+                      <li>
+                          <a href="picked_order_complete_list.html">Picked Order Complete List</a>
+                      </li>
+                      <li>
+                          <a href="ready_to_shipped.html">Ready to Shipped List</a>
+                      </li>
+                      <li>
+                          <a href="#">Shipped Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Delivered Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Cancel Orders List </a>
+                      </li>
+                  </ul>
               </div>
             </li>
-
+          
           </ul>
 
         </div>
@@ -388,63 +557,6 @@
 
 
 
-    <div class="content-page">
-      <div class="content">
-        <div class="container-fluid mt-5">
-          <div class="row">
-            <h3 class="pb-2">Confirmed Order List</h3>
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
-                    <thead>
-                      <tr>
-                        <th>Order Date & Time</th>
-                        <th>Confirm Order Date & Time</th>
-                        <th>Order no./Invoice no.</th>
-                        <th>Customer ID</th>
-                        <th>Customer Name</th>
-                        <th>Mobile Number</th>
-                        <th>Address</th>
-                        <th>Amount</th>
-                        <th>Payment</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>550.00</td>
-                        <td>Cash On Delivery</td>
-                        <td>
-                          <span class="">Confirmed</span>
-                        </td>
-                        <td><a href="confirm-order-detail-jfss.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div> <!-- end card body-->
-              </div> <!-- end card -->
-            </div><!-- end col-->
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
 
 
 
@@ -457,72 +569,121 @@
 
     <div class="content-page">
       <div class="content">
-        <!-- Start Content-->
-        <div class="container-fluid mt-5">
-
+        <div class="container-fluid">
           <div class="row mt-4">
-            <h3 class="pb-2">Confirmed Order List</h3>
+            <h3 class="pb-2">Confirmed Order Details </h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <table id="scroll-horizontal-datatable" class="table w-100 nowrap text-center">
+
+                  <div class="order-details-btn-wrap">
+
+                    <div class="order-details-btn-inner">
+
+                      <div class="order-btn-wrap">
+                        <a href="#" class="btn jfss-order-btn">Invoice no. / Order no.</a>
+                        <a href="procesing_order_list.html" class="btn jfss-order-btn jfss-order-btn2 ">Processing Order</a>
+                        <a href="procesing_order_list.html" class="btn jfss-order-btn jfss-order-btn3">Cancel Order</a>
+                      </div>
+                      <!-- <br> -->
+
+                      <a href="#" class="btn jfss-order-btn jfss-order-btn4">15864654858</a>
+
+                    </div>
+                    <!-- end order-details-btn-inner  -->
+                  </div>
+                  <!-- end order-details-btn-wrap  -->
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Order Date & Time</th>
-                        <th>Confirm Order Date & Time</th>
-                        <th>Order no./Invoice no.</th>
-                        <th>Customer ID</th>
-                        <th>Customer Name</th>
-                        <th>Mobile Number</th>
-                        <th>Address</th>
-                        <th>Amount</th>
-                        <th>Payment</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>SKU Code</th>
+                        <th>Supplier Name</th>
+                        <th>Supplier Product Code</th>
+                        <th>Color</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Buying Price</th>
+                        <th>Selling Price</th>
+                        <th>Process by</th>
+                        <th>Confirm Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>66167554</td>
-                        <td>550.00</td>
-                        <td>Cash On Delivery</td>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>1</td>
+                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
                         <td>
-                          <span class="">Confirmed</span>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
                         </td>
-                        <td><a href="confirm-order-detail-jfss.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
+
+
+
+                        <td class="text-center">
+                          <button id="btn1" class="confirm-btn">Confirm</button>
+
+                          <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>1</td>
+                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+                        </td>
+
+
+
+                        <td class="text-center">
+                          <button id="btn1" class="confirm-btn">Confirm</button>
+
+                          <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end row-->
-        </div> <!-- container -->
-
-
-      </div> <!-- content -->
-
-      <!-- Footer Start -->
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by <a
-                href="">Excel IT AI</a>
-            </div>
-
+                </div> <!-- end card body-->
+              </div> <!-- end card -->
+            </div><!-- end col-->
           </div>
         </div>
-      </footer>
-      <!-- end Footer -->
+      </div>
     </div>
 
     <!-- ============================================================== -->
@@ -688,6 +849,32 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
+  <script>
+
+
+    $('.arrow').on('click', function (e) {
+      $(this).css('display', 'none');
+      console.log('here');
+      $(this).next('.temp').css('display', 'block');
+    });
+
+    $('.statusButton').on('click', function () {
+      console.log(this);
+      $(this).parent().css('display', 'none');
+      $(this).parent().prev('.arrow').css('display', 'block');
+      console.log($(this).parent().parent().parent().prev('td').children('.main'));
+      let butttonElemnt = $(this).clone();
+      $(this).parent().parent().parent().prev('td').children('.main').empty();
+      $(this).parent().parent().parent().prev('td').children('.main').append(butttonElemnt);
+
+    });
+
+
+
+    $('#bt1').click(function () {
+      $('#bt1').css('background', 'rgba(22, 160, 133, 0.2);');
+    });
+  </script>
 
 </body>
 
