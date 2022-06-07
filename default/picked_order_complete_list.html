@@ -55,6 +55,9 @@
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
+    <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <style>
     .avatar-title {
       align-items: center;
@@ -71,13 +74,6 @@
 
     .footer {
       left: 255px;
-    }
-
-    .header-title {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 28px;
-      color: #6c757d;
     }
 
     .header-title2 {
@@ -200,6 +196,14 @@
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         margin-top: 20px;
       }
+    }
+    .cmpltBtn {
+      background: #A8AEB3;
+      border-radius: 10px;   
+      color: #000000;
+    }
+    .cmpltBtn:hover {  
+      color: #000000;
     }
   </style>
 
@@ -558,6 +562,7 @@
                         <th>Supplier Product Code</th>
                         <th>Color</th>
                         <th>Size</th>
+                        <th>Weight</th>
                         <th>Quantity</th>
                         <th>Buying Price</th>
                         <th>Zone</th>
@@ -581,16 +586,16 @@
                         <td>66167554</td>
                         <td>Red</td>
                         <td>M</td>
+                        <td>20kg</td>
                         <td>20</td>
-                        <td>600/=</td>
+                        <td>৳ 600</td>
                         <td>Moghbazar</td>
                         <td>Mr. XYZ</td>
                         <td><a href="picked-order-picked-boy-product-list.html"><i class="fas fa-eye"
                               style="background: #4FC6E1; border-radius: 10px; color: #000; padding: 10px 12px; font-size: 20px;"></i></a>
                         </td>
                         <td>Mr. mickel</td>
-                        <td><button class="btn"
-                            style="background-color: #A8AEB3; color: #000; border-radius: 10px;">Completed</button></td>
+                        <td><button class="btn cmpltBtn" onclick="confirmFun()">Completed</button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -783,6 +788,14 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
+
+  <script>
+    function confirmFun () {
+      event.target.style.background = "rgb(22, 160, 133)";
+      event.target.style.color = "#fff";
+      event.target.style.border = "rgb(22, 160, 133)";
+    }
+  </script>
 
 </body>
 

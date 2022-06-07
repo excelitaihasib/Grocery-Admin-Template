@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title> Pending Order Details</title>
+  <title> Confirm Order Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -53,6 +53,9 @@
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
+              <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <style>
     table {
       font-family: 'Tahoma';
@@ -94,6 +97,9 @@
       font-weight: 400;
       font-size: 18px;
       line-height: 22px;
+    }
+    .jfss-order-btn4:hover{
+      color: #fff;
     }
 
     .order-btn-wrap .jfss-order-btn {
@@ -232,14 +238,6 @@
       border-radius: 5px;
       border: none;
     }
-
-    .confirm-btn:focus {
-      color: #149078;
-      background: rgba(22, 160, 133, 0.2);
-      padding: 5px 20px;
-      border-radius: 5px;
-    }
-
 
     /* .form-select {
       background: #F4F5F7;
@@ -571,7 +569,7 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row mt-4">
-            <h3 class="pb-2">Confirmed Order Details </h3>
+            <h3 class="pb-2 header-title">Confirmed Order Details </h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
@@ -583,7 +581,7 @@
                       <div class="order-btn-wrap">
                         <a href="#" class="btn jfss-order-btn">Invoice no. / Order no.</a>
                         <a href="procesing_order_list.html" class="btn jfss-order-btn jfss-order-btn2 ">Processing Order</a>
-                        <a href="procesing_order_list.html" class="btn jfss-order-btn jfss-order-btn3">Cancel Order</a>
+                        <a href="#" class="btn jfss-order-btn jfss-order-btn3">Cancel Order</a>
                       </div>
                       <!-- <br> -->
 
@@ -604,6 +602,7 @@
                         <th>Supplier Product Code</th>
                         <th>Color</th>
                         <th>Size</th>
+                        <th>Weight</th>
                         <th>Quantity</th>
                         <th>Buying Price</th>
                         <th>Selling Price</th>
@@ -623,8 +622,9 @@
                         <td>#7PYLL2</td>
                         <td>Red</td>
                         <td>S</td>
+                        <td>2kg</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550 ( ৳ 550 )</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <select class="form-select" aria-label="Default select example">
@@ -639,7 +639,7 @@
 
 
                         <td class="text-center">
-                          <button id="btn1" class="confirm-btn">Confirm</button>
+                          <button id="btn1" class="confirm-btn" onclick="confirmF()">Confirm</button>
 
                           <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
                         </td>
@@ -655,8 +655,9 @@
                         <td>#7PYLL2</td>
                         <td>Red</td>
                         <td>S</td>
+                        <td>2kg</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550 ( ৳ 550 )</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <select class="form-select" aria-label="Default select example">
@@ -671,7 +672,7 @@
 
 
                         <td class="text-center">
-                          <button id="btn1" class="confirm-btn">Confirm</button>
+                          <button id="btn1" class="confirm-btn" onclick="confirmF()">Confirm</button>
 
                           <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
                         </td>
@@ -874,6 +875,13 @@
     $('#bt1').click(function () {
       $('#bt1').css('background', 'rgba(22, 160, 133, 0.2);');
     });
+
+
+
+    function confirmF () {
+      event.target.style.background = "rgba(22, 160, 133, 0.2)";
+      event.target.style.color = "#16A085";
+    }
   </script>
 
 </body>

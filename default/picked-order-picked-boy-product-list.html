@@ -55,6 +55,9 @@
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
+    <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
   <style>
     .avatar-title {
       align-items: center;
@@ -71,13 +74,6 @@
 
     .footer {
       left: 255px;
-    }
-
-    .header-title {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 28px;
-      color: #6c757d;
     }
 
     .header-title2 {
@@ -125,12 +121,12 @@
     table tfoot tr td {
       vertical-align: middle;
       text-align: center;
-      color: #fff;
+      color: #000;
     }
 
     table tfoot {
-      background-color: #38414A;
-      border: 1px solid #38414A;
+      background-color: #f3f4f4;
+      border: 1px solid #f3f4f4;
     }
 
     table tbody tr td:first-child {
@@ -186,6 +182,9 @@
       color: #fff;
       border-radius: 5px;
       padding: 5px 25px;
+    }
+    .done-btn:hover {
+      color: #fff;
     }
 
     .table th {
@@ -598,7 +597,7 @@
           <div class="row mb-2">
             <div class="col-lg-12">
               <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">28-05-2022</button>
+              <button class="btn btn2 mt-2">2022-05-28</button>
             </div>
           </div>
           <div class="row">
@@ -618,6 +617,7 @@
                           <th>Supplier Product Code</th>
                           <th>Color</th>
                           <th>Size</th>
+                          <th>Weight</th>
                           <th>Quantity</th>
                           <th>Buying Price</th>
                           <th>Check Status</th>
@@ -637,8 +637,9 @@
                           <td>66167554</td>
                           <td>Red</td>
                           <td>M</td>
+                          <td>2kg</td>
                           <td>15</td>
-                          <td>500/=</td>
+                          <td>৳ 500</td>
                           <td><i onclick="checkFunc()" class="fas fa-check"
                               style="font-size: 15px; background-color: #A8AEB3; border-radius: 25px; padding: 12px; color: #000; cursor: pointer;"></i>
                           </td>
@@ -659,8 +660,9 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td>60</td>
-                          <td>2000/=</td>
+                          <td></td>
+                          <td>Total Qty60</td>
+                          <td>Total Price ৳ 2000</td>
                           <td></td>
                           <td></td>
                           <td></td>
@@ -675,7 +677,7 @@
           <div class="row mb-2">
             <div class="col-lg-12">
               <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">28-05-2022</button>
+              <button class="btn btn2 mt-2">2022-05-28</button>
             </div>
           </div>
           <div class="row">
@@ -695,6 +697,7 @@
                           <th>Supplier Product Code</th>
                           <th>Color</th>
                           <th>Size</th>
+                          <th>Weight</th>
                           <th>Quantity</th>
                           <th>Buying Price</th>
                           <th>Check Status</th>
@@ -714,8 +717,9 @@
                           <td>66167554</td>
                           <td>Red</td>
                           <td>M</td>
+                          <td>2kg</td>
                           <td>15</td>
-                          <td>500/=</td>
+                          <td>৳ 500</td>
                           <td><i onclick="checkFunc()" class="fas fa-check"
                               style="font-size: 15px; background-color: #A8AEB3; border-radius: 25px; padding: 12px; color: #000; cursor: pointer;"></i>
                           </td>
@@ -735,8 +739,9 @@
                           <td>66167554</td>
                           <td>Red</td>
                           <td>M</td>
+                          <td>2kg</td>
                           <td>15</td>
-                          <td>500/=</td>
+                          <td>৳ 500</td>
                           <td><i onclick="checkFunc()" class="fas fa-check"
                               style="font-size: 15px; background-color: #A8AEB3; border-radius: 25px; padding: 12px; color: #000; cursor: pointer;"></i>
                           </td>
@@ -758,8 +763,9 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td>60</td>
-                          <td>2000/=</td>
+                          <td></td>
+                          <td>Total Qty 60</td>
+                          <td>Total Price ৳ 2000</td>
                           <td></td>
                           <td></td>
                           <td></td>
