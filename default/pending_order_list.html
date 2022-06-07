@@ -74,49 +74,17 @@
       background: #B8E6F0;
       border-radius: 10px;
       padding: 7px 12px;
+      color: #000000;
+    }
+    .jfss-edit-btn:hover {
+      color: #000000;
     }
 
     .dt-buttons {
       margin-top: 40px;
     }
+    
 
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-      position: absolute;
-      right: 20px;
-      top: 33px;
-    }
-
-    @media (max-width: 767px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        justify-content: center;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 75px;
-      }
-    }
-
-    @media (max-width: 636px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 84px;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        margin-top: 20px;
-      }
-    }
   </style>
 
 </head>
@@ -438,7 +406,7 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row  mt-4">
-            <h3 class="pb-2">Pending Order List</h3>
+            <h3 class="pb-2 header-title">Pending Order List</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
@@ -454,7 +422,7 @@
                         <th>Amount</th>
                         <th>Payment Type</th>
                         <th>Delivery date & time</th>
-                        <th>Status</th>
+                        <th>Order Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>

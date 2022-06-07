@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Processing Order List</title>
+        <title>Processing Order Details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -27,19 +27,16 @@
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+         <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
         <style>
-            .processingOrderList .prcDn a{
+            .processingOrderList .prcDn button{
                 background: #FFFFFF;
                 border: 1px solid #B8B8B8;
                 border-radius: 5px;
                 padding: 7px 12px;
                 color: #6c757d;
-            }
-            .processingOrderList .prcDn a:focus {
-                background: #16A085;
-                border: 1px solid #B8B8B8;
-                border-radius: 5px;
-                color: #fff;
             }
             .processingOrderList .faEye {
                 background: #B8E6F0;
@@ -706,7 +703,7 @@
                                                     <th>Amount</th>
                                                     <th>Payment</th>
                                                     <th>Product check by</th>
-                                                    <th>Status</th>
+                                                    <th>Order Status</th>
                                                     <th>BPP Shops Processing</th>
                                                     <th>Processing</th>
                                                     <th>Action</th>
@@ -723,13 +720,13 @@
                                                     <td>Mohgbazar, 5168/A Dhaka- 1219</td>
                                                     <td>550.00</td>
                                                     <td>Cash On Delivery</td>
-                                                    <td>Mr.XYZ</td>
+                                                    <td>Mr.XYZ, Mr.ABC, Mr.Been</td>
                                                     <td>Processing</td>
-                                                    <td class="prcDn">
-                                                        <a href="#">Processing done</a>
+                                                    <td class="prcDn text-center">
+                                                        <button onclick="highlight(this)" class="btn">Processing done</button>
                                                     </td>
-                                                    <td class="prcDn">
-                                                        <a href="#">Processing done</a>
+                                                    <td class="prcDn text-center">
+                                                        <button onclick="highlight(this)" class="btn">Processing done</button>
                                                     </td>
                                                     <td><a href="procesing_order_details.html"><i class="fas fa-eye faEye"></i></a></td>
                                                 </tr>
@@ -1196,6 +1193,22 @@
 
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
-        
+
+
+        <script>
+             var buttonClicked = null;
+
+            function highlight(element) {
+                if (buttonClicked != null) {
+                    buttonClicked.style.background = "#FFFFFF";
+                    buttonClicked.style.color = "#6c757d";
+                
+                }
+                buttonClicked = element;
+                buttonClicked.style.background = "#16A085";
+                buttonClicked.style.color = "white";
+            }
+        </script>
+
     </body>
 </html>
