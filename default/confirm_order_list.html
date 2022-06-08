@@ -4,17 +4,13 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Pickup Boy Product List Details</title>
+  <title> Confirmed Order List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- App favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
-
-  <!-- Plugins css -->
-  <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
 
   <!-- third party css -->
   <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -29,6 +25,7 @@
   <link href="../assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+  <!-- third party css end -->
 
   <!-- App css -->
   <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -42,8 +39,9 @@
 
   <!-- icons -->
   <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/css/dashboard.css" rel="stylesheet">
 
+  <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,150 +53,48 @@
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-       <!--custom css-->
-  <link rel="stylesheet" href="../assets/css/style.css">
-
   <style>
-    .avatar-title {
-      align-items: center;
-      color: #fff;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .left-side-menu {
-      width: 255px;
-    }
-
-    .footer {
-      left: 255px;
-    }
-
-    .header-title2 {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 22px;
-      color: #343A40;
-      text-align: center;
-    }
-
-    .print-pdf-part .pdfIcon,
-    .excelIcon,
-    .printIcon {
-      font-size: 26px;
-      margin: 0px 15px;
-      cursor: pointer;
-    }
-
-    table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
-
-
-    }
-
-    table th,
-    table td {
-      font-size: 16px;
-    }
-
-    table tbody tr {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      color: #000;
-    }
-
-    table tbody tr td {
+    table tr {
       vertical-align: middle;
-      text-align: center;
+      font-family: 'Tahoma';
     }
 
-    table tfoot tr td {
+    table tr td .pending {
+      color: #D25600;
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      padding: 6px 20px;
+    }
+
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
+      color: #000;
+    }
+    .jfss-edit-btn:hover {
+      color: #000;
+    }
+    table tr {
       vertical-align: middle;
-      text-align: center;
-      color: #000;
+      font-family: 'Tahoma';
     }
 
-    table tfoot {
-      background-color: #f3f4f4;
-      border: 1px solid #f3f4f4;
+    table tr td .pending {
+      color: #D25600;
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      padding: 6px 20px;
     }
 
-    table tbody tr td:first-child {
-      background-color: rgba(56, 65, 74, 0.4);
-      color: #000;
-      font-weight: bold;
-    }
-
-    .details-input {
-      border: 0;
-      border-bottom: 1px solid #ced4da;
-      border-radius: 0px;
-      font-size: 18px;
-    }
-
-    .supplier_n_picker_details .card-body {
-      font-family: 'Inter';
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
     }
 
     .dt-buttons {
       margin-top: 40px;
-    }
-
-    .btn1 {
-      padding: 10px 55px;
-      background: #0D99FF;
-      border-radius: 5px;
-      color: #fff;
-      margin: 0px 7px;
-    }
-
-    .btn2 {
-      padding: 10px 55px;
-      background: #16A085;
-      border-radius: 5px;
-      color: #fff;
-    }
-
-    .btn1:hover {
-      color: #fff;
-    }
-
-    .btn2:hover {
-      color: #fff;
-    }
-
-    .dataTables_wrapper {
-      overflow-x: auto;
-    }
-
-    .done-btn {
-      background-color: #A8AEB3;
-      color: #fff;
-      border-radius: 5px;
-      padding: 5px 25px;
-    }
-
-    table thead {
-      text-align: center;
-    }
-    .table th {
-      padding: .85rem 0.4rem;
-    }
-
-    .table-responsive .donebtn {
-      background-color: #fff;
-      justify-content: end;
-      display: flex;
-    }
-
-    .table-responsive .donebtn .btn {
-      padding: 7px 40px;
-      margin-top: 7px;
-      background: #16A085;
-      color: #fff;
-      border-radius: 10px;
     }
 
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
@@ -244,7 +140,7 @@
 
 <!-- body start -->
 
-<body class="loading"
+<body class="loading return-product"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -480,7 +376,7 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu">
+    <div class="left-side-menu" style="width: 260px;">
 
       <div class="h-100" data-simplebar>
 
@@ -514,7 +410,7 @@
                           <a href="picked_order_list.html">Picked Orders List</a>
                       </li>
                       <li>
-                          <a href="picked_boy_pro_list_details.html">Picked Order Processing List </a>
+                          <a href="picked_order_procesing_list.html">Picked Order Processing List </a>
                       </li> 
 
                       <li>
@@ -549,6 +445,71 @@
     </div>
     <!-- Left Sidebar End -->
 
+
+
+    <div class="content-page">
+      <div class="content">
+        <div class="container-fluid ">
+          <div class="row mt-4">
+            <h3 class="pb-2 header-title">Confirmed Order List</h3>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Order Date & Time</th>
+                        <th>Confirm Order Date & Time</th>
+                        <th>Order no./Invoice no.</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Order Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>
+                          <span class="">Confirmed</span>
+                        </td>
+                        <td><a href="confirm_order_detail.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> <!-- end card body-->
+              </div> <!-- end card -->
+            </div><!-- end col-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
@@ -556,170 +517,56 @@
     <div class="content-page">
       <div class="content">
         <!-- Start Content-->
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
+
           <div class="row mt-4">
-            <h4 class="header-title">Pickup boy Product list details</h4>
-          </div>
-          <hr style="height: 6px; color: #38414A; border-radius: 5px; margin-top: 10px;">
-          <div class="row supplier_n_picker_details">
-            <div class="col-lg-12 col-md-12 col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="col-lg-10 d-flex justify-content-lg-end justify-content-center print-pdf-part">
-                    <div class="pdfIcon"><i class="far fa-file-pdf"></i></div>
-                    <div class="excelIcon"><i class="fas fa-file-excel"></i></div>
-                    <div class="printIcon"><i class="fas fa-print"></i></div>
-                  </div>
-                  <h4 class="header-title2">Picker Details</h4>
-                  <div class="row">
-                    <div class="col-lg-7" style="width: 50%; margin-left: 25%;">
-                      <form>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Picker Id :">
-                        </div>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Picker Name :">
-                        </div>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Mobile no :">
-                        </div>
-                      </form>
-                    </div> <!-- end col -->
-                  </div>
-                  <!-- end row-->
-                </div> <!-- end card-body -->
-              </div> <!-- end card -->
-            </div><!-- end col -->
-          </div>
-          <div class="row mb-2">
-            <div class="col-lg-12">
-              <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">2022-05-28</button>
-            </div>
-          </div>
-          <div class="row">
+            <h3 class="pb-2">Confirmed Order List</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table mb-0">
-                      <thead>
-                        <tr>
-                          <th>Total Serial no.</th>
-                          <th>Serial no.</th>
-                          <th>Product Image</th>
-                          <th>Product Name</th>
-                          <th>Product Code</th>
-                          <th>SKU Code</th>
-                          <th>Supplier Product Code</th>
-                          <th>Color</th>
-                          <th>Size</th>
-                          <th>Quantity</th>
-                          <th>Buying Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>1</td>
-                          <td><img src="../assets/images/download-img/anika.jpg" alt="" height="46" width="40"
-                              style="justify-content: center; display: flex;"></td>
-                          <td>Mango</td>
-                          <td>66167554</td>
-                          <td>469866785</td>
-                          <td>66167554</td>
-                          <td>Red</td>
-                          <td>M</td>
-                          <td>15</td>
-                          <td>৳ 500</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>Total Qty 60</td>
-                          <td>Total Price ৳ 2000</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
+                  <table id="scroll-horizontal-datatable" class="table w-100 nowrap text-center">
+                    <thead>
+                      <tr>
+                        <th>Order Date & Time</th>
+                        <th>Confirm Order Date & Time</th>
+                        <th>Order no./Invoice no.</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>
+                          <span class="">Confirmed</span>
+                        </td>
+                        <td><a href="confirm-order-detail-jfss.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mb-2">
-            <div class="col-lg-12">
-              <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">2022-05-28</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table mb-0">
-                      <thead>
-                        <tr>
-                          <th>Total Serial no.</th>
-                          <th>Serial no.</th>
-                          <th>Product Image</th>
-                          <th>Product Name</th>
-                          <th>Product Code</th>
-                          <th>SKU Code</th>
-                          <th>Supplier Product Code</th>
-                          <th>Color</th>
-                          <th>Size</th>
-                          <th>Quantity</th>
-                          <th>Buying Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>1</td>
-                          <td><img src="../assets/images/download-img/anika.jpg" alt="" height="46" width="40"
-                              style="justify-content: center; display: flex;"></td>
-                          <td>Mango</td>
-                          <td>66167554</td>
-                          <td>469866785</td>
-                          <td>66167554</td>
-                          <td>Red</td>
-                          <td>M</td>
-                          <td>15</td>
-                          <td>৳ 500</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>Total Qty60</td>
-                          <td>Total Price ৳ 2000</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- end row-->
         </div> <!-- container -->
+
+
       </div> <!-- content -->
 
       <!-- Footer Start -->
@@ -727,9 +574,10 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by
-              <a href="">Excel IT AI</a>
+              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by <a
+                href="">Excel IT AI</a>
             </div>
+
           </div>
         </div>
       </footer>
@@ -824,15 +672,13 @@
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="condensed"
                 id="condensed-check" />
-              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small
-                  size)</small></label>
+              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
             </div>
 
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="compact"
                 id="compact-check" />
-              <label class="form-check-label" for="compact-check">Compact <small>(Small
-                  size)</small></label>
+              <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
             </div>
 
 
@@ -869,9 +715,9 @@
 
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
+
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
-
 
   <!-- third party js -->
   <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -891,8 +737,7 @@
   <script src="../assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
   <script src="../assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
   <script src="../assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- third party js ends-->
-
+  <!-- third party js ends -->
 
   <!-- Datatables init -->
   <script src="../assets/js/pages/datatables.init.js"></script>

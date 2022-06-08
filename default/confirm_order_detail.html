@@ -4,17 +4,13 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Pickup Boy Product List Details</title>
+  <title> Confirm Order Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- App favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
-
-  <!-- Plugins css -->
-  <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
 
   <!-- third party css -->
   <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -29,6 +25,7 @@
   <link href="../assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+  <!-- third party css end -->
 
   <!-- App css -->
   <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -42,8 +39,9 @@
 
   <!-- icons -->
   <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="../assets/css/dashboard.css" rel="stylesheet">
 
+  <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,150 +53,129 @@
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-       <!--custom css-->
+              <!--custom css-->
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    .avatar-title {
-      align-items: center;
-      color: #fff;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .left-side-menu {
-      width: 255px;
-    }
-
-    .footer {
-      left: 255px;
-    }
-
-    .header-title2 {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 22px;
-      color: #343A40;
-      text-align: center;
-    }
-
-    .print-pdf-part .pdfIcon,
-    .excelIcon,
-    .printIcon {
-      font-size: 26px;
-      margin: 0px 15px;
-      cursor: pointer;
-    }
-
     table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
-
-
+      font-family: 'Tahoma';
     }
 
-    table th,
-    table td {
-      font-size: 16px;
-    }
-
-    table tbody tr {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      color: #000;
-    }
-
-    table tbody tr td {
+    table tr {
       vertical-align: middle;
-      text-align: center;
+      font-family: 'Tahoma';
     }
 
-    table tfoot tr td {
-      vertical-align: middle;
-      text-align: center;
-      color: #000;
+    /* .dataTables_length {
+      display: none;
     }
 
-    table tfoot {
-      background-color: #f3f4f4;
-      border: 1px solid #f3f4f4;
-    }
+    .dataTables_filter {
+      display: none;
+    } */
 
-    table tbody tr td:first-child {
-      background-color: rgba(56, 65, 74, 0.4);
-      color: #000;
-      font-weight: bold;
-    }
-
-    .details-input {
-      border: 0;
-      border-bottom: 1px solid #ced4da;
-      border-radius: 0px;
-      font-size: 18px;
-    }
-
-    .supplier_n_picker_details .card-body {
-      font-family: 'Inter';
-    }
-
-    .dt-buttons {
-      margin-top: 40px;
-    }
-
-    .btn1 {
-      padding: 10px 55px;
+    .order-btn-wrap .jfss-order-btn {
       background: #0D99FF;
-      border-radius: 5px;
       color: #fff;
-      margin: 0px 7px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      margin-right: 20px;
     }
 
-    .btn2 {
-      padding: 10px 55px;
+    .order-btn-wrap .jfss-order-btn2 {
       background: #16A085;
+    }
+
+    .order-btn-wrap .jfss-order-btn3 {
+      background: #FF2E2E;
+    }
+
+    .jfss-order-btn4 {
+      background: #88C604;
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .jfss-order-btn4:hover{
+      color: #fff;
+    }
+
+    .order-btn-wrap .jfss-order-btn {
+      margin-bottom: 20px;
+    }
+
+    .social-icon a {
+      font-size: 25px;
+    }
+
+    .arrow {
+      background: red;
+      padding: 31px 80px;
+      background: rgba(28, 28, 28, 0.4);
+    }
+
+    .temp {
+      display: none;
+    }
+
+    .temp .success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
       border-radius: 5px;
-      color: #fff;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    .btn1:hover {
-      color: #fff;
-    }
-
-    .btn2:hover {
-      color: #fff;
-    }
-
-    .dataTables_wrapper {
-      overflow-x: auto;
-    }
-
-    .done-btn {
-      background-color: #A8AEB3;
-      color: #fff;
+    .temp .cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
       border-radius: 5px;
-      padding: 5px 25px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    table thead {
-      text-align: center;
-    }
-    .table th {
-      padding: .85rem 0.4rem;
-    }
-
-    .table-responsive .donebtn {
-      background-color: #fff;
-      justify-content: end;
+    .main {
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .table-responsive .donebtn .btn {
-      padding: 7px 40px;
-      margin-top: 7px;
-      background: #16A085;
-      color: #fff;
-      border-radius: 10px;
+    .main .statusButton.success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main .statusButton.cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
     }
 
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
@@ -227,6 +204,7 @@
       }
     }
 
+    /* 
     @media (max-width: 636px) {
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
         right: 0;
@@ -237,14 +215,40 @@
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         margin-top: 20px;
       }
+    } */
+
+
+
+    @media (max-width: 636px) {
+
+      .order-details-btn-wrap {
+        margin-bottom: 50px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 256px;
+      }
     }
+
+    .confirm-btn {
+      background: #dee2e6;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    /* .form-select {
+      background: #F4F5F7;
+    } */
   </style>
 
 </head>
 
 <!-- body start -->
 
-<body class="loading"
+<body class="loading return-product"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -480,7 +484,7 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu">
+    <div class="left-side-menu" style="width: 260px;">
 
       <div class="h-100" data-simplebar>
 
@@ -505,7 +509,7 @@
                           <a href="pending_order_list.html">Pending Orders List</a>
                       </li>
                       <li>
-                          <a href="confirm_order_list.html">Confirmed Orders List</a>
+                          <a href="confirm_order_detail.html">Confirmed Orders List</a>
                       </li>
                       <li>
                           <a href="procesing_order_list.html">Processing Orders List</a>
@@ -514,7 +518,7 @@
                           <a href="picked_order_list.html">Picked Orders List</a>
                       </li>
                       <li>
-                          <a href="picked_boy_pro_list_details.html">Picked Order Processing List </a>
+                          <a href="picked_order_procesing_list.html">Picked Order Processing List </a>
                       </li> 
 
                       <li>
@@ -549,191 +553,138 @@
     </div>
     <!-- Left Sidebar End -->
 
+
+
+
+
+
+
+
+
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
     <div class="content-page">
       <div class="content">
-        <!-- Start Content-->
         <div class="container-fluid">
           <div class="row mt-4">
-            <h4 class="header-title">Pickup boy Product list details</h4>
-          </div>
-          <hr style="height: 6px; color: #38414A; border-radius: 5px; margin-top: 10px;">
-          <div class="row supplier_n_picker_details">
-            <div class="col-lg-12 col-md-12 col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="col-lg-10 d-flex justify-content-lg-end justify-content-center print-pdf-part">
-                    <div class="pdfIcon"><i class="far fa-file-pdf"></i></div>
-                    <div class="excelIcon"><i class="fas fa-file-excel"></i></div>
-                    <div class="printIcon"><i class="fas fa-print"></i></div>
-                  </div>
-                  <h4 class="header-title2">Picker Details</h4>
-                  <div class="row">
-                    <div class="col-lg-7" style="width: 50%; margin-left: 25%;">
-                      <form>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Picker Id :">
-                        </div>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Picker Name :">
-                        </div>
-                        <div class="mb-3 mt-3">
-                          <input type="text" class="form-control details-input" placeholder="Mobile no :">
-                        </div>
-                      </form>
-                    </div> <!-- end col -->
-                  </div>
-                  <!-- end row-->
-                </div> <!-- end card-body -->
-              </div> <!-- end card -->
-            </div><!-- end col -->
-          </div>
-          <div class="row mb-2">
-            <div class="col-lg-12">
-              <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">2022-05-28</button>
-            </div>
-          </div>
-          <div class="row">
+            <h3 class="pb-2 header-title">Confirmed Order Details </h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table mb-0">
-                      <thead>
-                        <tr>
-                          <th>Total Serial no.</th>
-                          <th>Serial no.</th>
-                          <th>Product Image</th>
-                          <th>Product Name</th>
-                          <th>Product Code</th>
-                          <th>SKU Code</th>
-                          <th>Supplier Product Code</th>
-                          <th>Color</th>
-                          <th>Size</th>
-                          <th>Quantity</th>
-                          <th>Buying Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>1</td>
-                          <td><img src="../assets/images/download-img/anika.jpg" alt="" height="46" width="40"
-                              style="justify-content: center; display: flex;"></td>
-                          <td>Mango</td>
-                          <td>66167554</td>
-                          <td>469866785</td>
-                          <td>66167554</td>
-                          <td>Red</td>
-                          <td>M</td>
-                          <td>15</td>
-                          <td>৳ 500</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>Total Qty 60</td>
-                          <td>Total Price ৳ 2000</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-lg-12">
-              <button class="btn btn1 mt-2">Mr.Adam.</button>
-              <button class="btn btn2 mt-2">2022-05-28</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table mb-0">
-                      <thead>
-                        <tr>
-                          <th>Total Serial no.</th>
-                          <th>Serial no.</th>
-                          <th>Product Image</th>
-                          <th>Product Name</th>
-                          <th>Product Code</th>
-                          <th>SKU Code</th>
-                          <th>Supplier Product Code</th>
-                          <th>Color</th>
-                          <th>Size</th>
-                          <th>Quantity</th>
-                          <th>Buying Price</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>1</td>
-                          <td><img src="../assets/images/download-img/anika.jpg" alt="" height="46" width="40"
-                              style="justify-content: center; display: flex;"></td>
-                          <td>Mango</td>
-                          <td>66167554</td>
-                          <td>469866785</td>
-                          <td>66167554</td>
-                          <td>Red</td>
-                          <td>M</td>
-                          <td>15</td>
-                          <td>৳ 500</td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>Total Qty60</td>
-                          <td>Total Price ৳ 2000</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- container -->
-      </div> <!-- content -->
 
-      <!-- Footer Start -->
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by
-              <a href="">Excel IT AI</a>
-            </div>
+                  <div class="order-details-btn-wrap">
+
+                    <div class="order-details-btn-inner">
+
+                      <div class="order-btn-wrap">
+                        <a href="#" class="btn jfss-order-btn">Invoice no. / Order no.</a>
+                        <a href="procesing_order_list.html" class="btn jfss-order-btn jfss-order-btn2 ">Processing Order</a>
+                        <a href="#" class="btn jfss-order-btn jfss-order-btn3">Cancel Order</a>
+                      </div>
+                      <!-- <br> -->
+
+                      <a href="#" class="btn jfss-order-btn jfss-order-btn4">15864654858</a>
+
+                    </div>
+                    <!-- end order-details-btn-inner  -->
+                  </div>
+                  <!-- end order-details-btn-wrap  -->
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>SKU Code</th>
+                        <th>Supplier Name</th>
+                        <th>Supplier Product Code</th>
+                        <th>Color</th>
+                        <th>Size</th>
+                        <th>Weight</th>
+                        <th>Quantity</th>
+                        <th>Buying Price</th>
+                        <th>Selling Price</th>
+                        <th>Process by</th>
+                        <th>Confirm Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>2kg</td>
+                        <td>1</td>
+                        <td>৳550 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+                        </td>
+
+
+
+                        <td class="text-center">
+                          <button id="btn1" class="confirm-btn" onclick="confirmF()">Confirm</button>
+
+                          <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>2kg</td>
+                        <td>1</td>
+                        <td>৳550 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+                        </td>
+
+
+
+                        <td class="text-center">
+                          <button id="btn1" class="confirm-btn" onclick="confirmF()">Confirm</button>
+
+                          <!-- <span id="bt1" class="confirm-btn">confirm</span> -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> <!-- end card body-->
+              </div> <!-- end card -->
+            </div><!-- end col-->
           </div>
         </div>
-      </footer>
-      <!-- end Footer -->
+      </div>
     </div>
 
     <!-- ============================================================== -->
@@ -824,15 +775,13 @@
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="condensed"
                 id="condensed-check" />
-              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small
-                  size)</small></label>
+              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
             </div>
 
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="compact"
                 id="compact-check" />
-              <label class="form-check-label" for="compact-check">Compact <small>(Small
-                  size)</small></label>
+              <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
             </div>
 
 
@@ -869,9 +818,9 @@
 
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
+
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
-
 
   <!-- third party js -->
   <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -891,8 +840,7 @@
   <script src="../assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
   <script src="../assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
   <script src="../assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- third party js ends-->
-
+  <!-- third party js ends -->
 
   <!-- Datatables init -->
   <script src="../assets/js/pages/datatables.init.js"></script>
@@ -902,6 +850,39 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
+  <script>
+
+
+    $('.arrow').on('click', function (e) {
+      $(this).css('display', 'none');
+      console.log('here');
+      $(this).next('.temp').css('display', 'block');
+    });
+
+    $('.statusButton').on('click', function () {
+      console.log(this);
+      $(this).parent().css('display', 'none');
+      $(this).parent().prev('.arrow').css('display', 'block');
+      console.log($(this).parent().parent().parent().prev('td').children('.main'));
+      let butttonElemnt = $(this).clone();
+      $(this).parent().parent().parent().prev('td').children('.main').empty();
+      $(this).parent().parent().parent().prev('td').children('.main').append(butttonElemnt);
+
+    });
+
+
+
+    $('#bt1').click(function () {
+      $('#bt1').css('background', 'rgba(22, 160, 133, 0.2);');
+    });
+
+
+
+    function confirmF () {
+      event.target.style.background = "rgba(22, 160, 133, 0.2)";
+      event.target.style.color = "#16A085";
+    }
+  </script>
 
 </body>
 
