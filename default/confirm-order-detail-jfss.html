@@ -233,12 +233,13 @@
       border: none;
     }
 
+    /* 
     .confirm-btn:focus {
       color: #149078;
       background: rgba(22, 160, 133, 0.2);
       padding: 5px 20px;
       border-radius: 5px;
-    }
+    } */
 
 
     /* .form-select {
@@ -624,7 +625,7 @@
                         <td>Red</td>
                         <td>S</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550 ( ৳ 550 )</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <select class="form-select" aria-label="Default select example">
@@ -851,29 +852,10 @@
   <script src="../assets/js/app.min.js"></script>
   <script>
 
-
-    $('.arrow').on('click', function (e) {
-      $(this).css('display', 'none');
-      console.log('here');
-      $(this).next('.temp').css('display', 'block');
+    $('.confirm-btn').on('click', function (e) {
+      $(this).css('background-color', 'rgba(22, 160, 133, 0.2)');
     });
 
-    $('.statusButton').on('click', function () {
-      console.log(this);
-      $(this).parent().css('display', 'none');
-      $(this).parent().prev('.arrow').css('display', 'block');
-      console.log($(this).parent().parent().parent().prev('td').children('.main'));
-      let butttonElemnt = $(this).clone();
-      $(this).parent().parent().parent().prev('td').children('.main').empty();
-      $(this).parent().parent().parent().prev('td').children('.main').append(butttonElemnt);
-
-    });
-
-
-
-    $('#bt1').click(function () {
-      $('#bt1').css('background', 'rgba(22, 160, 133, 0.2);');
-    });
   </script>
 
 </body>

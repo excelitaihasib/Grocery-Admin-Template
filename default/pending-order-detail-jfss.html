@@ -88,7 +88,8 @@
       background: #FF2E2E;
     }
 
-    .jfss-order-btn4 {
+    .jfss-order-btn4,
+    .jfss-order-btn4:hover {
       background: #88C604;
       color: #fff;
       font-weight: 400;
@@ -104,13 +105,18 @@
 
     .arrow {
       background: red;
-      padding: 31px 80px;
+      width: 100%;
+      display: block;
+      padding: 31px 0px;
       background: rgba(28, 28, 28, 0.4);
     }
 
     .temp {
       display: none;
+      width: 100%;
     }
+
+
 
     .temp .success {
       font-weight: 400;
@@ -120,7 +126,6 @@
       background: rgba(22, 160, 133, 0.2);
       border-radius: 5px;
       border: none;
-      padding: 6px 20px;
       display: block;
       margin-bottom: 10px;
     }
@@ -133,9 +138,15 @@
       background: rgba(255, 46, 46, 0.2);
       border-radius: 5px;
       border: none;
-      padding: 6px 20px;
+
       display: block;
       margin-bottom: 10px;
+    }
+
+    .temp .statusButton {
+      width: 103px;
+      height: 40px;
+      margin: 4px auto;
     }
 
     .main {
@@ -619,7 +630,7 @@
                         <td>Red</td>
                         <td>S</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <div class="text-center social-icon">
@@ -665,7 +676,7 @@
                         <td>Red</td>
                         <td>S</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <div class="text-center social-icon">
@@ -711,7 +722,7 @@
                         <td>Red</td>
                         <td>S</td>
                         <td>1</td>
-                        <td>৳550.00 ( ৳ 550 )</td>
+                        <td>৳550</td>
                         <td>৳600 ( ৳ 600 )</td>
                         <td>
                           <div class="text-center social-icon">
@@ -922,6 +933,7 @@
 
 
     $('.arrow').on('click', function (e) {
+      pastState();
       $(this).css('display', 'none');
       console.log('here');
       $(this).next('.temp').css('display', 'block');
@@ -937,6 +949,11 @@
       $(this).parent().parent().parent().prev('td').children('.main').append(butttonElemnt);
 
     });
+
+    function pastState() {
+      $('.temp').css('display', 'none');
+      $('.arrow').css('display', 'block');
+    }
 
   </script>
 
