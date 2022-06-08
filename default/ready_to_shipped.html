@@ -4,13 +4,17 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Order History</title>
+  <title>Ready to shipped</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- App favicon -->
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Plugins css -->
+  <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
 
   <!-- third party css -->
   <link href="../assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
@@ -25,7 +29,6 @@
   <link href="../assets/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
   <link href="../assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-  <!-- third party css end -->
 
   <!-- App css -->
   <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -39,16 +42,21 @@
 
   <!-- icons -->
   <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/dashboard.css" rel="stylesheet">
 
-  <!--custom css-->
-  <link rel="stylesheet" href="../assets/css/style.css">
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+           <!--custom css-->
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
     .avatar-title {
@@ -68,60 +76,72 @@
       left: 255px;
     }
 
-    .header-title {
-      margin-bottom: 20px;
+
+    .header-title2 {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 22px;
+      color: #343A40;
     }
 
-    #datatable-buttons a {
-      color: #0D6EFD;
+    table {
+      font-family: 'Tahoma', sans-serif;
     }
 
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 10px;
+    table th,
+    table td {
+      font-size: 14px;
     }
 
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-      position: absolute;
-      right: 20px;
-      top: 23px;
+    table tbody tr td {
+      vertical-align: middle;
+      text-align: center;
     }
 
-    @media (max-width: 767px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        justify-content: center;
-      }
+
+
+    .readyToShipped .dataTables_length .form-label {
+        display: none;
+    }
+    .readyToShipped .selectCourier {
+        background: #38414A;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Tahoma';
+        padding: 5px 10px;
+    }
+    .readyToShipped .codeGnrt {
+        margin: 0;
+        padding: 0;
+        background: #4FC6E1;
+        border: transparent;
+        border-radius: 10px;
+        color: #000;
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Tahoma';
+    }
+    .codeGnrtModal {
+        display: flex;
+        gap: 10px;
+    }
+    .codeGnrtModal button {
+        color: #fff;
+        background-color: #4FC6E1;
+        border: #4FC6E1;
+        padding: 0 10px;
     }
 
-    @media (max-width: 636px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 60px;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        margin-top: 20px;
-      }
-
-      .header-title {
-        text-align: center;
-      }
-    }
-
-    #datatable-buttons .edit {
-      font-size: 17px;
-    }
   </style>
 
 </head>
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -357,72 +377,72 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu" style="width: 263px;">
-    
+    <div class="left-side-menu">
+
       <div class="h-100" data-simplebar>
-    
-    
-    
+
+
+
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-    
+
           <ul id="side-menu">
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
-                <span class="menu-arrow"></span>
+              <a href="#order" data-bs-toggle="collapse">
+                  <i class="fab fa-first-order"></i>
+                  <span> Order </span>
+                  <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
-                <ul class="nav-second-level">
-                  <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
-                  </li>
-    
-                  <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="Agent2">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
-                        </li>
-                        <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-    
-                  <li>
-                    <a href="manager-customer-list.html">Customer List</a>
-                  </li>
-    
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
-                  </li>
-                </ul>
+              <div class="collapse" id="order">
+                  <ul class="nav-second-level">
+                      <li>
+                          <a href="all_order_list.html">All Order List</a>
+                      </li>
+                      <li>
+                          <a href="pending_order_list.html">Pending Orders List</a>
+                      </li>
+                      <li>
+                          <a href="confirm_order_list.html">Confirmed Orders List</a>
+                      </li>
+                      <li>
+                          <a href="procesing_order_list.html">Processing Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_list.html">Picked Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_procesing_list.html">Picked Order Processing List </a>
+                      </li> 
+
+                      <li>
+                          <a href="picked_order_complete_list.html">Picked Order Complete List</a>
+                      </li>
+                      <li>
+                          <a href="ready_to_shipped.html">Ready to Shipped List</a>
+                      </li>
+                      <li>
+                          <a href="#">Shipped Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Delivered Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Cancel Orders List </a>
+                      </li>
+                  </ul>
               </div>
             </li>
-    
+          
           </ul>
-    
+
         </div>
         <!-- End Sidebar -->
-    
+
         <div class="clearfix"></div>
-    
+
       </div>
       <!-- Sidebar -left -->
-    
+
     </div>
     <!-- Left Sidebar End -->
 
@@ -430,85 +450,72 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page">
+    <div class="content-page readyToShipped">
       <div class="content">
         <!-- Start Content-->
-        <div class="container-fluid mt-5">
-          <div class="row">
+        <div class="container-fluid pickedOrderList">
+          <div class="row mt-4">
+            <h4 class="header-title">Ready to shipped</h4>
+          </div>
+          <div class="row mt-3">
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <h4 class="header-title">Order History</h4>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 d-lg-flex d-inline justify-content-lg-end">
-                      <!-- <div class="col-lg-4 col-12">
-                        <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
-                          placeholder="Select Date" readonly="readonly">
-                      </div> -->
-                    </div>
-                  </div>
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Agent ID</th>
-                        <th>Customer ID</th>
+                        <th>Order Date & Time</th>
+                        <th>Pickedup Order Complete Date & Time</th>
+                        <th>Order no./Invoice no.</th>
+                        <th>Customer Id</th>
                         <th>Customer Name</th>
-                        <th>Product QTY</th>
-                        <th>Total Amount</th>
-                        <th>Sales Commission</th>
+                        <th>Mobile  Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment Type</th>
+                        <th>Product item number</th>
+                        <th>Product packing</th>
+                        <th>Courier name</th>
+                        <th>Barcode</th>
+                        <th>Order Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>2022-05-21  12:53:57</td>
+                        <td>2022-05-21  12:53:57</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>Mr.ABC</td>
+                        <td>66167554568 </td>
+                        <td>Mohgbazar, 5168/A Dhaka- 1219</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>50</td>
+                        <td>Complete </td>
+                        <td>
+                            <select class="selectCourier" name="" id="">
+                                <option value="">Select</option>
+                                <option value="">Courier 1</option>
+                                <option value="">Courier 1</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="codeGnrt" data-bs-toggle="modal" data-bs-target="#codeGnrtModal">Code generate</button>
+                        <td>Handover to Courier</td>
+                        <td>
+                            <a href="ready_shipped_picked_boy_pro_list_details.html"><i class="fas fa-eye"
+                                style="background: #4FC6E1; border-radius: 10px; color: #000; padding: 10px 12px; font-size: 20px;"></i></a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
-                </div> <!-- end card body-->
-              </div> <!-- end card -->
-            </div><!-- end col-->
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- end row-->
-
         </div> <!-- container -->
-
       </div> <!-- content -->
 
       <!-- Footer Start -->
@@ -516,8 +523,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by <a
-                href="">Excel IT AI</a>
+              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by
+              <a href="">Excel IT AI</a>
             </div>
 
           </div>
@@ -533,6 +540,25 @@
 
   </div>
   <!-- END wrapper -->
+
+  <!-- ========================Code Generate Modal Start================================ -->
+<div class="modal fade" id="codeGnrtModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="codeGnrtModal">
+              <h4>Print Quantity: </h4>
+              <input type="number">
+              <button>Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========================Code Generate Modal Start================================ -->
 
   <!-- Right Sidebar -->
   <div class="right-bar">
@@ -614,13 +640,15 @@
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="condensed"
                 id="condensed-check" />
-              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
+              <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small
+                  size)</small></label>
             </div>
 
             <div class="form-check form-switch mb-1">
               <input type="checkbox" class="form-check-input" name="leftsidebar-size" value="compact"
                 id="compact-check" />
-              <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
+              <label class="form-check-label" for="compact-check">Compact <small>(Small
+                  size)</small></label>
             </div>
 
 
@@ -661,6 +689,7 @@
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
 
+
   <!-- third party js -->
   <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="../assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
@@ -679,7 +708,8 @@
   <script src="../assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
   <script src="../assets/libs/clockpicker/bootstrap-clockpicker.min.js"></script>
   <script src="../assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- third party js ends -->
+  <!-- third party js ends-->
+
 
   <!-- Datatables init -->
   <script src="../assets/js/pages/datatables.init.js"></script>

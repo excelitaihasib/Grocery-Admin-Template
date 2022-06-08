@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Order History</title>
+  <title>Commision History</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -42,13 +42,17 @@
 
   <!--custom css-->
   <link rel="stylesheet" href="../assets/css/style.css">
+
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <style>
     .avatar-title {
@@ -72,8 +76,17 @@
       margin-bottom: 20px;
     }
 
-    #datatable-buttons a {
-      color: #0D6EFD;
+    .date {
+      margin-top: 130px;
+    }
+
+    table tfoot {
+      border: none;
+      border-color: transparent;
+    }
+
+    table tfoot td {
+      font-size: 15px;
     }
 
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
@@ -81,39 +94,59 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
       position: absolute;
       right: 20px;
-      top: 23px;
+      top: 198px;
     }
 
     @media (max-width: 767px) {
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         justify-content: center;
+        margin-top: 30px;
       }
-    }
 
-    @media (max-width: 636px) {
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
         right: 0;
         left: 0;
-        top: 60px;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        margin-top: 20px;
-      }
-
-      .header-title {
-        text-align: center;
+        margin-top: 10px;
       }
     }
 
-    #datatable-buttons .edit {
-      font-size: 17px;
+    @media(max-width: 991px) {
+      .date {
+        margin-top: 0px;
+      }
+    }
+
+
+    @media (max-width: 576px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 320px) {
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
+        justify-content: center;
+        margin-top: 70px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        margin-top: 120px;
+      }
     }
   </style>
 
@@ -218,8 +251,6 @@
               <i class="fe-maximize noti-icon"></i>
             </a>
           </li>
-
-
 
           <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
@@ -358,71 +389,65 @@
 
     <!-- ========== Left Sidebar Start ========== -->
     <div class="left-side-menu" style="width: 263px;">
-    
+
       <div class="h-100" data-simplebar>
-    
-    
-    
+
+
+
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-    
+
           <ul id="side-menu">
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
+              <a href="#agent_customer" data-bs-toggle="collapse">
                 <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
+                <span> Agent Panel </span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
+              <div class="collapse" id="agent_customer">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
+                    <a href="agentPanel_dashboard.html">Dashboard</a>
                   </li>
-    
                   <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
+                    <a href="#agent_customer_add" data-bs-toggle="collapse">
+                      <span> Customer </span>
                       <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="Agent2">
+                    <div class="collapse" id="agent_customer_add">
                       <ul class="nav-second-level">
                         <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
+                          <a href="agent_add_customer.html">Add Customer</a>
                         </li>
                         <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
+                          <a href="agent-customer-list.html">Customer List </a>
                         </li>
+
                       </ul>
                     </div>
                   </li>
-    
+
                   <li>
-                    <a href="manager-customer-list.html">Customer List</a>
+                    <a href="agent-order-history.html">Order History</a>
                   </li>
-    
+
                   <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
+                    <a href="agent-commission-history.html">My Commission</a>
                   </li>
                 </ul>
               </div>
             </li>
-    
+
           </ul>
-    
+
         </div>
         <!-- End Sidebar -->
-    
+
         <div class="clearfix"></div>
-    
+
       </div>
       <!-- Sidebar -left -->
-    
+
     </div>
     <!-- Left Sidebar End -->
 
@@ -439,11 +464,15 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <h4 class="header-title">Order History</h4>
+                    <div class="col-lg-6 col-12 paymentInfo">
+                      <h4 class="header-title">Commission History</h4>
+                      <p><b>Agent Name :</b> Rahim Mia</p>
+                      <p><b>Agent ID :</b> RF 123456</p>
+                      <p><b>Contact No :</b> +8801 XXXX XXXXX</p>
+                      <p><b>Address :</b> 1219 Dhaka, Bangladesh · 3</p>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12 d-lg-flex d-inline justify-content-lg-end">
-                      <!-- <div class="col-lg-4 col-12">
+                    <div class="col-lg-6 col-12 d-lg-flex justify-content-lg-end">
+                      <!-- <div class="col-4 date">
                         <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
                           placeholder="Select Date" readonly="readonly">
                       </div> -->
@@ -452,53 +481,70 @@
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Agent ID</th>
-                        <th>Customer ID</th>
-                        <th>Customer Name</th>
-                        <th>Product QTY</th>
-                        <th>Total Amount</th>
+                        <th>Date</th>
+                        <th>Order ID</th>
+                        <th>Sales QTY</th>
+                        <th>Total Sales Amount</th>
                         <th>Sales Commission</th>
-                        <th>Action</th>
+                        <th>Deposit Amount</th>
+                        <th>Withdraw</th>
+                        <th>Remaining Balance</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
+                        <td>10 Feb, 2022</td>
+                        <td># 123457</td>
                         <td>12</td>
                         <td>৳ 49,000</td>
                         <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>৳ 1,500</td>
+                        <td>-</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
+                        <td>10 Feb, 2022</td>
+                        <td># 123457</td>
                         <td>12</td>
                         <td>৳ 49,000</td>
                         <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>৳ 1,500</td>
+                        <td>-</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
+                        <td>10 Feb, 2022</td>
+                        <td># 123457</td>
                         <td>12</td>
                         <td>৳ 49,000</td>
                         <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                       </tr>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
+                        <td>10 Feb, 2022</td>
+                        <td># 123457</td>
                         <td>12</td>
                         <td>৳ 49,000</td>
                         <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
+                        <td>৳ 1,500</td>
                       </tr>
                     </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total: ৳ 49,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                        <td>Total: ৳ 15,000</td>
+                      </tr>
+                    </tfoot>
                   </table>
 
                 </div> <!-- end card body-->

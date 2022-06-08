@@ -35,10 +35,17 @@
 
         <!--custom css-->
         <link rel="stylesheet" href="../assets/css/style.css">
-
+        
+        <!-- font awesome -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
 
         <style>
           
@@ -344,525 +351,72 @@
             <!-- end Topbar -->
 
             <!-- ========== Left Sidebar Start ========== -->
-            <div class="left-side-menu">
-
+            <div class="left-side-menu" style="width: 263px;">
+            
                 <div class="h-100" data-simplebar>
-
-              
-
+            
+            
+            
                     <!--- Sidemenu -->
                     <div id="sidebar-menu">
-
+            
                         <ul id="side-menu">
-
-                                    
                             <li>
-                                <a href="index.html">
-                                    <i data-feather="airplay"></i>
-                                    <span> Dashboard </span>
-                                </a>
-                            </li>
-
-
-
-
-                            <li>
-                                <a href="#owner_dashboard" data-bs-toggle="collapse">
+                                <a href="#manager-panel" data-bs-toggle="collapse">
                                     <i class="fas fa-list-alt"></i>
-                                    <span> Shop Owner Dashboard </span>
+                                    <span> Manager Panel </span>
                                     <span class="menu-arrow"></span>
                                 </a>
-                                <div class="collapse" id="owner_dashboard">
+                                <div class="collapse" id="manager-panel">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="#">Dashboard</a>
+                                            <a href="manager_panel_dashboard.html">Dashboard</a>
+                                        </li>
+            
+                                        <li>
+                                            <a href="#Agent2" data-bs-toggle="collapse">
+                                                <span> Agent </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="Agent2">
+                                                <ul class="nav-second-level">
+                                                    <li>
+                                                        <a href="mngr_add_agent.html">Add Agent</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="mngr_agent_list.html">Agent List</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+            
+                                        <li>
+                                            <a href="manager-customer-list.html">Customer List</a>
+                                        </li>
+            
+                                        <li>
+                                            <a href="#">Product Category</a>
                                         </li>
                                         <li>
-                                            <a href="#">Product List</a>
+                                            <a href="manager-total-order-history.html">Order History</a>
                                         </li>
                                         <li>
-                                            <a href="#">Product Details</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Supplier List</a>
-                                        </li>
-                                        <li>
-                                            <a href="return-product.html">Return Product</a>
-                                        </li>
-                                        <li>
-                                            <a href="payment-history.html">Payment History</a>
-                                        </li>
-                                        <li>
-                                            <a href="profit-report.html">Profit Report</a>
+                                            <a href="manager-agent-commission.html">Agent Commission</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-
-
-
-                             
-                            <li>
-                                <a href="#brand" data-bs-toggle="collapse">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Brands </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="brand">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="brands.html">All Category</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-    
-                            <li>
-                                <a href="#category" data-bs-toggle="collapse">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Category </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="category">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="category.html">All Category</a>
-                                        </li>
-                                        <li>
-                                            <a href="sub-category.html">All Sub-Category</a>
-                                        </li>
-                                        <li>
-                                            <a href="sub-sub-category.html">All Sub-Sub-Category</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#product" data-bs-toggle="collapse">
-                                    <i class="fas fa-list-alt"></i>
-                                    <span> Products </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="product">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="product.html">Add Products</a>
-                                        </li>
-                                        <li>
-                                            <a href="manage-products.html">Manage All Products</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#SliderOption" data-bs-toggle="collapse">
-                                    <i class="fas fa-sliders-h"></i>
-                                    <span> Slider Option </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="SliderOption">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="slider-option.html">Manage Slider</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#coupon" data-bs-toggle="collapse">
-                                    <i class="fas fa-gift"></i>
-                                    <span> Coupon Option </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="coupon">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="coupon-list.html">Manage Coupon</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#bannerOption" data-bs-toggle="collapse">
-                                    <i class="far fa-image"></i>
-                                    <span> Banner Option </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="bannerOption">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="banner-option.html">Manage Banner</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#bannerCategory" data-bs-toggle="collapse">
-                                    <i class="far fa-image"></i>
-                                    <span> Banner Category </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="bannerCategory">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="banner-category.html">Manage Banner</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#order" data-bs-toggle="collapse">
-                                    <i class="fab fa-first-order"></i>
-                                    <span> Orders </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="order">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="pending-order-list.html">Pending Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="confirm-order-list.html">Confirmed Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="processing-order-list.html">Processing Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="picked-order-list.html">Picked Orders</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="shipped-order-list.html">Shipped Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="deliver-order-list.html">Delivered Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="cancel-order-list.html">Cancel Orders</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#product-stock" data-bs-toggle="collapse">
-                                    <i class="fa fa-undo"></i>
-                                    <span> Return Order </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="product-stock">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="return-order-list.html">Return Request</a>
-                                        </li>
-                                        <li>
-                                            <a href="all-return-order-list.html">All Request</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#return-order" data-bs-toggle="collapse">
-                                    <i class="fa fa-list"></i>
-                                    <span> Manage Stock </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="return-order">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="product-stock-list.html">Product Stock</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#all-user" data-bs-toggle="collapse">
-                                    <i class="fas fa-users"></i>
-                                    <span> All Users </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="all-user">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="all-users.html">All Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#admin-role" data-bs-toggle="collapse">
-                                    <i class="fa fa-user-circle"></i>
-                                    <span> Admin User Role </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="admin-role">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="admin-user-role.html">All Admin User Role</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#manage-department" data-bs-toggle="collapse">
-                                    <i class="fa fa-building"></i>
-                                    <span> Department </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="manage-department">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="manage-department.html">Manage Department</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#add-employee" data-bs-toggle="collapse">
-                                    <i class="fa fa-building"></i>
-                                    <span> Employee Manage </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="add-employee">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="add-employee.html">Add Employee</a>
-                                        </li>
-                                        <li>
-                                            <a href="manage-employee.html">Manage Employee</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-
-
-
-                            <li>
-                                <a href="pos.html">
-                                    <i class="fas fa-calculator"></i>
-                                    <span> POS </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#sidebarPurchase" data-bs-toggle="collapse">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span> Purchase </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarPurchase">
-                                  <ul class="nav-second-level">
-                                      <li>
-                                          <a href="purchase.html">Purchase</a>
-                                      </li>
-                                      <li>
-                                          <a href="view_purchase.html">View Purchase</a>
-                                      </li>
-                                  </ul>
-                              </div>
-                            </li>
-
-                            <li>
-                                <a href="#expense" data-bs-toggle="collapse">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span> Expense </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="expense">
-                                  <ul class="nav-second-level">
-                                      <li>
-                                          <a href="expense.html">Add Expence</a>
-                                      </li>
-                                      <li>
-                                          <a href="view_expense.html">View Expence</a>
-                                      </li>
-                                  </ul>
-                              </div>
-                            </li>
-
-                            <li>
-                                <a href="#sidebarReport" data-bs-toggle="collapse">
-                                    <i class="fas fa-file"></i>
-                                    <span> All Reports </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarReport">
-                                  <ul class="nav-second-level">
-                                      <li>
-                                          <a href="order_reports.html">Order Reports</a>
-                                      </li>
-                                      <li>
-                                          <a href="salary_reports.html">Salary Reports</a>
-                                      </li>
-                                      <li>
-                                        <a href="product_reports.html">Return Product Reports</a>
-                                      </li>
-                                      <li>
-                                        <a href="user_reports.html">User Active Reports</a>
-                                      </li>
-                                      <li>
-                                        <a href="profit_reports.html">Profit Reports</a>
-                                      </li>
-                                  </ul>
-                              </div>
-                            </li>
-
-                         
-
-                         
-
-
-
-                       
-
-                          
-
-                            <li>
-                                <a href="#sidebarAuth" data-bs-toggle="collapse">
-                                    <i data-feather="file-text"></i>
-                                    <span> Auth Pages </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarAuth">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="auth-login.html">Log In</a>
-                                        </li>
-                                     
-                                        <li>
-                                            <a href="auth-register.html">Register</a>
-                                        </li>
-                                   
-                                        <li>
-                                            <a href="auth-recoverpw.html">Recover Password</a>
-                                        </li>
-                                     
-                                        <li>
-                                            <a href="auth-confirm-mail.html">Confirm Mail</a>
-                                        </li>
-                                     
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li>
-                                <a href="#sidebarExpages" data-bs-toggle="collapse">
-                                    <i data-feather="package"></i>
-                                    <span> Extra Pages </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarExpages">
-                                    <ul class="nav-second-level">
-                         
-                                        <li>
-                                            <a href="pages-invoice.html">Invoice</a>
-                                        </li>
-                                    
-                                     
-                                        <li>
-                                            <a href="pages-maintenance.html">Maintenance</a>
-                                        </li>
-                                 
-                                        <li>
-                                            <a href="pages-404.html">Error 404</a>
-                                        </li>
-                                    
-                                    
-                                    </ul>
-                                </div>
-                            </li>
-
-                            
-                     
-
-                            <li>
-                                <a href="#sidebarIcons" data-bs-toggle="collapse">
-                                    <i data-feather="cpu"></i>
-                                    <span> Icons </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarIcons">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="icons-two-tone.html">Two Tone Icons</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-feather.html">Feather Icons</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-mdi.html">Material Design Icons</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-dripicons.html">Dripicons</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-font-awesome.html">Font Awesome 5</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-themify.html">Themify</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-simple-line.html">Simple Line</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-weather.html">Weather</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-
-
-                            <li>
-                                <a href="#sidebarCharts" data-bs-toggle="collapse">
-                                    <i data-feather="bar-chart-2"></i>
-                                    <span> Charts </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarCharts">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="charts-apex.html">Apex Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-flot.html">Flot Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-morris.html">Morris Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-chartjs.html">Chartjs Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-peity.html">Peity Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-chartist.html">Chartist Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-c3.html">C3 Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-sparklines.html">Sparklines Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="charts-knob.html">Jquery Knob Charts</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                    
-
+            
                         </ul>
-
+            
                     </div>
                     <!-- End Sidebar -->
-
+            
                     <div class="clearfix"></div>
-
+            
                 </div>
                 <!-- Sidebar -left -->
-
+            
             </div>
             <!-- Left Sidebar End -->
 

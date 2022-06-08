@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Order History</title>
+  <title> Pending Order Details</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -45,35 +45,129 @@
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <style>
-    .avatar-title {
-      align-items: center;
+    table {
+      font-family: 'Tahoma';
+    }
+
+    table tr {
+      vertical-align: middle;
+      font-family: 'Tahoma';
+    }
+
+    /* .dataTables_length {
+      display: none;
+    }
+
+    .dataTables_filter {
+      display: none;
+    } */
+
+    .order-btn-wrap .jfss-order-btn {
+      background: #0D99FF;
       color: #fff;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      margin-right: 20px;
     }
 
-    .left-side-menu {
-      width: 255px;
+    .order-btn-wrap .jfss-order-btn2 {
+      background: #16A085;
     }
 
-    .footer {
-      left: 255px;
+    .order-btn-wrap .jfss-order-btn3 {
+      background: #FF2E2E;
     }
 
-    .header-title {
+    .jfss-order-btn4 {
+      background: #88C604;
+      color: #fff;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .order-btn-wrap .jfss-order-btn {
       margin-bottom: 20px;
     }
 
-    #datatable-buttons a {
-      color: #0D6EFD;
+
+
+    .arrow {
+      background: red;
+      padding: 31px 80px;
+      background: rgba(28, 28, 28, 0.4);
+    }
+
+    .temp {
+      display: none;
+    }
+
+    .temp .success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .temp .cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main .statusButton.success {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #149078;
+      background: rgba(22, 160, 133, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main .statusButton.cancel {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FF2E2E;
+      background: rgba(255, 46, 46, 0.2);
+      border-radius: 5px;
+      border: none;
+      padding: 6px 20px;
+      display: block;
+      margin-bottom: 10px;
     }
 
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
@@ -87,33 +181,62 @@
     #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
       position: absolute;
       right: 20px;
-      top: 23px;
+      top: 33px;
     }
 
     @media (max-width: 767px) {
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         justify-content: center;
       }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 75px;
+      }
     }
 
+    /* 
     @media (max-width: 636px) {
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
         right: 0;
         left: 0;
-        top: 60px;
+        top: 84px;
       }
 
       #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
         margin-top: 20px;
       }
+    } */
 
-      .header-title {
-        text-align: center;
+
+
+    @media (max-width: 636px) {
+
+      .order-details-btn-wrap {
+        margin-bottom: 50px;
+      }
+
+      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
+        right: 0;
+        left: 0;
+        top: 256px;
       }
     }
 
-    #datatable-buttons .edit {
-      font-size: 17px;
+    .social-icon .messanger {
+      color: #00B2FF;
+      font-size: 32px;
+    }
+
+    .social-icon .whatsapp {
+      color: #25D366;
+      font-size: 32px;
+    }
+
+    .social-icon .mobile {
+      color: #222;
+      font-size: 32px;
     }
   </style>
 
@@ -357,74 +480,82 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu" style="width: 263px;">
-    
+    <div class="left-side-menu" style="width: 260px;">
+
       <div class="h-100" data-simplebar>
-    
-    
-    
+
+
+
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-    
+
           <ul id="side-menu">
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
-                <span class="menu-arrow"></span>
+              <a href="#order" data-bs-toggle="collapse">
+                  <i class="fab fa-first-order"></i>
+                  <span> Order </span>
+                  <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
-                <ul class="nav-second-level">
-                  <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
-                  </li>
-    
-                  <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="Agent2">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
-                        </li>
-                        <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-    
-                  <li>
-                    <a href="manager-customer-list.html">Customer List</a>
-                  </li>
-    
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
-                  </li>
-                </ul>
+              <div class="collapse" id="order">
+                  <ul class="nav-second-level">
+                      <li>
+                          <a href="all_order_list.html">All Order List</a>
+                      </li>
+                      <li>
+                          <a href="pending_order_detail.html">Pending Orders List</a>
+                      </li>
+                      <li>
+                          <a href="confirm_order_list.html">Confirmed Orders List</a>
+                      </li>
+                      <li>
+                          <a href="procesing_order_list.html">Processing Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_list.html">Picked Orders List</a>
+                      </li>
+                      <li>
+                          <a href="picked_order_procesing_list.html">Picked Order Processing List </a>
+                      </li> 
+
+                      <li>
+                          <a href="picked_order_complete_list.html">Picked Order Complete List</a>
+                      </li>
+                      <li>
+                          <a href="ready_to_shipped.html">Ready to Shipped List</a>
+                      </li>
+                      <li>
+                          <a href="#">Shipped Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Delivered Orders List </a>
+                      </li>
+                      <li>
+                          <a href="#">Cancel Orders List </a>
+                      </li>
+                  </ul>
               </div>
             </li>
-    
+          
           </ul>
-    
+
         </div>
         <!-- End Sidebar -->
-    
+
         <div class="clearfix"></div>
-    
+
       </div>
       <!-- Sidebar -left -->
-    
+
     </div>
     <!-- Left Sidebar End -->
+
+
+
+
+
+
+
+
 
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
@@ -432,98 +563,202 @@
 
     <div class="content-page">
       <div class="content">
-        <!-- Start Content-->
-        <div class="container-fluid mt-5">
-          <div class="row">
+        <div class="container-fluid">
+          <div class="row mt-4">
+            <h3 class="pb-2 header-title">Pending Order Details</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <h4 class="header-title">Order History</h4>
+
+                  <div class="order-details-btn-wrap">
+
+                    <div class="order-details-btn-inner">
+
+                      <div class="order-btn-wrap">
+                        <a href="#" class="btn jfss-order-btn">Invoice no. / Order no.</a>
+                        <a href="confirm_order_list.html" class="btn jfss-order-btn jfss-order-btn2 ">Confirm Order</a>
+                        <a href="#" class="btn jfss-order-btn jfss-order-btn3">Cancel Order</a>
+                      </div>
+                      <!-- <br> -->
+
+                      <a href="#" class="btn jfss-order-btn jfss-order-btn4">15864654858</a>
+
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12 d-lg-flex d-inline justify-content-lg-end">
-                      <!-- <div class="col-lg-4 col-12">
-                        <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
-                          placeholder="Select Date" readonly="readonly">
-                      </div> -->
-                    </div>
+                    <!-- end order-details-btn-inner  -->
                   </div>
+                  <!-- end order-details-btn-wrap  -->
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Agent ID</th>
-                        <th>Customer ID</th>
-                        <th>Customer Name</th>
-                        <th>Product QTY</th>
-                        <th>Total Amount</th>
-                        <th>Sales Commission</th>
-                        <th>Action</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Code</th>
+                        <th>SKU Code</th>
+                        <th>Supplier Name</th>
+                        <th>Supplier Product Code</th>
+                        <th>Color</th>
+                        <th>Size</th>
+                        <th>Weight</th>
+                        <th>Quantity</th>
+                        <th>Buying Price</th>
+                        <th>Selling Price</th>
+                        <th>supplier Contacts</th>
+                        <th>Supplier Order Status</th>
+                        <th>Supplier Order Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>2kg</td>
+                        <td>1</td>
+                        <td>৳550 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <div class="text-center social-icon">
+                            <a href="#" class="messanger"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+                            <a href="" class="mobile"><i class="fa-solid fas fa-mobile"></i></a>
+                          </div>
+                        </td>
+
+
+
+                        <td class="text-center">
+
+                          <span class="main text-center buttonHolder"> </span>
+                        </td>
+
+                        <td class="text-center">
+
+                          <div class="sideMain">
+
+                            <span class="arrow"><i class="fas fa-angle-down"></i></span>
+
+                            <div class="temp">
+                              <button class="success statusButton">Success</button>
+                              <button class="cancel statusButton">Cancel</button>
+                            </div>
+
+                          </div>
+
+
+                        </td>
                       </tr>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>2kg</td>
+                        <td>1</td>
+                        <td>৳550 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <div class="text-center social-icon">
+                            <a href="#" class="messanger"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+                            <a href="" class="mobile"><i class="fa-solid fas fa-mobile"></i></a>
+                          </div>
+                        </td>
+
+
+
+                        <td class="text-center">
+
+                          <span class="main text-center buttonHolder"> </span>
+                        </td>
+
+                        <td class="text-center">
+
+                          <div class="sideMain">
+
+                            <span class="arrow"><i class="fas fa-angle-down"></i></span>
+
+                            <div class="temp">
+                              <button class="success statusButton">Success</button>
+                              <button class="cancel statusButton">Cancel</button>
+                            </div>
+
+                          </div>
+
+
+                        </td>
                       </tr>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td><img
+                            src="https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="img1" width="67px;" height="57px"> </td>
+                        <td>Mango</td>
+                        <td>#7PYLL2</td>
+                        <td>#8PYAL4</td>
+                        <td>Mr.ABC</td>
+                        <td>#7PYLL2</td>
+                        <td>Red</td>
+                        <td>S</td>
+                        <td>2kg</td>
+                        <td>1</td>
+                        <td>৳550 ( ৳ 550 )</td>
+                        <td>৳600 ( ৳ 600 )</td>
+                        <td>
+                          <div class="text-center social-icon">
+                            <a href="#" class="messanger"><i class="fab fa-facebook-messenger"></i></a>
+                            <a href="" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+                            <a href="" class="mobile"><i class="fa-solid fas fa-mobile"></i></a>
+                          </div>
+                        </td>
+
+
+
+                        <td class="text-center">
+
+                          <span class="main text-center buttonHolder"> </span>
+                        </td>
+
+                        <td class="text-center">
+
+                          <div class="sideMain">
+
+                            <span class="arrow"><i class="fas fa-angle-down"></i></span>
+
+                            <div class="temp">
+                              <button class="success statusButton">Success</button>
+                              <button class="cancel statusButton">Cancel</button>
+                            </div>
+
+                          </div>
+
+
+                        </td>
                       </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
+                      
+                      
                     </tbody>
                   </table>
-
                 </div> <!-- end card body-->
               </div> <!-- end card -->
             </div><!-- end col-->
           </div>
-          <!-- end row-->
-
-        </div> <!-- container -->
-
-      </div> <!-- content -->
-
-      <!-- Footer Start -->
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <script>document.write(new Date().getFullYear())</script> &copy; Grocery Admin Template by <a
-                href="">Excel IT AI</a>
-            </div>
-
-          </div>
         </div>
-      </footer>
-      <!-- end Footer -->
+      </div>
     </div>
 
     <!-- ============================================================== -->
@@ -689,6 +924,27 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
+  <script>
+
+
+    $('.arrow').on('click', function (e) {
+      $(this).css('display', 'none');
+      console.log('here');
+      $(this).next('.temp').css('display', 'block');
+    });
+
+    $('.statusButton').on('click', function () {
+      console.log(this);
+      $(this).parent().css('display', 'none');
+      $(this).parent().prev('.arrow').css('display', 'block');
+      console.log($(this).parent().parent().parent().prev('td').children('.main'));
+      let butttonElemnt = $(this).clone();
+      $(this).parent().parent().parent().prev('td').children('.main').empty();
+      $(this).parent().parent().parent().prev('td').children('.main').append(butttonElemnt);
+
+    });
+
+  </script>
 
 </body>
 

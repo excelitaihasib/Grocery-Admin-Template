@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Order History</title>
+  <title> Confirmed Order List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -45,75 +45,35 @@
   <!-- font awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <style>
-    .avatar-title {
-      align-items: center;
-      color: #fff;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
+    table tr {
+      vertical-align: middle;
+      font-family: 'Tahoma';
     }
 
-    .left-side-menu {
-      width: 255px;
+    /* .dataTables_length {
+      display: none;
+    } */
+
+    table tr td .pending {
+      color: #D25600;
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      padding: 6px 20px;
     }
 
-    .footer {
-      left: 255px;
-    }
-
-    .header-title {
-      margin-bottom: 20px;
-    }
-
-    #datatable-buttons a {
-      color: #0D6EFD;
-    }
-
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-      position: absolute;
-      right: 20px;
-      top: 23px;
-    }
-
-    @media (max-width: 767px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 636px) {
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(2) .dataTables_filter {
-        right: 0;
-        left: 0;
-        top: 60px;
-      }
-
-      #datatable-buttons_wrapper .row:nth-child(1)>.col-sm-12:nth-child(1) {
-        margin-top: 20px;
-      }
-
-      .header-title {
-        text-align: center;
-      }
-    }
-
-    #datatable-buttons .edit {
-      font-size: 17px;
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
     }
   </style>
 
@@ -358,14 +318,14 @@
 
     <!-- ========== Left Sidebar Start ========== -->
     <div class="left-side-menu" style="width: 263px;">
-    
+
       <div class="h-100" data-simplebar>
-    
-    
-    
+
+
+
         <!--- Sidemenu -->
         <div id="sidebar-menu">
-    
+
           <ul id="side-menu">
             <li>
               <a href="#manager-panel" data-bs-toggle="collapse">
@@ -378,7 +338,7 @@
                   <li>
                     <a href="manager_panel_dashboard.html">Dashboard</a>
                   </li>
-    
+
                   <li>
                     <a href="#Agent2" data-bs-toggle="collapse">
                       <span> Agent </span>
@@ -395,16 +355,16 @@
                       </ul>
                     </div>
                   </li>
-    
+
                   <li>
-                    <a href="manager-customer-list.html">Customer List</a>
+                    <a href="manager-customer-list.html">Pending Order List</a>
                   </li>
-    
+
                   <li>
                     <a href="#">Product Category</a>
                   </li>
                   <li>
-                    <a href="manager-order-history.html">Order History</a>
+                    <a href="manager-total-order-history.html">Order History</a>
                   </li>
                   <li>
                     <a href="manager-agent-commission.html">Agent Commission</a>
@@ -412,19 +372,84 @@
                 </ul>
               </div>
             </li>
-    
+
           </ul>
-    
+
         </div>
         <!-- End Sidebar -->
-    
+
         <div class="clearfix"></div>
-    
+
       </div>
       <!-- Sidebar -left -->
-    
+
     </div>
     <!-- Left Sidebar End -->
+
+
+
+    <div class="content-page">
+      <div class="content">
+        <div class="container-fluid mt-5">
+          <div class="row">
+            <h3 class="pb-2">Confirmed Order List</h3>
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Order Date & Time</th>
+                        <th>Confirm Order Date & Time</th>
+                        <th>Order no./Invoice no.</th>
+                        <th>Customer ID</th>
+                        <th>Customer Name</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>
+                          <span class="">Confirmed</span>
+                        </td>
+                        <td><a href="confirm-order-detail-jfss.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> <!-- end card body-->
+              </div> <!-- end card -->
+            </div><!-- end col-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
@@ -434,80 +459,54 @@
       <div class="content">
         <!-- Start Content-->
         <div class="container-fluid mt-5">
-          <div class="row">
+
+          <div class="row mt-4">
+            <h3 class="pb-2">Confirmed Order List</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-lg-flex justify-content-lg-between mb-2">
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <h4 class="header-title">Order History</h4>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 d-lg-flex d-inline justify-content-lg-end">
-                      <!-- <div class="col-lg-4 col-12">
-                        <input type="text" id="basic-datepicker" class="form-control flatpickr-input active"
-                          placeholder="Select Date" readonly="readonly">
-                      </div> -->
-                    </div>
-                  </div>
-                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                  <table id="scroll-horizontal-datatable" class="table w-100 nowrap text-center">
                     <thead>
                       <tr>
-                        <th>Agent ID</th>
+                        <th>Order Date & Time</th>
+                        <th>Confirm Order Date & Time</th>
+                        <th>Order no./Invoice no.</th>
                         <th>Customer ID</th>
                         <th>Customer Name</th>
-                        <th>Product QTY</th>
-                        <th>Total Amount</th>
-                        <th>Sales Commission</th>
+                        <th>Mobile Number</th>
+                        <th>Address</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
-                      </tr>
-                      <tr>
-                        <td># WS123</td>
-                        <td># WS123</td>
-                        <td>MD, Ahosan Habib</td>
-                        <td>12</td>
-                        <td>৳ 49,000</td>
-                        <td>৳ 1,500</td>
-                        <td><a href="manager-single-order-history.html"><button class="btn btn-success">See Orders</button></a></td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>66167554</td>
+                        <td>550.00</td>
+                        <td>Cash On Delivery</td>
+                        <td>
+                          <span class="">Confirmed</span>
+                        </td>
+                        <td><a href="confirm-order-detail-jfss.html" class="jfss-edit-btn"><i class="fe-eye"></i></a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-
-                </div> <!-- end card body-->
-              </div> <!-- end card -->
-            </div><!-- end col-->
+                </div>
+              </div>
+            </div>
           </div>
           <!-- end row-->
-
         </div> <!-- container -->
+
 
       </div> <!-- content -->
 

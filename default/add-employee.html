@@ -31,6 +31,157 @@
     <!-- css for datepicker -->
     <link href="../assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
 
+    <style>
+        /* .modal-header h5 {
+            font-size: 18px;
+            text-transform: capitalize;
+        }
+
+        .modal-body {
+            background: #F3F7F9;
+        }
+
+
+        .supiler-modal-wrapper input {
+            width: 243px;
+        }
+
+        .supiler-modal-wrapper textarea {
+            width: 243px;
+            height: 128px;
+        }
+
+        .supiler-modal-text {
+            margin-left: 14px;
+        }
+
+        .supiler-modal-text input {
+            width: 243px;
+        }
+
+        .jfss-save-btn {
+            background: #4FC6E1;
+            border-radius: 3px;
+            color: #fff;
+        }
+
+        @media(max-width:576px) {
+            .supiler-modal-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        } */
+
+
+        .add-employee-wrapper input {
+            width: 330px;
+        }
+
+        .add-employee-wrapper select {
+            width: 330px;
+        }
+
+
+        .add-employee-inner textarea {
+            width: 330px;
+            height: 127px;
+        }
+
+        /* .employee-reference-inner {
+            margin-bottom: 30px;
+        } */
+
+        .employee-reference-inner input {
+            width: 464px;
+        }
+
+        .employee-reference-inner textarea {
+            width: 464px;
+            height: 100px;
+        }
+
+
+        .employee-reference-wrapper {
+            padding: 20px 50px;
+        }
+
+        .jfss-btn,
+        .jfss-btn:hover {
+            background: #1ABC9C;
+            border-radius: 3px;
+            color: #fff;
+            margin-bottom: 30px;
+
+        }
+
+
+        @media(max-width:575px) {
+
+
+
+            .add-employee-wrapper input {
+                width: 260px;
+            }
+
+            .add-employee-wrapper select {
+                width: 260px;
+            }
+
+
+            .add-employee-inner textarea {
+                width: 260px;
+                height: 127px;
+            }
+
+            /* .employee-reference-inner {
+            margin-bottom: 30px;
+        } */
+
+            .employee-reference-inner input {
+                width: 260px;
+            }
+
+            .employee-reference-inner textarea {
+                width: 260px;
+                height: 100px;
+            }
+
+
+            .employee-reference-wrapper {
+                padding: 20px;
+            }
+        }
+
+        @media(max-width:360px) {
+
+
+            .add-employee-wrapper input {
+                width: 230px;
+            }
+
+            .add-employee-wrapper select {
+                width: 230px;
+            }
+
+
+            .add-employee-inner textarea {
+                width: 230px;
+                height: 127px;
+            }
+
+            .employee-reference-inner input {
+                width: 230px;
+            }
+
+            .employee-reference-inner textarea {
+                width: 230px;
+                height: 100px;
+            }
+
+        }
+    </style>
+
 </head>
 
 <!-- body start -->
@@ -629,7 +780,7 @@
                                 <span> Dashboard </span>
                             </a>
                         </li>
-                         <li>
+                        <li>
                             <a href="brands.html">
                                 <i class="fas fa-list-alt"></i>
                                 <span> Brand </span>
@@ -722,7 +873,7 @@
                                     <li>
                                         <a href="picked-order-list.html">Picked Orders</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="shipped-order-list.html">Shipped Orders</a>
                                     </li>
@@ -1546,143 +1697,299 @@
                         <div class="card-body">
                             <form class="needs-validation" novalidate>
                                 <div class="employee-container">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div
+                                        class="add-employee-wrapper d-flex justify-content-between align-items-center flex-wrap">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your name
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Father Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Father Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your father name
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Mother Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Mother Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your mother name
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Date Of Birth</label>
+                                            <input type="date" class="form-control" id="name" placeholder="Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your birth date
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Email Address</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Email"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your email address
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Mobile Number</label>
+                                            <input type="text" class="form-control" id="name"
+                                                placeholder="Mobile Number" required />
+                                            <div class="invalid-feedback">
+                                                please enter your mobile No.
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Office ID</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Office ID"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your employee office ID
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="dprt-name" class="form-label">Department Name</label>
+                                            <select id="dprt-name" class="form-select" required="">
+                                                <option value="">Select Department Name</option>
+                                                <option value="">Front end</option>
+                                                <option value="press">Back end</option>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="image" class="form-label">Employee Profile
+                                                Image</label>
+                                            <input type="file" class="form-control" id="image" placeholder="Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please choose your image
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="image" class="form-label">Employee Joining Datee</label>
+                                            <input type="date" class="form-control" id="image" placeholder="Name"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please choose your joining date
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Salary</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Salary"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter salary
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Employee Designation</label>
+                                            <input type="text" class="form-control" id="name" placeholder=" Designation"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                please enter your designation
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="dprt-name" class="form-label">Status</label>
+                                            <select id="dprt-name" class="form-select" required="">
+                                                <option value="">Active</option>
+                                                <option value="">Front end</option>
+                                                <option value="press">Back end</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div
+                                        class="add-employee-inner d-flex justify-content-around align-items-center flex-wrap">
+                                        <div class="mb-3">
+                                            <label for="dprt-name" class="form-label">Status</label>
+                                            <select id="dprt-name" class="form-select" required="">
+                                                <option value="">Active</option>
+                                                <option value="">Front end</option>
+                                                <option value="press">Back end</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dprt-name" class="form-label">Employee Present Address</label>
+                                            <textarea id="p-address" class="form-control" placeholder="Present Address"
+                                                required></textarea>
+                                            <div class="invalid-feedback">
+                                                please write your present address
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dprt-name" class="form-label">Employee Permanent Address</label>
+                                            <textarea id="p-address" class="form-control"
+                                                placeholder="Permanent Address" required></textarea>
+                                            <div class="invalid-feedback">
+                                                please write your parmanent address
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="employee-reference-wrapper">
+                                        <h4 class="my-3">#Reference 1</h4>
+                                        <div
+                                            class="employee-reference-inner d-flex justify-content-between align-items-center flex-wrap">
                                             <div class="mb-3">
-                                                <label for="name" class="form-label">Employee name</label>
+                                                <label for="name" class="form-label">Reference name</label>
                                                 <input type="text" class="form-control" id="name" placeholder="Name"
                                                     required />
                                                 <div class="invalid-feedback">
-                                                    please enter your name
+                                                    please enter your Reference name
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="image" class="form-label">Employee Profile
-                                                    Image</label>
-                                                <input type="file" class="form-control" id="image" placeholder="Name"
+                                                <label for="name" class="form-label">Reference Mobile Number</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Mobile Number" required />
+                                                <div class="invalid-feedback">
+                                                    please enter your Reference mobile No.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Reference Relationship</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Relationship" required />
+                                                <div class="invalid-feedback">
+                                                    please enter your Reference Relationship
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="dprt-name" class="form-label">Reference Address</label>
+                                                <textarea id="p-address" class="form-control" placeholder="Address"
+                                                    required></textarea>
+                                                <div class="invalid-feedback">
+                                                    please write your Reference address
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="employee-reference-wrapper">
+                                        <h4 class="my-3">#Reference 2</h4>
+                                        <div
+                                            class="employee-reference-inner d-flex justify-content-between align-items-center flex-wrap">
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Reference name</label>
+                                                <input type="text" class="form-control" id="name" placeholder="Name"
                                                     required />
                                                 <div class="invalid-feedback">
-                                                    please choose your image
+                                                    please enter your Reference name
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="phone" class="form-label">Employee
-                                                    Phone</label>
-                                                <input type="number" class="form-control" id="phone"
-                                                    placeholder="phone number" required />
+                                                <label for="name" class="form-label">Reference Mobile Number</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Mobile Number" required />
                                                 <div class="invalid-feedback">
-                                                    Please provide your phone number
+                                                    please enter your Reference mobile No.
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="salary" class="form-label">Employee
-                                                    Salary</label>
-                                                <input type="number" class="form-control" id="salary"
-                                                    placeholder="Salary" required />
-                                                <div class="invalid-feedback">
-                                                    Please enter your salary
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="designation" class="form-label">Employee
-                                                    Designation</label>
-                                                <input type="text" class="form-control" id="designation"
-                                                    placeholder="Designation" required />
-                                                <div class="invalid-feedback">
-                                                    please enter your name
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="mb-3">
-                                                <label for="dprt-name" class="form-label">Department Name</label>
-                                                <select id="dprt-name" class="form-select" required="">
-                                                    <option value="">Choose...</option>
-                                                    <option value="">Front end</option>
-                                                    <option value="press">Back end</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="employee-id" class="form-label">Employee Email Id</label>
-                                                <input type="text" class="form-control" id="employee-id"
-                                                    placeholder="Email-Id" required />
+                                                <label for="name" class="form-label">Reference Relationship</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Relationship" required />
                                                 <div class="invalid-feedback">
-                                                    please give your id
+                                                    please enter your Reference Relationship
                                                 </div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="father-name" class="form-label">Employee Father Name</label>
-                                                <input type="text" class="form-control" id="father-name"
-                                                    placeholder="Email-Id" required />
-                                                <div class="invalid-feedback">
-                                                    please write your father name
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="birth-day" class="form-label">Date Of Birth</label>
-                                                <input type="date" class="form-control" id="basic-datepicker"
-                                                    placeholder="birth-day-date" required />
-                                                <div class="invalid-feedback">
-                                                    please write your birth day date
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="p-address" class="form-label">Employee Present
-                                                    Address</label>
-                                                <textarea id="p-address" class="form-control" required></textarea>
-                                                <div class="invalid-feedback">
-                                                    please write your present address
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="mb-3">
-                                                <label for="office-id" class="form-label">Employee Office Id</label>
-                                                <input type="text" class="form-control" id="office-id"
-                                                    placeholder="Office-Id" required />
+                                                <label for="dprt-name" class="form-label">Reference Address</label>
+                                                <textarea id="p-address" class="form-control" placeholder="Address"
+                                                    required></textarea>
                                                 <div class="invalid-feedback">
-                                                    please give your id
+                                                    please write your Reference address
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="employee-reference-wrapper">
+                                        <h4 class="my-3">#Reference 3</h4>
+                                        <div
+                                            class="employee-reference-inner d-flex justify-content-between align-items-center flex-wrap">
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Reference name</label>
+                                                <input type="text" class="form-control" id="name" placeholder="Name"
+                                                    required />
+                                                <div class="invalid-feedback">
+                                                    please enter Reference name
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="dprt-name" class="form-label">Employee Status</label>
-                                                <select id="dprt-name" class="form-select" required="">
-                                                    <option value="">Choose...</option>
-                                                    <option value="">Active</option>
-                                                    <option value="press">InActive</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="mother-name" class="form-label">Employee Mother Name</label>
-                                                <input type="text" class="form-control" id="mother-name"
-                                                    placeholder="Mother Name" required />
+                                                <label for="name" class="form-label">Reference Mobile Number</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Mobile Number" required />
                                                 <div class="invalid-feedback">
-                                                    please write your mother name
+                                                    please enter your Reference mobile No.
                                                 </div>
                                             </div>
+
                                             <div class="mb-3">
-                                                <label for="humanfd-datepicker" class="form-label">Employee Joining
-                                                    Date</label>
-                                                <input type="date" class="form-control" id="humanfd-datepicker"
-                                                    placeholder="joining date" required />
+                                                <label for="name" class="form-label">Reference Relationship</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Relationship" required />
                                                 <div class="invalid-feedback">
-                                                    please write your joining date
+                                                    please enter your Reference Relationship
                                                 </div>
                                             </div>
+
                                             <div class="mb-3">
-                                                <label for="p-address" class="form-label">Employee Permanent
-                                                    Address</label>
-                                                <textarea id="p-address" class="form-control" required ></textarea>
+                                                <label for="dprt-name" class="form-label">Reference Address</label>
+                                                <textarea id="p-address" class="form-control" placeholder="Address"
+                                                    required></textarea>
                                                 <div class="invalid-feedback">
-                                                    please write your permanent address
+                                                    please write your Reference address
                                                 </div>
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" type="submit">Add Employee</button>
+                                <div class="jfdd-btn-holder d-flex justify-content-end align-items-center ">
+                                    <button class="btn jfss-btn" type="submit">Add Employee</button>
+                                </div>
+
+                                <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle"
+                                    role="button">Open first modal</a>
                             </form>
 
                         </div> <!-- end card-body-->
@@ -1718,6 +2025,156 @@
     <!-- ============================================================== -->
     <!-- End Page content -->
     <!-- ============================================================== -->
+
+
+
+
+
+  
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">Add suppliers</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-select-innr d-flex justify-content-center align-items-center">
+                        <div class="mb-3 ">
+                            <label for="dprt-name" class="form-label">Ecommerce Name</label>
+                            <select id="dprt-name" class="form-select" required="">
+                                <option value="">Select Ecommerce Name</option>
+                                <option value="">Front end</option>
+                                <option value="press">Back end</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="supiler-modal-wrapper d-flex justify-content-around align-items-center flex-wrap">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Supplier Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Supplier Name" required />
+                            <div class="invalid-feedback">
+                                please enter your Reference Relationship
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Organization Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="organization name"
+                                required />
+                            <div class="invalid-feedback">
+                                please enter your Reference Relationship
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Supplier Email</label>
+                            <input type="text" class="form-control" id="name" placeholder="supplier email" required />
+                            <div class="invalid-feedback">
+                                please enter your Reference Relationship
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" id="name" placeholder="number" required />
+                            <div class="invalid-feedback">
+                                please enter your Reference Relationship
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end supiler-modal-wrapper  -->
+
+
+                    <div class="supiler-modal-wrapper d-flex justify-content-around align-items-start flex-wrap">
+
+                        <div class="supiler-modal-innr ">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Mobile Number2</label>
+                                <input type="text" class="form-control" id="name" placeholder="number" required />
+                                <div class="invalid-feedback">
+                                    please enter your Reference Relationship
+                                </div>
+                            </div>
+                            <div class="mb-3 ">
+                                <label for="dprt-name" class="form-label">Zone</label>
+                                <select id="dprt-name" class="form-select" required="">
+                                    <option value="">location</option>
+                                    <option value="">Front end</option>
+                                    <option value="press">Back end</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dprt-name" class="form-label">Bank Details</label>
+                            <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
+                            <div class="invalid-feedback">
+                                please write your Reference address
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dprt-name" class="form-label">Mobile Banking Details</label>
+                            <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
+                            <div class="invalid-feedback">
+                                please write your Reference address
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dprt-name" class="form-label">Supplier Address</label>
+                            <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
+                            <div class="invalid-feedback">
+                                please write your Reference address
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- end supiler-modal-wrapper  -->
+                    <div class="supiler-modal-text">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Social Media link</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your messenger link"
+                                required />
+                            <div class="invalid-feedback">
+                                please enter your messenger link
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn jfss-save-btn"> Save</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hide this modal and show the first with the button below.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Back to first</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- ******************************* -->
+    <!-- MODal  -->
 
 
     </div>
