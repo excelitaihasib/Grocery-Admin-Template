@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title> Merchant Package List</title>
+  <title>Zone Wise Packages Delivery Complete List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -416,7 +416,7 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu" style="width: 263px;">
+    <div class="left-side-menu">
 
       <div class="h-100" data-simplebar>
 
@@ -426,47 +426,88 @@
         <div id="sidebar-menu">
 
           <ul id="side-menu">
+
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
+              <a href="#courierPanel" data-bs-toggle="collapse">
+                <i class="fab fa-first-order"></i>
+                <span> Courier panel </span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
+              <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
+                    <a href="courier_dashboard.html">1. Courier Dashboard</a>
                   </li>
-
                   <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
+                    <a href="merchant_list.html">2. Merchant List </a>
+                  </li>
+                  <li>
+                    <a href="merchantPackageList.html">3. Merchant Package List </a>
+                  </li>
+                  <li>
+                    <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                  </li>
+                  <li>
+                    <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                  </li>
+                  <li>
+                    <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                  </li>
+                  <li>
+                    <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation
+                      List</a>
+                  </li>
+                  <li>
+                    <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
+                  </li>
+                  <li>
+                    <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
+                  </li>
+                  <li>
+                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit
+                      Statement</a>
+                  </li>
+                  <li>
+                    <a href="#11">11. Merchant Payment Statement</a>
+                  </li>
+                  <li>
+                    <a href="#12">12. Courier Employee Part </a>
+                  </li>
+                  <li>
+                    <a href="#13">13. Parcel Tracking System</a>
+                  </li>
+                  <li>
+                    <a href="#logistics" data-bs-toggle="collapse">
+                      <span>14. Logistics </span>
                     </a>
-                    <div class="collapse" id="Agent2">
+                    <div class="collapse" id="logistics">
                       <ul class="nav-second-level">
                         <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
+                          <a href="#14.1">14.1 Vehicle Add</a>
                         </li>
                         <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
+                          <a href="#14.2">14.2 Driver Add</a>
+                        </li>
+                        <li>
+                          <a href="#14.3">14.3. Delivery Boy Add</a>
+                        </li>
+                        <li>
+                          <a href="14.4">14.4. Zone In-charge Add </a>
+                        </li>
+                        <li>
+                          <a href="#14.5">14.5 Add Zone </a>
+                        </li>
+                        <li>
+                          <a href="14.6">14.6. Driver Select </a>
+                        </li>
+                        <li>
+                          <a href="#14.7">14.7. Zone Select </a>
+                        </li>
+                        <li>
+                          <a href="#14.8">14.8 Supervisor Select </a>
                         </li>
                       </ul>
                     </div>
-                  </li>
-
-                  <li>
-                    <a href="manager-customer-list.html">Pending Order List</a>
-                  </li>
-
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-total-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
                   </li>
                 </ul>
               </div>
@@ -489,9 +530,9 @@
 
     <div class="content-page">
       <div class="content">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="pb-2">Zone wise packages delivery complete list</h3>
+            <h3 class="header-title">Zone Wise Packages Delivery Complete List</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
@@ -506,15 +547,15 @@
                       <tr>
                         <th>Date & Time</th>
                         <th>Zone Name</th>
-                        <th>Zone id</th>
-                        <th>Supervisor name</th>
-                        <th>Package delivery <br> completed quantity</th>
-                        <th>product price</th>
-                        <th>Delivary fee</th>
-                        <th>Recieved amount from Customer</th>
-                        <th>Transfer money to Company Account</th>
-                        <th>Transfer money process by</th>
-                        <th>Payment Statement details</th>
+                        <th>Zone Id</th>
+                        <th>Supervisor Name</th>
+                        <th>Package Delivery <br> Completed Quantity</th>
+                        <th>Product Price</th>
+                        <th>Delivery Fee</th>
+                        <th>Received Amount from Customer</th>
+                        <th>Transfer Money to Company Account</th>
+                        <th>Transfer Money Process by</th>
+                        <th>Payment Statement Details</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -532,7 +573,8 @@
                         <td>
                           <span class="complete">Complete</span>
                         </td>
-                        <td> <a href="mirpurZonePackageList.html" class=" jfss-edit-btn"><i class="fas fa-eye"></i></a>
+                        <td> <a href="courier_bank_account_payment_history.html" class=" jfss-edit-btn"><i
+                              class="fas fa-eye"></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -549,7 +591,8 @@
                         <td>
                           <span class="pending">Pending</span>
                         </td>
-                        <td> <a href="mirpurZonePackageList.html" class=" jfss-edit-btn"><i class="fas fa-eye"></i></a>
+                        <td> <a href="courier_bank_account_payment_history.html" class=" jfss-edit-btn"><i
+                              class="fas fa-eye"></i></a>
                         </td>
                       </tr>
 
