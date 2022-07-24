@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Courier Bank Account Payment History</title>
+        <title>Merchant Single Package List </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -37,73 +37,89 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
-            .courierBankPaymentHistory .addBtn {
-              background: #16A085;
-              border-radius: 5px;
-              border: 1px solid #16A085;
-              padding: 8px 30px;
-              font-family: 'Inter';
-              font-weight: 300;
-              font-size: 18px;
-              margin: 15px 0 0 20px;
+            .merchantSinglePkgList th{
+                text-align: left;
+                display: inline-flexbox;
+                justify-content: center;
             }
-            .courierBankPaymentHistory .addBtn a {
-              color: #FFFFFF;
+            .merchantSinglePkgList tr{
+                vertical-align: middle;
             }
-        
+            
+            .merchantSinglePkgList tr td{
+                vertical-align: middle;
+                text-align: center;
+            }
+            .merchantSinglePkgList .addBtn {
+                background: #16A085;
+                border-radius: 5px;
+                border: 1px solid #16A085;
+                padding: 8px 30px;
+                font-family: 'Inter';
+                font-weight: 300;
+                font-size: 18px;
+                margin: 15px 0 0 20px;
+            }
+            .merchantSinglePkgList .addBtn a {
+                color: #FFFFFF;
+            }
+            .merchantSinglePkgList .top_merchant_btn {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
             @media (max-width: 738px){
-                .courierBankPaymentHistory .top_merchant_btn{
-                  display: flex;
-                  justify-content: center;
+                .merchantSinglePkgList .top_merchant_btn{
+                    justify-content: center;
                 }
             }
-            .courierBankPaymentHistory .merchantNameBtn {
-              background: #26C1D7;
-              border-radius: 5px;
-              text-align: center;
-              width: 300px;
-              margin: 15px 0 0 20px;
-              padding: 7px 10px;
+            .merchantSinglePkgList .merchantNameBtn {
+                background: #00666C;
+                border-radius: 5px;
+                width: 327px;
+                margin: 15px 0 0 20px;
+                padding: 0 10px;
             }
-            .courierBankPaymentHistory .merchantNameBtn h6 {
-              font-family: 'Inter';
-              font-weight: 400;
-              font-size: 16px;
-              line-height: 19px;
-              color: #FFFFFF;
+            .merchantSinglePkgList .merchantNameBtn h6 {
+                font-family: 'Inter';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: #FFFFFF;
             }
 
-            .courierBankPaymentHistory .dataTables_length .form-label {
-              display: none;
+            .merchantSinglePkgList .dataTables_length .form-label {
+                display: none;
             }
-            .courierBankPaymentHistory table {
-              font-family: 'Tahoma';
+            .merchantSinglePkgList table {
+                font-family: 'Tahoma';
             }
-            .courierBankPaymentHistory table td {
-              vertical-align: middle;
-              text-align: center;
+            .merchantSinglePkgList table td {
+                vertical-align: middle;
+                text-align: center;
             }
-            .courierBankPaymentHistory .pending {
-              background: rgba(210, 86, 0, 0.2);
-              border-radius: 20px;
-              font-family: 'Inter';
-              font-weight: 400;
-              font-size: 16px;
-              color: #D25600;
-              padding: 6px 20px;
+            .merchantSinglePkgList .pending {
+                background: rgba(210, 86, 0, 0.2);
+                border-radius: 20px;
+                font-family: 'Inter';
+                font-weight: 400;
+                font-size: 16px;
+                color: #D25600;
+                padding: 6px 20px;
             }
-            .courierBankPaymentHistory .submit {
-              background: rgba(55, 210, 0, 0.2);
-              border-radius: 20px;
-              font-family: 'Inter';
-              font-weight: 400;
-              font-size: 16px;
-              color: #37D200;
-              padding: 6px 20px;
+            .merchantSinglePkgList .submit {
+                background: rgba(55, 210, 0, 0.2);
+                border-radius: 20px;
+                font-family: 'Inter';
+                font-weight: 400;
+                font-size: 16px;
+                color: #37D200;
+                padding: 6px 20px;
             }
         </style>
 
-    </head>
+    </head> -
 
     <!-- body start -->
     <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
@@ -620,147 +636,146 @@
             <div class="left-side-menu">
 
                 <div class="h-100" data-simplebar>
-          
-                  <!-- User box -->
-                  <div class="user-box text-center">
-                    <img src="../assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
-                      class="rounded-circle avatar-md">
-                    <div class="dropdown">
-                      <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
-                        data-bs-toggle="dropdown">Geneva Kennedy</a>
-                      <div class="dropdown-menu user-pro-dropdown">
-          
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                          <i class="fe-user me-1"></i>
-                          <span>My Account</span>
-                        </a>
-          
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                          <i class="fe-settings me-1"></i>
-                          <span>Settings</span>
-                        </a>
-          
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                          <i class="fe-lock me-1"></i>
-                          <span>Lock Screen</span>
-                        </a>
-          
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                          <i class="fe-log-out me-1"></i>
-                          <span>Logout</span>
-                        </a>
-          
-                      </div>
-                    </div>
-                    <p class="text-muted">Admin Head</p>
-                  </div>
-          
-                  <!--- Sidemenu -->
-                  <div id="sidebar-menu">
-          
-                    <ul id="side-menu">
-          
-          
-                        <li>
-                            <a href="#courierPanel" data-bs-toggle="collapse">
-                                <i class="fab fa-first-order"></i>
-                                <span> Courier panel </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="courierPanel">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="courier_dashboard.html">1. Courier Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a href="merchant_list.html">2. Merchant List </a>
-                                    </li>
-                                    <li>
-                                        <a href="merchantPackageList.html">3. Merchant Package List </a>
-                                    </li>
-                                    <li>
-                                        <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
-                                    </li>
-                                    <li>
-                                        <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
-                                    </li>
-                                    <li>
-                                        <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
-                                    </li>
-                                    <li>
-                                        <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
-                                    </li>
-                                    <li>
-                                        <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
-                                    </li>
-                                    <li>
-                                        <a href="courier_bank_account_payment_history.html">9. Zone Wise Packages Delivery Complete List</a>
-                                    </li>
-                                    <li>
-                                        <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
-                                    </li>
-                                    <li>
-                                        <a href="#11">11. Merchant Payment Statement</a>
-                                    </li>
-                                    <li>
-                                        <a href="#12">12. Courier Employee Part </a>
-                                    </li>
-                                    <li>
-                                        <a href="#13">13. Parcel Tracking System</a>
-                                    </li>
-                                    <li>
-                                        <a href="#logistics" data-bs-toggle="collapse">
-                                            <span>14. Logistics </span>
-                                        </a>
-                                        <div class="collapse" id="logistics">
-                                            <ul class="nav-second-level">
-                                                <li>
-                                                    <a href="#14.1">14.1 Vehicle Add</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#14.2">14.2 Driver Add</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#14.3">14.3. Delivery Boy Add</a>
-                                                </li>
-                                                <li>
-                                                    <a href="14.4">14.4. Zone In-charge Add </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#14.5">14.5 Add Zone </a>
-                                                </li>
-                                                <li>
-                                                    <a href="14.6">14.6. Driver Select </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#14.7">14.7. Zone Select </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#14.8">14.8 Supervisor Select </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+
+                    <!-- User box -->
+                    <div class="user-box text-center">
+                        <img src="../assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme"
+                            class="rounded-circle avatar-md">
+                        <div class="dropdown">
+                            <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
+                                data-bs-toggle="dropdown">Geneva Kennedy</a>
+                            <div class="dropdown-menu user-pro-dropdown">
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="fe-user me-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="fe-settings me-1"></i>
+                                    <span>Settings</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="fe-lock me-1"></i>
+                                    <span>Lock Screen</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="fe-log-out me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+
                             </div>
-                        </li>
-          
-          
-                    </ul>
-          
-                  </div>
-                  <!-- End Sidebar -->
-          
-                  <div class="clearfix"></div>
-          
+                        </div>
+                        <p class="text-muted">Admin Head</p>
+                    </div>
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+
+                        <ul id="side-menu">
+                            
+
+                            <li>
+                                <a href="#courierPanel" data-bs-toggle="collapse">
+                                    <i class="fab fa-first-order"></i>
+                                    <span> Courier panel </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="courierPanel">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="merchant_list.html">2. Merchant List </a>
+                                        </li>
+                                        <li>
+                                            <a href="merchantPackageList.html">3. Merchant Package List </a>
+                                        </li>
+                                        <li>
+                                            <a href="merchant_single_package_list.html">4. Send by Merchant Parcel List</a>
+                                        </li>
+                                        <li>
+                                            <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                                        </li>
+                                        <li>
+                                            <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                                        </li>
+                                        <li>
+                                            <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
+                                        </li>
+                                        <li>
+                                            <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
+                                        </li>
+                                        <li>
+                                            <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
+                                        </li>
+                                        <li>
+                                            <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
+                                        </li>
+                                        <li>
+                                            <a href="#11">11. Merchant Payment Statement</a>
+                                        </li>
+                                        <li>
+                                            <a href="#12">12. Courier Employee Part </a>
+                                        </li>
+                                        <li>
+                                            <a href="#13">13. Parcel Tracking System</a>
+                                        </li>
+                                        <li>
+                                            <a href="#logistics" data-bs-toggle="collapse">
+                                                <span>14. Logistics </span>
+                                            </a>
+                                            <div class="collapse" id="logistics">
+                                                <ul class="nav-second-level">
+                                                    <li>
+                                                        <a href="#14.1">14.1 Vehicle Add</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#14.2">14.2 Driver Add</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#14.3">14.3. Delivery Boy Add</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="14.4">14.4. Zone In-charge Add </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#14.5">14.5 Add Zone </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="14.6">14.6. Driver Select </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#14.7">14.7. Zone Select </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#14.8">14.8 Supervisor Select </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+    
+                          
+                        </ul>
+
+                    </div>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
                 </div>
                 <!-- Sidebar -left -->
-
-              </div>
+            </div>
             <!-- Left Sidebar End -->
 
 
@@ -768,53 +783,79 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page courierBankPaymentHistory">
+            <div class="content-page merchantSinglePkgList">
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid mt-3">
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-2">
-                                    <h3 class="header-title">Courier Bank Account Payment History</h3>
+                                    <h3 class="header-title">Merchant Single Package List</h3>
                                 </div>
                                 
                                 <div class="card">
-                                    <div class="top_merchant_btn">                
+                                    <div class="top_merchant_btn">
                                         <div class="merchantNameBtn">
-                                            <h6>Zone Name = Mirpur</h6>
-                                            <h6>Zone ID = 012586</h6>
+                                            <h6>Merchant name <br>
+                                                (Organization name) = Jara Fashion </h6>
+                                            <h6>Merchant Id = 0123598756</h6>
+                                        </div>
+                                        
+                                        <div class="me-3">
+                                            <button class="addBtn"><a href="#fgh">Add picker from merchant  <i class="fas fa-plus ms-2"></i></a></button>
                                         </div>
                                     </div>
-
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
-                                              <tr>
-                                                <th>Transaction Date & Time</th>
-                                                <th>Transaction Completed Person</th>
-                                                <th>Total Payment Received from Courier Boy </th>
-                                                <th>Total Deposit at Bank Account</th>
-                                                <th>Total Cash Expense at Zone</th>
-                                                <th>Balance Amount</th>
-                                              </tr>
+                                                <tr>
+                                                   <th>Date & Time</th>
+                                                   <th>Merchant Package Id</th>
+                                                   <th>Customer Name</th>
+                                                   <th>Customer Phone no.</th>
+                                                   <th>Customer Address</th>
+                                                   <th>Package Category</th>
+                                                   <th>Package weight</th>
+                                                   <th>Customer expected delivery time</th>
+                                                   <th>Payment type</th>
+                                                   <th>Product Price</th>
+                                                   <th>Delivery fee</th>
+                                                   <th>status</th>
+                                                   <th>Supervisor name</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                              <tr>
-                                                <td>2022-05-21  12:53:57</td>
-                                                <td>Mr. Hamid</td>
-                                                <td>Complete</td>
-                                                <td>2022-05-21  12:53:57</td>
-                                                <td>Khilgaon</td>
-                                                <td>Cash</td>
-                                              </tr>
-                                              <tr>
-                                                <td>2022-05-21  12:53:57</td>
-                                                <td>Mr. Hamid</td>
-                                                <td>Pending</td>
-                                                <td>2022-05-21  12:53:57</td>
-                                                <td>Khilgaon</td>
-                                                <td>Cash</td>
-                                              </tr>
+                                                <tr>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>55544887</td>
+                                                    <td>Mr. Abdul Hakim</td>
+                                                    <td>011254682</td>
+                                                    <td>Moghbazar, Dhaka 1219</td>
+                                                    <td>Shipped</td>
+                                                    <td>100 kg</td>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>Cash on delivery</td>
+                                                    <td>200  ৳</td>
+                                                    <td>20  ৳</td>
+                                                    <td><span class="pending">Pending</span></td>
+                                                    <td>Mr. Asif</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>55544887</td>
+                                                    <td>Mr. Abdul Hakim</td>
+                                                    <td>011254682</td>
+                                                    <td>Moghbazar, Dhaka 1219</td>
+                                                    <td>Shipped</td>
+                                                    <td>100 kg</td>
+                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>Cash on delivery</td>
+                                                    <td>200  ৳</td>
+                                                    <td>20  ৳</td>
+                                                    <td><span class="submit">Submit</span></td>
+                                                    <td>Mr. Asif</td>
+                                                </tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div> <!-- end card body-->
