@@ -54,14 +54,68 @@
     rel="stylesheet">
 
   <style>
+     #sidebar-menu .menuitem-active>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .menuitem-active:hover>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .nav-second-level li:hover>a {
+      color: #D99200 !important;
+    }
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
     }
 
-    /* .dataTables_length {
+    .table thead tr th {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      color: #717A82;
+    }
+
+    .table tbody tr td {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      color: #5F5F5F;
+
+    }
+
+    .jfss-submit-btn {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: #5F5F5F;
+      background: #FFFFFF;
+      border: 1px solid #5F5F5F;
+      border-radius: 5px;
+    }
+
+
+
+    .jfss-submit-btn .active,
+    .jfss-submit-btn:active,
+    .jfss-submit-btn:focus {
+      background: #0984e3;
+      border: none;
+      color: #FFFFFF;
+    }
+
+    .dataTables_length {
       display: none;
-    } */
+    }
 
     table tr td .pending {
       color: #D25600;
@@ -76,14 +130,20 @@
       padding: 7px 12px;
     }
 
-    .dataTables_length {
+    /* .dataTables_length {
       display: none;
     }
 
+    */
     .dataTables_filter {
       display: none;
     }
 
+    .clr-grn {
+      color: #24AC0E;
+    }
+
+    /* 
     .package-list {
       background: #00666C;
       border-radius: 5px;
@@ -91,17 +151,18 @@
       margin-bottom: 20px;
     }
 
+
+
     .package-list h6 {
-      background: #00666C;
       border-radius: 5px;
       font-family: 'Inter';
       font-style: normal;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 16px;
       line-height: 19px;
 
       color: #FFFFFF;
-    }
+    } */
 
     .add-package-btn-hlder {
       margin-bottom: 20px;
@@ -123,6 +184,18 @@
       border-radius: 20px;
     }
 
+    .complete-btn {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      color: #04D200;
+      background: rgba(4, 210, 0, 0.15);
+      border-radius: 20px;
+      padding: 6px 15px;
+    }
+
     .submit {
       background: rgba(4, 210, 0, 0.2);
       border-radius: 20px;
@@ -131,54 +204,69 @@
 
     }
 
-    .jfss-pack-btn.delete {
-
-      background: rgba(255, 0, 0, 0.1);
-      border: 1px solid #FF0000;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 10px 15px;
+    /* 
+    .package-list-content h6 {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
       margin-right: 10px;
-      color: #FF0000;
+      color: #FFFFFF;
+      margin: 5px 15px;
 
+    } */
+    /* 
+    h6.package-lists {
 
-    }
-
-    .jfss-pack-btn.print {
-
-      background: rgba(3, 158, 192, 0.2);
-      border: 1px solid #039EC0;
-      border-radius: 10px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 10px 15px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
       margin-right: 10px;
-      color: #039EC0;
+      color: #FFFFFF;
+      margin: 0 15px;
+    } */
 
+    .metting-id-wrap .mettingId {
 
-    }
-
-    .pack-row {
-      border: 1px solid #000000;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .pack-add-new-btn-holder .add-new-btn {
-
-      background: #44C003;
-      border-radius: 10px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 8px 30px;
+      font-size: 16px;
+      line-height: 19px;
       color: #FFFFFF;
+      background: #2ACAC0;
+      padding: 8px 30px;
+    }
+
+    @media(max-width:575px) {
+
+
+      .merchant-header {
+        margin: 20px;
+      }
+
+      .metting-id-wrap .mettingId {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+    }
+
+    @media(max-width:320px) {
+
+
+      .merchant-header {
+        margin: 20px !important;
+      }
+
+      .metting-id-wrap .mettingId {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+      }
+
     }
   </style>
 
@@ -186,7 +274,7 @@
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading return-product" style="background:#FCD37F;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -428,60 +516,56 @@
 
 
 
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-
-          <ul id="side-menu">
-            <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
-                <span class="menu-arrow"></span>
-              </a>
-              <div class="collapse" id="manager-panel">
-                <ul class="nav-second-level">
-                  <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
-                  </li>
-
-                  <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="Agent2">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
-                        </li>
-                        <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li>
-                    <a href="manager-customer-list.html">Pending Order List</a>
-                  </li>
-
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-total-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-        <!-- End Sidebar -->
+      <!--- Sidemenu -->
+      <div id="sidebar-menu">
+      
+        <ul id="side-menu">
+          <li>
+            <a href="#courierPanel" data-bs-toggle="collapse">
+              <i class="fab fa-first-order"></i>
+              <span>Merchant </span>
+              <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="courierPanel">
+              <ul class="nav-second-level">
+                <li>
+                  <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
+                </li>
+                <li>
+                  <a href="merchant_packageList.html">2.Merchant Package List </a>
+                </li>
+                <li>
+                  <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
+                </li>
+                <li>
+                  <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
+                </li>
+                <li>
+                  <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
+                    list from
+                    Delivery Boy</a>
+                </li>
+                <li>
+                  <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
+                </li>
+                <li>
+                  <a href="merchant_admin_payment_history.html">7. Merchant & Admin
+                    Payment History</a>
+                </li>
+      
+      
+      
+              </ul>
+            </div>
+          </li>
+      
+      
+      
+        </ul>
+      
+      </div>
+      <!-- End Sidebar -->
+       
 
         <div class="clearfix"></div>
 
@@ -495,351 +579,111 @@
 
     <div class="content-page">
       <div class="content">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="pb-2">Package listing</h3>
+            <h3 class="pb-2 merchant-header">Merchant Delivered Package List</h3>
             <div class="col-12">
               <div class="card">
-                <div class="card-body" id="parentOfCardId">
-                  <div class="row pack-row" id="cardId">
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Merchant package id</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter package id
-                        </div>
+                <div class="card-body">
+                  <div class="add-package-wrap d-flex justify-content-between align-items-center flex-wrap ">
+
+                    <div class="metting-id-wrap">
+                      <h6 class="mettingId">Merchant ID : <span> 20225455</span></h6>
+                    </div>
+
+                    <!-- <div class="package-list">
+                      <h6>Merchant name <br>
+                        (Organization name) = Jara Fashion</h6>
+                      <h6> Merchant Id = 0123598756</h6>
+                    </div>
+
+                    <div class="package-list bg-dark">
+                      <div class=" package-list-content d-flex justify-content-center-align-items-center">
+                        <h6>Picker Name <br>
+                          Rahim</h6>
+                        <h6> Zone
+                          Moghbazar</h6>
                       </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter customer Name" required />
-                        <div class="invalid-feedback">
-                          please enter your customer Name
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Id</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter customer Id" required />
-                        <div class="invalid-feedback">
-                          please enter your customer Id
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Phone no.</label>
-                        <input type="text" class="form-control" id="name" placeholder="Relationship" required />
-                        <div class="invalid-feedback">
-                          please enter your Reference Relationship
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Package Category</label>
-                        <select id="dprt-name" class="form-select" required="">
-                          <option value="">Active</option>
-                          <option value="">Front end</option>
-                          <option value="press">Back end</option>
-                        </select>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Package weight</label>
-                        <input type="text" class="form-control" id="name" placeholder="weight" required />
-                        <div class="invalid-feedback">
-                          please enter your weight
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer expected delivary time</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter parcel number
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Payment type</label>
-                        <select id="dprt-name" class="form-select" required="">
-                          <option value="">Active</option>
-                          <option value="">Front end</option>
-                          <option value="press">Back end</option>
-                        </select>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Product Price</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Price" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter Price
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Delivary fee</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter fee
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Address</label>
-                        <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
-                        <div class="invalid-feedback">
-                          please enter your Enter Address
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-sm-12 col-md-4">
-
-                      <div class="mb-3">
-                        <span></span>
-                        <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                          <a href="javascript:void(0)" class="jfss-pack-btn delete"> Delete
-                            <i class="fas fa-trash-alt"></i></a>
-                          <a href="#" class="jfss-pack-btn print"> Print <i class="fas fa-print"></i> </a>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div class="pack-add-new-btn-holder my-3">
-                      <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-                    </div>
-
+                      <h6 class=" package-lists">Mobile Number = 0123598756</h6>
+                    </div> -->
                   </div>
 
 
-                  <div class="pack-add-new-btn-holder d-flex justify-content-end align-items-center my-3">
-                    <a href="#" class="add-new-btn">Submit </a>
-                  </div>
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
 
+                    <thead>
+                      <tr>
+                        <th>Delivery Date & Time </th>
+                        <th>Merchant package <br> id</th>
+                        <th>Customer Name</th>
+                        <th>Customer Phone <br> no.</th>
+                        <th>Customer Address</th>
+                        <th>Package <br> Category</th>
+                        <th>Package <br> weight</th>
+                        <th>Customer expected <br> delivery time</th>
+                        <th>Payment type</th>
+                        <th>Product Delivery <br>
+                          to Customer Status</th>
+                        <th>Product Price</th>
+                        <th>Delivery fee</th>
+                        <th>Received amount <br>
+                          from Customer</th>
+                        <th>Day wise Total
+                          <br>
+                          Received Amount
+                          amount
+                        </th>
 
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>55544887</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>011254682</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td>Shipped</td>
+                        <td>100kg</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>Cash on delivery</td>
+                        <td>
+                          <span class="pending"  onclick="penBtnClick(this)">Pending</span>
+                        </td>
+                        <td>৳ 500</td>
+                        <td>৳ 30</td>
+                        <td> <span class="clr-grn"> ৳ 220 </span></td>
+                        <td> <span class="clr-grn"> = ৳ 500</span> </td>
 
+                      </tr>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>55544887</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>011254682</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td>Shipped</td>
+                        <td>100kg</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>Cash on delivery</td>
+                        <td>
+                          <span class="pending" onclick="penBtnClick(this)">Pending</span>
+                        </td>
+                        <td>৳ 500</td>
+                        <td>৳ 30</td>
+                        <td> <span class="clr-grn"> ৳ 220 </span></td>
+                        <td> <span class="clr-grn"> = ৳ 500</span> </td>
 
+                      </tr>
+
+                    </tbody>
+                  </table>
                 </div> <!-- end card body-->
               </div> <!-- end card -->
             </div><!-- end col-->
           </div>
         </div>
       </div>
-
-      <div id="duplicateData">
-        <div class="row pack-row mt-4" id="childCardId">
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Merchant package id</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
-              <div class="invalid-feedback">
-                please enter your Enter package id
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter customer Name" required />
-              <div class="invalid-feedback">
-                please enter your customer Name
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Id</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter customer Id" required />
-              <div class="invalid-feedback">
-                please enter your customer Id
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Phone no.</label>
-              <input type="text" class="form-control" id="name" placeholder="Relationship" required />
-              <div class="invalid-feedback">
-                please enter your Reference Relationship
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Package Category</label>
-              <select id="dprt-name" class="form-select" required="">
-                <option value="">Active</option>
-                <option value="">Front end</option>
-                <option value="press">Back end</option>
-              </select>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Package weight</label>
-              <input type="text" class="form-control" id="name" placeholder="weight" required />
-              <div class="invalid-feedback">
-                please enter your weight
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer expected delivary time</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
-              <div class="invalid-feedback">
-                please enter your Enter parcel number
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Payment type</label>
-              <select id="dprt-name" class="form-select" required="">
-                <option value="">Active</option>
-                <option value="">Front end</option>
-                <option value="press">Back end</option>
-              </select>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Product Price</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter Price" required />
-              <div class="invalid-feedback">
-                please enter your Enter Price
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Delivary fee</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
-              <div class="invalid-feedback">
-                please enter your Enter fee
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Address</label>
-              <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
-              <div class="invalid-feedback">
-                please enter your Enter Address
-              </div>
-            </div>
-
-          </div>
-          <!-- end col  -->
-
-          <div class="col-lg-2 col-sm-12 col-md-4">
-
-            <div class="mb-3">
-              <span></span>
-              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
-                  <i class="fas fa-trash-alt"></i></a>
-                <a href="#" class="jfss-pack-btn print"> Print <i class="fas fa-print"></i> </a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="pack-add-new-btn-holder my-3">
-            <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
 
@@ -1002,23 +846,27 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
 
 
   <script>
 
-    function addNewBtn() {
-      $cardIdClone = $('#childCardId').clone();
-      $('#parentOfCardId').append($cardIdClone);
-    }
-    function removeItem(event) {
-      $('#childCardId').remove();
-    }
+        var pendingBtn = null;
+          function penBtnClick(element) {
+            if (pendingBtn != null) {
+              pendingBtn = element;
+              pendingBtn.style.background = "rgba(210, 86, 0, 0.2)";
+              pendingBtn.style.color = "#D25600";
+              pendingBtn.innerHTML = 'Pending';
 
-    $(document).ready(function () {
-      $('#duplicateData').hide();
-    });
+
+            }
+            pendingBtn = element;
+            pendingBtn.style.background = "#3DB613";
+            pendingBtn.style.color = " #fff";
+            pendingBtn.innerHTML = ' Delivery Complete';
+          }
+
+
   </script>
 
 </body>

@@ -54,6 +54,22 @@
     rel="stylesheet">
 
   <style>
+    #sidebar-menu .menuitem-active>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .menuitem-active:hover>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .nav-second-level li:hover>a {
+      color: #D99200 !important;
+    }
+
+    .content-page {
+      margin-top: 20px;
+    }
+
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
@@ -68,6 +84,25 @@
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
+    }
+
+    label {
+      font-weight: 700;
+    }
+
+    .add-btn {
+      background: #5056E2;
+      border-radius: 10px;
+    }
+
+    .submit-btn {
+      background: #1C71B7;
+      border-radius: 10px;
+    }
+
+    .complete-btn {
+      background: #3A9D07;
+      border-radius: 10px;
     }
 
     .jfss-edit-btn {
@@ -137,12 +172,13 @@
       border: 1px solid #FF0000;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px;
-      padding: 10px 15px;
+      padding: 8px 15px;
       margin-right: 10px;
       color: #FF0000;
-
+      margin: 5px;
+      text-align: center;
 
     }
 
@@ -153,12 +189,13 @@
       border-radius: 10px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px;
-      padding: 10px 15px;
+      padding: 8px 10px;
       margin-right: 10px;
       color: #039EC0;
-
+      text-align: center;
+      margin: 5px;
 
     }
 
@@ -169,16 +206,65 @@
     }
 
     .pack-add-new-btn-holder .add-new-btn {
-
-      background: #44C003;
-      border-radius: 10px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 17px;
-      padding: 8px 30px;
+      padding: 8px 40px;
       color: #FFFFFF;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 575px) {
+
+      .pack-add-new-btn-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+      }
+
+      .pack-add-new-btn-holder .add-new-btn {
+        padding: 8px 25px;
+      }
+
+      .merchant-header {
+        margin: 20px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .pack-add-new-btn-holder .add-new-btn {
+        padding: 10px 19px;
+        font-size: 12px;
+        margin: 5px;
+      }
+
+
+    }
+
+    @media (max-width: 480px) {
+      .pack-add-new-btn-holder .add-new-btn {
+        font-size: 12px;
+        margin: 5px;
+        width: 103px;
+        text-align: center;
+      }
+
+    }
+
+    @media (max-width: 320px) {
+      .add-package-btn-hlder .add-package-btn {
+        font-size: 14px;
+      }
+
+      label {
+        font-size: 12px;
+      }
     }
   </style>
 
@@ -186,7 +272,7 @@
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading return-product" style="background:#FCD37F;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -433,50 +519,45 @@
 
           <ul id="side-menu">
             <li>
-              <a href="#manager-panel" data-bs-toggle="collapse">
-                <i class="fas fa-list-alt"></i>
-                <span> Manager Panel </span>
+              <a href="#courierPanel" data-bs-toggle="collapse">
+                <i class="fab fa-first-order"></i>
+                <span>Merchant </span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="manager-panel">
+              <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="manager_panel_dashboard.html">Dashboard</a>
+                    <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="merchant_packageList.html">2.Merchant Package List </a>
+                  </li>
+                  <li>
+                    <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
+                  </li>
+                  <li>
+                    <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
+                  </li>
+                  <li>
+                    <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
+                      list from
+                      Delivery Boy</a>
+                  </li>
+                  <li>
+                    <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
+                  </li>
+                  <li>
+                    <a href="merchant_admin_payment_history.html">7. Merchant & Admin
+                      Payment History</a>
                   </li>
 
-                  <li>
-                    <a href="#Agent2" data-bs-toggle="collapse">
-                      <span> Agent </span>
-                      <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="Agent2">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="mngr_add_agent.html">Add Agent</a>
-                        </li>
-                        <li>
-                          <a href="mngr_agent_list.html">Agent List</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
 
-                  <li>
-                    <a href="manager-customer-list.html">Pending Order List</a>
-                  </li>
 
-                  <li>
-                    <a href="#">Product Category</a>
-                  </li>
-                  <li>
-                    <a href="manager-total-order-history.html">Order History</a>
-                  </li>
-                  <li>
-                    <a href="manager-agent-commission.html">Agent Commission</a>
-                  </li>
                 </ul>
               </div>
             </li>
+
+
 
           </ul>
 
@@ -497,10 +578,16 @@
       <div class="content">
         <div class="container-fluid mt-5">
           <div class="row">
-            <h3 class="pb-2">Package listing</h3>
+            <h3 class="pb-2 merchant-header">Package listing</h3>
             <div class="col-12">
-              <div class="card">
+              <div class="card p-3">
                 <div class="card-body" id="parentOfCardId">
+
+                  <div class="add-package-btn-hlder mb-4" style="margin-right: 10px;">
+                    <a href="merchant_parcelList.html" class="add-package-btn">Sent to parcel list
+                    </a>
+                  </div>
+
                   <div class="row pack-row" id="cardId">
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
@@ -647,17 +734,27 @@
 
                       <div class="mb-3">
                         <span></span>
-                        <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                          <a href="javascript:void(0)" class="jfss-pack-btn delete"> Delete
+                        <div
+                          class="package-listing-btn-holder d-flex justify-content-center align-items-center flex-lg-row flex-wrap my-3">
+
+                          <a href="#" class="jfss-pack-btn print"
+                            onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> QR Print </br> <i
+                              class="fas fa-print"></i> </a>
+                          <a href="#" class="jfss-pack-btn print"
+                            onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> Invoice Print </br> <i
+                              class="fas fa-print"></i> </a>
+                          <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
+                            </br>
                             <i class="fas fa-trash-alt"></i></a>
-                          <a href="#" class="jfss-pack-btn print"> Print <i class="fas fa-print"></i> </a>
                         </div>
                       </div>
 
                     </div>
 
                     <div class="pack-add-new-btn-holder my-3">
-                      <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
+                      <a href="javascript:void(0)" class="add-new-btn add-btn" onclick="addNewBtn()"> Add New</a>
+                      <a href="merchant_packageList.html" class="add-new-btn submit-btn"> Submit</a>
+                      <a href="merchant_packageList.html" class="add-new-btn complete-btn"> Complete</a>
                     </div>
 
                   </div>
@@ -824,17 +921,27 @@
 
             <div class="mb-3">
               <span></span>
-              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
+              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center  flex-wrap my-3">
+
+                <a href="#" class="jfss-pack-btn print"
+                  onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> QR Print
+                  </br> <i class="fas fa-print"></i> </a>
+                <a href="#" class="jfss-pack-btn print"
+                  onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> Invoice
+                  Print </br> <i class="fas fa-print"></i> </a>
+                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete </br>
                   <i class="fas fa-trash-alt"></i></a>
-                <a href="#" class="jfss-pack-btn print"> Print <i class="fas fa-print"></i> </a>
               </div>
             </div>
 
           </div>
 
           <div class="pack-add-new-btn-holder my-3">
-            <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
+            <div class="pack-add-new-btn-holder my-3">
+              <a href="javascript:void(0)" class="add-new-btn add-btn" onclick="addNewBtn()"> Add New</a>
+              <a href="merchant_packageList.html" class="add-new-btn submit-btn"> Submit</a>
+              <a href="merchant_packageList.html" class="add-new-btn complete-btn"> Complete</a>
+            </div>
           </div>
 
         </div>
