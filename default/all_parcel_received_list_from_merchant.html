@@ -35,10 +35,14 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
+            body{
+                background-color: #91f1fd;
+            }
             table {
                 font-family: 'Tahoma', sans-serif;
                 white-space: nowrap;
             }
+            
             .merchantList .faEye {
                 background: #B8E6F0;
                 border-radius: 10px;
@@ -52,10 +56,14 @@
             .merchantList table {
                 font-family: 'Tahoma';
             }
+            
             table th{
                 text-align: left;
-                display: inline-flexbox;
                 justify-content: center;
+                font-size: 12px;
+            }
+            table tr{
+                font-size: 12px;
             }
             table tr td{
                 vertical-align: middle;
@@ -72,6 +80,9 @@
                 background: rgba(55, 210, 0, 0.2);
                 border-radius: 20px;
                 padding: 6px 20px;
+            }
+            table.dataTable.nowrap td {
+                white-space: normal;
             }
         </style>
     </head>
@@ -634,93 +645,56 @@
                     <div id="sidebar-menu">
 
                         <ul id="side-menu">
-                            
-
                             <li>
                                 <a href="#courierPanel" data-bs-toggle="collapse">
-                                    <i class="fab fa-first-order"></i>
-                                    <span> Courier panel </span>
-                                    <span class="menu-arrow"></span>
+                                  <i class="fab fa-first-order"></i>
+                                  <span> Courier panel </span>
+                                  <span class="menu-arrow"></span>
                                 </a>
                                 <div class="collapse" id="courierPanel">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="courier_dashboard.html">1. Courier Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="merchant_list.html">2. Merchant List </a>
-                                        </li>
-                                        <li>
-                                            <a href="merchantPackageList.html">3. Merchant Package List </a>
-                                        </li>
-                                        <li>
-                                            <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
-                                        </li>
-                                        <li>
-                                            <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
-                                        </li>
-                                        <li>
-                                            <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
-                                        </li>
-                                        <li>
-                                            <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
-                                        </li>
-                                        <li>
-                                            <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
-                                        </li>
-                                        <li>
-                                            <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
-                                        </li>
-                                        <li>
-                                            <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
-                                        </li>
-                                        <li>
-                                            <a href="#11">11. Merchant Payment Statement</a>
-                                        </li>
-                                        <li>
-                                            <a href="#12">12. Courier Employee Part </a>
-                                        </li>
-                                        <li>
-                                            <a href="#13">13. Parcel Tracking System</a>
-                                        </li>
-                                        <li>
-                                            <a href="#logistics" data-bs-toggle="collapse">
-                                                <span>14. Logistics </span>
-                                            </a>
-                                            <div class="collapse" id="logistics">
-                                                <ul class="nav-second-level">
-                                                    <li>
-                                                        <a href="#14.1">14.1 Vehicle Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.2">14.2 Driver Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.3">14.3. Delivery Boy Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.4">14.4. Zone In-charge Add </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.5">14.5 Add Zone </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.6">14.6. Driver Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.7">14.7. Zone Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.8">14.8 Supervisor Select </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                  <ul class="nav-second-level">
+                                    <li>
+                                      <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                                    </li>
+                                    <li>
+                                      <a href="merchant_list.html">2. Merchant List </a>
+                                    </li>
+                                    <li>
+                                      <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
+                                    </li>
+                                    <li>
+                                      <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
+                                    </li>
+                                    <li>
+                                      <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
+                                    </li>
+                                    <li>
+                                      <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
+                                    </li>
+                                    <li>
+                                      <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
+                                    </li>
+                                    <li>
+                                      <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
+                                    </li>
+                                    <li>
+                                      <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
+                                    </li>
+                                    <li>
+                                      <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
+                                    </li>
+                                    <li>
+                                      <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
+                                    </li>
+                                    <li>
+                                      <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
+                                    </li>
+                                    <li>
+                                      <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
+                                    </li>
+                                  </ul>
                                 </div>
                             </li>
-    
-                          
                         </ul>
 
                     </div>
@@ -754,24 +728,24 @@
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Parcel Received Date & time</th>
-                                                    <th>Merchant Name</th>
-                                                    <th>Merchant Id</th>
-                                                    <th>Number of Parcel Quantity</th>
-                                                    <th>Cash on Delivery No. of Parcel Quantity</th>
-                                                    <th>Payment Complete No. of Parcel Quantity</th>
-                                                    <th>Total Parcel Weight</th>
-                                                    <th>Payment Type</th>
+                                                    <th>Parcel Received Date & <br> Time</th>
+                                                    <th>Merchant / <br> Organization Name </th>
+                                                    <th>Merchant ID</th>
+                                                    <th>Number of <br> Parcel Quantity</th>
+                                                    <th>Cash on Delivery <br> No. of Parcel <br> Quantity</th>
+                                                    <th>Payment Complete <br> No. of Parcel <br> Quantity</th>
+                                                    <th>Total Parcel <br> Weight</th>
+                                                    <th>Payment <br> Type</th>
                                                     <th>Amount</th>
-                                                    <th>Total Delivery Charge</th>
-                                                    <th>Parcel Check by</th>
-                                                    <th>Parcel Receive Status</th>
+                                                    <th>Total Delivery <br> Charge</th>
+                                                    <th>Parcel <br> Check by</th>
+                                                    <th>Parcel <br> Receive Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>20-05-2022  12:53:57</td>
                                                     <td>Mr. Abdul Hakim</td>
                                                     <td>01238791</td>
                                                     <td>50</td>
@@ -786,7 +760,7 @@
                                                     <td><a href="delivery_zone_select_page.html"><i class="fas fa-eye faEye"></i></a></td>
                                                 </tr>
                                                 <tr>     
-                                                    <td>2022-05-21  12:53:57</td>
+                                                    <td>20-05-2022  12:53:57</td>
                                                     <td>Mr. Abdul Hakim</td>
                                                     <td>01238791</td>
                                                     <td>50</td>
@@ -809,26 +783,6 @@
                         <!-- end row--> 
                     </div> <!-- container -->
                 </div> <!-- content -->
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a> 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
             </div>
 
             

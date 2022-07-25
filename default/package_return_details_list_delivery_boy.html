@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>All Zone Payment Received & Deposit Statement</title>
+        <title>Package Return Details List from Delivery Boy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -15,13 +15,11 @@
         <link href="../assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <!-- third party css end -->
-
-        <!-- google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
+        <!-- third party css end -->
 
 		<!-- App css -->
 		<link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -29,6 +27,7 @@
 
 		<link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
 		<link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -37,32 +36,42 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
-            table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before{
-                bottom: 1.6rem;
+            body{
+                background-color: #91f1fd;
             }
-            .zonePaymentReceiveStatement .dataTables_length .form-label {
+            table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before {
+                bottom: 4em;
+            }
+            .merchantParcelList .faEye {
+                background: #B8E6F0;
+                border-radius: 10px;
+                color: #000000;
+                padding: 10px 12px;
+                font-size: 20px;
+            }
+            .merchantParcelList .dataTables_length .form-label {
                 display: none;
             }
-            .zonePaymentReceiveStatement table {
+            .merchantParcelList table {
                 font-family: 'Tahoma';
             }
-            .zonePaymentReceiveStatement table td {
+            .merchantParcelList table td {
                 vertical-align: middle;
-                text-align: center;
             }
-            .zonePaymentReceiveStatement th{
+            .merchantParcelList th{
                 text-align: left;
                 display: inline-flexbox;
                 justify-content: center;
-                font-size: 12px;
-                text-align: center;
             }
-            .zonePaymentReceiveStatement tr{
+            .merchantParcelList tr{
                 vertical-align: middle;
                 font-size: 12px;
             }
-            .zonePaymentReceiveStatement table
-            .zonePaymentReceiveStatement .pending {
+            .merchantParcelList tr td{
+                vertical-align: middle;
+                text-align: center;
+            }
+            .merchantParcelList .pending {
                 background: rgba(210, 86, 0, 0.2);
                 border-radius: 20px;
                 font-family: 'Inter';
@@ -70,8 +79,9 @@
                 font-size: 16px;
                 color: #D25600;
                 padding: 6px 20px;
+                cursor: pointer;
             }
-            .zonePaymentReceiveStatement .submit {
+            .merchantParcelList .complete {
                 background: rgba(55, 210, 0, 0.2);
                 border-radius: 20px;
                 font-family: 'Inter';
@@ -80,37 +90,38 @@
                 color: #37D200;
                 padding: 6px 20px;
             }
-            .zonePaymentReceiveStatement .calender {
-                display: block;
-                width: 100%;
-                padding: 0.45rem 0.9rem;
-                font-size: .875rem;
-                font-weight: 400;
-                line-height: 1.5;
-                color: #6c757d;
-                background-color: #fff;
-                border: 1px solid #ced4da;
-                border-radius: 0.2rem;
-                appearance: none;
-                margin: 20px 0 0 20px;
+            .merchantParcelList .notreceived-btn {
+                padding: 5px 20px;
+                border-radius: 5px;
+                background: rgba(212, 24, 24, 0.2);
+                border: 1px solid #D41818;
+                color: #D51818;
+            }
+            table tr td .pending {
+                color: #D25600;
+                background: rgba(210, 86, 0, 0.2);
+                border-radius: 20px;
+                padding: 6px 20px;
+            }
+            table tr td .complete {
+                color: #37D200;
+                background: rgba(55, 210, 0, 0.2);
+                border-radius: 20px;
+                padding: 6px 20px;
             }
             table.dataTable.nowrap th, table.dataTable.nowrap td {
                 white-space: normal;
             }
-            .faEye{
-                background: #B8E6F0;
-                border-radius: 10px;
-                color: #000000;
-                padding: 10px 12px;
-                font-size: 20px;
+            table select.form-select{
+                width: 100px;
+                padding: 0.45rem 2.7rem 0.45rem 0.3rem;
             }
         </style>
-
     </head>
 
     <!-- body start -->
     <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
-       
+
         <!-- Begin page -->
         <div id="wrapper">
 
@@ -718,7 +729,6 @@
                                     </ul>
                                 </div>
                             </li>
-    
                           
                         </ul>
 
@@ -729,6 +739,7 @@
 
                 </div>
                 <!-- Sidebar -left -->
+3
             </div>
             <!-- Left Sidebar End -->
 
@@ -737,42 +748,72 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page zonePaymentReceiveStatement">
+            <div class="content-page merchantParcelList">
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid mt-3">
                         <div class="row">
                             <div class="col-12">
                                 <div class="mb-2">
-                                    <h3 class="header-title">All Zone Payment Received & Deposit Statement</h3>
+                                    <h3 class="header-title">Package Return Details List from Delivery Boy</h3>
                                 </div>
                                 
                                 <div class="card">
-                                    <div class="col-lg-2 calender-wrapper">
-                                        <input type="date" class="calender">
-                                    </div>
-
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                   <th>Date</th>
-                                                   <th>Total Deposit at Bank Account from Zone</th>
-                                                   <th>Total Cash Deposit from Zone</th>
-                                                   <th>Total Payment Received from Zone</th>
-                                                   <th>Balance Amount</th>
-                                                   <th>Action</th>
+                                                    <th>Package Return Date & Time </th>
+                                                    <th>Merchant Id</th>
+                                                    <th>Merchant Parcel Number</th>
+                                                    <th>Invoice Number or Order Number</th>
+                                                    <th>Customer Name</th>
+                                                    <th>Customer Phone Number</th>
+                                                    <th>Customer Address</th>
+                                                    <th>Package Category</th>
+                                                    <th>Package Weight</th>
+                                                    <th>Return Package Delivery Fee</th>
+                                                    <th>Zone</th>
+                                                    <th>Package Return Received by</th>
+                                                    <th>Supervisor Return Product Received Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>20-05-2022</td>
-                                                    <td>2022052</td>
-                                                    <td>100000</td>
-                                                    <td>10000</td>
-                                                    <td>100000</td>
-                                                    <td><a href="date_wise_payment_statement.html"><i class="fas fa-eye faEye"></i></a></td>
+                                                    <td>20-05-2022 12:53:57</td>
+                                                    <td>20225455</td>
+                                                    <td>4534531</td>
+                                                    <td>011675545425</td>
+                                                    <td>Mr. Sharif</td>
+                                                    <td>011675545453</td>
+                                                    <td>Moghbazar, Dhaka 1219</td>
+                                                    <td>Vacuum Packaging</td>
+                                                    <td>50kg</td>
+                                                    <td>60</td>
+                                                    <td>Moghbazar, Dhaka 1217</td>
+                                                    <td>Mr. Kamal khan</td>
+                                                    <td class="text-center">
+                                                        <button id="btn1" class="notreceived-btn" onclick="notReceivedF(this)">Not Received</button>
+                                                    </td>
                                                 </tr>
+                                                <tr>
+                                                  <td>20-05-2022 12:53:57</td>
+                                                  <td>20225455</td>
+                                                  <td>4534531</td>
+                                                  <td>011675545425</td>
+                                                  <td>Mr. Sharif</td>
+                                                  <td>011675545453</td>
+                                                  <td>Moghbazar, Dhaka 1219</td>
+                                                  <td>Vacuum Packaging</td>
+                                                  <td>50kg</td>
+                                                  <td>60</td>
+                                                  <td>Moghbazar, Dhaka 1217</td>
+                                                  <td>Mr. Kamal khan</td>
+                                                  <td class="text-center">
+                                                      <button id="btn1" class="notreceived-btn" onclick="notReceivedF(this)">Not Received</button>
+                                                  </td>
+                                              </tr>
+                                                
                                             </tbody>
                                         </table>
                                     </div> <!-- end card body-->
@@ -783,8 +824,6 @@
                     </div> <!-- container -->
                 </div> <!-- content -->
 
-            </div>
-
             
             <!-- ============================================================== -->
             <!-- End Page content -->
@@ -792,6 +831,27 @@
 
         </div>
         <!-- END wrapper -->
+
+        <!-- ========================Code Generate Modal Start================================ -->
+        <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="delete-icon">
+                            <i class="fa-solid fa-trash-can delete-icon"></i>
+                            <p>Delete Data</p>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-body text-center">
+                        <h4>Are You Sure!  You want to Delete this Data ?</h4>
+                        <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================Code Generate Modal Start================================ -->
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1191,6 +1251,27 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+        <script>
+            
+            // not received button js
+            var buttonClicked1 = null;
+            function notReceivedF(element) {
+                if (buttonClicked1 != null) {
+                    buttonClicked1.style.background = "rgba(212, 24, 24, 0.2)";
+                    buttonClicked1.style.color = "#D51818";
+                    buttonClicked1.style.border = "1px solid #D41818";
+                    buttonClicked1.innerHTML = "Not Received"
+                }
+                buttonClicked1 = element;
+                buttonClicked1.style.background = "#55B10D";
+                buttonClicked1.style.color = "#fff";
+                buttonClicked1.innerHTML = "Package Received";
+                buttonClicked1.style.border = "none"
+                buttonClicked1.style.whiteSpace = "nowrap"
+            }
+
+        </script>
 
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>
