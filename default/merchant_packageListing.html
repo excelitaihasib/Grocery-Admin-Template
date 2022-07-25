@@ -54,6 +54,22 @@
     rel="stylesheet">
 
   <style>
+    #sidebar-menu .menuitem-active>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .menuitem-active:hover>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .nav-second-level li:hover>a {
+      color: #D99200 !important;
+    }
+
+    .content-page {
+      margin-top: 20px;
+    }
+
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
@@ -68,6 +84,25 @@
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
+    }
+
+    label {
+      font-weight: 700;
+    }
+
+    .add-btn {
+      background: #5056E2;
+      border-radius: 10px;
+    }
+
+    .submit-btn {
+      background: #1C71B7;
+      border-radius: 10px;
+    }
+
+    .complete-btn {
+      background: #3A9D07;
+      border-radius: 10px;
     }
 
     .jfss-edit-btn {
@@ -137,12 +172,13 @@
       border: 1px solid #FF0000;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px;
-      padding: 10px 15px;
+      padding: 8px 15px;
       margin-right: 10px;
       color: #FF0000;
-
+      margin: 5px;
+      text-align: center;
 
     }
 
@@ -153,12 +189,13 @@
       border-radius: 10px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px;
-      padding: 10px 15px;
+      padding: 8px 10px;
       margin-right: 10px;
       color: #039EC0;
-
+      text-align: center;
+      margin: 5px;
 
     }
 
@@ -166,20 +203,68 @@
       border: 1px solid #000000;
       border-radius: 10px;
       padding: 20px;
-
     }
 
     .pack-add-new-btn-holder .add-new-btn {
-
-      background: #44C003;
-      border-radius: 10px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 17px;
-      padding: 8px 30px;
+      padding: 8px 40px;
       color: #FFFFFF;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 575px) {
+
+      .pack-add-new-btn-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+      }
+
+      .pack-add-new-btn-holder .add-new-btn {
+        padding: 8px 25px;
+      }
+
+      .merchant-header {
+        margin: 20px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .pack-add-new-btn-holder .add-new-btn {
+        padding: 10px 19px;
+        font-size: 12px;
+        margin: 5px;
+      }
+
+
+    }
+
+    @media (max-width: 480px) {
+      .pack-add-new-btn-holder .add-new-btn {
+        font-size: 12px;
+        margin: 5px;
+        width: 103px;
+        text-align: center;
+      }
+
+    }
+
+    @media (max-width: 320px) {
+      .add-package-btn-hlder .add-package-btn {
+        font-size: 14px;
+      }
+
+      label {
+        font-size: 12px;
+      }
     }
   </style>
 
@@ -187,7 +272,7 @@
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading return-product" style="background:#FCD37F;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -423,7 +508,7 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu">
+    <div class="left-side-menu" style="width: 263px;">
 
       <div class="h-100" data-simplebar>
 
@@ -436,88 +521,44 @@
             <li>
               <a href="#courierPanel" data-bs-toggle="collapse">
                 <i class="fab fa-first-order"></i>
-                <span> Courier panel </span>
+                <span>Merchant </span>
                 <span class="menu-arrow"></span>
               </a>
               <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                    <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
                   </li>
                   <li>
-                    <a href="merchant_list.html">2. Merchant List </a>
+                    <a href="merchant_packageList.html">2.Merchant Package List </a>
                   </li>
                   <li>
-                    <a href="packageListing.html">3. Merchant Package List </a>
+                    <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
                   </li>
                   <li>
-                    <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                    <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
                   </li>
                   <li>
-                    <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                    <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
+                      list from
+                      Delivery Boy</a>
                   </li>
                   <li>
-                    <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                    <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
                   </li>
                   <li>
-                    <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation
-                      List</a>
+                    <a href="merchant_admin_payment_history.html">7. Merchant & Admin
+                      Payment History</a>
                   </li>
-                  <li>
-                    <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
-                  </li>
-                  <li>
-                    <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
-                  </li>
-                  <li>
-                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit
-                      Statement</a>
-                  </li>
-                  <li>
-                    <a href="#11">11. Merchant Payment Statement</a>
-                  </li>
-                  <li>
-                    <a href="#12">12. Courier Employee Part </a>
-                  </li>
-                  <li>
-                    <a href="#13">13. Parcel Tracking System</a>
-                  </li>
-                  <li>
-                    <a href="#logistics" data-bs-toggle="collapse">
-                      <span>14. Logistics </span>
-                    </a>
-                    <div class="collapse" id="logistics">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="#14.1">14.1 Vehicle Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.2">14.2 Driver Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.3">14.3. Delivery Boy Add</a>
-                        </li>
-                        <li>
-                          <a href="14.4">14.4. Zone In-charge Add </a>
-                        </li>
-                        <li>
-                          <a href="#14.5">14.5 Add Zone </a>
-                        </li>
-                        <li>
-                          <a href="14.6">14.6. Driver Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.7">14.7. Zone Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.8">14.8 Supervisor Select </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+
+
+
                 </ul>
               </div>
             </li>
+
+
+
           </ul>
 
         </div>
@@ -535,16 +576,22 @@
 
     <div class="content-page">
       <div class="content">
-        <div class="container-fluid mt-3">
+        <div class="container-fluid mt-5">
           <div class="row">
-            <h3 class="header-title">Package Listing</h3>
+            <h3 class="pb-2 merchant-header">Package listing</h3>
             <div class="col-12">
-              <div class="card">
+              <div class="card p-3">
                 <div class="card-body" id="parentOfCardId">
+
+                  <div class="add-package-btn-hlder mb-4" style="margin-right: 10px;">
+                    <a href="merchant_parcelList.html" class="add-package-btn">Sent to parcel list
+                    </a>
+                  </div>
+
                   <div class="row pack-row" id="cardId">
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Merchant Package Id</label>
+                        <label for="name" class="form-label">Merchant package id</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
                         <div class="invalid-feedback">
                           please enter your Enter package id
@@ -581,7 +628,7 @@
 
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Customer Phone No.</label>
+                        <label for="name" class="form-label">Customer Phone no.</label>
                         <input type="text" class="form-control" id="name" placeholder="Relationship" required />
                         <div class="invalid-feedback">
                           please enter your Reference Relationship
@@ -608,7 +655,7 @@
 
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Package Weight</label>
+                        <label for="name" class="form-label">Package weight</label>
                         <input type="text" class="form-control" id="name" placeholder="weight" required />
                         <div class="invalid-feedback">
                           please enter your weight
@@ -621,19 +668,20 @@
 
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Customer Expected Delivery Time</label>
+                        <label for="name" class="form-label">Customer expected delivary time</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
                         <div class="invalid-feedback">
                           please enter your Enter parcel number
                         </div>
                       </div>
+
                     </div>
                     <!-- end col  -->
 
 
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Payment Type</label>
+                        <label for="name" class="form-label">Payment type</label>
                         <select id="dprt-name" class="form-select" required="">
                           <option value="">Active</option>
                           <option value="">Front end</option>
@@ -660,7 +708,7 @@
 
                     <div class="col-lg-2 col-md-4 col-sm-12">
                       <div class="mb-3">
-                        <label for="name" class="form-label">Delivery Fee</label>
+                        <label for="name" class="form-label">Delivary fee</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
                         <div class="invalid-feedback">
                           please enter your Enter fee
@@ -686,30 +734,38 @@
 
                       <div class="mb-3">
                         <span></span>
-                        <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                          <a href="javascript:void(0)" class="jfss-pack-btn delete"> Delete
+                        <div
+                          class="package-listing-btn-holder d-flex justify-content-center align-items-center flex-lg-row flex-wrap my-3">
+
+                          <a href="#" class="jfss-pack-btn print"
+                            onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> QR Print </br> <i
+                              class="fas fa-print"></i> </a>
+                          <a href="#" class="jfss-pack-btn print"
+                            onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> Invoice Print </br> <i
+                              class="fas fa-print"></i> </a>
+                          <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
+                            </br>
                             <i class="fas fa-trash-alt"></i></a>
-                          <button class="jfss-pack-btn print"
-                            onclick="print('../default/bpp_shop_courier_invoice.html')"> Print <i
-                              class="fas fa-print"></i> </button>
                         </div>
                       </div>
 
                     </div>
 
-                    <div class="d-flex gap-4">
-                      <div class="pack-add-new-btn-holder">
-                        <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-                      </div>
-                      <div class="pack-add-new-btn-holder">
-                        <a href="merchantPackageList.html" class="add-new-btn">Submit </a>
-                      </div>
-                      <div class="pack-add-new-btn-holder">
-                        <a href="merchantPackageList.html" class="add-new-btn">Complete</a>
-                      </div>
+                    <div class="pack-add-new-btn-holder my-3">
+                      <a href="javascript:void(0)" class="add-new-btn add-btn" onclick="addNewBtn()"> Add New</a>
+                      <a href="merchant_packageList.html" class="add-new-btn submit-btn"> Submit</a>
+                      <a href="merchant_packageList.html" class="add-new-btn complete-btn"> Complete</a>
                     </div>
 
                   </div>
+
+
+                  <div class="pack-add-new-btn-holder d-flex justify-content-end align-items-center my-3">
+                    <a href="#" class="add-new-btn">Submit </a>
+                  </div>
+
+
+
 
                 </div> <!-- end card body-->
               </div> <!-- end card -->
@@ -722,14 +778,16 @@
         <div class="row pack-row mt-4" id="childCardId">
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Merchant Package Id</label>
+              <label for="name" class="form-label">Merchant package id</label>
               <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
               <div class="invalid-feedback">
                 please enter your Enter package id
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
               <label for="name" class="form-label">Customer Name</label>
@@ -738,8 +796,10 @@
                 please enter your customer Name
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
               <label for="name" class="form-label">Customer Id</label>
@@ -748,18 +808,24 @@
                 please enter your customer Id
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Customer Phone No.</label>
+              <label for="name" class="form-label">Customer Phone no.</label>
               <input type="text" class="form-control" id="name" placeholder="Relationship" required />
               <div class="invalid-feedback">
                 please enter your Reference Relationship
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
               <label for="name" class="form-label">Package Category</label>
@@ -769,39 +835,51 @@
                 <option value="press">Back end</option>
               </select>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Package Weight</label>
+              <label for="name" class="form-label">Package weight</label>
               <input type="text" class="form-control" id="name" placeholder="weight" required />
               <div class="invalid-feedback">
                 please enter your weight
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Customer Expected Delivery Time</label>
+              <label for="name" class="form-label">Customer expected delivary time</label>
               <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
               <div class="invalid-feedback">
                 please enter your Enter parcel number
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Payment Type</label>
+              <label for="name" class="form-label">Payment type</label>
               <select id="dprt-name" class="form-select" required="">
                 <option value="">Active</option>
                 <option value="">Front end</option>
                 <option value="press">Back end</option>
               </select>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
               <label for="name" class="form-label">Product Price</label>
@@ -810,18 +888,23 @@
                 please enter your Enter Price
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
-              <label for="name" class="form-label">Delivery Fee</label>
+              <label for="name" class="form-label">Delivary fee</label>
               <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
               <div class="invalid-feedback">
                 please enter your Enter fee
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
           <div class="col-lg-2 col-md-4 col-sm-12">
             <div class="mb-3">
               <label for="name" class="form-label">Customer Address</label>
@@ -830,30 +913,37 @@
                 please enter your Enter Address
               </div>
             </div>
+
           </div>
           <!-- end col  -->
+
           <div class="col-lg-2 col-sm-12 col-md-4">
+
             <div class="mb-3">
               <span></span>
-              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
+              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center  flex-wrap my-3">
+
+                <a href="#" class="jfss-pack-btn print"
+                  onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> QR Print
+                  </br> <i class="fas fa-print"></i> </a>
+                <a href="#" class="jfss-pack-btn print"
+                  onclick="print('../default/merchant_bpp_shop_courier_invoice.html')"> Invoice
+                  Print </br> <i class="fas fa-print"></i> </a>
+                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete </br>
                   <i class="fas fa-trash-alt"></i></a>
-                <a href="#" class="jfss-pack-btn print" onclick="print('../default/bpp_shop_courier_invoice.html')">
-                  Print <i class="fas fa-print"></i> </a>
               </div>
             </div>
+
           </div>
-          <div class="d-flex gap-4">
-            <div class="pack-add-new-btn-holder">
-              <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-            </div>
-            <div class="pack-add-new-btn-holder">
-              <a href="merchantPackageList.html" class="add-new-btn">Submit </a>
-            </div>
-            <div class="pack-add-new-btn-holder">
-              <a href="merchantPackageList.html" class="add-new-btn">Complete</a>
+
+          <div class="pack-add-new-btn-holder my-3">
+            <div class="pack-add-new-btn-holder my-3">
+              <a href="javascript:void(0)" class="add-new-btn add-btn" onclick="addNewBtn()"> Add New</a>
+              <a href="merchant_packageList.html" class="add-new-btn submit-btn"> Submit</a>
+              <a href="merchant_packageList.html" class="add-new-btn complete-btn"> Complete</a>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -1036,35 +1126,6 @@
     $(document).ready(function () {
       $('#duplicateData').hide();
     });
-  </script>
-
-
-  <script>
-
-    function addNewBtn() {
-      $cardIdClone = $('#childCardId').clone();
-      $('#parentOfCardId').append($cardIdClone);
-    }
-    function removeItem(event) {
-      $('#childCardId').remove();
-    }
-    $(document).ready(function () {
-      $('#duplicateData').hide();
-    });
-
-
-    function print(pdf) {
-      // Create an IFrame.
-      var iframe = document.createElement('iframe');
-      // Hide the IFrame. 
-      iframe.style.visibility = "hidden";
-      // Define the source. 
-      iframe.src = pdf;
-      // Add the IFrame to the web page.
-      document.body.appendChild(iframe);
-      iframe.contentWindow.focus();
-      iframe.contentWindow.print(); // Print.
-    }
   </script>
 
 </body>
