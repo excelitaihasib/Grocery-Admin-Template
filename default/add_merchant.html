@@ -35,6 +35,9 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
+            body{
+                background-color: #91f1fd;
+            }
             .merchantAdd .cusInputGrpoup {
                 display: flex;
                 flex-wrap: wrap;
@@ -62,11 +65,14 @@
             .merchantAdd .addBtn a {
                 color: #FFFFFF;
             }
+            #m_id{
+                background-color: #D9D9D9;
+            }
 
            
         </style>
 
-    </head> -
+    </head>
 
     <!-- body start -->
     <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
@@ -626,92 +632,56 @@
                     <div id="sidebar-menu">
 
                         <ul id="side-menu">
-
                             <li>
-                                <a href="#courierPanel" data-bs-toggle="collapse">
-                                    <i class="fab fa-first-order"></i>
-                                    <span> Courier panel </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="courierPanel">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="courier_dashboard.html">1. Courier Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="add_merchant.html">2. Merchant List </a>
-                                        </li>
-                                        <li>
-                                            <a href="merchantPackageList.html">3. Merchant Package List </a>
-                                        </li>
-                                        <li>
-                                            <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
-                                        </li>
-                                        <li>
-                                            <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
-                                        </li>
-                                        <li>
-                                            <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
-                                        </li>
-                                        <li>
-                                            <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
-                                        </li>
-                                        <li>
-                                            <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
-                                        </li>
-                                        <li>
-                                            <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
-                                        </li>
-                                        <li>
-                                            <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
-                                        </li>
-                                        <li>
-                                            <a href="#11">11. Merchant Payment Statement</a>
-                                        </li>
-                                        <li>
-                                            <a href="#12">12. Courier Employee Part </a>
-                                        </li>
-                                        <li>
-                                            <a href="#13">13. Parcel Tracking System</a>
-                                        </li>
-                                        <li>
-                                            <a href="#logistics" data-bs-toggle="collapse">
-                                                <span>14. Logistics </span>
-                                            </a>
-                                            <div class="collapse" id="logistics">
-                                                <ul class="nav-second-level">
-                                                    <li>
-                                                        <a href="#14.1">14.1 Vehicle Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.2">14.2 Driver Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.3">14.3. Delivery Boy Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.4">14.4. Zone In-charge Add </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.5">14.5 Add Zone </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.6">14.6. Driver Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.7">14.7. Zone Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.8">14.8 Supervisor Select </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                              <a href="#courierPanel" data-bs-toggle="collapse">
+                                <i class="fab fa-first-order"></i>
+                                <span> Courier panel </span>
+                                <span class="menu-arrow"></span>
+                              </a>
+                              <div class="collapse" id="courierPanel">
+                                <ul class="nav-second-level">
+                                  <li>
+                                    <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                                  </li>
+                                  <li>
+                                    <a href="add_merchant.html">2. Merchant List </a>
+                                  </li>
+                                  <li>
+                                    <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
+                                  </li>
+                                  <li>
+                                    <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
+                                  </li>
+                                  <li>
+                                    <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
+                                  </li>
+                                  <li>
+                                    <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
+                                  </li>
+                                  <li>
+                                    <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
+                                  </li>
+                                  <li>
+                                    <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
+                                  </li>
+                                  <li>
+                                    <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
+                                  </li>
+                                  <li>
+                                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
+                                  </li>
+                                  <li>
+                                    <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
+                                  </li>
+                                  <li>
+                                    <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
+                                  </li>
+                                  <li>
+                                    <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
+                                  </li>
+                                </ul>
+                              </div>
                             </li>
-    
-                          
                           </ul>
 
                     </div>
@@ -749,7 +719,7 @@
                                         </div>
                                         <div class="cusInput">
                                             <label for="m_id" class="form-label">Merchant Id</label>
-                                            <input type="number m-2" class="form-control" id="m_id" placeholder="#123">
+                                            <input type="number m-2" class="form-control" id="m_id" placeholder="#123" disabled>
                                         </div>
                                         <div class="cusInput">
                                             <label for="w_name" class="form-label">Merchant Owner Name</label>
@@ -757,11 +727,11 @@
                                         </div>
                                         <div class="cusInput">
                                             <label for="mobile1" class="form-label">Merchant Mobile No. 1</label>
-                                            <input type="number" value="+880" class="form-control" id="mobile1">
+                                            <input type="number" value="+880" class="form-control" id="mobile1" placeholder="+880">
                                         </div>
                                         <div class="cusInput">
                                             <label for="mobile2" class="form-label">Merchant Mobile No. 2</label>
-                                            <input type="number" value="+880" class="form-control" id="mobile2">
+                                            <input type="number" value="+880" class="form-control" id="mobile2" placeholder="+880">
                                         </div>
                                         <div class="cusInput">
                                             <label for="bank_details" class="form-label">Merchant Bank Details</label>
@@ -774,25 +744,25 @@
                                         <div class="cusInput">
                                             <label for="selectCategory">Business Category</label>
                                             <select class="form-select" aria-label="Default select example" id="selectCategory">
-                                                <option selected>Select</option>
+                                                <option selected>Category</option>
                                                 <option value="1">Electronic Components</option>
                                                 <option value="2">Food Beverage</option>
                                                 <option value="3">Furniture & Decoration</option>
                                                 <option value="4">Health & Medicine</option>
-                                              </select>
+                                            </select>
                                         </div>
                                         <div class="cusInput">
                                             <label for="selectZone">Merchant Zone</label>
-                                            <select class="form-select" aria-label="Default select example" id="selectZone">
+                                            <select class="form-select" aria-label="Default select example" id="selectZone">          
                                                 <option selected>Select</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
-                                              </select>
+                                            </select>
                                         </div>
                                         <div class="cusInput">
                                             <label for="m_add" class="form-label">Merchant Address</label>
-                                            <textarea class="form-control" id="m_add" rows="3" placeholder="Enter Marchent Address"></textarea>
+                                            <textarea class="form-control" id="m_add" rows="3" placeholder="Enter Merchant Address"></textarea>
                                         </div>
                                     </div>
 
@@ -805,25 +775,6 @@
                         <!-- end row--> 
                     </div> <!-- container -->
                 </div> <!-- content -->
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a> 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
 
             </div>
 

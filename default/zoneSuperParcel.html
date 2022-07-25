@@ -57,6 +57,9 @@
     rel="stylesheet">
 
   <style>
+    body{
+      background-color: #91f1fd;
+    }
     h1,
     h2,
     h3,
@@ -65,11 +68,14 @@
     h6 {
       font-family: 'Inter', sans-serif;
     }
-
+    table th{
+      font-size: 12px;
+    }
     table tr {
       vertical-align: middle;
       font-family: 'Inter', sans-serif;
       font-family: 'Tahoma';
+      font-size: 12px;
     }
 
     /* .dataTables_length {
@@ -94,6 +100,7 @@
       border-radius: 10px;
       padding: 7px 12px;
       color: #000;
+      font-size: 20px;
     }
 
     .dataTables_length {
@@ -135,9 +142,7 @@
       line-height: 19px;
       padding: 8px 20px;
       color: #FFFFFF;
-
     }
-
     .pending {
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
@@ -148,7 +153,9 @@
       border-radius: 20px;
       padding: 6px 20px;
       color: #04D200;
-
+    }
+    table.dataTable.nowrap th, table.dataTable.nowrap td {
+      white-space: normal;
     }
   </style>
 
@@ -418,72 +425,37 @@
                     <a href="merchant_list.html">2. Merchant List </a>
                   </li>
                   <li>
-                    <a href="merchantPackageList.html">3. Merchant Package List </a>
+                    <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
                   </li>
                   <li>
-                    <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                    <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
                   </li>
                   <li>
-                    <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                    <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
                   </li>
                   <li>
-                    <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                    <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
                   </li>
                   <li>
-                    <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation
-                      List</a>
+                    <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
                   </li>
                   <li>
-                    <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
+                    <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
                   </li>
                   <li>
-                    <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
+                    <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
                   </li>
                   <li>
-                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit
-                      Statement</a>
+                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
                   </li>
                   <li>
-                    <a href="#11">11. Merchant Payment Statement</a>
+                    <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
                   </li>
                   <li>
-                    <a href="#12">12. Courier Employee Part </a>
+                    <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
                   </li>
                   <li>
-                    <a href="#13">13. Parcel Tracking System</a>
-                  </li>
-                  <li>
-                    <a href="#logistics" data-bs-toggle="collapse">
-                      <span>14. Logistics </span>
-                    </a>
-                    <div class="collapse" id="logistics">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="#14.1">14.1 Vehicle Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.2">14.2 Driver Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.3">14.3. Delivery Boy Add</a>
-                        </li>
-                        <li>
-                          <a href="14.4">14.4. Zone In-charge Add </a>
-                        </li>
-                        <li>
-                          <a href="#14.5">14.5 Add Zone </a>
-                        </li>
-                        <li>
-                          <a href="14.6">14.6. Driver Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.7">14.7. Zone Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.8">14.8 Supervisor Select </a>
-                        </li>
-                      </ul>
-                    </div>
+                    <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
                   </li>
                 </ul>
               </div>
@@ -518,21 +490,21 @@
 
                     <thead>
                       <tr>
-                        <th>Date & Time</th>
+                        <th>Zone Supervisor Receive Parcel Date & Time</th>
                         <th>Zone</th>
-                        <th>Driver Invoice Number <br> or Order Number</th>
+                        <th>Driver Invoice Number or Order Number</th>
                         <th>Driver Name</th>
                         <th>Vehicle No.</th>
-                        <th>Total Quantity of Package <br> Handover to Driver</th>
+                        <th>Total Quantity of Package Handover to Driver</th>
                         <th>Total Package Weight</th>
-                        <th>Zone Supervisor Parcel receive <br> from Driver Process by</th>
-                        <th>Parcel Receive Status</th>
+                        <th>Zone Supervisor Parcel Receive from Driver Process by</th>
+                        <th>Parcel Receive from Driver Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
+                        <td>20-05-2022 12:53:57</td>
                         <td>Mohakhali</td>
                         <td>011254682</td>
                         <td>Mr. Abdul Hakim</td>
@@ -548,7 +520,7 @@
                       </tr>
 
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
+                        <td>20-05-2022 12:53:57</td>
                         <td>Mohakhali</td>
                         <td>011254682</td>
                         <td>Mr. Abdul Hakim</td>
@@ -562,7 +534,6 @@
                         <td> <a href="mirpurZonePackageList.html" class="edit jfss-edit-btn"><i
                               class="fas fa-eye"></i></a></td>
                       </tr>
-
                     </tbody>
                   </table>
                 </div> <!-- end card body-->

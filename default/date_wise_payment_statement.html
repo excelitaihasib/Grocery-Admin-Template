@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Delivery Zone Select Page</title>
+  <title>Date Wise Payment Statement</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
   <meta content="Coderthemes" name="author" />
@@ -19,11 +19,13 @@
     type="text/css" />
   <link href="../assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet"
     type="text/css" />
+  <!-- third party css end -->
+
+  <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <!-- third party css end -->
 
   <!-- App css -->
   <link href="../assets/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -42,52 +44,91 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    body{
-      background-color: #91f1fd;
+    table.dataTable>thead .sorting:after,
+    table.dataTable>thead .sorting:before,
+    table.dataTable>thead .sorting_asc:after,
+    table.dataTable>thead .sorting_asc:before,
+    table.dataTable>thead .sorting_asc_disabled:after,
+    table.dataTable>thead .sorting_asc_disabled:before,
+    table.dataTable>thead .sorting_desc:after,
+    table.dataTable>thead .sorting_desc:before,
+    table.dataTable>thead .sorting_desc_disabled:after,
+    table.dataTable>thead .sorting_desc_disabled:before {
+      bottom: 1.6rem;
     }
-    table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
+
+    .zonePaymentReceiveStatement .dataTables_length .form-label {
+      display: none;
     }
-    table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before {
-        bottom: 3em;
+
+    .zonePaymentReceiveStatement table {
+      font-family: 'Tahoma';
     }
-    table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
+
+    .zonePaymentReceiveStatement table td {
+      vertical-align: middle;
+      text-align: center;
     }
-    .deliveryZone .faEye {
+
+    .zonePaymentReceiveStatement th {
+      text-align: left;
+      display: inline-flexbox;
+      justify-content: center;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .zonePaymentReceiveStatement tr {
+      vertical-align: middle;
+      font-size: 12px;
+    }
+
+    .zonePaymentReceiveStatement table .zonePaymentReceiveStatement .pending {
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      color: #D25600;
+      padding: 6px 20px;
+    }
+
+    .zonePaymentReceiveStatement .submit {
+      background: rgba(55, 210, 0, 0.2);
+      border-radius: 20px;
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      color: #37D200;
+      padding: 6px 20px;
+    }
+
+    .zonePaymentReceiveStatement .calender {
+      display: block;
+      width: 100%;
+      padding: 0.45rem 0.9rem;
+      font-size: .875rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #6c757d;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 0.2rem;
+      appearance: none;
+      margin: 20px 0 0 20px;
+    }
+
+    table.dataTable.nowrap th,
+    table.dataTable.nowrap td {
+      white-space: normal;
+    }
+
+    .faEye {
       background: #B8E6F0;
       border-radius: 10px;
       color: #000000;
       padding: 10px 12px;
       font-size: 20px;
-    }
-
-    .deliveryZone .dataTables_length .form-label {
-      display: none;
-    }
-
-    .deliveryZone table {
-      font-family: 'Tahoma';
-    }
-    table th,table tr{
-      font-size: 12px;
-    }
-    table tr td{
-      vertical-align: middle;
-      text-align: center;
-    }
-
-    table tr td .pending {
-      color: #D25600;
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
-      cursor: pointer;
-    }
-    table.dataTable.nowrap th, table.dataTable.nowrap td {
-      white-space: normal;
     }
   </style>
 
@@ -672,9 +713,9 @@
 
             <li>
               <a href="#courierPanel" data-bs-toggle="collapse">
-                  <i class="fab fa-first-order"></i>
-                  <span> Courier panel </span>
-                  <span class="menu-arrow"></span>
+                <i class="fab fa-first-order"></i>
+                <span> Courier panel </span>
+                <span class="menu-arrow"></span>
               </a>
               <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
@@ -688,13 +729,14 @@
                     <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
                   </li>
                   <li>
-                    <a href="delivery_zone_select_page.html">4. All Parcel Received List from Merchant </a>
+                    <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
                   </li>
                   <li>
                     <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
                   </li>
                   <li>
-                    <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
+                    <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation
+                      List</a>
                   </li>
                   <li>
                     <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
@@ -706,20 +748,23 @@
                     <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
                   </li>
                   <li>
-                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
+                    <a href="date_wise_payment_statement.html">10. All Zone Payment Received & Deposit
+                      Statement</a>
                   </li>
                   <li>
-                    <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
+                    <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from
+                      Delivery Boy</a>
                   </li>
                   <li>
-                    <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
+                    <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete
+                      List</a>
                   </li>
                   <li>
                     <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
                   </li>
                 </ul>
               </div>
-          </li>
+            </li>
 
 
           </ul>
@@ -731,7 +776,6 @@
 
       </div>
       <!-- Sidebar -left -->
-      3
     </div>
     <!-- Left Sidebar End -->
 
@@ -740,69 +784,45 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page deliveryZone">
+    <div class="content-page zonePaymentReceiveStatement">
       <div class="content">
         <!-- Start Content-->
         <div class="container-fluid mt-3">
           <div class="row">
             <div class="col-12">
               <div class="mb-2">
-                <h3 class="header-title">Delivery Zone Select Page</h3>
+                <h3 class="header-title">Date Wise Payment Statement</h3>
               </div>
 
               <div class="card">
+                <div class="col-lg-2 calender-wrapper">
+                  <input type="date" class="calender">
+                </div>
+
                 <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
                         <th>Date & Time</th>
-                        <th>Invoice no. / Order no.</th>
-                        <th>Customer Id</th>
-                        <th>Customer Name</th>
-                        <th>Customer Phone no.</th>
-                        <th>Customer Address</th>
-                        <th>Package Category</th>
-                        <th>Package Weight</th>
-                        <th>Customer Expected Delivery Time</th>
-                        <th>Payment Type</th>
-                        <th>Product Price</th>
-                        <th>Delivery Fee</th>
-                        <th>Customer Delivery Zone</th>
-                        <th>Sent to Package Details List</th>
+                        <th>Zone Name</th>
+                        <th>Zone Id</th>
+                        <th>Transaction Completed Person</th>
+                        <th>Total Deposit at Bank Account from Zone</th>
+                        <th>Total Cash Deposit from zone</th>
+                        <th>Total Payment Received from Zone</th>
+                        <th>Balance Amount</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>20-05-2022  12:53:57</td>
-                        <td>35638697496</td>
-                        <td>01234568791</td>
-                        <td>Mr. Abdul Hakim</td>
-                        <td>011254682</td>
-                        <td>Moghbazar, Dhaka 1219</td>
-                        <td>Shipped</td>
-                        <td>100 kg</td>
-                        <td>2022-05-21  12:53:57</td>
-                        <td>Cash on delivery</td>
-                        <td>200  ৳</td>
-                        <td>20 ৳</td>
-                        <td>Moghbazar</td>
-                        <td><span class="pending" onclick="pendingNCompleteF(this)">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <td>20-05-2022  12:53:57</td>
-                        <td>35638697496</td>
-                        <td>01234568791</td>
-                        <td>Mr. Abdul Hakim</td>
-                        <td>011254682</td>
-                        <td>Moghbazar, Dhaka 1219</td>
-                        <td>Shipped</td>
-                        <td>100 kg</td>
-                        <td>2022-05-21  12:53:57</td>
-                        <td>Cash on delivery</td>
-                        <td>200  ৳</td>
-                        <td>20 ৳</td>
-                        <td>Moghbazar</td>
-                        <td><span class="pending" onclick="pendingNCompleteF(this)">Pending</span></td>
+                        <td>Mohakhali</td>
+                        <td>100000</td>
+                        <td>Mr. Hamid</td>
+                        <td>100000</td>
+                        <td>100000</td>
+                        <td>100000</td>
+                        <td>10000</td>
                       </tr>
                     </tbody>
                   </table>
@@ -1235,22 +1255,6 @@
 
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
-
-  <script>
-    var buttonClicked1 = null;
-    function pendingNCompleteF(element) {
-        if (buttonClicked1 != null) {
-            buttonClicked1.style.background = "rgba(210, 86, 0, 0.2)";
-            buttonClicked1.style.color = "#D25600";
-            buttonClicked1.innerHTML = "Pending"
-        }
-        buttonClicked1 = element;
-        buttonClicked1.style.background = "rgba(55, 210, 0, 0.2)";
-        buttonClicked1.style.color = "#37D200";
-        buttonClicked1.innerHTML = "Sent Complete";
-        buttonClicked1.style.whiteSpace = "nowrap"
-    }
-  </script>
 
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
