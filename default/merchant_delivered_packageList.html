@@ -54,7 +54,7 @@
     rel="stylesheet">
 
   <style>
-     #sidebar-menu .menuitem-active>a {
+    #sidebar-menu .menuitem-active>a {
       color: #D99200 !important;
     }
 
@@ -65,6 +65,7 @@
     #sidebar-menu .nav-second-level li:hover>a {
       color: #D99200 !important;
     }
+
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
@@ -76,7 +77,7 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      text-align: center;
+      /* text-align: center; */
       color: #717A82;
     }
 
@@ -86,7 +87,7 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 15px;
-      text-align: center;
+      /* text-align: center; */
       color: #5F5F5F;
 
     }
@@ -121,7 +122,12 @@
       color: #D25600;
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
-      padding: 6px 20px;
+      width: 90px;
+      border: none;
+    }
+
+    .pending:hover {
+      color: #D25600;
     }
 
     .jfss-edit-btn {
@@ -130,11 +136,7 @@
       padding: 7px 12px;
     }
 
-    /* .dataTables_length {
-      display: none;
-    }
 
-    */
     .dataTables_filter {
       display: none;
     }
@@ -143,26 +145,6 @@
       color: #24AC0E;
     }
 
-    /* 
-    .package-list {
-      background: #00666C;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-
-
-
-    .package-list h6 {
-      border-radius: 5px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-
-      color: #FFFFFF;
-    } */
 
     .add-package-btn-hlder {
       margin-bottom: 20px;
@@ -182,6 +164,7 @@
     .pending {
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
+      border: none;
     }
 
     .complete-btn {
@@ -516,59 +499,51 @@
 
 
 
-      <!--- Sidemenu -->
-      <div id="sidebar-menu">
-      
-        <ul id="side-menu">
-          <li>
-            <a href="#courierPanel" data-bs-toggle="collapse">
-              <i class="fab fa-first-order"></i>
-              <span>Merchant </span>
-              <span class="menu-arrow"></span>
-            </a>
-            <div class="collapse" id="courierPanel">
-              <ul class="nav-second-level">
-                <li>
-                  <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
-                </li>
-                <li>
-                  <a href="merchant_packageList.html">2.Merchant Package List </a>
-                </li>
-                <li>
-                  <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
-                </li>
-                <li>
-                  <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
-                </li>
-                <li>
-                  <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
-                    list from
-                    Delivery Boy</a>
-                </li>
-                <li>
-                  <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
-                </li>
-                <li>
-                  <a href="merchant_admin_payment_history.html">7. Merchant & Admin
-                    Payment History</a>
-                </li>
-      
-      
-      
-              </ul>
-            </div>
-          </li>
-      
-      
-      
-        </ul>
-      
-      </div>
-      <!-- End Sidebar -->
-       
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+          <ul id="side-menu">
+            <li>
+              <a href="#courierPanel" data-bs-toggle="collapse">
+                <i class="fab fa-first-order"></i>
+                <span>Merchant </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="courierPanel">
+                <ul class="nav-second-level">
+                  <li>
+                    <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="merchant_packageList.html">2.Merchant Package List </a>
+                  </li>
+                  <li>
+                    <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
+                  </li>
+                  <li>
+                    <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
+                  </li>
+                  <li>
+                    <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
+                      list from
+                      Delivery Boy</a>
+                  </li>
+                  <li>
+                    <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
+                  </li>
+                  <li>
+                    <a href="merchant_admin_payment_history.html">7. Merchant & Admin
+                      Payment History</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <!-- End Sidebar -->
 
         <div class="clearfix"></div>
-
       </div>
       <!-- Sidebar -left -->
 
@@ -590,22 +565,6 @@
                     <div class="metting-id-wrap">
                       <h6 class="mettingId">Merchant ID : <span> 20225455</span></h6>
                     </div>
-
-                    <!-- <div class="package-list">
-                      <h6>Merchant name <br>
-                        (Organization name) = Jara Fashion</h6>
-                      <h6> Merchant Id = 0123598756</h6>
-                    </div>
-
-                    <div class="package-list bg-dark">
-                      <div class=" package-list-content d-flex justify-content-center-align-items-center">
-                        <h6>Picker Name <br>
-                          Rahim</h6>
-                        <h6> Zone
-                          Moghbazar</h6>
-                      </div>
-                      <h6 class=" package-lists">Mobile Number = 0123598756</h6>
-                    </div> -->
                   </div>
 
 
@@ -648,7 +607,7 @@
                         <td>2022-05-21 12:53:57</td>
                         <td>Cash on delivery</td>
                         <td>
-                          <span class="pending"  onclick="penBtnClick(this)">Pending</span>
+                          <button class="pending btn" onclick="penBtnClick(this)">Pending</button>
                         </td>
                         <td>৳ 500</td>
                         <td>৳ 30</td>
@@ -667,7 +626,7 @@
                         <td>2022-05-21 12:53:57</td>
                         <td>Cash on delivery</td>
                         <td>
-                          <span class="pending" onclick="penBtnClick(this)">Pending</span>
+                          <button class="pending btn" onclick="penBtnClick(this)">Pending</button>
                         </td>
                         <td>৳ 500</td>
                         <td>৳ 30</td>
@@ -850,21 +809,20 @@
 
   <script>
 
-        var pendingBtn = null;
-          function penBtnClick(element) {
-            if (pendingBtn != null) {
-              pendingBtn = element;
-              pendingBtn.style.background = "rgba(210, 86, 0, 0.2)";
-              pendingBtn.style.color = "#D25600";
-              pendingBtn.innerHTML = 'Pending';
+    var pendingBtn = null;
+    function penBtnClick(element) {
+      if (pendingBtn != null) {
+        pendingBtn.style.background = "rgba(210, 86, 0, 0.2)";
+        pendingBtn.style.color = "#D25600";
+        pendingBtn.innerHTML = 'Pending';
 
-
-            }
-            pendingBtn = element;
-            pendingBtn.style.background = "#3DB613";
-            pendingBtn.style.color = " #fff";
-            pendingBtn.innerHTML = ' Delivery Complete';
-          }
+      }
+      pendingBtn = element;
+      pendingBtn.style.background = "#3DB613";
+      pendingBtn.style.color = " #fff";
+      pendingBtn.innerHTML = ' Delivery <br> Complete';
+      pendingBtn.style.padding = "6px 10px"
+    }
 
 
   </script>
