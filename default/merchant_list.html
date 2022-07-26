@@ -27,6 +27,7 @@
 
 		<link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
 		<link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +36,26 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
+            body{
+                background-color: #91f1fd;
+            }
             table th{
                 text-align: left;
                 display: inline-flexbox;
-                justify-content: center;
+                justify-content: center; 
+                font-size: 12px;
             }
             table tr{
                 vertical-align: middle;
+                font-size: 12px;
             }
             
             table tr td{
                 vertical-align: middle;
                 /* text-align: center; */
+            }
+            table.dataTable.nowrap td{
+                white-space: normal;
             }
             .merchantList .addBtn {
                 background: #16A085;
@@ -75,6 +84,69 @@
             }
             .merchantList table td {
                 vertical-align: middle;
+            } 
+            .merchantList .active-status{
+                padding: 3px 30px;
+                background-color: #11862B;
+                color: #fff;
+            } 
+            .merchantList .deactive-status{
+                padding: 3px 23px;
+                background-color: #D60000;
+                color: #fff;
+            }  
+            .merchantList .icons{
+                display: flex;
+            }        
+            .merchantList .icons a{
+                margin: 4px !important;
+                font-size: 17px;
+            } 
+            .merchantList .icons .pen-icon{
+                color: #fff;
+                background: #00A3E2;
+                border-radius: 2px;
+                padding: 5px;
+            }
+            .merchantList .icons .delete-icon{
+                color: #fff;
+                background: #D60000;
+                border-radius: 2px;
+                padding: 5px;
+            }
+            /* #deleteRowModal .btn-close{
+                display: none;
+            } */
+            #deleteRowModal .cancel-btn{
+                background: #FFFFFF;
+                border: 1px solid #585353;
+                border-radius: 5px;
+                padding: 3px 20px;
+                margin: 0px 10px;
+            }
+            #deleteRowModal .delete-btn{
+                background: #D60000;
+                color: #fff;
+                border-radius: 5px;
+                border: 1px solid #D60000;
+                padding: 3px 20px;
+                margin: 0px 10px;
+            }
+            #deleteRowModal .delete-icon{
+                display: flex;
+            }
+            #deleteRowModal .delete-icon i{
+                background-color: #D60000;
+                color: #fff;
+                height: 35px;
+                width: 35px;
+                border-radius: 35px;
+                justify-content: center;
+                align-items: center;
+            }
+            #deleteRowModal .delete-icon p{
+                margin: auto;
+                margin-left: 10px;
             }
         </style> 
     </head>
@@ -648,83 +720,48 @@
                                 <div class="collapse" id="courierPanel">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                                          <a href="courier_dashboard.html">1. Courier Dashboard</a>
                                         </li>
                                         <li>
-                                            <a href="merchant_list.html">2. Merchant List </a>
+                                          <a href="merchant_list.html">2. Merchant List </a>
                                         </li>
                                         <li>
-                                            <a href="merchantPackageList.html">3. Merchant Package List </a>
+                                          <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
                                         </li>
                                         <li>
-                                            <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                                          <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
                                         </li>
                                         <li>
-                                            <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                                          <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
                                         </li>
                                         <li>
-                                            <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                                          <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
                                         </li>
                                         <li>
-                                            <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
+                                          <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
                                         </li>
                                         <li>
-                                            <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
+                                          <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
                                         </li>
                                         <li>
-                                            <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
+                                          <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
                                         </li>
                                         <li>
-                                            <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
+                                          <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
                                         </li>
                                         <li>
-                                            <a href="#11">11. Merchant Payment Statement</a>
+                                          <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
                                         </li>
                                         <li>
-                                            <a href="#12">12. Courier Employee Part </a>
+                                          <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
                                         </li>
                                         <li>
-                                            <a href="#13">13. Parcel Tracking System</a>
-                                        </li>
-                                        <li>
-                                            <a href="#logistics" data-bs-toggle="collapse">
-                                                <span>14. Logistics </span>
-                                            </a>
-                                            <div class="collapse" id="logistics">
-                                                <ul class="nav-second-level">
-                                                    <li>
-                                                        <a href="#14.1">14.1 Vehicle Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.2">14.2 Driver Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.3">14.3. Delivery Boy Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.4">14.4. Zone In-charge Add </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.5">14.5 Add Zone </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.6">14.6. Driver Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.7">14.7. Zone Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.8">14.8 Supervisor Select </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                          <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                          
                         </ul>
-
                     </div>
                     <!-- End Sidebar -->
 
@@ -759,31 +796,63 @@
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Merchant Name (Organization Name)</th>
-                                                    <th>Merchant Id</th>
-                                                    <th>Merchant Owner Name</th>
-                                                    <th>Merchant Address</th>
-                                                    <th>Merchant Mobile no. 1</th>
-                                                    <th>Merchant Mobile no. 2 </th>
-                                                    <th>Merchant Bank Details</th>
-                                                    <th>Merchant Mobile Banking Details</th>
-                                                    <th>Business Category</th> 
+                                                    <th>Add Merchant <br> Date</th>
+                                                    <th>Merchant  Name <br>(Organization name)</th>
+                                                    <th>Merchant <br> ID</th>
+                                                    <th>Merchant Owner <br> Name</th>
+                                                    <th>Merchant <br> Address</th>
+                                                    <th>Merchant Mobile <br> no. 1</th>
+                                                    <th>Merchant Mobile <br> no. 2 </th>
+                                                    <th>Merchant Bank <br> Details</th>
+                                                    <th>Merchant <br> Mobile Banking <br> Details</th> 
+                                                    <th>Merchant <br> Zone</th>
+                                                    <th>Business <br> Category</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>Asian Tailors & Fabrics </td>
+                                                    <td>20-05-2022</td>
+                                                    <td>Asian Tailors & Fabrics</td>
                                                     <td>5248678</td>
-                                                    <td>Mr. Abul </td>
-                                                    <td>Moghbazar, Dhaka 1217</td>
+                                                    <td>Mr. Abul</td>
+                                                    <td>111/C Moghbazar, Dhaka 1217</td>
                                                     <td>01756324158</td>
                                                     <td>01167554598</td>
                                                     <td>661675542598</td>
                                                     <td>554568</td>
-                                                    <td>Agriculture & Fish </td>
-                                                    <td><a href="merchantPackageList.html"><i class="fas fa-eye faEye"></i></a></td>          
+                                                    <td>Malibagh, Dhaka 1217</td>  
+                                                    <td>Agriculture & Fish</td>
+                                                    <td><button class="btn active-status" onclick="activeStatus(this)" onfocusout="deActive(this)">Active</button></td>   
+                                                    <td>
+                                                        <div class="icons">
+                                                            <a href="add_merchant.html"><i class="fa-solid fa-pen-to-square pen-icon"></i></a>
+                                                            <a href="#"  data-bs-toggle="modal" data-bs-target="#deleteRowModal"><i class="fa-solid fa-trash-can delete-icon"></i></a>
+                                                        </div>
+                                                    </td>     
                                                 </tr>
+                                                <tr>
+                                                    <td>20-05-2022</td>
+                                                    <td>Asian Tailors & Fabrics </td>
+                                                    <td>5248678</td>
+                                                    <td>Mr. Abul</td>
+                                                    <td>111/C Moghbazar, Dhaka 1217</td>
+                                                    <td>01756324158</td>
+                                                    <td>01167554598</td>
+                                                    <td>661675542598</td>
+                                                    <td>554568</td>
+                                                    <td>Malibagh, Dhaka 1217</td>  
+                                                    <td>Agriculture & Fish</td>
+                                                    <td><button class="btn active-status" onclick="activeStatus(this)">Active</button></td>   
+                                                    <td>
+                                                        <div class="icons">
+                                                            <a href="add_merchant.html"><i class="fa-solid fa-pen-to-square pen-icon"></i></a>
+                                                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteRowModal"><i class="fa-solid fa-trash-can delete-icon"></i></a>
+                                                        </div>
+                                                    </td>     
+                                                </tr>
+                
                                             </tbody>
                                         </table>
                                     </div> <!-- end card body-->
@@ -794,25 +863,6 @@
                     </div> <!-- container -->
                 </div> <!-- content -->
 
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a> 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
             </div>
 
             
@@ -822,6 +872,27 @@
 
         </div>
         <!-- END wrapper -->
+
+        <!-- ========================Code Generate Modal Start================================ -->
+        <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="delete-icon">
+                            <i class="fa-solid fa-trash-can delete-icon"></i>
+                            <p>Delete Data</p>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-body text-center">
+                        <h4>Are You Sure!  You want to Delete this Data ?</h4>
+                        <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        <button class="delete-btn" id="DeleteButton">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================Code Generate Modal Start================================ -->
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1221,6 +1292,44 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+        <script>
+            var buttonClicked = null;
+
+            function activeStatus(element) {
+                if (buttonClicked != null) {
+                    buttonClicked.style.background = "#11862B";
+                    buttonClicked.style.color = "#fff";
+                    buttonClicked.style.border = "0px";
+                    buttonClicked.innerHTML = "Active";
+                    buttonClicked.style.width = "115px"
+                }
+                buttonClicked = element;
+                buttonClicked.style.background = "#D60000";
+                buttonClicked.style.color = "#fff";
+                buttonClicked.style.border = "0px";
+                buttonClicked.innerHTML = "Deactive";
+                buttonClicked.style.width = "115px"
+            }
+            function deActive(element){
+                if (buttonClicked != null) {
+                    buttonClicked.style.background = "#D60000";
+                    buttonClicked.style.color = "#fff";
+                    buttonClicked.style.border = "0px";
+                    buttonClicked.innerHTML = "Deactive";
+                    buttonClicked.style.width = "115px"
+                }
+                    buttonClicked = element;
+                    buttonClicked.style.background = "#11862B";
+                    buttonClicked.style.color = "#fff";
+                    buttonClicked.style.border = "0px";
+                    buttonClicked.innerHTML = "Active";
+                    buttonClicked.style.width = "115px"
+                }
+
+            
+        </script>
+        
 
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>

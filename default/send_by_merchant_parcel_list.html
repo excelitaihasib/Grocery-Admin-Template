@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Send by merchant parcel list</title>
+        <title>Send by Merchant Parcel List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -27,14 +27,21 @@
 
 		<link href="../assets/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
 		<link href="../assets/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<!-- icons -->
 		<link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
          <!--custom css-->
-  <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
+            body{
+                background-color: #91f1fd;
+            }
+            table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before {
+                bottom: 4em;
+            }
             .merchantParcelList .faEye {
                 background: #B8E6F0;
                 border-radius: 10px;
@@ -58,6 +65,7 @@
             }
             .merchantParcelList tr{
                 vertical-align: middle;
+                font-size: 12px;
             }
             .merchantParcelList tr td{
                 vertical-align: middle;
@@ -68,9 +76,10 @@
                 border-radius: 20px;
                 font-family: 'Inter';
                 font-weight: 400;
-                font-size: 16px;
+                font-size: 12px;
                 color: #D25600;
                 padding: 6px 20px;
+                cursor: pointer;
             }
             .merchantParcelList .complete {
                 background: rgba(55, 210, 0, 0.2);
@@ -81,9 +90,22 @@
                 color: #37D200;
                 padding: 6px 20px;
             }
+            .merchantParcelList .confirm-btn {
+                background: #dee2e6;
+                padding: 5px 20px;
+                border-radius: 5px;
+                border: none;
+            }
+            table.dataTable.nowrap td {
+                white-space: normal;
+            }
+            table select.form-select{
+                width: 95px;
+                padding: 0.45rem 0.7rem 0.45rem 0.3rem;
+                background-position: right 0.4rem center;
+            }
         </style>
-
-    </head> -
+    </head>
 
     <!-- body start -->
     <body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
@@ -654,81 +676,47 @@
                                 <div class="collapse" id="courierPanel">
                                     <ul class="nav-second-level">
                                         <li>
-                                            <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                                          <a href="courier_dashboard.html">1. Courier Dashboard</a>
                                         </li>
                                         <li>
-                                            <a href="merchant_list.html">2. Merchant List </a>
+                                          <a href="merchant_list.html">2. Merchant List </a>
                                         </li>
                                         <li>
-                                            <a href="merchantPackageList.html">3. Merchant Package List </a>
+                                          <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
                                         </li>
                                         <li>
-                                            <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                                          <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
                                         </li>
                                         <li>
-                                            <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                                          <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
                                         </li>
                                         <li>
-                                            <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                                          <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
                                         </li>
                                         <li>
-                                            <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation List</a>
+                                          <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
                                         </li>
                                         <li>
-                                            <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
+                                          <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
                                         </li>
                                         <li>
-                                            <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
+                                          <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
                                         </li>
                                         <li>
-                                            <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received &  Deposit Statement</a>
+                                          <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
                                         </li>
                                         <li>
-                                            <a href="#11">11. Merchant Payment Statement</a>
+                                          <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
                                         </li>
                                         <li>
-                                            <a href="#12">12. Courier Employee Part </a>
+                                          <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
                                         </li>
                                         <li>
-                                            <a href="#13">13. Parcel Tracking System</a>
-                                        </li>
-                                        <li>
-                                            <a href="#logistics" data-bs-toggle="collapse">
-                                                <span>14. Logistics </span>
-                                            </a>
-                                            <div class="collapse" id="logistics">
-                                                <ul class="nav-second-level">
-                                                    <li>
-                                                        <a href="#14.1">14.1 Vehicle Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.2">14.2 Driver Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.3">14.3. Delivery Boy Add</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.4">14.4. Zone In-charge Add </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.5">14.5 Add Zone </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14.6">14.6. Driver Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.7">14.7. Zone Select </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#14.8">14.8 Supervisor Select </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                          <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-    
                           
                         </ul>
 
@@ -739,6 +727,7 @@
 
                 </div>
                 <!-- Sidebar -left -->
+3
             </div>
             <!-- Left Sidebar End -->
 
@@ -762,53 +751,79 @@
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Parcel Received Date & Time</th>
-                                                    <th>Merchant Name</th>
-                                                    <th>Merchant Id</th>
-                                                    <th>Number of Parcel Quantity</th>
-                                                    <th>Cash on Delivery no. of Parcel Quantity</th>
-                                                    <th>Payment Complete no. of Parcel Quantity</th>
-                                                    <th>Total Parcel Weight</th>
-                                                    <th>Payment Type</th>
+                                                    <th>Parcel <br> Received <br> Date & <br> Time</th>
+                                                    <th>Merchant / <br> Organization <br> Name</th>
+                                                    <th>Merchant <br> Id</th>
+                                                    <th>Number <br> of Parcel <br> Quantity</th>
+                                                    <th>Cash on <br> Delivery no. <br> of Parcel <br> Quantity</th>
+                                                    <th>Payment <br> Complete no. <br> of Parcel <br> Quantity</th>
+                                                    <th>Total <br> Parcel <br> Weight</th>
+                                                    <th>Payment <br> Type</th>
                                                     <th>Amount</th>
-                                                    <th>Total Delivery Charge </th>
-                                                    <th>Parcel Picker Name</th>
-                                                    <th>Parcel Receive Status</th>
+                                                    <th>COD</th>
+                                                    <th>Total <br> Delivery <br> Charge </th>
+                                                    <th>Merchant <br> Zone</th>
+                                                    <th>Parcel <br> Picker <br> Name</th>
+                                                    <th>Picker <br> Add <br> Status</th>
+                                                    <th>Parcel <br> Receive <br> Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>2022-05-21  12:53:57</td>
-                                                    <td>Mr. Abdul Hakim </td>
+                                                    <td>20-05-2022 12:53:57</td>
+                                                    <td>Mehedi Mart</td>
                                                     <td>01234568791</td>
                                                     <td>50</td>
                                                     <td>40</td>
                                                     <td>40</td>
                                                     <td>70kg</td>
                                                     <td>Cash On Delivery</td>
-                                                    <td>500</td>
-                                                    <td>100</td>
-                                                    <td>Mr. Kamal</td>
-                                                    <td><span class="pending">Pending</span></td>
+                                                    <td>৳ 500</td>
+                                                    <td>৳ 150</td>
+                                                    <td>30</td>
+                                                    <td>Malibagh</td>
+                                                    <td>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                          <option selected>Select</option>
+                                                          <option value="1">Mr. Kamal</option>
+                                                          <option value="2">Mr. Kamal</option>
+                                                          <option value="3">Mr. Kamal</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button id="btn1" class="confirm-btn" onclick="submitF(this)">Submit</button>
+                                                    </td>
+                                                    <td><span class="pending" onclick="pendingF(this)">Pending</span></td>
                                                     <td><a href="merchant_single_package_list.html"><i class="fas fa-eye faEye"></i></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>2022-05-21  12:53:57</td>
-                                                    <td>Mr. Abdul Hakim </td>
+                                                    <td>20-05-2022 12:53:57</td>
+                                                    <td>Mehedi Mart</td>
                                                     <td>01234568791</td>
                                                     <td>50</td>
                                                     <td>40</td>
                                                     <td>40</td>
                                                     <td>70kg</td>
                                                     <td>Cash On Delivery</td>
-                                                    <td>500</td>
-                                                    <td>100</td>
-                                                    <td>Mr. Kamal</td>
-                                                    <td><span class="complete">Parcel Check Complete</span></td>
+                                                    <td>৳ 500</td>
+                                                    <td>৳ 150</td>
+                                                    <td>30</td>
+                                                    <td>Malibagh</td>
+                                                    <td>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                          <option selected>Select</option>
+                                                          <option value="1">Mr. Kamal</option>
+                                                          <option value="2">Mr. Kamal</option>
+                                                          <option value="3">Mr. Kamal</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button id="btn1" class="confirm-btn" onclick="submitF(this)">Submit</button>
+                                                    </td>
+                                                    <td><span class="pending" onclick="pendingF(this)">Pending</span></td>
                                                     <td><a href="merchant_single_package_list.html"><i class="fas fa-eye faEye"></i></a></td>
                                                 </tr>
-                                               
                                             </tbody>
                                         </table>
                                     </div> <!-- end card body-->
@@ -819,27 +834,6 @@
                     </div> <!-- container -->
                 </div> <!-- content -->
 
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a> 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
-            </div>
-
             
             <!-- ============================================================== -->
             <!-- End Page content -->
@@ -847,6 +841,27 @@
 
         </div>
         <!-- END wrapper -->
+
+        <!-- ========================Code Generate Modal Start================================ -->
+        <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="delete-icon">
+                            <i class="fa-solid fa-trash-can delete-icon"></i>
+                            <p>Delete Data</p>
+                        </div>
+                    
+                    </div>
+                    <div class="modal-body text-center">
+                        <h4>Are You Sure!  You want to Delete this Data ?</h4>
+                        <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================Code Generate Modal Start================================ -->
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1246,6 +1261,39 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+
+        <script>
+            
+            // submit button js
+            var buttonClicked1 = null;
+            function submitF(element) {
+                if (buttonClicked1 != null) {
+                    buttonClicked1.style.background = "#dee2e6";
+                    buttonClicked1.style.color = "#000";
+                }
+                buttonClicked1 = element;
+                buttonClicked1.style.background = "rgba(22, 160, 133, 0.2)";
+                buttonClicked1.style.color = "#16A085";
+            }
+
+            
+
+            // pending button js
+            var buttonClicked2 = null;
+            function pendingF(element) {
+                if (buttonClicked2 != null) {
+                    buttonClicked2.style.background = "rgba(210, 86, 0, 0.2)";
+                    buttonClicked2.style.color = "#D25600";
+                    buttonClicked2.innerHTML = "Pending"
+                }
+                buttonClicked2 = element;
+                buttonClicked2.style.background = "rgba(55, 210, 0, 0.2)";
+                buttonClicked2.style.color = "#37D200";
+                buttonClicked2.innerHTML = "Parcel Check Complete";
+                buttonClicked2.style.fontSize = "12px";
+                buttonClicked2.style.whiteSpace  = "nowrap"
+            }
+        </script>
 
         <!-- Vendor js -->
         <script src="../assets/js/vendor.min.js"></script>

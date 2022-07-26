@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title> Mirpur Zone( Received Package List)</title>
+  <title>Day Wise Payment Received & Due Amount</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -57,19 +57,6 @@
     rel="stylesheet">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 1.6rem;
-    }
-
     h1,
     h2,
     h3,
@@ -81,12 +68,9 @@
     body{
       background-color: #91f1fd;
     }
-
-    table th {
-      text-align: left;
-      display: inline-flexbox;
-      justify-content: center;
+    table th{
       font-size: 12px;
+      text-align: center;
     }
 
     table tr {
@@ -96,19 +80,28 @@
       font-size: 12px;
     }
 
+    /* .dataTables_length {
+      display: none;
+    } */
+
     table tr td {
       vertical-align: middle;
       text-align: center;
     }
 
-    /* .dataTables_length {
-      display: none;
-    } */
+    table tr td .pending {
+      color: #D25600;
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      padding: 6px 20px;
+    }
 
-    .jfss-edit-btn {
+    .jfss-edit-btn,
+    .jfss-edit-btn:hover {
       background: #B8E6F0;
       border-radius: 10px;
       padding: 7px 12px;
+      color: #000;
     }
 
     .dataTables_length {
@@ -152,33 +145,52 @@
       color: #FFFFFF;
 
     }
-    table tr td .pending {
-      color: #D25600;
+
+    .pending {
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
-      padding: 6px 20px;
-      border: 1px solid #D25600;
-      cursor: pointer;
     }
 
-    table tr td .complete {
+    .complete {
       background: rgba(4, 210, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
       color: #04D200;
-      border: 1px solid #40C91E;
-      cursor: pointer;
+
     }
-    table tr td .return {
-      background: rgba(255, 0, 0, 0.2);
-      border: 1px solid #D20000;
-      color: #D20000;
-      border-radius: 20px;
-      padding: 6px 20px;
-      cursor: pointer;
+
+    .calender-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .calender-wrapper .calender {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #38414A;
+      background: #fff;
+    }
+
+    @media(max-width:576px) {
+
+      .calender-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
     }
     table.dataTable.nowrap th, table.dataTable.nowrap td {
       white-space: normal;
+    }
+    .faEye{
+      background: #B8E6F0;
+      border-radius: 10px;
+      color: #000000;
+      padding: 10px 12px;
+      font-size: 20px;
     }
   </style>
 
@@ -460,7 +472,7 @@
                     <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
                   </li>
                   <li>
-                    <a href="mirpurZonePackageList.html">7. Zone Supervisor Parcel Receive from Driver</a>
+                    <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
                   </li>
                   <li>
                     <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
@@ -503,91 +515,35 @@
       <div class="content">
         <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="header-title">Mirpur Zone( Received Package List)</h3>
+            <h3 class="header-title">Day Wise Payment Received & Due Amount</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
 
+                  <div class="calender-wrapper">
+                    <input type="date" class="calender">
+                  </div>
 
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
 
                     <thead>
                       <tr>
-                        <th>Parcel Received Date & Time</th>
-                        <th>Merchant Id</th>
-                        <th>Merchant Package Number</th>
-                        <th>Invoice Number or Order Number</th>
-                        <th>Customer Name</th>
-                        <th>Customer Phone Number</th>
-                        <th>Customer Address</th>
-                        <th>Package Category</th>
-                        <th>Package Weight</th>
-                        <th>Customer Expected Delivery Time</th>
-                        <th>Payment Type</th>
-                        <th>Product Price</th>
-                        <th>Delivery Fee</th>
-                        <th>Receivable Amount from Customer</th>
-                        <th>Delivery Boy Product Delivery Status</th>
+                        <th>Date</th>
+                        <th>Zone  Wise Today Total Received Amount</th>
+                        <th>All Zone Today Total Payment at Bank</th>
+                        <th>All Zone Today Total Payment at Cash</th>
+                        <th>Due Amount</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>20-05-2022 12:53:57</td>
-                        <td>011254682</td>
-                        <td>0102245</td>
-                        <td>011254682</td>
-                        <td>Mr. Abdul Hakim</td>
-                        <td>66665955884</td>
-                        <td>Moghbazar, Dhaka 1217</td>
-                        <td>66665955884</td>
-                        <td>60kg </td>
-                        <td>11:53:57</td>
-                        <td>Cash On Delivery</td>
-                        <td>10000</td>
-                        <td>60</td>
-                        <td>10000</td>
-                        <td>
-                          <span class="pending" onclick="pendingF(this)">Pending</span>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>20-05-2022 12:53:57</td>
-                        <td>011254682</td>
-                        <td>0102245</td>
-                        <td>011254682</td>
-                        <td>Mr. Abdul Hakim</td>
-                        <td>66665955884</td>
-                        <td>Moghbazar, Dhaka 1217</td>
-                        <td>66665955884</td>
-                        <td>60kg </td>
-                        <td>11:53:57</td>
-                        <td>Cash On Delivery</td>
-                        <td>10000</td>
-                        <td>60</td>
-                        <td>10000</td>
-                        <td>
-                          <span class="complete">Complete</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>20-05-2022 12:53:57</td>
-                        <td>011254682</td>
-                        <td>0102245</td>
-                        <td>011254682</td>
-                        <td>Mr. Abdul Hakim</td>
-                        <td>66665955884</td>
-                        <td>Moghbazar, Dhaka 1217</td>
-                        <td>66665955884</td>
-                        <td>60kg </td>
-                        <td>11:53:57</td>
-                        <td>Cash On Delivery</td>
-                        <td>10000</td>
-                        <td>60</td>
-                        <td>10000</td>
-                        <td>
-                          <span class="return" onclick="returnF(this)">Return</span>
-                        </td>
+                        <td>20-05-2022</td>
+                        <td>1,50,000</td>
+                        <td>72,000</td>
+                        <td>85,000</td>
+                        <td>85,000</td>
+                        <td><a href="day_zone_wise_payment_history.html"><i class="fas fa-eye faEye"></i></a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -727,44 +683,6 @@
 
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
-
-  <script>
-            
-      // pending button js
-      var buttonClicked1 = null;
-      function pendingF(element) {
-          if (buttonClicked1 != null) {
-              buttonClicked1.style.background = " rgba(4, 210, 0, 0.2)";
-              buttonClicked1.style.color = "#04D200";
-              buttonClicked1.style.border = "1px solid #40C91E";
-              buttonClicked1.innerHTML = "Pending"
-          }
-          buttonClicked1 = element;
-          buttonClicked1.style.background = "rgba(5, 210, 1, 0.2)";
-          buttonClicked1.style.color = "#05D201";
-          buttonClicked1.innerHTML = "Delivery Complete";
-          buttonClicked1.style.whiteSpace = "nowrap";
-          buttonClicked1.style.border = "1px solid #05D201"
-      }
-
-      
-
-      // return button js
-      var buttonClicked2 = null;
-      function returnF(element) {
-          if (buttonClicked2 != null) {
-              buttonClicked2.style.background = "rgba(210, 86, 0, 0.2)";
-              buttonClicked2.style.color = "#D25600";
-              buttonClicked2.innerHTML = "Return"
-          }
-          buttonClicked2 = element;
-          buttonClicked2.style.background = "#EC2A2A";
-          buttonClicked2.style.color = "#fff";
-          buttonClicked2.innerHTML = "Product Return";
-          buttonClicked2.style.fontSize = "12px";
-          buttonClicked2.style.whiteSpace  = "nowrap";
-      }
-  </script>
 
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
