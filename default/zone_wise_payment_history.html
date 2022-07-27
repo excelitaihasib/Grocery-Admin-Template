@@ -57,6 +57,9 @@
     rel="stylesheet">
 
   <style>
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 1em;
+    }
     h1,
     h2,
     h3,
@@ -70,7 +73,7 @@
     }
     table th{
       font-size: 12px;
-      text-align: center;
+      text-align: left;
     }
 
     table tr {
@@ -86,7 +89,7 @@
 
     table tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     table tr td .pending {
@@ -182,7 +185,7 @@
       }
 
     }
-    table.dataTable.nowrap th, table.dataTable.nowrap td {
+    table.dataTable.nowrap td {
       white-space: normal;
     }
     .faEye{

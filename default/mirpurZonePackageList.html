@@ -57,17 +57,8 @@
     rel="stylesheet">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 1.6rem;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 3em;
     }
 
     h1,
@@ -98,7 +89,7 @@
 
     table tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     /* .dataTables_length {
@@ -177,7 +168,7 @@
       padding: 6px 20px;
       cursor: pointer;
     }
-    table.dataTable.nowrap th, table.dataTable.nowrap td {
+    table.dataTable.nowrap td {
       white-space: normal;
     }
   </style>
@@ -513,21 +504,21 @@
 
                     <thead>
                       <tr>
-                        <th>Parcel Received Date & Time</th>
-                        <th>Merchant Id</th>
-                        <th>Merchant Package Number</th>
-                        <th>Invoice Number or Order Number</th>
-                        <th>Customer Name</th>
-                        <th>Customer Phone Number</th>
-                        <th>Customer Address</th>
-                        <th>Package Category</th>
-                        <th>Package Weight</th>
-                        <th>Customer Expected Delivery Time</th>
-                        <th>Payment Type</th>
-                        <th>Product Price</th>
-                        <th>Delivery Fee</th>
-                        <th>Receivable Amount from Customer</th>
-                        <th>Delivery Boy Product Delivery Status</th>
+                        <th>Parcel Received <br> Date & <br> Time</th>
+                        <th>Merchant <br> ID</th>
+                        <th>Merchant <br> Package <br> Number</th>
+                        <th>Invoice <br> Number or <br> Order Number</th>
+                        <th>Customer <br> Name</th>
+                        <th>Customer <br> Phone <br> Number</th>
+                        <th>Customer <br> Address</th>
+                        <th>Package <br> Category</th>
+                        <th>Package <br> Weight</th>
+                        <th>Customer <br> Expected <br> Delivery <br> Time</th>
+                        <th>Payment <br> Type</th>
+                        <th>Product <br> Price</th>
+                        <th>Delivery <br> Fee</th>
+                        <th>Receivable <br> Amount <br> from Customer</th>
+                        <th>Delivery Boy <br> Product <br> Delivery <br> Status</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -57,6 +57,9 @@
     rel="stylesheet">
 
   <style>
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
+    }
     h1,
     h2,
     h3,
@@ -72,7 +75,7 @@
 
     table th {
       font-size: 12px;
-      text-align: center;
+      text-align: left;
     }
 
     table tr {
@@ -88,7 +91,7 @@
 
     table tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     table tr td .pending {
@@ -184,8 +187,6 @@
       }
 
     }
-
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -541,13 +542,13 @@
                     <thead>
                       <tr>
                         <th>Date</th>
-                        <th>Merchant  Name (Organization name)</th>
+                        <th>Merchant  Name <br> (Organization name)</th>
                         <th>Merchant Id</th>
-                        <th>Today Received Amount from Customer</th>
-                        <th>Today Delivery Fee Withdraw Amount</th>
-                        <th>Today COD Charge Withdraw Amount</th>
-                        <th>Today Merchant Withdrew Amount</th>
-                        <th>Today Due Amount</th>
+                        <th>Today Received <br> Amount from Customer</th>
+                        <th>Today Delivery <br> Fee Withdraw Amount</th>
+                        <th>Today COD Charge <br> Withdraw Amount</th>
+                        <th>Today Merchant <br> Withdrew Amount</th>
+                        <th>Today Due <br> Amount</th>
                         <th>(Payment Details) Action</th>
                       </tr>
                     </thead>

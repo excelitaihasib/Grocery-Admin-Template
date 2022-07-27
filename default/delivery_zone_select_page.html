@@ -49,12 +49,8 @@
       font-family: 'Tahoma', sans-serif;
       white-space: nowrap;
     }
-    table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before {
-        bottom: 3em;
-    }
-    table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
     }
     .deliveryZone .faEye {
       background: #B8E6F0;
@@ -71,12 +67,15 @@
     .deliveryZone table {
       font-family: 'Tahoma';
     }
+    table th{
+      text-align: left;
+    }
     table th,table tr{
       font-size: 12px;
     }
     table tr td{
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     table tr td .pending {
@@ -86,7 +85,7 @@
       padding: 6px 20px;
       cursor: pointer;
     }
-    table.dataTable.nowrap th, table.dataTable.nowrap td {
+    table.dataTable.nowrap td {
       white-space: normal;
     }
   </style>
@@ -755,20 +754,20 @@
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
                       <tr>
-                        <th>Date & Time</th>
-                        <th>Invoice no. / Order no.</th>
-                        <th>Customer Id</th>
-                        <th>Customer Name</th>
-                        <th>Customer Phone no.</th>
-                        <th>Customer Address</th>
-                        <th>Package Category</th>
-                        <th>Package Weight</th>
-                        <th>Customer Expected Delivery Time</th>
-                        <th>Payment Type</th>
-                        <th>Product Price</th>
-                        <th>Delivery Fee</th>
-                        <th>Customer Delivery Zone</th>
-                        <th>Sent to Package Details List</th>
+                        <th>Date & <br> Time</th>
+                        <th>Invoice no. / <br> Order no.</th>
+                        <th>Customer <br> ID</th>
+                        <th>Customer <br> Name</th>
+                        <th>Customer <br> Phone no.</th>
+                        <th>Customer <br> Address</th>
+                        <th>Package <br> Category</th>
+                        <th>Package <br> Weight</th>
+                        <th>Customer <br> Expected <br> Time</th>
+                        <th>Payment <br> Type</th>
+                        <th>Product <br> Price</th>
+                        <th>Delivery <br> Fee</th>
+                        <th>Customer <br> Delivery <br> Zone</th>
+                        <th>Sent to <br> Package <br> Details List</th>
                       </tr>
                     </thead>
                     <tbody>
