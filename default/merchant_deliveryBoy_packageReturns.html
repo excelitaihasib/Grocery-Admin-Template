@@ -75,6 +75,7 @@
       border: 1px solid #D41818;
       border-radius: 5px;
       padding: 6px 20px;
+      cursor: pointer;
     }
 
     table tr {
@@ -88,8 +89,8 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 15px;
-      text-align: center;
       color: #717A82;
+      /* text-align: center; */
     }
 
     .table tbody tr td {
@@ -98,148 +99,18 @@
       font-weight: 400;
       font-size: 12px;
       line-height: 15px;
-      text-align: center;
       color: #5F5F5F;
+      /* text-align: center; */
 
     }
-
-    /* .jfss-submit-btn {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 19px;
-      color: #5F5F5F;
-      background: #FFFFFF;
-      border: 1px solid #5F5F5F;
-      border-radius: 5px;
-    } */
-
-
-    /* 
-    .jfss-submit-btn .active,
-    .jfss-submit-btn:active,
-    .jfss-submit-btn:focus {
-      background: #0984e3;
-      border: none;
-      color: #FFFFFF;
-    } */
 
     .dataTables_length {
       display: none;
     }
 
-    /* table tr td .pending {
-      color: #D25600;
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
-    }
-
-    .jfss-edit-btn {
-      background: #B8E6F0;
-      border-radius: 10px;
-      padding: 7px 12px;
-    } */
-
-    /* .dataTables_length {
-      display: none;
-    }
-
-    */
-    /* .dataTables_filter {
-      display: none;
-    } */
-
     .clr-grn {
       color: #24AC0E;
     }
-
-    /* 
-    .package-list {
-      background: #00666C;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-
-
-
-    .package-list h6 {
-      border-radius: 5px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-
-      color: #FFFFFF;
-    } */
-
-    /* .add-package-btn-hlder {
-      margin-bottom: 20px;
-    }
-
-    .add-package-btn-hlder .add-package-btn {
-      background: #16A085;
-      border-radius: 5px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      padding: 8px 20px;
-      color: #FFFFFF;
-
-    }
-
-    .pending {
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-    }
-
-    .complete-btn {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 19px;
-      color: #04D200;
-      background: rgba(4, 210, 0, 0.15);
-      border-radius: 20px;
-      padding: 6px 15px;
-    }
-
-    .submit {
-      background: rgba(4, 210, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
-      color: #04D200;
-
-    } */
-
-    /* 
-    .package-list-content h6 {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      margin-right: 10px;
-      color: #FFFFFF;
-      margin: 5px 15px;
-
-    } */
-    /* 
-    h6.package-lists {
-
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      margin-right: 10px;
-      color: #FFFFFF;
-      margin: 0 15px;
-    } */
 
     .metting-id-wrap .mettingId {
 
@@ -858,13 +729,10 @@
 
 
   <script>
-    notRecvdBtn
-
 
     var notRecv = null;
     function notRecvdBtn(element) {
       if (notRecv != null) {
-        notRecv = element;
         notRecv.style.background = " rgba(212, 24, 24, 0.2)";
         notRecv.style.color = "#D41818";
         notRecv.style.border = "1px solid #D41818";
@@ -877,7 +745,7 @@
       notRecv.style.color = " #fff";
       notRecv.innerHTML = 'Package Recived';
       notRecv.style.border = "1px solid #55B10D";
-      
+
     }
 
   </script>

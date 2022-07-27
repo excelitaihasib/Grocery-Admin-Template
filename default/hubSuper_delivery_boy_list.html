@@ -55,15 +55,26 @@
 
   <style>
     #sidebar-menu .menuitem-active>a {
-      color: #D99200 !important;
+      color: #8B6BE8 !important;
     }
 
     #sidebar-menu .menuitem-active:hover>a {
-      color: #D99200 !important;
+      color: #8B6BE8 !important;
     }
 
     #sidebar-menu .nav-second-level li:hover>a {
-      color: #D99200 !important;
+      color: #8B6BE8 !important;
+    }
+
+    .edit i,
+    .edit:hover i {
+      color: #000000;
+    }
+
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
     }
 
     table tr {
@@ -92,6 +103,18 @@
 
     }
 
+    .auto-fill {
+      color: #C2C0C0;
+    }
+
+    .notif-btn {
+      background: rgba(224, 68, 68, 0.2);
+      border: 1px solid #E04444;
+      color: #E04444;
+      border-radius: 20px;
+      padding: 8px 15px;
+    }
+
     .jfss-submit-btn {
       font-family: 'Inter';
       font-style: normal;
@@ -106,12 +129,13 @@
 
 
 
-    /* .jfss-submit-btn .active,
-    .jfss-submit-btn:active {
+    .jfss-submit-btn .active,
+    .jfss-submit-btn:active,
+    .jfss-submit-btn:focus {
       background: #0984e3;
       border: none;
       color: #FFFFFF;
-    } */
+    }
 
     .dataTables_length {
       display: none;
@@ -121,11 +145,29 @@
       color: #D25600;
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
-      width: 120px;
+      padding: 8px 18px;
+      border: 1px solid #D25600;
     }
 
-    .pending:hover {
-      color: #D25600;
+    table tr td .complete {
+      color: #40C91E;
+      background: rgba(64, 201, 30, 0.2);
+      border-radius: 20px;
+      padding: 8px 15px;
+      border: 1px solid #40C91E;
+    }
+
+    table tr td .return {
+      color: #D20000;
+      background: rgba(255, 0, 0, 0.2);
+      border: 1px solid #D20000;
+      border-radius: 20px;
+      padding: 8px 20px;
+    }
+
+    .edit i,
+    .edit:hover i {
+      color: #000000;
     }
 
     .jfss-edit-btn {
@@ -149,12 +191,13 @@
       margin-bottom: 20px;
     }
 
+
+
     .package-list h6 {
-      background: #00666C;
       border-radius: 5px;
       font-family: 'Inter';
       font-style: normal;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 16px;
       line-height: 19px;
 
@@ -181,7 +224,17 @@
       border-radius: 20px;
     }
 
-
+    .complete-btn {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      color: #04D200;
+      background: rgba(4, 210, 0, 0.15);
+      border-radius: 20px;
+      padding: 6px 15px;
+    }
 
     .submit {
       background: rgba(4, 210, 0, 0.2);
@@ -191,17 +244,77 @@
 
     }
 
-    .edit i,
-    .edit:hover i {
-      color: #000000;
+    .package-list-content h6 {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 10px;
+      color: #FFFFFF;
+      margin: 5px 15px;
+
+    }
+
+    h6.package-lists {
+
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 10px;
+      color: #FFFFFF;
+      margin: 0 15px;
+    }
+
+    .active-btn {
+      background: #11862B;
+      border-radius: 5px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 19px;
+      color: #FFFFFF;
+      /* padding: 6px 20px; */
+      border: none;
+      width: 78px;
+      height: 32px;
+    }
+
+    .deactive-btn {
+      background: #D60000;
+      border-radius: 5px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 19px;
+      color: #FFFFFF;
+      /* padding: 6px 20px; */
+      border: none;
+      width: 78px;
+      height: 32px;
+    }
+
+    .edit-list {
+      background: #00A3E2;
+      border-radius: 2px;
+      color: #FFFFFF;
+      padding: 5px 7px;
+      font-size: 16px;
+    }
+
+    .delete-list {
+      background: #D60000;
+      border-radius: 2px;
+      color: #FFFFFF;
+      padding: 5px 7px;
+      font-size: 16px;
     }
 
     @media (max-width:575px) {
-      .package-list h6 {
-        font-weight: 600;
-        font-size: 14px;
-      }
-
       .metting-id-wrap {
         display: flex;
         justify-content: center;
@@ -224,6 +337,12 @@
         width: 70% !important;
       }
 
+      .package-list-content h6 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+      }
     }
 
     @media (max-width:320px) {
@@ -258,7 +377,7 @@
 
 <!-- body start -->
 
-<body class="loading return-product" style="background:#FCD37F;"
+<body class="loading return-product" style="background: #D1CEF4;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -499,7 +618,6 @@
       <div class="h-100" data-simplebar>
 
 
-
         <!--- Sidemenu -->
         <div id="sidebar-menu">
 
@@ -507,34 +625,34 @@
             <li>
               <a href="#courierPanel" data-bs-toggle="collapse">
                 <i class="fab fa-first-order"></i>
-                <span>Merchant </span>
+                <span>Hub Supervisor panel </span>
                 <span class="menu-arrow"></span>
               </a>
               <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
+                    <a href="hub_supervisor_dashboard.html"> 1.Hub Supervisor Dashboard</a>
                   </li>
                   <li>
-                    <a href="merchant_packageList.html">2.Merchant Package List </a>
+                    <a href="hubSuper_zoneSuperv_parcel_receive_drive.html">2. Zone Supervisor Parcel
+                      <br>
+                      receive from driver</a>
                   </li>
                   <li>
-                    <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
+                    <a href="hubSuper_mirpur_zone_received_packageList.html">3. Mirpur Zone (received package list)</a>
                   </li>
                   <li>
-                    <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
+                    <a href="hubSuper_product_delivery_complete_list.html">4. Product Delivery complete List</a>
                   </li>
                   <li>
-                    <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
-                      list from
-                      Delivery Boy</a>
+                    <a href="hubSuper_delivery_boy_list.html">5. Delivery Boy List</a>
                   </li>
                   <li>
-                    <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
+                    <a href="#fg">6. All Delivery Boy Payment History</a>
                   </li>
                   <li>
-                    <a href="merchant_admin_payment_history.html">7. Merchant & Admin
-                      Payment History</a>
+                    <a href="#fd">7. Zone wise Payment History at
+                      Admin Account</a>
                   </li>
 
 
@@ -564,84 +682,85 @@
       <div class="content">
         <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="pb-2 merchant-header">Send by merchant parcel list</h3>
+            <h3 class="pb-2 merchant-header">Delivery Boy list</h3>
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="add-package-wrap d-flex justify-content-between align-items-center flex-wrap ">
-
-                    <div class="package-list">
-                      <h6>Merchant name <br>
-                        (Organization name) = Jara Fashion</h6>
-                      <h6> Merchant Id = 0123598756</h6>
-                    </div>
-
-                    <!-- <div class="add-package-btn-hlder">
-                      <a href="packageListing.html" class="add-package-btn">Add Package <i class="fas fa-plus"> </i>
-                      </a>
-                    </div> -->
+                  <div class="add-package-btn-hlder d-flex justify-content-end align-items-center">
+                    <a href="" class="add-package-btn">Add Delivery Boy <i class="fas fa-user-plus"></i>
+                      </i>
+                    </a>
                   </div>
-
 
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
 
                     <thead>
                       <tr>
-                        <th>Parcel Recived <br> Date & time</th>
-                        <th>Number of parcel <br> quantity</th>
-                        <th>Cash on delivery no. of <br> parcel quantity</th>
-                        <th>Payment complete no. of <br> parcel quantity</th>
-                        <th>Total Parcel <br> Weight</th>
-                        <th>Payment Type</th>
-                        <th>Amount</th>
-                        <th>COD</th>
-                        <th>Total delivery <br> charge</th>
-                        <th>Send notification from <br> merchant to admin </th>
-                        <th>Parcel picker name</th>
-                        <th>Picker Parcel <br> Receive Status</th>
-                        <th>Action</th>
+                        <th>Add Delivery <br> Boy Date
+                        </th>
+                        <th>Delivery Boy <br> Name</th>
+                        <th>Delivery Boy Id</th>
+                        <th>Delivery <br> Boy mobile <br> no. 1</th>
+                        <th>Delivery <br> Boy mobile <br> no. 1</th>
+                        <th>Status</th>
+                        <th>List, Edit & <br> Delete <br>
+                          Option</th>
+                        <th>Product <br> Delivery & <br> Return List</th>
+                        <th>Delivery Boy <br> Payment <br> History</th>
+
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>50</td>
-                        <td>40</td>
-                        <td>40</td>
-                        <td>70 kg</td>
-                        <td>Cash on delivery</td>
-                        <td>৳ 500</td>
-                        <td>৳ 300</td>
-                        <td>100</td>
-                        <td> <button class="btn jfss-submit-btn active " onclick="bgChange(this)">Submit</button></td>
-                        <td>Mr. Kamal</td>
-                        <td>
-                          <button id="pendingId" class="pending btn" onclick="penBtnClick(this)">Pending</button>
+                        <td>2022-05-21 </td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>6616758</td>
+                        <td>01756324158</td>
+                        <td>01756324158</td>
+                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
+                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
+                          <span class="delete-list">
+                            <i class="fas fa-trash-alt"></i>
+                          </span>
                         </td>
-                        <td>
-                          <a href="merchant_sendpackageList.html" class="edit jfss-edit-btn"> <i
-                              class="fas fa-eye"></i></a>
-                        </td>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+
                       </tr>
                       <tr>
-                        <td>2022-05-21 12:53:57</td>
-                        <td>50</td>
-                        <td>40</td>
-                        <td>40</td>
-                        <td>70 kg</td>
-                        <td>Cash on delivery</td>
-                        <td>৳ 500</td>
-                        <td>৳ 300</td>
-                        <td>100</td>
-                        <td> <button class="btn jfss-submit-btn active " onclick="bgChange(this)">Submit</button></td>
-                        <td>Mr. Kamal</td>
-                        <td>
-                          <button id="pendingId" class="pending btn" onclick="penBtnClick(this)">Pending</button>
+                        <td>2022-05-21 </td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>6616758</td>
+                        <td>01756324158</td>
+                        <td>01756324158</td>
+
+                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
+                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
+                          <span class="delete-list">
+                            <i class="fas fa-trash-alt"></i>
+                          </span>
                         </td>
-                        <td>
-                          <a href="merchant_sendpackageList.html" class="edit jfss-edit-btn"> <i
-                              class="fas fa-eye"></i></a>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+
+                      </tr>
+
+                      <tr>
+                        <td>2022-05-21 </td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>6616758</td>
+                        <td>01756324158</td>
+                        <td>01756324158</td>
+
+                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
+                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
+                          <span class="delete-list">
+                            <i class="fas fa-trash-alt"></i>
+                          </span>
                         </td>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+                        <td> <a href="" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
+
                       </tr>
                     </tbody>
                   </table>
@@ -814,70 +933,25 @@
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
 
+
   <script>
 
-    // const btn = document.getElementById('#submitId');
-
-    // btn.addEventListener('click', function onClick() {
-    //   btn.style.backgroundColor = 'salmon';
-    //   btn.style.color = 'white';
-    // });
-
-    // function bgChange() {
-
-    //   document.querySelector('#submitId').style.background = '#0984e3';
-    //   document.querySelector('#submitId').style.color = '#ffffff';
-    // }
-
-
-
-
-
-    var buttonClicked = null;
-    function bgChange(element) {
-      if (buttonClicked != null) {
-        buttonClicked.style.background = "#fff";
-        buttonClicked.style.color = "#000";
-        buttonClicked.style.border = "1px solid #5F5F5F";
+    var activeClk = null;
+    function activeClick(element) {
+      if (activeClk != null) {
+        activeClk.style.background = "#11862B";
+        activeClk.style.color = "#fff";
+        activeClk.innerHTML = 'Active';
 
 
       }
-      buttonClicked = element;
-      buttonClicked.style.background = "#2880C6";
-      buttonClicked.style.color = "#fff";
-      buttonClicked.style.border = 'none';
-    }
-
-
-
-    // const pending = null;
-    // function penBtnClick() {
-    //   if (pending != null) {
-    //     event.target.style.background = 'rgba(210, 86, 0, 0.2)';
-    //     event.target.style.color = '#D25600';
-    //     event.target.innerHTML = "Pending";
-    //   }
-    //   event.target.style.background = '#16A085';
-    //   event.target.style.color = '#FFFFFF';
-    //   event.target.innerHTML = "Submitted";
-    // }
-
-
-    var pendingBtn = null;
-    function penBtnClick(element) {
-      if (pendingBtn != null) {
-        pendingBtn.style.background = "rgba(210, 86, 0, 0.2)";
-        pendingBtn.style.color = "#D25600";
-        pendingBtn.innerHTML = 'Pending';
-
-
-      }
-      pendingBtn = element;
-      pendingBtn.style.background = "rgba(4, 210, 0, 0.15)";
-      pendingBtn.style.color = " #04D200";
-      pendingBtn.innerHTML = ' Parcel Receive  <br> Complete';
+      activeClk = element;
+      activeClk.style.background = "#D60000";
+      activeClk.style.color = " #fff";
+      activeClk.innerHTML = ' Deactive';
 
     }
+
 
   </script>
 
