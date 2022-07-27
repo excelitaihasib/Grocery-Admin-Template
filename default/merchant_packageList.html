@@ -54,9 +54,46 @@
     rel="stylesheet">
 
   <style>
+    #sidebar-menu .menuitem-active>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .menuitem-active:hover>a {
+      color: #D99200 !important;
+    }
+
+    #sidebar-menu .nav-second-level li:hover>a {
+      color: #D99200 !important;
+    }
+
+    .content-page {
+      margin-top: 25px;
+    }
+
     table tr {
       vertical-align: middle;
       font-family: 'Tahoma';
+    }
+
+    .table thead tr th {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      /* text-align: center; */
+      color: #717A82;
+    }
+
+    .table tbody tr td {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      /* text-align: center; */
+      color: #5F5F5F;
+
     }
 
     /* .dataTables_length {
@@ -131,55 +168,56 @@
 
     }
 
-    .jfss-pack-btn.delete {
 
-      background: rgba(255, 0, 0, 0.1);
-      border: 1px solid #FF0000;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 10px 15px;
-      margin-right: 10px;
-      color: #FF0000;
+    @media (max-width:575px) {
+      .metting-id-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
+      div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: normal;
+        white-space: nowrap;
+        text-align: left;
+        font-size: 12px !important;
+      }
 
+      .row>* {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      .dataTables_filter label input {
+        width: 70% !important;
+      }
     }
 
-    .jfss-pack-btn.print {
+    @media (max-width:320px) {
+      .metting-id-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-      background: rgba(3, 158, 192, 0.2);
-      border: 1px solid #039EC0;
-      border-radius: 10px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 10px 15px;
-      margin-right: 10px;
-      color: #039EC0;
+      .merchant-header {
+        margin: 20px;
+      }
 
+      .dataTables_filter label input {
+        width: 70% !important;
+      }
 
-    }
+      .header-title {
+        font-size: 22px;
+        line-height: 1;
+        margin-left: 20px;
+      }
 
-    .pack-row {
-      border: 1px solid #000000;
-      border-radius: 10px;
-      padding: 20px;
-
-    }
-
-    .pack-add-new-btn-holder .add-new-btn {
-
-      background: #44C003;
-      border-radius: 10px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 8px 30px;
-      color: #FFFFFF;
+      .metting-id-wrap .mettingId {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
     }
   </style>
 
@@ -187,7 +225,7 @@
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading return-product" style="background:#FCD37F;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -285,8 +323,6 @@
             </a>
           </li>
 
-
-
           <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#"
               role="button" aria-haspopup="false" aria-expanded="false">
@@ -319,8 +355,6 @@
                   </p>
                 </a>
 
-
-
                 <!-- All-->
                 <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                   View all
@@ -329,8 +363,6 @@
 
               </div>
           </li>
-
-
           <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown"
               href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -340,38 +372,29 @@
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
-
-
               <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <i class="fe-user"></i>
                 <span>My Profile</span>
               </a>
-
               <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <i class="fe-settings"></i>
                 <span>Change Password</span>
               </a>
-
-
               <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
                 <i class="fe-log-out"></i>
                 <span>Logout</span>
               </a>
-
             </div>
           </li>
-
           <li class="dropdown notification-list">
             <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
               <i class="fe-settings noti-icon"></i>
             </a>
           </li>
-
         </ul>
-
         <!-- LOGO -->
         <div class="logo-box">
           <a href="index.html" class="logo logo-dark text-center">
@@ -423,11 +446,9 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu">
+    <div class="left-side-menu" style="width: 263px;">
 
       <div class="h-100" data-simplebar>
-
-
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -436,85 +457,36 @@
             <li>
               <a href="#courierPanel" data-bs-toggle="collapse">
                 <i class="fab fa-first-order"></i>
-                <span> Courier panel </span>
+                <span>Merchant </span>
                 <span class="menu-arrow"></span>
               </a>
               <div class="collapse" id="courierPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                    <a href="merchant_dashboard.html">1. Merchant Dashboard</a>
                   </li>
                   <li>
-                    <a href="merchant_list.html">2. Merchant List </a>
+                    <a href="merchant_packageList.html">2.Merchant Package List </a>
                   </li>
                   <li>
-                    <a href="packageListing.html">3. Merchant Package List </a>
+                    <a href="merchant_parcelList.html">3. Send by merchant parcel list</a>
                   </li>
                   <li>
-                    <a href="send_by_merchant_parcel_list.html">4. Send by Merchant Parcel List</a>
+                    <a href="merchant_delivered_packageList.html">4. Merchant Delivered Package List</a>
                   </li>
                   <li>
-                    <a href="all_parcel_received_list_from_merchant.html">5. All Parcel Received List from Merchant </a>
+                    <a href="merchant_deliveryBoy_packageReturns.html">5. Package Return details
+                      list from
+                      Delivery Boy</a>
                   </li>
                   <li>
-                    <a href="all_package_details_list_from_merchant.html">6. All Package Details List from Merchant</a>
+                    <a href="merchant_delivery_fees_changes.html">6. Product Delivery Fees & Charges</a>
                   </li>
                   <li>
-                    <a href="zone_wise_vehicle_driver_confirmation_list.html">7. Zone Wise Vehicle & Driver Confirmation
-                      List</a>
+                    <a href="merchant_admin_payment_history.html">7. Merchant & Admin
+                      Payment History</a>
                   </li>
-                  <li>
-                    <a href="zoneSuperParcel.html">8. Zone Supervisor Parcel Receive from Driver</a>
-                  </li>
-                  <li>
-                    <a href="zonePackageDelivery.html">9. Zone Wise Packages Delivery Complete List</a>
-                  </li>
-                  <li>
-                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit
-                      Statement</a>
-                  </li>
-                  <li>
-                    <a href="#11">11. Merchant Payment Statement</a>
-                  </li>
-                  <li>
-                    <a href="#12">12. Courier Employee Part </a>
-                  </li>
-                  <li>
-                    <a href="#13">13. Parcel Tracking System</a>
-                  </li>
-                  <li>
-                    <a href="#logistics" data-bs-toggle="collapse">
-                      <span>14. Logistics </span>
-                    </a>
-                    <div class="collapse" id="logistics">
-                      <ul class="nav-second-level">
-                        <li>
-                          <a href="#14.1">14.1 Vehicle Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.2">14.2 Driver Add</a>
-                        </li>
-                        <li>
-                          <a href="#14.3">14.3. Delivery Boy Add</a>
-                        </li>
-                        <li>
-                          <a href="14.4">14.4. Zone In-charge Add </a>
-                        </li>
-                        <li>
-                          <a href="#14.5">14.5 Add Zone </a>
-                        </li>
-                        <li>
-                          <a href="14.6">14.6. Driver Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.7">14.7. Zone Select </a>
-                        </li>
-                        <li>
-                          <a href="#14.8">14.8 Supervisor Select </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+
                 </ul>
               </div>
             </li>
@@ -530,333 +502,80 @@
 
     </div>
     <!-- Left Sidebar End -->
-
-
-
     <div class="content-page">
       <div class="content">
-        <div class="container-fluid mt-3">
+        <div class="container-fluid mt-5">
           <div class="row">
-            <h3 class="header-title">Package Listing</h3>
+            <h3 class="pb-2 merchant-header">Merchant Package List</h3>
             <div class="col-12">
               <div class="card">
-                <div class="card-body" id="parentOfCardId">
-                  <div class="row pack-row" id="cardId">
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Merchant Package Id</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter package id
-                        </div>
-                      </div>
-
+                <div class="card-body">
+                  <div class="add-package-wrap d-flex justify-content-end align-items-center flex-wrap">
+                    <div class="add-package-btn-hlder" style="margin-right: 10px;">
+                      <a href="merchant_parcelList.html" class="add-package-btn">Sent to parcel list
+                      </a>
                     </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter customer Name" required />
-                        <div class="invalid-feedback">
-                          please enter your customer Name
-                        </div>
-                      </div>
-
+                    <div class="add-package-btn-hlder">
+                      <a href="merchant_packageListing.html" class="add-package-btn">Add Package <i class="fas fa-plus">
+                        </i>
+                      </a>
                     </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Id</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter customer Id" required />
-                        <div class="invalid-feedback">
-                          please enter your customer Id
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Phone No.</label>
-                        <input type="text" class="form-control" id="name" placeholder="Relationship" required />
-                        <div class="invalid-feedback">
-                          please enter your Reference Relationship
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Package Category</label>
-                        <select id="dprt-name" class="form-select" required="">
-                          <option value="">Active</option>
-                          <option value="">Front end</option>
-                          <option value="press">Back end</option>
-                        </select>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Package Weight</label>
-                        <input type="text" class="form-control" id="name" placeholder="weight" required />
-                        <div class="invalid-feedback">
-                          please enter your weight
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Expected Delivery Time</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter parcel number
-                        </div>
-                      </div>
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Payment Type</label>
-                        <select id="dprt-name" class="form-select" required="">
-                          <option value="">Active</option>
-                          <option value="">Front end</option>
-                          <option value="press">Back end</option>
-                        </select>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Product Price</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter Price" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter Price
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Delivery Fee</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
-                        <div class="invalid-feedback">
-                          please enter your Enter fee
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-md-4 col-sm-12">
-                      <div class="mb-3">
-                        <label for="name" class="form-label">Customer Address</label>
-                        <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
-                        <div class="invalid-feedback">
-                          please enter your Enter Address
-                        </div>
-                      </div>
-
-                    </div>
-                    <!-- end col  -->
-
-                    <div class="col-lg-2 col-sm-12 col-md-4">
-
-                      <div class="mb-3">
-                        <span></span>
-                        <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                          <a href="javascript:void(0)" class="jfss-pack-btn delete"> Delete
-                            <i class="fas fa-trash-alt"></i></a>
-                          <button class="jfss-pack-btn print"
-                            onclick="print('../default/bpp_shop_courier_invoice.html')"> Print <i
-                              class="fas fa-print"></i> </button>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div class="d-flex gap-4">
-                      <div class="pack-add-new-btn-holder">
-                        <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-                      </div>
-                      <div class="pack-add-new-btn-holder">
-                        <a href="merchantPackageList.html" class="add-new-btn">Submit </a>
-                      </div>
-                      <div class="pack-add-new-btn-holder">
-                        <a href="merchantPackageList.html" class="add-new-btn">Complete</a>
-                      </div>
-                    </div>
-
                   </div>
 
+                  <table id="datatable-buttons" class="table table-striped nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Date & Time</th>
+                        <th>Merchant Package <br> ID</th>
+                        <th>Customer Name</th>
+                        <th>Customer Phone <br> no.</th>
+                        <th>Customer Address</th>
+                        <th>Package <br> Category</th>
+                        <th>Package <br> Weight</th>
+                        <th>Customer Expected <br> Delivary Time</th>
+                        <th>Payment type</th>
+                        <th>Product Price</th>
+                        <th>Delivary fee</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>4178956423</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>011254682</td>
+                        <td>Moghbazar, Dhaka 1217</td>
+                        <td>Shipped</td>
+                        <td>100 kg</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>Cash on delivery</td>
+                        <td> ৳ 200 </td>
+                        <td> ৳ 20 </td>
+
+                      </tr>
+                      <tr>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>4178956423</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>011254682</td>
+                        <td>Moghbazar, Dhaka 1217</td>
+                        <td>Shipped</td>
+                        <td>100 kg</td>
+                        <td>2022-05-21 12:53:57</td>
+                        <td>Cash on delivery</td>
+                        <td> ৳ 200 </td>
+                        <td> ৳ 20 </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
                 </div> <!-- end card body-->
               </div> <!-- end card -->
             </div><!-- end col-->
           </div>
         </div>
       </div>
-
-      <div id="duplicateData">
-        <div class="row pack-row mt-4" id="childCardId">
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Merchant Package Id</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter package id" required />
-              <div class="invalid-feedback">
-                please enter your Enter package id
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter customer Name" required />
-              <div class="invalid-feedback">
-                please enter your customer Name
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Id</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter customer Id" required />
-              <div class="invalid-feedback">
-                please enter your customer Id
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Phone No.</label>
-              <input type="text" class="form-control" id="name" placeholder="Relationship" required />
-              <div class="invalid-feedback">
-                please enter your Reference Relationship
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Package Category</label>
-              <select id="dprt-name" class="form-select" required="">
-                <option value="">Active</option>
-                <option value="">Front end</option>
-                <option value="press">Back end</option>
-              </select>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Package Weight</label>
-              <input type="text" class="form-control" id="name" placeholder="weight" required />
-              <div class="invalid-feedback">
-                please enter your weight
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Expected Delivery Time</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter parcel number" required />
-              <div class="invalid-feedback">
-                please enter your Enter parcel number
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Payment Type</label>
-              <select id="dprt-name" class="form-select" required="">
-                <option value="">Active</option>
-                <option value="">Front end</option>
-                <option value="press">Back end</option>
-              </select>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Product Price</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter Price" required />
-              <div class="invalid-feedback">
-                please enter your Enter Price
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Delivery Fee</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter fee" required />
-              <div class="invalid-feedback">
-                please enter your Enter fee
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-md-4 col-sm-12">
-            <div class="mb-3">
-              <label for="name" class="form-label">Customer Address</label>
-              <textarea id="p-address" class="form-control" placeholder="Address" required></textarea>
-              <div class="invalid-feedback">
-                please enter your Enter Address
-              </div>
-            </div>
-          </div>
-          <!-- end col  -->
-          <div class="col-lg-2 col-sm-12 col-md-4">
-            <div class="mb-3">
-              <span></span>
-              <div class="package-listing-btn-holder d-flex justify-content-center align-items-center my-3">
-                <a href="javascript:void(0)" class="jfss-pack-btn delete" onclick="removeItem(this)"> Delete
-                  <i class="fas fa-trash-alt"></i></a>
-                <a href="#" class="jfss-pack-btn print" onclick="print('../default/bpp_shop_courier_invoice.html')">
-                  Print <i class="fas fa-print"></i> </a>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex gap-4">
-            <div class="pack-add-new-btn-holder">
-              <a href="javascript:void(0)" class="add-new-btn" onclick="addNewBtn()"> Add New</a>
-            </div>
-            <div class="pack-add-new-btn-holder">
-              <a href="merchantPackageList.html" class="add-new-btn">Submit </a>
-            </div>
-            <div class="pack-add-new-btn-holder">
-              <a href="merchantPackageList.html" class="add-new-btn">Complete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
 
@@ -1019,53 +738,6 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-
-
-  <script>
-
-    function addNewBtn() {
-      $cardIdClone = $('#childCardId').clone();
-      $('#parentOfCardId').append($cardIdClone);
-    }
-    function removeItem(event) {
-      $('#childCardId').remove();
-    }
-
-    $(document).ready(function () {
-      $('#duplicateData').hide();
-    });
-  </script>
-
-
-  <script>
-
-    function addNewBtn() {
-      $cardIdClone = $('#childCardId').clone();
-      $('#parentOfCardId').append($cardIdClone);
-    }
-    function removeItem(event) {
-      $('#childCardId').remove();
-    }
-    $(document).ready(function () {
-      $('#duplicateData').hide();
-    });
-
-
-    function print(pdf) {
-      // Create an IFrame.
-      var iframe = document.createElement('iframe');
-      // Hide the IFrame. 
-      iframe.style.visibility = "hidden";
-      // Define the source. 
-      iframe.src = pdf;
-      // Add the IFrame to the web page.
-      document.body.appendChild(iframe);
-      iframe.contentWindow.focus();
-      iframe.contentWindow.print(); // Print.
-    }
-  </script>
 
 </body>
 
