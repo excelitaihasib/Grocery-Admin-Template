@@ -114,13 +114,13 @@
         }
 
         .merchantList .active-status {
-            padding: 3px 30px;
+            padding: 3px 28px;
             background-color: #11862B;
             color: #fff;
         }
 
         .merchantList .deactive-status {
-            padding: 3px 23px;
+            padding: 3px 22px;
             background-color: #D60000;
             color: #fff;
         }
@@ -969,7 +969,7 @@
                 <div class="modal-body text-center">
                     <h4>Are You Sure! You want to Delete this Data ?</h4>
                     <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                    <button class="delete-btn" id="DeleteButton">Delete</button>
+                    <button onclick="closeModal(this)" class="delete-btn" id="DeleteButton">Delete</button>
                 </div>
             </div>
         </div>
@@ -1406,25 +1406,18 @@
     <div class="rightbar-overlay"></div>
 
     <script>
-        var buttonClicked = null;
 
-        function activeStatus(element) {
-            if (buttonClicked != null) {
-                buttonClicked.style.background = "#11862B";
-                buttonClicked.style.color = "#fff";
-                buttonClicked.style.border = "0px";
-                buttonClicked.innerHTML = "Active";
-                buttonClicked.style.width = "115px"
+        // active and deactive toggle button
+        function activeStatus(elem) {
+            elem.classList.toggle("deactive-status"); 
+            if (elem.innerHTML === "Active") {
+                elem.innerHTML = "Deactive";
+            } else {
+                elem.innerHTML = "Active";
             }
-            buttonClicked = element;
-            buttonClicked.style.background = "#D60000";
-            buttonClicked.style.color = "#fff";
-            buttonClicked.style.border = "0px";
-            buttonClicked.innerHTML = "Deactive";
-            buttonClicked.style.width = "115px"
         }
-    </script>
 
+    </script>
 
     <!-- Vendor js -->
     <script src="../assets/js/vendor.min.js"></script>
@@ -1450,7 +1443,6 @@
 
     <!-- App js -->
     <script src="../assets/js/app.min.js"></script>
-
 
 </body>
 
