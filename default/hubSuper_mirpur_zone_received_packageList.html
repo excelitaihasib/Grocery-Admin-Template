@@ -551,12 +551,12 @@
 
           <ul id="side-menu">
             <li>
-              <a href="#courierPanel" data-bs-toggle="collapse">
+              <a href="#hubPanel" data-bs-toggle="collapse">
                 <i class="fab fa-first-order"></i>
                 <span>Hub Supervisor panel </span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="courierPanel">
+              <div class="collapse" id="hubPanel">
                 <ul class="nav-second-level">
                   <li>
                     <a href="hub_supervisor_dashboard.html"> 1.Hub Supervisor Dashboard</a>
@@ -658,7 +658,7 @@
                         <td>60</td>
                         <td>10060</td>
                         <td> <span class="auto-fill"> Auto fill from <br> zone selection</span></td>
-                        <td><span class="notif-btn">Notification Not Sent</span></td>
+                        <td><span class="notif-btn" onclick="notiSendClick(this)">Notification Not Sent</span></td>
                         <td>Mr. Arman</td>
                       </tr>
                       <tr>
@@ -677,7 +677,7 @@
                         <td>60</td>
                         <td>10060</td>
                         <td> <span class="auto-fill"> Auto fill </span></td>
-                        <td><span class="notif-btn">Notification Not Sent</span></td>
+                        <td><span class="notif-btn" onclick="notiSendClick(this)">Notification Not Sent</span></td>
                         <td>Mr. Arman</td>
                       </tr>
                     </tbody>
@@ -850,6 +850,34 @@
 
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
+
+
+  <script>
+
+    var notisendBtn = null;
+    function notiSendClick(element) {
+      if (notisendBtn != null) {
+        notisendBtn.style.background = "rgba(224, 68, 68, 0.2)";
+        notisendBtn.style.color = "#E04444";
+        notisendBtn.style.border = " 1px solid #E04444";
+        notisendBtn.innerHTML = 'Notification Not Sent';
+        notisendBtn.style.padding = "8px 15px";
+
+      }
+      notisendBtn = element;
+      notisendBtn.style.background = " rgba(0, 207, 33, 0.2)";
+      notisendBtn.style.color = " #00CF21";
+      notisendBtn.style.border = " 1px solid #00CF21";
+      notisendBtn.innerHTML = 'Notification Sent';
+      notisendBtn.style.padding = "8px 27px";
+
+
+
+
+    }
+
+
+  </script>
 
 </body>
 
