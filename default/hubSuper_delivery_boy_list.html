@@ -933,22 +933,32 @@
 
   <script>
 
-    var activeClk = null;
-    function activeClick(element) {
-      if (activeClk != null) {
-        activeClk.style.background = "#11862B";
-        activeClk.style.color = "#fff";
-        activeClk.innerHTML = 'Active';
+    // var activeClk = null;
+    // function activeClick(element) {
+    //   if (activeClk != null) {
+    //     activeClk.style.background = "#11862B";
+    //     activeClk.style.color = "#fff";
+    //     activeClk.innerHTML = 'Active';
 
 
-      }
-      activeClk = element;
-      activeClk.style.background = "#D60000";
-      activeClk.style.color = " #fff";
-      activeClk.innerHTML = ' Deactive';
+    //   }
+    //   activeClk = element;
+    //   activeClk.style.background = "#D60000";
+    //   activeClk.style.color = " #fff";
+    //   activeClk.innerHTML = ' Deactive';
 
+    // }
+
+
+
+    function activeClick(elem) {
+      elem.classList.toggle("deactive-btn");
+      if (elem.innerHTML === "Active") {
+        elem.innerHTML = "Deactive";
+      } else {
+        elem.innerHTML = "Active";
+      };
     }
-
 
   </script>
 
