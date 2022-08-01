@@ -371,6 +371,41 @@
         padding: 10px 20px;
       }
     }
+    #deleteRowModal .cancel-btn {
+            background: #FFFFFF;
+            border: 1px solid #585353;
+            border-radius: 5px;
+            padding: 3px 20px;
+            margin: 0px 10px;
+        }
+
+        #deleteRowModal .delete-btn {
+            background: #D60000;
+            color: #fff;
+            border-radius: 5px;
+            border: 1px solid #D60000;
+            padding: 3px 20px;
+            margin: 0px 10px;
+        }
+
+        #deleteRowModal .delete-icon {
+            display: flex;
+        }
+
+        #deleteRowModal .delete-icon i {
+            background-color: #D60000;
+            color: #fff;
+            height: 35px;
+            width: 35px;
+            border-radius: 35px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #deleteRowModal .delete-icon p {
+            margin: auto;
+            margin-left: 10px;
+        }
   </style>
 
 </head>
@@ -751,9 +786,10 @@
 
                         <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
                         <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
-                          <span class="delete-list">
+                          <a href="#" data-bs-toggle="modal"
+                            data-bs-target="#deleteRowModal"><span class="delete-list">
                             <i class="fas fa-trash-alt"></i>
-                          </span>
+                            </span></a>
                         </td>
                         <td> <a href="hubSuper_delivery_boy_product_deliveredlist.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
                         <td> <a href="hubSuper_delivery_boy_payment_history.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
@@ -773,6 +809,27 @@
 
   </div>
   <!-- END wrapper -->
+
+  <!-- ========================Delete Button Modal Start================================ -->
+  <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="delete-icon">
+                    <i class="fa-solid fa-trash-can delete-icon"></i>
+                    <p>Delete Data</p>
+                </div>
+
+            </div>
+            <div class="modal-body text-center">
+                <h4>Are You Sure! You want to Delete this Data ?</h4>
+                <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                <button onclick="closeModal(this)" class="delete-btn" id="DeleteButton">Delete</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ========================Delete Button Modal Start================================ -->
 
   <!-- Right Sidebar -->
   <div class="right-bar">
