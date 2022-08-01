@@ -45,17 +45,8 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 3em;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
     }
 
     body {
@@ -75,7 +66,7 @@
 
     .merchantSinglePkgList tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     .merchantSinglePkgList .addBtn {
@@ -203,7 +194,6 @@
       color: #FE0808;
     }
 
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -914,9 +904,9 @@
                         <th>Payment Type</th>
                         <th>Product Price</th>
                         <th>Delivery Fee</th>
-                        <th>Received Amount from Customer</th>
-                        <th>Day Wise Total Received Amount </th>
-                        <th>COD Charge For Cash On Delivery</th>
+                        <th>Received Amount <br> from Customer</th>
+                        <th>Day Wise Total <br> Received Amount </th>
+                        <th>COD Charge For <br> Cash On Delivery</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -57,6 +57,9 @@
     rel="stylesheet">
 
   <style>
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
+    }
     body{
       background-color: #91f1fd;
     }
@@ -70,6 +73,7 @@
     }
     table th{
       font-size: 12px;
+      text-align: left;
     }
     table tr {
       vertical-align: middle;
@@ -84,7 +88,7 @@
 
     table tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     table tr td .pending {
@@ -154,7 +158,7 @@
       padding: 6px 20px;
       color: #04D200;
     }
-    table.dataTable.nowrap th, table.dataTable.nowrap td {
+    table.dataTable.nowrap td {
       white-space: normal;
     }
   </style>
@@ -490,15 +494,15 @@
 
                     <thead>
                       <tr>
-                        <th>Zone Supervisor Receive Parcel Date & Time</th>
+                        <th>Zone Supervisor <br> Receive Parcel Date & Time</th>
                         <th>Zone</th>
-                        <th>Driver Invoice Number or Order Number</th>
+                        <th>Driver Invoice Number or <br> Order Number</th>
                         <th>Driver Name</th>
                         <th>Vehicle No.</th>
-                        <th>Total Quantity of Package Handover to Driver</th>
-                        <th>Total Package Weight</th>
-                        <th>Zone Supervisor Parcel Receive from Driver Process by</th>
-                        <th>Parcel Receive from Driver Status</th>
+                        <th>Total Quantity of <br> Package Handover to Driver</th>
+                        <th>Total Package <br> Weight</th>
+                        <th>Zone Supervisor Parcel <br> Receive from Driver Process by</th>
+                        <th>Parcel Receive from <br> Driver Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>

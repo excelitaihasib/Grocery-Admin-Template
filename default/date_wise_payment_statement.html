@@ -44,17 +44,11 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 1.6rem;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 1em;
+    }
+    body{
+      background-color: #91f1fd;
     }
 
     .zonePaymentReceiveStatement .dataTables_length .form-label {
@@ -67,7 +61,7 @@
 
     .zonePaymentReceiveStatement table td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     .zonePaymentReceiveStatement th {
@@ -118,7 +112,6 @@
       margin: 20px 0 0 20px;
     }
 
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -805,7 +798,7 @@
                       <tr>
                         <th>Date & Time</th>
                         <th>Zone Name</th>
-                        <th>Zone Id</th>
+                        <th>Zone ID</th>
                         <th>Transaction Completed Person</th>
                         <th>Total Deposit at Bank Account from Zone</th>
                         <th>Total Cash Deposit from zone</th>

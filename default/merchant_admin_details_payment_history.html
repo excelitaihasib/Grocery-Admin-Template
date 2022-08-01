@@ -49,17 +49,8 @@
       background-color: #91f1fd;
     }
 
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 3em;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
     }
 
     table th {
@@ -76,10 +67,9 @@
 
     table tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -209,7 +199,7 @@
       color: #fff;
       font-size: 16px;
     }
-    .blue{
+    /* .blue{
       color: #0038FF;
     }
     .brown{
@@ -220,7 +210,7 @@
     }
     .green{
       color: #00FFD1;
-    }
+    } */
     @media(max-width: 767px){
       .top_merchant_btn{
         justify-content: center;
@@ -912,10 +902,10 @@
                       <tr>
                         <th>Date</th>
                         <th>Payment Description</th>
-                        <th>Received Amount from Customer</th>
-                        <th>Delivery Fee Withdraw Amount</th>
-                        <th>COD Charge Withdraw Amount</th>
-                        <th>Merchant Withdrew Amount</th>
+                        <th>Received Amount <br> from Customer</th>
+                        <th>Delivery Fee <br> Withdraw Amount</th>
+                        <th>COD Charge <br> Withdraw Amount</th>
+                        <th>Merchant <br> Withdrew Amount</th>
                         <th>Due Amount</th>
                       </tr>
                     </thead>
@@ -923,10 +913,10 @@
                       <tr>
                         <td>20-05-2022</td>
                         <td>Bank Payment</td>
-                        <td class="blue">(+)৳ 12000</td>
-                        <td class="brown">(+)৳ 16000</td>
-                        <td class="purple">(+)৳ 19000</td>
-                        <td class="green">(+)৳ 22000</td>
+                        <td>(+)৳ 12000</td>
+                        <td>(+)৳ 16000</td>
+                        <td>(+)৳ 19000</td>
+                        <td>(+)৳ 22000</td>
                         <td>(+)৳ 12000</td>
                       </tr>
                     </tbody>

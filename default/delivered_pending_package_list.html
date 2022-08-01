@@ -45,19 +45,9 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 3em;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 1em;
     }
-
     body {
       background-color: #91f1fd;
     }
@@ -75,7 +65,7 @@
 
     .merchantSinglePkgList tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     .merchantSinglePkgList .addBtn {
@@ -202,8 +192,6 @@
       font-size: 12px;
       color: #FE0808;
     }
-
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -229,9 +217,6 @@
 
     .trnsfr-completebtn a {
       color: #fff;
-    }
-    .green{
-      color: #24AC0E;
     }
   </style>
 </head>
@@ -925,7 +910,7 @@
                         <td>Cash on delivery</td>
                         <td>৳ 200</td>
                         <td>৳ 20</td>
-                        <td class="green">৳ 220</td>
+                        <td>৳ 220</td>
                       </tr>
                     </tbody>
                   </table>
