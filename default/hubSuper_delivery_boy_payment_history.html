@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>Merchant Product Delivery Complete List</title>
+  <title>Delivery Boy Payment History</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -50,66 +50,135 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@200;400;500;600;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,700&family=Roboto&family=Ubuntu:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
-  <link
     href="https://fonts.googleapis.com/css2?family=Mukta&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
   <style>
-    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
-      bottom: 2em;
+    #sidebar-menu .menuitem-active>a {
+      color: #8B6BE8 !important;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Inter', sans-serif;
+
+    #sidebar-menu .menuitem-active:hover>a {
+      color: #8B6BE8 !important;
     }
-    body{
-      background-color: #91f1fd;
+
+    #sidebar-menu .nav-second-level li:hover>a {
+      color: #8B6BE8 !important;
     }
-    table th{
-      font-size: 12px;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
+
+    .edit i,
+    .edit:hover i {
+      color: #000000;
+    }
+
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
     }
 
     table tr {
       vertical-align: middle;
-      font-family: 'Inter', sans-serif;
       font-family: 'Tahoma';
+    }
+
+    .table thead tr th {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
       font-size: 12px;
+      line-height: 15px;
+      /* text-align: center; */
+      color: #717A82;
     }
 
-    table tr td {
-      vertical-align: middle;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
+    .table tbody tr td {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+
     }
 
-    table tr td .pending {
-      color: #D25600;
-      background: rgba(210, 86, 0, 0.2);
+    .auto-fill {
+      color: #C2C0C0;
+    }
+
+    .notif-btn {
+      background: rgba(224, 68, 68, 0.2);
+      border: 1px solid #E04444;
+      color: #E04444;
       border-radius: 20px;
-      padding: 6px 20px;
+      padding: 8px 15px;
     }
 
-    .jfss-edit-btn,
-    .jfss-edit-btn:hover {
-      background: #B8E6F0;
-      border-radius: 10px;
-      padding: 7px 12px;
-      color: #000;
+    .jfss-submit-btn {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: #5F5F5F;
+      background: #FFFFFF;
+      border: 1px solid #5F5F5F;
+      border-radius: 5px;
+    }
+
+
+
+    .jfss-submit-btn .active,
+    .jfss-submit-btn:active,
+    .jfss-submit-btn:focus {
+      background: #0984e3;
+      border: none;
+      color: #FFFFFF;
     }
 
     .dataTables_length {
       display: none;
     }
 
-    /* .dataTables_filter {
+    table tr td .pending {
+      color: #D25600;
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      padding: 8px 18px;
+      border: 1px solid #D25600;
+    }
+
+    table tr td .complete {
+      color: #40C91E;
+      background: rgba(64, 201, 30, 0.2);
+      border-radius: 20px;
+      padding: 8px 15px;
+      border: 1px solid #40C91E;
+    }
+
+    table tr td .return {
+      color: #D20000;
+      background: rgba(255, 0, 0, 0.2);
+      border: 1px solid #D20000;
+      border-radius: 20px;
+      padding: 8px 20px;
+    }
+
+    .edit i,
+    .edit:hover i {
+      color: #000000;
+    }
+
+    .jfss-edit-btn {
+      background: #B8E6F0;
+      border-radius: 10px;
+      padding: 7px 12px;
+    }
+
+    /* .dataTables_length {
+      display: none;
+    }
+
+    .dataTables_filter {
       display: none;
     } */
 
@@ -120,12 +189,13 @@
       margin-bottom: 20px;
     }
 
+
+
     .package-list h6 {
-      background: #00666C;
       border-radius: 5px;
       font-family: 'Inter';
       font-style: normal;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 16px;
       line-height: 19px;
 
@@ -152,7 +222,19 @@
       border-radius: 20px;
     }
 
-    .complete {
+    .complete-btn {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      color: #04D200;
+      background: rgba(4, 210, 0, 0.15);
+      border-radius: 20px;
+      padding: 6px 15px;
+    }
+
+    .submit {
       background: rgba(4, 210, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
@@ -160,46 +242,218 @@
 
     }
 
-    .calender-wrapper {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+    .package-list-content h6 {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 10px;
+      color: #FFFFFF;
+      margin: 5px 15px;
+
     }
 
-    .calender-wrapper .calender {
-      padding: 8px;
+    h6.package-lists {
+
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      margin-right: 10px;
+      color: #FFFFFF;
+      margin: 0 15px;
+    }
+
+    .active-btn {
+      background: #11862B;
       border-radius: 5px;
-      border: 1px solid #38414A;
-      background: #fff;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 19px;
+      color: #FFFFFF;
+      /* padding: 6px 20px; */
+      border: none;
+      width: 78px;
+      height: 32px;
     }
 
-    @media(max-width:576px) {
+    .deactive-btn {
+      background: #D60000;
+      border-radius: 5px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 19px;
+      color: #FFFFFF;
+      /* padding: 6px 20px; */
+      border: none;
+      width: 78px;
+      height: 32px;
+    }
 
-      .calender-wrapper {
+    .edit-list {
+      background: #00A3E2;
+      border-radius: 2px;
+      color: #FFFFFF;
+      padding: 5px 7px;
+      font-size: 16px;
+    }
+
+    .delete-list {
+      background: #D60000;
+      border-radius: 2px;
+      color: #FFFFFF;
+      padding: 5px 7px;
+      font-size: 16px;
+    }
+
+    @media (max-width:575px) {
+      .metting-id-wrap {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
       }
 
+      div.dataTables_wrapper div.dataTables_filter label {
+        font-weight: normal;
+        white-space: nowrap;
+        text-align: left;
+        font-size: 12px !important;
+      }
+
+      .row>* {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      .dataTables_filter label input {
+        width: 70% !important;
+      }
+
+      .package-list-content h6 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+      }
     }
-   table.dataTable.nowrap td {
-      white-space: normal;
+
+    @media (max-width:320px) {
+      .metting-id-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .merchant-header {
+        margin: 20px;
+      }
+
+      .dataTables_filter label input {
+        width: 70% !important;
+      }
+
+      .header-title {
+        font-size: 22px;
+        line-height: 1;
+        margin-left: 20px;
+      }
+
+      .metting-id-wrap .mettingId {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
     }
-    .faEye{
-      background: #B8E6F0;
-      border-radius: 10px;
-      color: #000000;
-      padding: 10px 12px;
-      font-size: 20px;
+
+    .top_delivery_btn {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
+    .deliveryNameBtn {
+      background: #0E97AA;
+      border-radius: 5px;
+      width: 327px;
+      height: 120px;
+      margin: 15px 0 0 20px;
+      padding: 0 10px;
+      height: auto;
+    }
+    .deliveryNameBtn h6 {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+    }
+    .pending {
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 12px;
+      color: #D25600;
+      padding: 6px 20px;
+      cursor: pointer;
+    }
+    .brown{
+      color: #D25600;
+    }
+    .red{
+      color: #FF0000;
+    }
+    .green{
+      color: #40C91E;
+    }
+    .dark-green{
+      color: #1C883A;
+    }
+    .black{
+      color: #000;
+    }
+
+    @media (min-width: 992px){
+      .me-lg-3 {
+      margin-right: 1.5rem!important;
+      }
+    }
+   .addBtn {
+      background: #16A085;
+      border-radius: 5px;
+      border: 1px solid #16A085;
+      padding: 8px 30px;
+      font-family: 'Inter';
+      font-weight: 300;
+      font-size: 18px;
+    }
+    .addBtn a {
+      color: #FFFFFF;
+    }
+    @media(max-width: 767px){
+      .top_delivery_btn{
+        justify-content: center;
+      }
+      .deliveryNameBtn{
+        margin: 15px 0 0 0;
+      }
+      .addBtn a{
+        font-size: 15px;
+      }
+    }
+
   </style>
 
 </head>
 
 <!-- body start -->
 
-<body class="loading return-product"
+<body class="loading return-product" style="background: #D1CEF4;"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
 
   <!-- Begin page -->
@@ -435,67 +689,52 @@
     <!-- end Topbar -->
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="left-side-menu">
+    <div class="left-side-menu" style="width: 263px;">
 
       <div class="h-100" data-simplebar>
-
 
 
         <!--- Sidemenu -->
         <div id="sidebar-menu">
 
           <ul id="side-menu">
-
             <li>
-              <a href="#courierPanel" data-bs-toggle="collapse">
+              <a href="#hubPanel" data-bs-toggle="collapse">
                 <i class="fab fa-first-order"></i>
-                <span> Courier panel </span>
+                <span>Hub Supervisor panel </span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="courierPanel">
+              <div class="collapse" id="hubPanel">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="courier_dashboard.html">1. Courier Dashboard</a>
+                    <a href="hub_supervisor_dashboard.html"> 1.Hub Supervisor Dashboard</a>
                   </li>
                   <li>
-                    <a href="merchant_list.html">2. Merchant List </a>
+                    <a href="hubSuper_zoneSuperv_parcel_receive_drive.html">2. Zone Supervisor Parcel
+                      <br>
+                      receive from driver</a>
                   </li>
                   <li>
-                    <a href="send_by_merchant_parcel_list.html">3. Send by Merchant Parcel List</a>
+                    <a href="hubSuper_mirpur_zone_received_packageList.html">3. Mirpur Zone (received package list)</a>
                   </li>
                   <li>
-                    <a href="all_parcel_received_list_from_merchant.html">4. All Parcel Received List from Merchant </a>
+                    <a href="hubSuper_product_delivery_complete_list.html">4. Product Delivery complete List</a>
                   </li>
                   <li>
-                    <a href="all_package_details_list_from_merchant.html">5. All Package Details List from Merchant</a>
+                    <a href="hubSuper_delivery_boy_payment_history.html">5. Delivery Boy List</a>
                   </li>
                   <li>
-                    <a href="zone_wise_vehicle_driver_confirmation_list.html">6. Zone Wise Vehicle & Driver Confirmation List</a>
+                    <a href="#fg">6. All Delivery Boy Payment History</a>
                   </li>
                   <li>
-                    <a href="zoneSuperParcel.html">7. Zone Supervisor Parcel Receive from Driver</a>
-                  </li>
-                  <li>
-                    <a href="zonePackageDelivery.html">8. Zone Wise Packages Delivery Complete List</a>
-                  </li>
-                  <li>
-                    <a href="zone_wise_payment_history.html">9. Zone Wise Payment History</a>
-                  </li>
-                  <li>
-                    <a href="all_zone_payment_recieved_deposite_statement.html">10. All Zone Payment Received & Deposit Statement</a>
-                  </li>
-                  <li>
-                    <a href="package_return_details_list_delivery_boy.html">11. Package Return Details List from Delivery Boy</a>
-                  </li>
-                  <li>
-                    <a href="merchant_product_delivery_complete_list.html">12. Merchant Product Delivery Complete List</a>
-                  </li>
-                  <li>
-                    <a href="product_delivery_fees_charges.html">13. Product Delivery Fees & Charges</a>
+                    <a href="#fd">7. Zone wise Payment History at
+                      Admin Account</a>
                   </li>
                 </ul>
               </div>
             </li>
+
+
 
           </ul>
 
@@ -516,63 +755,77 @@
       <div class="content">
         <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="header-title">Merchant Product Delivery Complete List</h3>
+            <h3 class="header-title">Delivery Boy Payment History</h3>
             <div class="col-12">
               <div class="card">
-                <div class="card-body">
-
-                  <div class="calender-wrapper">
-                    <input type="date" class="calender">
+                <div class="top_delivery_btn">
+                  <div class="deliveryNameBtn">
+                    <h6>Delivery Boy Name : Hasibul Hasan</h6>
+                    <h6>Delivery Boy ID = 0123598756</h6>
                   </div>
-
+                  <div class="text-end mt-3 me-lg-3 me-md-0">
+                    <button class="addBtn"><a href="hubSpuer_add_payment_delivery_boy.html">Add Payment By Delivery Boy</a></button>
+                  </div>
+                </div>
+                <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
-
                     <thead>
                       <tr>
-                        <th>Package Delivered <br> Complete Date</th>
-                        <th>Merchant  Name <br> (Organization name)</th>
-                        <th>Merchant ID</th>
-                        <th>Delivery Completed <br> Package Quantity</th>
-                        <th>Delivery Pending <br> Package Quantity</th>
-                        <th>Delivery Return <br> Package Quantity</th>
-                        <th>(Delivery Completed List) Action</th>
-                        <th>(Delivery Pending List) Action</th>
-                        <th>(Delivery Return List) Action</th>
+                        <th>Payment Date & Time</th>
+                        <th>Invoice Number or Order Number</th>
+                        <th>Customer Name</th>
+                        <th>Customer Phone Number</th>
+                        <th>Customer Address</th>
+                        <th>Payment Type</th>
+                        <th>Received Amount from Customer</th>
+                        <th>Delivery Boy Payment Amount</th>
+                        <th>Due Amount</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>20-05-2022</td>
-                        <td>Asian Tailors & Fabrics </td>
-                        <td>5248678</td>
-                        <td>17</td>
-                        <td>02</td>
-                        <td>02</td>
-                        <td><a href="delivered_complete_package_list_action.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivered_pending_package_list.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivery_return_package_quantity.html"><i class="fas fa-eye faEye"></i></a></td>
+                        <td>21-05-2022</td>
+                        <td>01234568791</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td class="brown">Cash On Delivery</td>
+                        <td class="green">৳ 12000</td>
+                        <td class="brown">৳ 5000</td>
+                        <td class="red">৳ 23700</td>
                       </tr>
                       <tr>
-                        <td>20-05-2022</td>
-                        <td>Asian Tailors & Fabrics </td>
-                        <td>5248678</td>
-                        <td>17</td>
-                        <td>02</td>
-                        <td>02</td>
-                        <td><a href="delivered_complete_package_list_action.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivered_pending_package_list.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivery_return_package_quantity.html"><i class="fas fa-eye faEye"></i></a></td>
+                        <td>21-05-2022</td>
+                        <td>01234568791</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td class="green">Paid</td>
+                        <td class="green"></td>
+                        <td class="brown"></td>
+                        <td class="red">৳ 23700</td>
                       </tr>
                       <tr>
-                        <td>20-05-2022</td>
-                        <td>Asian Tailors & Fabrics </td>
-                        <td>5248678</td>
-                        <td>17</td>
-                        <td>02</td>
-                        <td>02</td>
-                        <td><a href="delivered_complete_package_list_action.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivered_pending_package_list.html"><i class="fas fa-eye faEye"></i></a></td>
-                        <td><a href="delivery_return_package_quantity.html"><i class="fas fa-eye faEye"></i></a></td>
+                        <td>21-05-2022</td>
+                        <td>01234568791</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td class="green">Paid</td>
+                        <td class="green">৳ 5000</td>
+                        <td class="brown"></td>
+                        <td class="red">৳ 23700</td>
+                      </tr>
+                      <tr>
+                        <td>21-05-2022</td>
+                        <td>01234568791</td>
+                        <td>Mr. Abdul Hakim</td>
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td class="brown">Cash on Delivery</td>
+                        <td class="green"></td>
+                        <td class="brown">৳ 5000</td>
+                        <td class="dark-green">৳ 23700</td>
                       </tr>
                     </tbody>
                   </table>
@@ -713,6 +966,26 @@
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
 
+
+  <script>
+    // pending button js
+    var buttonClicked1 = null;
+    function pendingF(element) {
+        if (buttonClicked1 != null) {
+          buttonClicked1.style.background = "rgba(210, 86, 0, 0.2)";
+          buttonClicked1.style.border = "1px solid #D25600";
+          buttonClicked1.style.color = "#D25600";
+          buttonClicked1.innerHTML = "Pending"
+        }
+        buttonClicked1 = element;
+        buttonClicked1.style.background = "rgba(55, 210, 0, 0.2)";
+        buttonClicked1.style.border = "1px solid #05D201";
+        buttonClicked1.style.color = "#37D200";
+        buttonClicked1.innerHTML = "Delivery Complete";
+        buttonClicked1.style.fontSize = "12px";
+        buttonClicked1.style.whiteSpace  = "nowrap"
+    }
+  </script>
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
 
@@ -745,6 +1018,7 @@
   <!-- App js-->
   <script src="../assets/js/app.min.js"></script>
 
+
 </body>
 
-</html>
+</html> 
