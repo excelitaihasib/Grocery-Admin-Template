@@ -39,8 +39,8 @@
             body{
                 background-color: #91f1fd;
             }
-            table.dataTable>thead .sorting:after, table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:after, table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting_asc_disabled:after, table.dataTable>thead .sorting_asc_disabled:before, table.dataTable>thead .sorting_desc:after, table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_desc_disabled:after, table.dataTable>thead .sorting_desc_disabled:before {
-                bottom: 4em;
+            table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+                bottom: 2em;
             }
             .merchantParcelList .faEye {
                 background: #B8E6F0;
@@ -69,7 +69,7 @@
             }
             .merchantParcelList tr td{
                 vertical-align: middle;
-                text-align: center;
+                text-align: left;
             }
             .merchantParcelList .pending {
                 background: rgba(210, 86, 0, 0.2);
@@ -109,7 +109,7 @@
                 border-radius: 20px;
                 padding: 6px 20px;
             }
-            table.dataTable.nowrap th, table.dataTable.nowrap td {
+            table.dataTable.nowrap td {
                 white-space: normal;
             }
             table select.form-select{
@@ -763,19 +763,19 @@
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Package Return Date & Time </th>
-                                                    <th>Merchant Id</th>
-                                                    <th>Merchant Parcel Number</th>
-                                                    <th>Invoice Number or Order Number</th>
-                                                    <th>Customer Name</th>
-                                                    <th>Customer Phone Number</th>
-                                                    <th>Customer Address</th>
-                                                    <th>Package Category</th>
-                                                    <th>Package Weight</th>
-                                                    <th>Return Package Delivery Fee</th>
+                                                    <th>Package Return <br> Date & Time </th>
+                                                    <th>Merchant <br> ID</th>
+                                                    <th>Merchant Parcel <br> Number</th>
+                                                    <th>Invoice Number or <br> Order Number</th>
+                                                    <th>Customer <br> Name</th>
+                                                    <th>Customer Phone <br> Number</th>
+                                                    <th>Customer <br> Address</th>
+                                                    <th>Package <br> Category</th>
+                                                    <th>Package <br> Weight</th>
+                                                    <th>Return Package <br> Delivery Fee</th>
                                                     <th>Zone</th>
-                                                    <th>Package Return Received by</th>
-                                                    <th>Supervisor Return Product Received Status</th>
+                                                    <th>Package Return <br> Received by</th>
+                                                    <th>Supervisor Return <br> Product Received Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

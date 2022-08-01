@@ -45,19 +45,9 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    table.dataTable>thead .sorting:after,
-    table.dataTable>thead .sorting:before,
-    table.dataTable>thead .sorting_asc:after,
-    table.dataTable>thead .sorting_asc:before,
-    table.dataTable>thead .sorting_asc_disabled:after,
-    table.dataTable>thead .sorting_asc_disabled:before,
-    table.dataTable>thead .sorting_desc:after,
-    table.dataTable>thead .sorting_desc:before,
-    table.dataTable>thead .sorting_desc_disabled:after,
-    table.dataTable>thead .sorting_desc_disabled:before {
-      bottom: 3em;
+    table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+      bottom: 2em;
     }
-
     body {
       background-color: #91f1fd;
     }
@@ -75,7 +65,7 @@
 
     .merchantSinglePkgList tr td {
       vertical-align: middle;
-      text-align: center;
+      text-align: left;
     }
 
     .merchantSinglePkgList .addBtn {
@@ -195,8 +185,6 @@
       color: #37D200;
       padding: 6px 20px;
     }
-
-    table.dataTable.nowrap th,
     table.dataTable.nowrap td {
       white-space: normal;
     }
@@ -899,16 +887,16 @@
                     <thead>
                       <tr>
                         <th>Transaction Date</th>
-                        <th>Zone Supervisor Name</th>
+                        <th>Zone Supervisor <br> Name</th>
                         <th>Supervisor ID</th>
-                        <th>Payment Description</th>
-                        <th>Total Payment Received from Courier Boy </th>
-                        <th>Total Deposit at Bank Account</th>
-                        <th>Total Deposit at Cash</th>
+                        <th>Payment <br> Description</th>
+                        <th>Total Payment Received <br> from Courier Boy </th>
+                        <th>Total Deposit at <br> Bank Account</th>
+                        <th>Total Deposit at <br> Cash</th>
                         <th>Due Amount</th>
-                        <th>Transaction Notification</th>
-                        <th>Approved From Accounts Officer</th>
-                        <th>Approved Accounts Officer Name</th>
+                        <th>Transaction <br> Notification</th>
+                        <th>Approved From <br> Accounts Officer</th>
+                        <th>Approved Accounts <br> Officer Name</th>
                       </tr>
                     </thead>
                     <tbody>
