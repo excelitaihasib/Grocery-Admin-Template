@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <title> Merchant Package List</title>
+  <title>Delivery Boy Product Delivered List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="Grocery E-com" name="description" />
   <meta content="Coderthemes" name="author" />
@@ -371,6 +371,39 @@
         padding: 10px 20px;
       }
     }
+
+    .top_merchant_btn {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .merchantNameBtn {
+      background: #0E97AA;
+      border-radius: 5px;
+      width: 327px;
+      height: 120px;
+      margin: 15px 0 0 20px;
+      padding: 0 10px;
+      height: auto;
+    }
+    .merchantNameBtn h6 {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF;
+    }
+    .pending {
+      background: rgba(210, 86, 0, 0.2);
+      border-radius: 20px;
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 12px;
+      color: #D25600;
+      padding: 6px 20px;
+      cursor: pointer;
+    }
   </style>
 
 </head>
@@ -645,7 +678,7 @@
                     <a href="hubSuper_product_delivery_complete_list.html">4. Product Delivery complete List</a>
                   </li>
                   <li>
-                    <a href="hubSuper_delivery_boy_list.html">5. Delivery Boy List</a>
+                    <a href="hubSuper_delivery_boy_product_deliveredlist.html">5. Delivery Boy List</a>
                   </li>
                   <li>
                     <a href="#fg">6. All Delivery Boy Payment History</a>
@@ -679,85 +712,91 @@
       <div class="content">
         <div class="container-fluid mt-3">
           <div class="row">
-            <h3 class="pb-2 merchant-header">Delivery Boy list</h3>
+            <h3 class="pb-2 merchant-header">Delivery Boy Product Delivered List</h3>
             <div class="col-12">
               <div class="card">
-                <div class="card-body">
-                  <div class="add-package-btn-hlder d-flex justify-content-end align-items-center">
-                    <a href="hubSuper_add_delivery_boy.html" class="add-package-btn">Add Delivery Boy <i class="fas fa-user-plus"></i>
-                      </i>
-                    </a>
+                <div class="top_merchant_btn">
+                  <div class="merchantNameBtn">
+                    <h6>Delivery Boy Name : Hasibul Hasan  </h6>
+                    <h6>Delivery Boy ID = 0123598756</h6>
                   </div>
-
+                </div>
+                <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
-
                     <thead>
                       <tr>
-                        <th>Add Delivery <br> Boy Date
-                        </th>
-                        <th>Delivery Boy <br> Name</th>
-                        <th>Delivery Boy Id</th>
-                        <th>Delivery <br> Boy mobile <br> no. 1</th>
-                        <th>Delivery <br> Boy mobile <br> no. 1</th>
-                        <th>Status</th>
-                        <th>List, Edit & <br> Delete <br>
-                          Option</th>
-                        <th>Product <br> Delivery & <br> Return List</th>
-                        <th>Delivery Boy <br> Payment <br> History</th>
-
+                        <th>Package <br> Delivered Complete <br> Date & Time</th>
+                        <th>Merchant <br> ID</th>
+                        <th>Merchant <br> Package <br> Number</th>
+                        <th>Invoice <br> Number <br> or Order Number</th>
+                        <th>Customer <br> Name</th>
+                        <th>Customer <br> Phone <br> Number</th>
+                        <th>Customer <br> Address</th>
+                        <th>Package <br> Category</th>
+                        <th>Package <br> Weight</th>
+                        <th>Customer <br> Expected <br> Delivery Time</th>
+                        <th>Payment <br> Type</th>
+                        <th>Product <br> Price</th>
+                        <th>Delivery <br> Fee</th>
+                        <th>Receivable <br> Amount <br> from Customer</th>
+                        <th>Supervisor <br> Name</th>
+                        <th>Delivery Boy <br> Product Delivery <br> Status</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2022-05-21 </td>
+                        <td>20-05-2022</td>
+                        <td>55544887</td>
+                        <td>0105245</td>
+                        <td>01234568791</td>
                         <td>Mr. Abdul Hakim</td>
-                        <td>6616758</td>
-                        <td>01756324158</td>
-                        <td>01756324158</td>
-                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
-                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
-                          <span class="delete-list">
-                            <i class="fas fa-trash-alt"></i>
-                          </span>
-                        </td>
-                        <td> <a href="hubSuper_delivery_boy_product_deliveredlist.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-                        <td> <a href="hubSuper_delivery_boy_payment_history.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td>66167554568</td>
+                        <td>60 kg</td>
+                        <td>11:53:57</td>
+                        <td>Cash On Delivery</td>
+                        <td>10000</td>
+                        <td>60</td>
+                        <td>10060</td>
+                        <td>Mr. Arman</td>
+                        <td><span class="pending" onclick="pendingF(this)">Pending</span></td>
                       </tr>
                       <tr>
-                        <td>21-05-2022</td>
+                        <td>20-05-2022</td>
+                        <td>55544887</td>
+                        <td>0105245</td>
+                        <td>01234568791</td>
                         <td>Mr. Abdul Hakim</td>
-                        <td>6616758</td>
-                        <td>01756324158</td>
-                        <td>01756324158</td>
-
-                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
-                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
-                          <span class="delete-list">
-                            <i class="fas fa-trash-alt"></i>
-                          </span>
-                        </td>
-                        <td> <a href="hubSuper_delivery_boy_product_deliveredlist.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-                        <td> <a href="hubSuper_delivery_boy_payment_history.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td>66167554568</td>
+                        <td>60 kg</td>
+                        <td>11:53:57</td>
+                        <td>Cash On Delivery</td>
+                        <td>10000</td>
+                        <td>60</td>
+                        <td>10060</td>
+                        <td>Mr. Arman</td>
+                        <td><span class="pending" onclick="pendingF(this)">Pending</span></td>
                       </tr>
-
                       <tr>
-                        <td>21-05-2022</td>
+                        <td>20-05-2022</td>
+                        <td>55544887</td>
+                        <td>0105245</td>
+                        <td>01234568791</td>
                         <td>Mr. Abdul Hakim</td>
-                        <td>6616758</td>
-                        <td>01756324158</td>
-                        <td>01756324158</td>
-
-                        <td> <button class="active-btn" onclick="activeClick(this)">Active</button></td>
-                        <td> <span class="edit-list"> <i class="fas fa-edit"></i></span>
-                          <span class="delete-list">
-                            <i class="fas fa-trash-alt"></i>
-                          </span>
-                        </td>
-                        <td> <a href="hubSuper_delivery_boy_product_deliveredlist.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-                        <td> <a href="hubSuper_delivery_boy_payment_history.html" class="edit jfss-edit-btn"><i class="fas fa-eye"></i></a></td>
-
+                        <td>661675542598</td>
+                        <td>Moghbazar, Dhaka 1219</td>
+                        <td>66167554568</td>
+                        <td>60 kg</td>
+                        <td>11:53:57</td>
+                        <td>Cash On Delivery</td>
+                        <td>10000</td>
+                        <td>60</td>
+                        <td>10060</td>
+                        <td>Mr. Arman</td>
+                        <td><span class="pending" onclick="pendingF(this)">Pending</span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -898,6 +937,26 @@
   <!-- Right bar overlay-->
   <div class="rightbar-overlay"></div>
 
+
+  <script>
+    // pending button js
+    var buttonClicked1 = null;
+    function pendingF(element) {
+        if (buttonClicked1 != null) {
+          buttonClicked1.style.background = "rgba(210, 86, 0, 0.2)";
+          buttonClicked1.style.border = "1px solid #D25600";
+          buttonClicked1.style.color = "#D25600";
+          buttonClicked1.innerHTML = "Pending"
+        }
+        buttonClicked1 = element;
+        buttonClicked1.style.background = "rgba(55, 210, 0, 0.2)";
+        buttonClicked1.style.border = "1px solid #05D201";
+        buttonClicked1.style.color = "#37D200";
+        buttonClicked1.innerHTML = "Delivery Complete";
+        buttonClicked1.style.fontSize = "12px";
+        buttonClicked1.style.whiteSpace  = "nowrap"
+    }
+  </script>
   <!-- Vendor js -->
   <script src="../assets/js/vendor.min.js"></script>
 
@@ -933,32 +992,22 @@
 
   <script>
 
-    // var activeClk = null;
-    // function activeClick(element) {
-    //   if (activeClk != null) {
-    //     activeClk.style.background = "#11862B";
-    //     activeClk.style.color = "#fff";
-    //     activeClk.innerHTML = 'Active';
+    var activeClk = null;
+    function activeClick(element) {
+      if (activeClk != null) {
+        activeClk.style.background = "#11862B";
+        activeClk.style.color = "#fff";
+        activeClk.innerHTML = 'Active';
 
 
-    //   }
-    //   activeClk = element;
-    //   activeClk.style.background = "#D60000";
-    //   activeClk.style.color = " #fff";
-    //   activeClk.innerHTML = ' Deactive';
+      }
+      activeClk = element;
+      activeClk.style.background = "#D60000";
+      activeClk.style.color = " #fff";
+      activeClk.innerHTML = ' Deactive';
 
-    // }
-
-
-
-    function activeClick(elem) {
-      elem.classList.toggle("deactive-btn");
-      if (elem.innerHTML === "Active") {
-        elem.innerHTML = "Deactive";
-      } else {
-        elem.innerHTML = "Active";
-      };
     }
+
 
   </script>
 
