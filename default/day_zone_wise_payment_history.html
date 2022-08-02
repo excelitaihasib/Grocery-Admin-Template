@@ -37,57 +37,31 @@
         <link rel="stylesheet" href="../assets/css/style.css">
 
         <style>
+            table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
+                bottom: 1.3em;
+            }
             body{
                 background-color: #91f1fd;
-            }
-            .pckgDetailsListMerchant .faEye {
-                background: #B8E6F0;
-                border-radius: 10px;
-                color: #000000;
-                padding: 10px 12px;
-                font-size: 20px;
-            }
-            .pckgDetailsListMerchant .dataTables_length .form-label {
-                display: none;
-            }
-            .pckgDetailsListMerchant table {
-                font-family: 'Tahoma';
-            }
-            .pckgDetailsListMerchant table th{
-                font-size: 12px;
-                text-align: left;
-                font-family: 'Inter', sans-serif;
-            }
-            .pckgDetailsListMerchant table td {
-                vertical-align: middle;
-                text-align: left;
-                font-size: 12px;
-                font-family: 'Inter', sans-serif;
-            }
-            table tr td .pending {
-                background: rgba(210, 86, 0, 0.2);
-                border-radius: 20px;
-                font-family: 'Inter';
-                font-weight: 400;
-                font-size: 16px;
-                color: #D25600;
-                padding: 6px 20px;
-                cursor: pointer;
             }
             table.dataTable.nowrap td {
                 white-space: normal;
             }
-            table .print-btn {
-                margin: 0;
-                padding: 0;
-                width: 80px;
-                background: #4FC6E1;
-                border: transparent;
-                border-radius: 10px;
-                color: #000;
-                padding: 7px 10px;
-                font-size: 14px;
-                font-weight: 500;
+            .dayZoneWisePayemnt .dataTables_length .form-label {
+                display: none;
+            }
+            .dayZoneWisePayemnt table {
+                font-family: 'Tahoma';
+            }
+            .dayZoneWisePayemnt table th{
+                font-size: 12px;
+                text-align: left;
+                font-family: 'Inter', sans-serif;
+            }
+            .dayZoneWisePayemnt table td {
+                vertical-align: middle;
+                text-align: left;
+                font-size: 12px;
+                font-family: 'Inter', sans-serif;
             }
         </style>
 
@@ -722,7 +696,7 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page pckgDetailsListMerchant">
+            <div class="content-page dayZoneWisePayemnt">
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid mt-3">
@@ -731,7 +705,6 @@
                                 <div class="mb-2">
                                     <h3 class="header-title">Zone Wise Payment History</h3>
                                 </div>
-                                
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -741,9 +714,9 @@
                                                     <th>Zone Name</th>
                                                     <th>Zone ID</th>
                                                     <th>Payment Description</th>
-                                                    <th>Zone Wise Today Total Received Amount</th>
-                                                    <th>Today Total Payment at Bank from Zone</th>
-                                                    <th>Today Total Payment at Cash from Zone</th>
+                                                    <th>Zone Wise Today <br> Total Received Amount</th>
+                                                    <th>Today Total Payment <br> at Bank from Zone</th>
+                                                    <th>Today Total Payment <br> at Cash from Zone</th>
                                                     <th>Due amount</th>
                                                 </tr>
                                             </thead>
@@ -767,8 +740,6 @@
                         <!-- end row--> 
                     </div> <!-- container -->
                 </div> <!-- content -->
-
-
             </div>
 
             

@@ -40,76 +40,7 @@
                 background-color: #91f1fd;
             }
             table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
-                bottom: 2em;
-            }
-            .merchantParcelList .faEye {
-                background: #B8E6F0;
-                border-radius: 10px;
-                color: #000000;
-                padding: 10px 12px;
-                font-size: 20px;
-            }
-            .merchantParcelList .dataTables_length .form-label {
-                display: none;
-            }
-            .merchantParcelList table {
-                font-family: 'Tahoma';
-            }
-            .merchantParcelList table td {
-                vertical-align: middle;
-            }
-            .merchantParcelList th{
-                text-align: left;
-                display: inline-flexbox;
-                justify-content: center;
-                font-family: 'Inter', sans-serif;
-            }
-            .merchantParcelList tr{
-                vertical-align: middle;
-                font-size: 12px;
-            }
-            .merchantParcelList tr td{
-                vertical-align: middle;
-                text-align: left;
-                font-family: 'Inter', sans-serif;
-            }
-            .merchantParcelList .pending {
-                background: rgba(210, 86, 0, 0.2);
-                border-radius: 20px;
-                font-family: 'Inter';
-                font-weight: 400;
-                font-size: 16px;
-                color: #D25600;
-                padding: 6px 20px;
-                cursor: pointer;
-            }
-            .merchantParcelList .complete {
-                background: rgba(55, 210, 0, 0.2);
-                border-radius: 20px;
-                font-family: 'Inter';
-                font-weight: 400;
-                font-size: 16px;
-                color: #37D200;
-                padding: 6px 20px;
-            }
-            .merchantParcelList .notreceived-btn {
-                padding: 5px 20px;
-                border-radius: 5px;
-                background: rgba(212, 24, 24, 0.2);
-                border: 1px solid #D41818;
-                color: #D51818;
-            }
-            table tr td .pending {
-                color: #D25600;
-                background: rgba(210, 86, 0, 0.2);
-                border-radius: 20px;
-                padding: 6px 20px;
-            }
-            table tr td .complete {
-                color: #37D200;
-                background: rgba(55, 210, 0, 0.2);
-                border-radius: 20px;
-                padding: 6px 20px;
+                bottom: 3em;
             }
             table.dataTable.nowrap td {
                 white-space: normal;
@@ -117,6 +48,34 @@
             table select.form-select{
                 width: 100px;
                 padding: 0.45rem 2.7rem 0.45rem 0.3rem;
+            }
+            .packReturnDelivery .dataTables_length .form-label {
+                display: none;
+            }
+            .packReturnDelivery table td {
+                vertical-align: middle;
+            }
+            .packReturnDelivery th{
+                text-align: left;
+                display: inline-flexbox;
+                justify-content: center;
+                font-family: 'Inter', sans-serif;
+            }
+            .packReturnDelivery tr{
+                vertical-align: middle;
+                font-size: 12px;
+            }
+            .packReturnDelivery tr td{
+                vertical-align: middle;
+                text-align: left;
+                font-family: 'Inter', sans-serif;
+            }
+            .packReturnDelivery .notreceived-btn {
+                padding: 5px 20px;
+                border-radius: 5px;
+                background: rgba(212, 24, 24, 0.2);
+                border: 1px solid #D41818;
+                color: #D51818;
             }
         </style>
     </head>
@@ -750,7 +709,7 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page merchantParcelList">
+            <div class="content-page packReturnDelivery">
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid mt-3">
@@ -759,7 +718,6 @@
                                 <div class="mb-2">
                                     <h3 class="header-title">Package Return Details List from Delivery Boy</h3>
                                 </div>
-                                
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -768,13 +726,13 @@
                                                     <th>Package Return <br> Date & Time </th>
                                                     <th>Merchant <br> ID</th>
                                                     <th>Merchant Parcel <br> Number</th>
-                                                    <th>Invoice Number or <br> Order Number</th>
+                                                    <th>Invoice <br> Number or <br> Order Number</th>
                                                     <th>Customer <br> Name</th>
                                                     <th>Customer Phone <br> Number</th>
                                                     <th>Customer <br> Address</th>
                                                     <th>Package <br> Category</th>
                                                     <th>Package <br> Weight</th>
-                                                    <th>Return Package <br> Delivery Fee</th>
+                                                    <th>Return <br> Package <br> Delivery Fee</th>
                                                     <th>Zone</th>
                                                     <th>Package Return <br> Received by</th>
                                                     <th>Supervisor Return <br> Product Received Status</th>
@@ -815,7 +773,6 @@
                                                       <button id="btn1" class="notreceived-btn" onclick="notReceivedF(this)">Not Received</button>
                                                   </td>
                                               </tr>
-                                                
                                             </tbody>
                                         </table>
                                     </div> <!-- end card body-->
@@ -843,7 +800,6 @@
                             <i class="fa-solid fa-trash-can delete-icon"></i>
                             <p>Delete Data</p>
                         </div>
-                    
                     </div>
                     <div class="modal-body text-center">
                         <h4>Are You Sure!  You want to Delete this Data ?</h4>

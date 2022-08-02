@@ -42,6 +42,14 @@
             table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
                 bottom: 3em;
             }
+            table.dataTable.nowrap td {
+                white-space: normal;
+            }
+            table select.form-select{
+                width: 90px;
+                padding: 0.45rem 0.7rem 0.45rem 0.3rem;
+                background-position: right 0.4rem center;
+            }
             .merchantParcelList .faEye {
                 background: #B8E6F0;
                 border-radius: 10px;
@@ -97,14 +105,6 @@
                 padding: 5px 15px;
                 border-radius: 5px;
                 border: none;
-            }
-            table.dataTable.nowrap td {
-                white-space: normal;
-            }
-            table select.form-select{
-                width: 90px;
-                padding: 0.45rem 0.7rem 0.45rem 0.3rem;
-                background-position: right 0.4rem center;
             }
         </style>
     </head>
@@ -747,7 +747,6 @@
                                 <div class="mb-2">
                                     <h3 class="header-title">Send by Merchant Parcel List</h3>
                                 </div>
-                                
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -843,27 +842,6 @@
 
         </div>
         <!-- END wrapper -->
-
-        <!-- ========================Code Generate Modal Start================================ -->
-        <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="delete-icon">
-                            <i class="fa-solid fa-trash-can delete-icon"></i>
-                            <p>Delete Data</p>
-                        </div>
-                    
-                    </div>
-                    <div class="modal-body text-center">
-                        <h4>Are You Sure!  You want to Delete this Data ?</h4>
-                        <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-                        <button class="delete-btn">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ========================Code Generate Modal Start================================ -->
 
         <!-- Right Sidebar -->
         <div class="right-bar">
@@ -1277,8 +1255,6 @@
                 buttonClicked1.style.background = "rgba(22, 160, 133, 0.2)";
                 buttonClicked1.style.color = "#16A085";
             }
-
-            
 
             // pending button js
             var buttonClicked2 = null;

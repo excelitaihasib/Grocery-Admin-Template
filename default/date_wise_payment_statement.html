@@ -50,22 +50,18 @@
     body{
       background-color: #91f1fd;
     }
-
-    .zonePaymentReceiveStatement .dataTables_length .form-label {
+    table.dataTable.nowrap td {
+      white-space: normal;
+    }
+    .dateWisePayment .dataTables_length .form-label {
       display: none;
     }
-
-    .zonePaymentReceiveStatement table {
-      font-family: 'Tahoma';
-    }
-
-    .zonePaymentReceiveStatement table td {
+    .dateWisePayment table td {
       vertical-align: middle;
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
-    .zonePaymentReceiveStatement th {
+    .dateWisePayment th {
       text-align: left;
       display: inline-flexbox;
       justify-content: left;
@@ -73,33 +69,11 @@
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
-    .zonePaymentReceiveStatement tr {
+    .dateWisePayment tr {
       vertical-align: middle;
       font-size: 12px;
     }
-
-    .zonePaymentReceiveStatement table .zonePaymentReceiveStatement .pending {
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 16px;
-      color: #D25600;
-      padding: 6px 20px;
-    }
-
-    .zonePaymentReceiveStatement .submit {
-      background: rgba(55, 210, 0, 0.2);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 16px;
-      color: #37D200;
-      padding: 6px 20px;
-    }
-
-    .zonePaymentReceiveStatement .calender {
+    .dateWisePayment .calender {
       display: block;
       width: 100%;
       padding: 0.45rem 0.9rem;
@@ -112,18 +86,6 @@
       border-radius: 0.2rem;
       appearance: none;
       margin: 20px 0 0 20px;
-    }
-
-    table.dataTable.nowrap td {
-      white-space: normal;
-    }
-
-    .faEye {
-      background: #B8E6F0;
-      border-radius: 10px;
-      color: #000000;
-      padding: 10px 12px;
-      font-size: 20px;
     }
   </style>
 
@@ -779,7 +741,7 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page zonePaymentReceiveStatement">
+    <div class="content-page dateWisePayment">
       <div class="content">
         <!-- Start Content-->
         <div class="container-fluid mt-3">
@@ -788,12 +750,10 @@
               <div class="mb-2">
                 <h3 class="header-title">Date Wise Payment Statement</h3>
               </div>
-
               <div class="card">
                 <div class="col-lg-2 calender-wrapper">
                   <input type="date" class="calender">
                 </div>
-
                 <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
                     <thead>
@@ -828,7 +788,6 @@
           <!-- end row-->
         </div> <!-- container -->
       </div> <!-- content -->
-
     </div>
 
 

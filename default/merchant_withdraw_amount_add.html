@@ -38,21 +38,20 @@
             body{
                 background-color: #91f1fd;
             }
-            .merchantAdd .cusInputGrpoup {
+            .merchantAdd .merInputGroup {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 margin: 30px 0;
                 font-family: 'Inter', sans-serif;
             }
-            .cusInput {
+            .merchantAdd .merInputGroup .merInput {
                 width: 250px;
                 margin:10px;
             }
-            .cusInput select {
+            .merchantAdd .merInputGroup .merInput select {
                 margin-top: 9px;
             }
-            
             .merchantAdd .addBtn {
                 background: #16A085;
                 border-radius: 5px;
@@ -66,8 +65,6 @@
             .merchantAdd .addBtn a {
                 color: #FFFFFF;
             }
-
-           
         </style>
 
     </head>
@@ -708,35 +705,33 @@
                                 <div class="mb-2">
                                     <h3 class="header-title">Merchant Withdrawal Amount Add</h3>
                                 </div>
-                                
                                 <div class="card">
-                                    <div class="cusInputGrpoup">
-                                        <div class="cusInput">
+                                    <div class="merInputGroup">
+                                        <div class="merInput">
                                             <label for="m_name" class="form-label">Merchant Name (organization name)</label>
                                             <input type="text" class="form-control" id="m_name" placeholder="Full Name">
                                                 </div>
-                                        <div class="cusInput">
-                                            <label for="m_id" class="form-label">Merchant Id</label>
+                                        <div class="merInput">
+                                            <label for="m_id" class="form-label">Merchant ID</label>
                                             <input type="number m-2" class="form-control" id="m_id" placeholder="#123">
                                         </div>
-                                        <div class="cusInput">
+                                        <div class="merInput">
                                             <label for="p_amount" class="form-label">Pay Amount</label>
                                             <input type="number" class="form-control" id="p_amount" placeholder="Amount">
                                         </div>
-                                        <div class="cusInput">
+                                        <div class="merInput">
                                             <label for="m_date" class="form-label">Date</label>
                                             <input type="date" name="" id="m_date" class="form-control">
                                         </div>
-                                        <div class="cusInput">
+                                        <div class="merInput">
                                             <label for="p_type_cash" class="form-label">Payment Type Cash & Name</label>
                                             <input type="text" class="form-control" id="p_type_cash" placeholder="Payment Type">
                                         </div>
-                                        <div class="cusInput">
+                                        <div class="merInput">
                                             <label for="p_type_bank" class="form-label">Payment Type Bank & Details</label>
                                             <input type="text" class="form-control" id="p_type_bank" placeholder="Payment Type">
                                         </div>
                                     </div>
-
                                     <div class="text-center mt-3 me-3">
                                         <button class="addBtn"><a href="merchant_admin_details_payment_history.html">Save</a></button>
                                     </div>
@@ -746,7 +741,6 @@
                         <!-- end row--> 
                     </div> <!-- container -->
                 </div> <!-- content -->
-
             </div>
 
             

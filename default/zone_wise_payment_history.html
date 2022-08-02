@@ -60,14 +60,6 @@
     table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
       bottom: 1em;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Inter', sans-serif;
-    }
     body{
       background-color: #91f1fd;
     }
@@ -76,129 +68,49 @@
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
     table tr {
       vertical-align: middle;
       font-family: 'Inter', sans-serif;
-      font-family: 'Tahoma';
       font-size: 12px;
     }
-
-    /* .dataTables_length {
-      display: none;
-    } */
-
     table tr td {
       vertical-align: middle;
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
-    table tr td .pending {
-      color: #D25600;
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
+    table.dataTable.nowrap td {
+      white-space: normal;
     }
-
-    .jfss-edit-btn,
-    .jfss-edit-btn:hover {
-      background: #B8E6F0;
-      border-radius: 10px;
-      padding: 7px 12px;
-      color: #000;
-    }
-
     .dataTables_length {
       display: none;
     }
-
-    /* .dataTables_filter {
-      display: none;
-    } */
-
-    .package-list {
-      background: #00666C;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-
-    .package-list h6 {
-      background: #00666C;
-      border-radius: 5px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 19px;
-
-      color: #FFFFFF;
-    }
-
-    .add-package-btn-hlder {
-      margin-bottom: 20px;
-    }
-
-    .add-package-btn-hlder .add-package-btn {
-      background: #16A085;
-      border-radius: 5px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      padding: 8px 20px;
-      color: #FFFFFF;
-
-    }
-
-    .pending {
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-    }
-
-    .complete {
-      background: rgba(4, 210, 0, 0.2);
-      border-radius: 20px;
-      padding: 6px 20px;
-      color: #04D200;
-
-    }
-
-    .calender-wrapper {
+    .zoneWisePaymentHistory .calender-wrapper {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
     }
-
-    .calender-wrapper .calender {
+    .zoneWisePaymentHistory .calender-wrapper .calender {
       padding: 8px;
       border-radius: 5px;
       border: 1px solid #38414A;
       background: #fff;
     }
-
-    @media(max-width:576px) {
-
-      .calender-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-
-    }
-    table.dataTable.nowrap td {
-      white-space: normal;
-    }
-    .faEye{
+    .zoneWisePaymentHistory .faEye{
       background: #B8E6F0;
       border-radius: 10px;
       color: #000000;
       padding: 10px 12px;
       font-size: 20px;
     }
+    @media(max-width:576px) {
+      .zoneWisePaymentHistory .calender-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+    }
   </style>
-
 </head>
 
 <!-- body start -->
@@ -516,7 +428,7 @@
 
 
 
-    <div class="content-page">
+    <div class="content-page zoneWisePaymentHistory">
       <div class="content">
         <div class="container-fluid mt-3">
           <div class="row">
@@ -524,13 +436,10 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-
                   <div class="calender-wrapper">
                     <input type="date" class="calender">
                   </div>
-
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
-
                     <thead>
                       <tr>
                         <th>Date</th>
@@ -560,7 +469,9 @@
       </div>
     </div>
 
-
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
   </div>
   <!-- END wrapper -->

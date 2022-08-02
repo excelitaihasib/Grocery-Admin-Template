@@ -41,25 +41,6 @@
             body{
                 background-color: #91f1fd;
             }
-            table {
-                font-family: 'Tahoma', sans-serif;
-                white-space: nowrap;
-            }
-            
-            .merchantList .faEye {
-                background: #B8E6F0;
-                border-radius: 10px;
-                color: #000000;
-                padding: 10px 12px;
-                font-size: 20px;
-            }
-            .merchantList .dataTables_length .form-label {
-                display: none;
-            }
-            .merchantList table {
-                font-family: 'Tahoma';
-            }
-            
             table th{
                 text-align: left;
                 justify-content: center;
@@ -74,20 +55,30 @@
                 text-align: left;
                 font-family: 'Inter', sans-serif;
             }
-            table tr td .pending {
+            table.dataTable.nowrap td {
+                white-space: normal;
+            }
+            .parcelreceivedListMer tr td .pending {
                 color: #D25600;
                 background: rgba(210, 86, 0, 0.2);
                 border-radius: 20px;
                 padding: 6px 20px;
             }
-            table tr td .complete {
+            .parcelreceivedListMer tr td .complete {
                 color: #37D200;
                 background: rgba(55, 210, 0, 0.2);
                 border-radius: 20px;
                 padding: 6px 20px;
             }
-            table.dataTable.nowrap td {
-                white-space: normal;
+            .parcelreceivedListMer .faEye {
+                background: #B8E6F0;
+                border-radius: 10px;
+                color: #000000;
+                padding: 10px 12px;
+                font-size: 20px;
+            }
+            .parcelreceivedListMer .dataTables_length .form-label {
+                display: none;
             }
         </style>
     </head>
@@ -718,7 +709,7 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page merchantList">
+            <div class="content-page parcelreceivedListMer">
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid mt-3">
@@ -727,14 +718,13 @@
                                 <div class="mb-2">
                                     <h3 class="header-title">All Parcel Received List from Merchant </h3>
                                 </div>
-                                
                                 <div class="card">
                                     <div class="card-body">
                                         <table id="datatable-buttons" class="table table-striped nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Parcel Received Date & <br> Time</th>
-                                                    <th>Merchant / <br> Organization Name </th>
+                                                    <th>Parcel Received <br> Date & <br> Time</th>
+                                                    <th>Merchant / <br> Organization <br> Name </th>
                                                     <th>Merchant <br> ID</th>
                                                     <th>Number of <br> Parcel Quantity</th>
                                                     <th>Cash on Delivery <br> No. of <br> Parcel Quantity</th>
