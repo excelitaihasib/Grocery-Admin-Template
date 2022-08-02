@@ -48,58 +48,34 @@
     table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
       bottom: 2em;
     }
-
     body {
       background-color: #91f1fd;
     }
-
-    .merchantSinglePkgList th {
+    table.dataTable.nowrap td {
+      white-space: normal;
+    }
+    .delCompletePackageList th {
       text-align: left;
       display: inline-flexbox;
       justify-content: center;
       font-family: 'Inter', sans-serif;
     }
-
-    .merchantSinglePkgList tr {
+    .delCompletePackageList tr {
       vertical-align: middle;
       font-size: 12px;
     }
-
-    .merchantSinglePkgList tr td {
+    .delCompletePackageList tr td {
       vertical-align: middle;
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
-    .merchantSinglePkgList .addBtn {
-      background: #16A085;
-      border-radius: 5px;
-      border: 1px solid #16A085;
-      padding: 8px 30px;
-      font-family: 'Inter';
-      font-weight: 300;
-      font-size: 18px;
-      margin: 15px 0 0 20px;
-    }
-
-    .merchantSinglePkgList .addBtn a {
-      color: #FFFFFF;
-    }
-
-    .merchantSinglePkgList .top_merchant_btn {
+    .delCompletePackageList .top_merchant_btn {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
     }
-
-    @media (max-width: 738px) {
-      .merchantSinglePkgList .top_merchant_btn {
-        justify-content: center;
-      }
-    }
-
-    .merchantSinglePkgList .merchantNameBtn {
+    .delCompletePackageList .top_merchant_btn .merchantNameBtn {
       background: #2ACAC0;
       border-radius: 5px;
       width: 327px;
@@ -108,122 +84,30 @@
       padding: 0 10px;
       height: auto;
     }
-
-    .merchantSinglePkgList .merchantNameBtn h6 {
+    .delCompletePackageList .top_merchant_btn .merchantNameBtn h6 {
       font-family: 'Inter';
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
       color: #FFFFFF;
     }
-
-    .merchantSinglePkgList .pickerNameBtn {
-      background: #31435E;
-      border-radius: 5px;
-      width: 327px;
-      margin: 15px 15px 0 20px;
-      padding: 0 10px;
-    }
-
-    .merchantSinglePkgList .pickerNameBtn h6 {
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      color: #FFFFFF;
-    }
-
-    .merchantSinglePkgList .dataTables_length .form-label {
+    .delCompletePackageList .dataTables_length .form-label {
       display: none;
     }
-
-    .merchantSinglePkgList table {
-      font-family: 'Tahoma';
-    }
-
-    .merchantSinglePkgList table td {
-      vertical-align: middle;
-      text-align: center;
-    }
-
-    .merchantSinglePkgList .pending {
-      background: rgba(210, 86, 0, 0.2);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 12px;
-      color: #D25600;
-      padding: 6px 10px;
-      cursor: pointer;
-    }
-    .merchantSinglePkgList .not-complete{
-      background: rgba(255, 0, 0, 0.05);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 12px;
-      color: #FF0000;
-      padding: 6px 10px;
-      cursor: pointer;
-      white-space: no-wrap;
-    }
-    .merchantSinglePkgList .approve{
-      background: rgba(64, 201, 30, 0.15);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 12px;
-      color: #40C91E;
-      padding: 6px 10px;
-      cursor: pointer;
-      white-space: no-wrap;
-    }
-
-    .merchantSinglePkgList .submit {
-      background: rgba(55, 210, 0, 0.2);
-      border-radius: 20px;
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 16px;
-      color: #37D200;
-      padding: 6px 20px;
-    }
-    .merchantSinglePkgList .text{
+    .delCompletePackageList .text{
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
       font-size: 12px;
       color: #FE0808;
     }
-
-    table.dataTable.nowrap td {
-      white-space: normal;
-    }
-
-    table .print-btn {
-      margin: 0;
-      padding: 0;
-      width: 80px;
-      background: #4FC6E1;
-      border: transparent;
-      border-radius: 10px;
-      color: #000;
-      padding: 7px 10px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .trnsfr-completebtn {
-      background-color: #039A12;
-      border: 0;
-      padding: 5px 20px;
-    }
-
-    .trnsfr-completebtn a {
-      color: #fff;
-    }
-    .green{
+    .delCompletePackageList .green{
       color: #24AC0E;
+    }
+    @media (max-width: 738px) {
+      .delCompletePackageList .top_merchant_btn {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -879,7 +763,7 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page merchantSinglePkgList">
+    <div class="content-page delCompletePackageList">
       <div class="content">
         <!-- Start Content-->
         <div class="container-fluid mt-3">
@@ -888,7 +772,6 @@
               <div class="mb-2">
                 <h3 class="header-title">Delivered Complete Package List</h3>
               </div>
-
               <div class="card">
                 <div class="top_merchant_btn">
                   <div class="merchantNameBtn">
@@ -933,30 +816,14 @@
         </div> <!-- container -->
       </div> <!-- content -->
 
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+
     </div>
 
     <!-- END wrapper -->
 
-    <!-- ========================Code Generate Modal Start================================ -->
-    <div class="modal fade" id="deleteRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="delete-icon">
-              <i class="fa-solid fa-trash-can delete-icon"></i>
-              <p>Delete Data</p>
-            </div>
-
-          </div>
-          <div class="modal-body text-center">
-            <h4>Are You Sure! You want to Delete this Data ?</h4>
-            <button class="cancel-btn" data-bs-dismiss="modal">Cancel</button>
-            <button class="delete-btn">Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ========================Code Generate Modal Start================================ -->
 
     <!-- Right Sidebar -->
     <div class="right-bar">

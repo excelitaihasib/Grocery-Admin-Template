@@ -62,21 +62,26 @@
     table tr{
       vertical-align: middle;
     }
-    
     table tr td{
       vertical-align: middle;
       text-align: left;
       font-size: 12px;
       font-family: 'Inter', sans-serif;
     }
-    table tr td .pending {
+    table select.form-select {
+      width: 100px;
+      padding: 0.45rem 2.7rem 0.45rem 0.3rem;
+    }
+    table.dataTable.nowrap td {
+      white-space: normal;
+    }
+    .driverConfirmationList tr td .pending {
       color: #D25600;
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
     }
-
-    table tr td .complete {
+    .driverConfirmationList tr td .complete {
       color: #37D200;
       background: rgba(55, 210, 0, 0.2);
       border-radius: 20px;
@@ -85,7 +90,7 @@
     .driverConfirmationList .dataTables_length .form-label {
       display: none;
     }
-    table .print-btn {
+    .driverConfirmationList .print-btn {
       margin: 0;
       padding: 0;
       width: 80px;
@@ -96,13 +101,6 @@
       padding: 7px 10px;
       font-size: 14px;
       font-weight: 500;
-    }
-    table select.form-select {
-      width: 100px;
-      padding: 0.45rem 2.7rem 0.45rem 0.3rem;
-    }
-    table.dataTable.nowrap td {
-      white-space: normal;
     }
   </style>
 
@@ -763,7 +761,6 @@
               <div class="mb-2">
                 <h3 class="header-title">Zone Wise Vehicle & Driver Confirmation List</h3>
               </div>
-
               <div class="card">
                 <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -810,7 +807,6 @@
           <!-- end row-->
         </div> <!-- container -->
       </div> <!-- content -->
-
     </div>
 
 

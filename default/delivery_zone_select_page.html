@@ -45,27 +45,8 @@
     body{
       background-color: #91f1fd;
     }
-    table {
-      font-family: 'Tahoma', sans-serif;
-      white-space: nowrap;
-    }
     table.dataTable>thead .sorting:before,table.dataTable>thead .sorting_asc:before, table.dataTable>thead .sorting:after,table.dataTable>thead .sorting_asc:after{
       bottom: 2em;
-    }
-    .deliveryZone .faEye {
-      background: #B8E6F0;
-      border-radius: 10px;
-      color: #000000;
-      padding: 10px 12px;
-      font-size: 20px;
-    }
-
-    .deliveryZone .dataTables_length .form-label {
-      display: none;
-    }
-
-    .deliveryZone table {
-      font-family: 'Tahoma';
     }
     table th{
       text-align: left;
@@ -79,16 +60,28 @@
       text-align: left;
       font-family: 'Inter', sans-serif;
     }
-
-    table tr td .pending {
+    table.dataTable.nowrap td {
+      white-space: normal;
+    }
+    .deliveryZone .faEye {
+      background: #B8E6F0;
+      border-radius: 10px;
+      color: #000000;
+      padding: 10px 12px;
+      font-size: 20px;
+    }
+    .deliveryZone .dataTables_length .form-label {
+      display: none;
+    }
+    .deliveryZone table {
+      font-family: 'Tahoma';
+    }
+    .deliveryZone tr td .pending {
       color: #D25600;
       background: rgba(210, 86, 0, 0.2);
       border-radius: 20px;
       padding: 6px 20px;
       cursor: pointer;
-    }
-    table.dataTable.nowrap td {
-      white-space: normal;
     }
   </style>
 
@@ -750,7 +743,6 @@
               <div class="mb-2">
                 <h3 class="header-title">Delivery Zone Select Page</h3>
               </div>
-
               <div class="card">
                 <div class="card-body">
                   <table id="datatable-buttons" class="table table-striped nowrap w-100">
@@ -814,7 +806,6 @@
           <!-- end row-->
         </div> <!-- container -->
       </div> <!-- content -->
-
     </div>
 
 
